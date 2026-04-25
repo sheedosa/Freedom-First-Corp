@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header } from './components/Header.tsx';
-import { Hero } from './components/Hero.tsx';
-import { Capabilities } from './components/Capabilities.tsx';
-import { ServiceMap } from './components/ServiceMap.tsx';
-import { Advantages } from './components/Advantages.tsx';
-import { Partnerships } from './components/Partnerships.tsx';
-import { Footer } from './components/Footer.tsx';
-import { Logo } from './components/Logo.tsx';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { Capabilities } from './components/Capabilities';
+import { ServiceMap } from './components/ServiceMap';
+import { Advantages } from './components/Advantages';
+import { Partnerships } from './components/Partnerships';
+import { Footer } from './components/Footer';
+import { Logo } from './components/Logo';
 
 export default function App() {
   return (

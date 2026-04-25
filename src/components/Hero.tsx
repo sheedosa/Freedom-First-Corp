@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
-import { content } from '../content.ts';
+import { content } from '../content';
 
 export const Hero = () => {
   const { title, subhead, ctaPrimary, ctaSecondary, bgImage } = content.hero;

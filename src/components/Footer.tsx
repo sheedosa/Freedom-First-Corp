@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Mail, Linkedin, Send, MapPin } from 'lucide-react';
-import { content } from '../content.ts';
-import { Logo } from './Logo.tsx';
+import { content } from '../content';
+import { Logo } from './Logo';
 
 export const Footer = () => {
   const { navigate, contactForm, company } = content.footer;

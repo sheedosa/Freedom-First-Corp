@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import { content } from '../content.ts';
+import { content } from '../content';
 
 export const Advantages = () => {
   const { header, message, items, ctaPrimary, ctaPrimaryLink, ctaSecondary, ctaSecondaryLink } = content.advantages;

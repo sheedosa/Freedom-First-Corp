@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
-import { content } from '../content.ts';
-import { Logo } from './Logo.tsx';
+import { content } from '../content';
+import { Logo } from './Logo';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);

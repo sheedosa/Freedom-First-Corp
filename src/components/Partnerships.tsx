@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { content } from '../content.ts';
+import { content } from '../content';
 
 export const Partnerships = () => {
   const { section1, section2, ctaPrimary, ctaPrimaryLink, ctaSecondary, ctaSecondaryLink } = content.partnerships;
