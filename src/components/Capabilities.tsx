@@ -39,7 +39,7 @@ export const Capabilities = () => {
               transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
               className="flex flex-col group block bg-navy-deep relative overflow-hidden rounded-[2.5rem] min-h-[480px] md:min-h-[550px] shadow-2xl shadow-navy-deep/20 gpu-accel transition-transform duration-500 hover:scale-[1.01]"
             >
-              <div className="absolute inset-0 z-0 h-full">
+              <div className="absolute inset-0 z-0 h-full bg-navy-deep">
                 <img 
                   src={capability.image} 
                   alt={capability.title} 

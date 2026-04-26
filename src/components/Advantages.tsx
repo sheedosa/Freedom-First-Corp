@@ -56,7 +56,7 @@ export const Advantages = () => {
             >
               <div className="flex flex-col h-full bg-white rounded-[2rem] sm:rounded-[3rem] rounded-tr-[1.5rem] rounded-bl-[1.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-4 transition-all duration-700 ease-out border border-gray-100/50 gpu-accel">
                 {/* Image Section */}
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[4/5] overflow-hidden bg-navy-deep/5">
                   <img 
                     src={item.image} 
                     alt={item.title} 

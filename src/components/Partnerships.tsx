@@ -37,7 +37,7 @@ export const Partnerships = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full lg:w-1/2"
           >
-            <div className="aspect-[4/3] bg-off-white relative overflow-hidden rounded-[3rem] shadow-xl shadow-navy-deep/10 gpu-accel">
+            <div className="aspect-[4/3] bg-navy-deep/5 relative overflow-hidden rounded-[3rem] shadow-xl shadow-navy-deep/10 gpu-accel">
               <img 
                 src="https://lh3.googleusercontent.com/d/1kroLaWjvwK_OgROMCFh2v2ZSVAC6ImqQ" 
                 alt="Optimistic landscape"
@@ -80,7 +80,7 @@ export const Partnerships = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full lg:w-1/2"
           >
-            <div className="aspect-[4/3] bg-off-white relative overflow-hidden rounded-[3rem] shadow-xl shadow-navy-deep/10 gpu-accel">
+            <div className="aspect-[4/3] bg-navy-deep/5 relative overflow-hidden rounded-[3rem] shadow-xl shadow-navy-deep/10 gpu-accel">
               <img 
                 src="https://lh3.googleusercontent.com/d/1V3jOstphVvSI79E12m1Z-R7MeUvL436l" 
                 alt="Community collaboration landscape"

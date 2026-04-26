@@ -17,6 +17,7 @@ export const Hero = () => {
           referrerPolicy="no-referrer"
           decoding="sync"
           loading="eager"
+          fetchPriority="high"
         />
         {/* Gradients for legibility from High Density theme */}
         <div className="absolute inset-0" style={{ background: 'var(--gradient-overlay-dark)' }} />
