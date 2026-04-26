@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { content } from '../content';
@@ -7,7 +6,7 @@ export const Capabilities = () => {
   const { header, items } = content.capabilities;
 
   return (
-    <section id="capabilities" className="bg-white pt-12 pb-24 md:pt-20 md:pb-32 relative overflow-hidden fluid-section-transition">
+    <section id="capabilities" className="bg-white pt-10 pb-20 md:pt-20 md:pb-32 relative overflow-hidden fluid-section-transition">
       {/* Background Organic Shapes */}
       <div className="blob-bg -top-24 -left-48 opacity-[0.08] floating-element" />
       <div className="blob-bg top-1/2 -right-48 opacity-[0.05] rotate-180 floating-element" style={{ animationDelay: '-3s' }} />
@@ -24,7 +23,7 @@ export const Capabilities = () => {
             <div className="w-12 h-[1px] bg-red-freedom" />
             <span className="text-navy-deep/40 font-mono text-[10px] tracking-[0.3em] uppercase">Intelligence</span>
           </div>
-          <h2 className="text-navy-deep text-4xl md:text-7xl font-display leading-[0.9] uppercase text-left max-w-4xl tracking-tighter">
+          <h2 className="text-navy-deep text-3xl sm:text-4xl md:text-7xl font-display leading-[0.95] md:leading-[0.9] uppercase text-left max-w-4xl tracking-tighter">
             {header}
           </h2>
         </motion.div>
@@ -38,7 +37,7 @@ export const Capabilities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
-              className="flex flex-col group block bg-navy-deep relative overflow-hidden rounded-[2.5rem] min-h-[550px] shadow-2xl shadow-navy-deep/20 gpu-accel transition-transform duration-500 hover:scale-[1.01]"
+              className="flex flex-col group block bg-navy-deep relative overflow-hidden rounded-[2.5rem] min-h-[480px] md:min-h-[550px] shadow-2xl shadow-navy-deep/20 gpu-accel transition-transform duration-500 hover:scale-[1.01]"
             >
               <div className="absolute inset-0 z-0 h-full">
                 <img 
@@ -49,10 +48,10 @@ export const Capabilities = () => {
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/20 via-navy-deep/60 to-navy-deep" />
+                <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/10 via-navy-deep/50 to-navy-deep" />
               </div>
               
-              <div className="relative z-10 flex flex-col justify-end h-full p-10 mt-auto">
+              <div className="relative z-10 flex flex-col justify-end h-full p-8 md:p-10 mt-auto">
                 <div className="text-center transition-transform duration-500 group-hover:-translate-y-6">
                   <p className="text-gray-300 font-mono text-[10px] md:text-xs uppercase tracking-widest mb-4">
                     {capability.description}

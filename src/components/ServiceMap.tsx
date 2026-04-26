@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import { useState, memo } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
@@ -64,7 +64,7 @@ const WorldMap = memo(({ countries }: { countries: any[] }) => (
               transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
             />
 
-            {/* HUD Leader Line */}
+            {/* HUD Leader Line - Hide on tiny screens by making it shorter or adjusting logic */}
             <motion.path
               d={`M 0 0 L ${xOffset * 0.3} ${yOffset} L ${xOffset} ${yOffset}`}
               fill="none"
@@ -119,7 +119,7 @@ const WorldMap = memo(({ countries }: { countries: any[] }) => (
                   letterSpacing: "0.5px" 
                 }}
               >
-                LAT: {(country.coordinates as number[])[1].toFixed(2)} / LON: {(country.coordinates as number[])[0].toFixed(2)}
+                {country.id.slice(0, 3)}
               </text>
               <rect 
                 x={isLeft ? -70 : 66} 
@@ -146,10 +146,10 @@ export const ServiceMap = () => {
   const firstPart = messageParts[0];
 
   return (
-    <section id="where-we-do-it" className="flex flex-col lg:flex-row w-full min-h-[70vh]">
+    <section id="where-we-do-it" className="flex flex-col lg:flex-row w-full min-h-[60vh] md:min-h-[70vh]">
       
       {/* Light Side - Content */}
-      <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center pt-12 pb-24 lg:pt-20 lg:pb-32 px-6 sm:px-12 lg:px-16 xl:px-24 2xl:px-32">
+      <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center pt-10 pb-20 lg:pt-20 lg:pb-32 px-6 sm:px-12 lg:px-16 xl:px-24 2xl:px-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,10 +163,10 @@ export const ServiceMap = () => {
               Global Operations
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-display leading-[0.95] mb-10 uppercase text-navy-deep tracking-tighter">
+          <h2 className="text-4xl md:text-6xl font-display leading-[0.95] mb-8 md:mb-10 uppercase text-navy-deep tracking-tighter">
             {header}
           </h2>
-          <p className="text-navy-deep/70 text-lg leading-relaxed mb-10 font-medium">
+          <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed mb-10 font-medium">
             {firstPart}
             {accentClause && (
               <span className="text-navy-deep font-bold italic">
@@ -185,7 +185,7 @@ export const ServiceMap = () => {
       </div>
 
       {/* Dark Side - Map */}
-      <div className="w-full lg:w-1/2 bg-navy-deep relative flex flex-col justify-center bg-gradient-to-tr from-navy-deep via-navy-deep to-blue-freedom/20 border-l border-white/5 pt-12 pb-24 sm:pt-16 sm:pb-32 lg:py-0 overflow-hidden">
+      <div className="w-full lg:w-1/2 bg-navy-deep relative flex flex-col justify-center bg-gradient-to-tr from-navy-deep via-navy-deep to-blue-freedom/20 border-l border-white/5 pt-10 pb-20 sm:pt-16 sm:pb-32 lg:py-0 overflow-hidden">
         {/* Subtle Map Grid overlay */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
           style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '20px 20px' }} 

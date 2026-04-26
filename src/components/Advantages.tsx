@@ -1,6 +1,4 @@
-import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
 import { content } from '../content';
 
 export const Advantages = () => {
@@ -46,7 +44,7 @@ export const Advantages = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10">
           {items.map((item, index) => (
             <motion.div
               key={item.title}
@@ -56,7 +54,7 @@ export const Advantages = () => {
               transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
               className={`group h-full ${index % 2 === 0 ? 'lg:-translate-y-6' : 'lg:translate-y-6'}`}
             >
-              <div className="flex flex-col h-full bg-white rounded-[3rem] rounded-tr-[1.5rem] rounded-bl-[1.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-4 transition-all duration-700 ease-out border border-gray-100/50 gpu-accel">
+              <div className="flex flex-col h-full bg-white rounded-[2rem] sm:rounded-[3rem] rounded-tr-[1.5rem] rounded-bl-[1.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-4 transition-all duration-700 ease-out border border-gray-100/50 gpu-accel">
                 {/* Image Section */}
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img 

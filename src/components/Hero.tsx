@@ -31,11 +31,11 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl space-y-6 md:space-y-8 gpu-accel"
         >
-          <h1 className="industrial-h1 mb-4 md:mb-6 leading-[1.1] md:leading-[1.05]">
+          <h1 className="text-4xl xs:text-5xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-[1] font-display uppercase tracking-tight text-white mb-6">
             {title}
           </h1>
 
-          <p className="text-off-white text-base md:text-lg leading-relaxed max-w-[600px] opacity-90 mb-6 md:mb-8">
+          <p className="text-off-white text-base md:text-lg leading-relaxed max-w-[600px] opacity-90 mb-8">
             {subhead}
           </p>
 

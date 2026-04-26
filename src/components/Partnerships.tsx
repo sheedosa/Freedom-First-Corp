@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { content } from '../content';
 
@@ -6,10 +5,10 @@ export const Partnerships = () => {
   const { section1, section2, ctaPrimary, ctaPrimaryLink, ctaSecondary, ctaSecondaryLink } = content.partnerships;
 
   return (
-    <section id="partnerships" className="bg-white py-12 md:py-16">
+    <section id="partnerships" className="bg-white py-10 md:py-16">
       <div className="max-content-width">
         {/* First Block - Text Left, Image Right */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-12 md:mb-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mb-10 md:mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -22,11 +21,11 @@ export const Partnerships = () => {
                 <div className="w-2 h-2 bg-red-freedom" />
                 <span className="text-red-freedom text-[10px] font-bold uppercase tracking-[0.3em]">Operational Excellence</span>
               </div>
-              <h2 className="text-navy-deep text-3xl md:text-4xl font-display leading-[1.1] uppercase tracking-tight">
+              <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.1] uppercase tracking-tight">
                 {section1.header}
               </h2>
             </div>
-            <p className="text-navy-deep/80 text-lg leading-relaxed whitespace-pre-line">
+            <p className="text-navy-deep/80 text-base md:text-lg leading-relaxed whitespace-pre-line">
               {section1.message}
             </p>
           </motion.div>
@@ -52,7 +51,7 @@ export const Partnerships = () => {
         </div>
 
         {/* Second Block - Image Left, Text Right */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 mb-12 md:mb-16">
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20 mb-10 md:mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,11 +64,11 @@ export const Partnerships = () => {
                 <div className="w-2 h-2 bg-red-freedom" />
                 <span className="text-red-freedom text-[10px] font-bold uppercase tracking-[0.3em]">Synergy & Impact</span>
               </div>
-              <h2 className="text-navy-deep text-3xl md:text-4xl font-display leading-[1.1] uppercase tracking-tight">
+              <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.1] uppercase tracking-tight">
                 {section2.header}
               </h2>
             </div>
-            <p className="text-navy-deep/80 text-lg leading-relaxed whitespace-pre-line">
+            <p className="text-navy-deep/80 text-base md:text-lg leading-relaxed whitespace-pre-line">
               {section2.message}
             </p>
           </motion.div>
