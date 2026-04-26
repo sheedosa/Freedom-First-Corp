@@ -16,7 +16,7 @@ export const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 80);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -73,14 +73,14 @@ export const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute left-0 mt-4 w-64 bg-white shadow-xl border-t-2 border-red-freedom square-edges overflow-hidden"
+                      className="absolute left-0 mt-4 w-64 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden border border-gray-100"
                     >
-                      <div className="py-2">
+                      <div className="py-3 px-2">
                         {item.dropdown.map((subItem) => (
                           <a
                             key={subItem.label}
                             href={subItem.href}
-                            className="block px-6 py-3 text-sm text-navy-deep hover:bg-off-white hover:text-red-freedom transition-colors duration-200"
+                            className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200"
                           >
                             {subItem.label}
                           </a>
@@ -103,20 +103,20 @@ export const Header = () => {
               <Globe className="mr-2 w-4 h-4 opacity-70" />
               {currentLang}
             </button>
-            <div className="absolute right-0 mt-4 w-40 bg-white shadow-xl square-edges border border-gray-100 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200">
-              <div className="py-2">
+            <div className="absolute right-0 mt-4 w-40 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl border border-gray-100 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              <div className="py-2 px-1">
                 {content.nav.languages.map((lang) => (
                   <button 
                     key={lang.code} 
                     onClick={() => handleLangChange(lang.code, lang.active)}
-                    className={`w-full relative px-4 py-2 flex items-center text-left ${!lang.active ? 'cursor-not-allowed opacity-50' : 'hover:bg-off-white'}`}
+                    className={`w-full relative px-4 py-2.5 flex items-center text-left rounded-xl ${!lang.active ? 'cursor-not-allowed opacity-50' : 'hover:bg-red-freedom/10'}`}
                     disabled={!lang.active}
                   >
                     <span className={`text-xs ${currentLang === lang.code ? 'text-red-freedom font-bold' : 'text-navy-deep'}`}>
                       {lang.label} ({lang.code})
                     </span>
                     {!lang.active && (
-                      <span className="ml-auto text-[10px] bg-gray-100 px-1 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      <span className="ml-auto text-[10px] bg-gray-100 px-1 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                         Coming soon
                       </span>
                     )}
@@ -125,10 +125,10 @@ export const Header = () => {
               </div>
             </div>
           </div>
-
+ 
           <a 
             href="#contact" 
-            className="bg-red-freedom text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] square-edges transition-all duration-200 hover:bg-red-700 hover:-translate-y-0.5 active:translate-y-0 shadow-sm whitespace-nowrap"
+            className="bg-red-freedom text-white px-8 py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-freedom/30 hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
           >
             {content.nav.cta}
           </a>
@@ -219,7 +219,7 @@ export const Header = () => {
                 <div className="relative">
                   <button 
                     onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
-                    className="w-full flex items-center justify-between p-4 bg-white/5 square-edges border border-white/10 text-sm font-bold tracking-widest"
+                    className="w-full flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/10 text-sm font-bold tracking-widest"
                   >
                     <div className="flex items-center">
                       <Globe className="w-4 h-4 mr-3 text-red-freedom" />
@@ -227,27 +227,27 @@ export const Header = () => {
                     </div>
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileLangOpen ? 'rotate-180' : ''}`} />
                   </button>
-
+ 
                   <AnimatePresence>
                     {isMobileLangOpen && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute bottom-full left-0 right-0 mb-2 bg-white text-navy-deep square-edges shadow-2xl overflow-hidden"
+                        className="absolute bottom-full left-0 right-0 mb-4 bg-white text-navy-deep rounded-3xl shadow-2xl overflow-hidden p-2"
                       >
                         {content.nav.languages.map((lang) => (
                           <button
                             key={lang.code}
                             onClick={() => handleLangChange(lang.code, lang.active)}
                             disabled={!lang.active}
-                            className={`w-full px-6 py-4 flex items-center justify-between text-left border-b border-gray-100 last:border-0 ${!lang.active ? 'opacity-30' : 'active:bg-off-white'}`}
+                            className={`w-full px-6 py-4 flex items-center justify-between text-left rounded-2xl ${!lang.active ? 'opacity-30' : 'active:bg-off-white'}`}
                           >
                             <span className={`text-sm font-bold uppercase ${currentLang === lang.code ? 'text-red-freedom' : ''}`}>
                               {lang.label}
                             </span>
                             {!lang.active && (
-                              <span className="text-[10px] bg-gray-100 px-2 py-1 rounded-sm">Coming soon</span>
+                              <span className="text-[10px] bg-gray-100 px-2 py-1 rounded-md">Coming soon</span>
                             )}
                           </button>
                         ))}
@@ -255,10 +255,10 @@ export const Header = () => {
                     )}
                   </AnimatePresence>
                 </div>
-
+ 
                 <a 
                   href="#contact"
-                  className="block w-full bg-red-freedom text-white text-center py-5 text-lg font-bold uppercase tracking-widest square-edges active:scale-[0.98] transition-transform shadow-xl"
+                  className="block w-full bg-red-freedom text-white text-center py-5 text-lg font-bold uppercase tracking-widest rounded-2xl active:scale-[0.98] transition-transform shadow-xl shadow-red-freedom/20"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {content.nav.cta}

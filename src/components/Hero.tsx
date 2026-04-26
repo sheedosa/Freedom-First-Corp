@@ -13,8 +13,10 @@ export const Hero = () => {
         <img 
           src={bgImage} 
           alt="Industrial energy facility" 
-          className="w-full h-full object-cover grayscale-[20%]"
+          className="w-full h-full object-cover grayscale-[20%] gpu-accel"
           referrerPolicy="no-referrer"
+          decoding="sync"
+          loading="eager"
         />
         {/* Gradients for legibility from High Density theme */}
         <div className="absolute inset-0" style={{ background: 'var(--gradient-overlay-dark)' }} />
@@ -22,12 +24,12 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-content-width w-full pb-16 md:pb-24">
+      <div className="relative z-10 max-content-width w-full pb-10 md:pb-16">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl space-y-6 md:space-y-8"
+          className="max-w-3xl space-y-6 md:space-y-8 gpu-accel"
         >
           <h1 className="industrial-h1 mb-4 md:mb-6 leading-[1.1] md:leading-[1.05]">
             {title}
@@ -40,13 +42,13 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4">
             <a 
               href="#capabilities" 
-              className="inline-block bg-red-freedom text-white px-8 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.08em] square-edges transition-all duration-300 hover:bg-red-700 md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] text-center"
+              className="inline-block bg-red-freedom text-white px-10 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-freedom/30 md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.95] text-center"
             >
               {ctaPrimary}
             </a>
             <a 
               href="#contact" 
-              className="inline-block border-[1.5px] border-white text-white px-8 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.08em] square-edges transition-all duration-300 hover:bg-white hover:text-navy-deep md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] text-center"
+              className="inline-block border-[1.5px] border-white/30 text-white px-10 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.1em] rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy-deep md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.95] text-center"
             >
               {ctaSecondary}
             </a>
