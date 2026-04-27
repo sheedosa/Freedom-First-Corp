@@ -1,3 +1,4 @@
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
@@ -11,6 +12,9 @@ export const Header = () => {
   const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(null);
   const [currentLang, setCurrentLang] = useState(content.nav.languages.find(l => l.active)?.code || 'EN');
   const [isMobileLangOpen, setIsMobileLangOpen] = useState(false);
+  
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +48,21 @@ export const Header = () => {
     }
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -54,9 +73,9 @@ export const Header = () => {
     >
       <div className="max-content-width flex items-center justify-between">
         <div className="flex-shrink-0">
-          <a href="/">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
             <Logo variant={isScrolled ? 'color' : 'white'} />
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -68,13 +87,24 @@ export const Header = () => {
               onMouseEnter={() => setActiveDropdown(item.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a 
-                href={item.href}
-                className="flex items-center nav-link transition-colors duration-200 hover:text-red-freedom"
-              >
-                {item.label}
-                {item.dropdown && <ChevronDown className="ml-1 w-3 h-3 opacity-50" strokeWidth={3} />}
-              </a>
+              {item.href.startsWith('/') ? (
+                <Link 
+                  to={item.href}
+                  className="flex items-center nav-link transition-colors duration-200 hover:text-red-freedom"
+                >
+                  {item.label}
+                  {item.dropdown && <ChevronDown className="ml-1 w-3 h-3 opacity-50" strokeWidth={3} />}
+                </Link>
+              ) : (
+                <a 
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="flex items-center nav-link transition-colors duration-200 hover:text-red-freedom"
+                >
+                  {item.label}
+                  {item.dropdown && <ChevronDown className="ml-1 w-3 h-3 opacity-50" strokeWidth={3} />}
+                </a>
+              )}
 
               {item.dropdown && (
                 <AnimatePresence>
@@ -88,13 +118,24 @@ export const Header = () => {
                     >
                       <div className="py-3 px-2">
                         {item.dropdown.map((subItem) => (
-                          <a
-                            key={subItem.label}
-                            href={subItem.href}
-                            className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200"
-                          >
-                            {subItem.label}
-                          </a>
+                          subItem.href.startsWith('/') ? (
+                            <Link
+                              key={subItem.label}
+                              to={subItem.href}
+                              className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200"
+                            >
+                              {subItem.label}
+                            </Link>
+                          ) : (
+                            <a
+                              key={subItem.label}
+                              href={subItem.href}
+                              onClick={(e) => handleNavClick(e, subItem.href)}
+                              className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200"
+                            >
+                              {subItem.label}
+                            </a>
+                          )
                         ))}
                       </div>
                     </motion.div>
@@ -139,6 +180,7 @@ export const Header = () => {
  
           <a 
             href="#contact" 
+            onClick={(e) => handleNavClick(e, '#contact')}
             className="bg-red-freedom text-white px-8 py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-freedom/30 hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
           >
             {content.nav.cta}
@@ -180,20 +222,32 @@ export const Header = () => {
               <nav className="flex-1 overflow-y-auto px-6 py-10 space-y-4">
                 {navItems.map((item) => (
                   <div key={item.label} className="border-b border-white/5 pb-4">
-                    <button 
-                      onClick={() => item.dropdown ? toggleMobileItem(item.label) : setIsMobileMenuOpen(false)}
-                      className="w-full flex items-center justify-between text-left text-2xl font-bold uppercase tracking-tight active:text-red-freedom transition-all"
-                    >
-                      <span>{item.label}</span>
-                      {item.dropdown && (
-                        <motion.div
-                          animate={{ rotate: expandedMobileItem === item.label ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
+                    <div className="w-full">
+                      {item.href.startsWith('/') ? (
+                        <Link 
+                          to={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="w-full flex items-center justify-between text-left text-2xl font-bold uppercase tracking-tight active:text-red-freedom transition-all"
                         >
-                          <ChevronDown className="w-6 h-6 opacity-50" />
-                        </motion.div>
+                          <span>{item.label}</span>
+                        </Link>
+                      ) : (
+                        <button 
+                          onClick={() => item.dropdown ? toggleMobileItem(item.label) : handleNavClick({ preventDefault: () => {} } as any, item.href)}
+                          className="w-full flex items-center justify-between text-left text-2xl font-bold uppercase tracking-tight active:text-red-freedom transition-all"
+                        >
+                          <span>{item.label}</span>
+                          {item.dropdown && (
+                            <motion.div
+                              animate={{ rotate: expandedMobileItem === item.label ? 180 : 0 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <ChevronDown className="w-6 h-6 opacity-50" />
+                            </motion.div>
+                          )}
+                        </button>
                       )}
-                    </button>
+                    </div>
                     
                     {item.dropdown && (
                       <AnimatePresence>
@@ -207,14 +261,25 @@ export const Header = () => {
                           >
                             <div className="pl-4 mt-4 space-y-4 border-l border-white/20">
                               {item.dropdown.map((subItem) => (
-                                <a
-                                  key={subItem.label}
-                                  href={subItem.href}
-                                  className="block text-lg text-gray-400 active:text-white py-1"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {subItem.label}
-                                </a>
+                                subItem.href.startsWith('/') ? (
+                                  <Link
+                                    key={subItem.label}
+                                    to={subItem.href}
+                                    className="block text-lg text-gray-400 active:text-white py-1"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                  >
+                                    {subItem.label}
+                                  </Link>
+                                ) : (
+                                  <a
+                                    key={subItem.label}
+                                    href={subItem.href}
+                                    onClick={(e) => handleNavClick(e, subItem.href)}
+                                    className="block text-lg text-gray-400 active:text-white py-1"
+                                  >
+                                    {subItem.label}
+                                  </a>
+                                )
                               ))}
                             </div>
                           </motion.div>
@@ -269,8 +334,8 @@ export const Header = () => {
  
                 <a 
                   href="#contact"
+                  onClick={(e) => handleNavClick(e, '#contact')}
                   className="block w-full bg-red-freedom text-white text-center py-5 text-lg font-bold uppercase tracking-widest rounded-2xl active:scale-[0.98] transition-transform shadow-xl shadow-red-freedom/20"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {content.nav.cta}
                 </a>

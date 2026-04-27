@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Logo = ({ variant = 'white' }: { variant?: 'white' | 'color' }) => {
   const logoUrl = 'https://lh3.googleusercontent.com/d/1KnZ0u0J25tIM6dbuGiOUIlZXNDe2JjH8';
 

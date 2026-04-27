@@ -1,9 +1,12 @@
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { content } from '../content';
 
-export const Capabilities = () => {
-  const { header, items } = content.capabilities;
+const MotionLink = motion(Link);
+
+export const CapabilitiesSection = () => {
+  const { header, items } = content.capabilitiesSection;
 
   return (
     <section id="capabilities" className="bg-white pt-10 pb-20 md:pt-20 md:pb-32 relative overflow-hidden fluid-section-transition">
@@ -30,8 +33,8 @@ export const Capabilities = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
           {items.map((capability, index) => (
-            <motion.a
-              href={capability.link}
+            <MotionLink
+              to={capability.link}
               key={capability.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +71,7 @@ export const Capabilities = () => {
                   </div>
                 </div>
               </div>
-            </motion.a>
+            </MotionLink>
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { content } from '../content';
 
 export const Hero = () => {
@@ -41,12 +41,12 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4">
-            <a 
-              href="#capabilities" 
+            <Link 
+              to="/capabilities" 
               className="inline-block bg-red-freedom text-white px-10 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-freedom/30 md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.95] text-center"
             >
               {ctaPrimary}
-            </a>
+            </Link>
             <a 
               href="#contact" 
               className="inline-block border-[1.5px] border-white/30 text-white px-10 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.1em] rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy-deep md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.95] text-center"

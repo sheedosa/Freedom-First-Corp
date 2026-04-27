@@ -1,9 +1,25 @@
+import { Link, useLocation } from 'react-router-dom';
 import { Mail, Linkedin, Send, MapPin } from 'lucide-react';
 import { content } from '../content';
 import { Logo } from './Logo';
 
 export const Footer = () => {
-  const { navigate, contactForm, company } = content.footer;
+  const { navigate: navData, contactForm, company } = content.footer;
+  const location = useLocation();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        // Let normal navigation happen if it's a Link or manual if <a>
+      } else {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
 
   return (
     <footer className="bg-navy-deep text-white pt-16 pb-10 relative overflow-hidden border-t border-white/5">
@@ -16,7 +32,9 @@ export const Footer = () => {
           
           {/* Column 1: Addresses */}
           <div className="lg:col-span-4 space-y-8">
-            <Logo variant="white" />
+            <Link to="/">
+              <Logo variant="white" />
+            </Link>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8">
               {company.offices.map((office) => (
                 <div key={office.city} className="space-y-3">
@@ -24,7 +42,7 @@ export const Footer = () => {
                     <MapPin className="w-3 h-3" />
                     <span className="text-[10px] font-bold uppercase tracking-widest">{office.city}</span>
                   </div>
-                  <p className="text-gray-cool text-xs leading-relaxed whitespace-pre-line font-mono opacity-60">
+                  <p className="text-white/60 text-xs leading-relaxed whitespace-pre-line font-mono">
                     {office.address}
                   </p>
                 </div>
@@ -36,17 +54,28 @@ export const Footer = () => {
           <div className="lg:col-span-3 space-y-12">
             <div className="space-y-6">
               <h3 className="text-red-freedom text-xs font-bold uppercase tracking-[0.2em]">
-                {navigate.title}
+                {navData.title}
               </h3>
               <nav className="flex flex-col gap-4">
-                {navigate.links.map((link) => (
-                  <a 
-                    key={link.label} 
-                    href={link.href}
-                    className="text-gray-cool text-sm font-bold uppercase tracking-widest hover:text-white transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
+                {navData.links.map((link) => (
+                  link.href.startsWith('/') ? (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      className="text-white/70 text-sm font-bold uppercase tracking-widest hover:text-white transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a 
+                      key={link.label} 
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      className="text-white/70 text-sm font-bold uppercase tracking-widest hover:text-white transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  )
                 ))}
               </nav>
             </div>
@@ -54,7 +83,7 @@ export const Footer = () => {
             <div className="pt-8 border-t border-white/5 space-y-4">
               <a 
                 href={`mailto:${company.social.email}`}
-                className="flex items-center gap-3 text-gray-cool hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/5 flex items-center justify-center rounded-xl group-hover:bg-red-freedom transition-colors">
                   <Mail className="w-4 h-4" />
@@ -65,7 +94,7 @@ export const Footer = () => {
                 href={company.social.linkedin}
                 target="_blank"
                 rel="no-referrer"
-                className="flex items-center gap-3 text-gray-cool hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/5 flex items-center justify-center rounded-xl group-hover:bg-[#0077b5] transition-colors">
                   <Linkedin className="w-4 h-4" />
@@ -87,7 +116,7 @@ export const Footer = () => {
                     <input 
                       type={field.type}
                       placeholder={field.label}
-                      className="w-full bg-blue-freedom/10 border border-white/10 px-6 py-4 text-sm rounded-2xl focus:border-red-freedom focus:ring-1 focus:ring-red-freedom/30 focus:outline-none transition-all placeholder:text-gray-cool/40"
+                      className="w-full bg-blue-freedom/10 border border-white/10 px-6 py-4 text-sm rounded-2xl focus:border-red-freedom focus:ring-1 focus:ring-red-freedom/30 focus:outline-none transition-all placeholder:text-white/50"
                     />
                   </div>
                 ))}
@@ -96,7 +125,7 @@ export const Footer = () => {
                 <textarea 
                   placeholder={contactForm.fields[3].label}
                   rows={4}
-                  className="w-full bg-blue-freedom/10 border border-white/10 px-6 py-4 text-sm rounded-2xl focus:border-red-freedom focus:ring-1 focus:ring-red-freedom/30 focus:outline-none transition-all placeholder:text-gray-cool/40 resize-none"
+                  className="w-full bg-blue-freedom/10 border border-white/10 px-6 py-4 text-sm rounded-2xl focus:border-red-freedom focus:ring-1 focus:ring-red-freedom/30 focus:outline-none transition-all placeholder:text-white/50 resize-none"
                 />
               </div>
               <button 
@@ -112,12 +141,12 @@ export const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-           <p className="text-[10px] text-gray-cool/40 uppercase tracking-[0.2em] font-mono">
+           <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-mono">
             © {new Date().getFullYear()} {company.name} All rights reserved.
           </p>
           <div className="flex gap-8">
-            <a href="#privacy" className="text-[10px] text-gray-cool/40 hover:text-white uppercase tracking-[0.2em] transition-colors">Privacy</a>
-            <a href="#terms" className="text-[10px] text-gray-cool/40 hover:text-white uppercase tracking-[0.2em] transition-colors">Terms</a>
+            <a href="#privacy" className="text-[10px] text-white/40 hover:text-white uppercase tracking-[0.2em] transition-colors">Privacy</a>
+            <a href="#terms" className="text-[10px] text-white/40 hover:text-white uppercase tracking-[0.2em] transition-colors">Terms</a>
           </div>
         </div>
       </div>

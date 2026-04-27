@@ -1,27 +1,39 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect, Suspense, lazy } from 'react';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Capabilities } from './components/Capabilities';
-import { ServiceMap } from './components/ServiceMap';
-import { Advantages } from './components/Advantages';
-import { Partnerships } from './components/Partnerships';
 import { Footer } from './components/Footer';
-import { Logo } from './components/Logo';
+
+const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
+const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
+const CapabilitiesPage = lazy(() => import('./pages/Capabilities').then(module => ({ default: module.CapabilitiesPage })));
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-off-white font-body selection:bg-red-freedom selection:text-white">
-      <Header />
-      <main>
-        <Hero />
-        <Capabilities />
-        <ServiceMap />
-        <Advantages />
-        <Partnerships />
-        {/* Upcoming sections: About, How We Work, etc. */}
-      </main>
-
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-off-white font-body selection:bg-red-freedom selection:text-white flex flex-col">
+        <ScrollToTop />
+        <Header />
+        <main className="flex-grow flex flex-col">
+          <Suspense fallback={<div className="flex-grow flex items-center justify-center min-h-[50vh]"><div className="w-8 h-8 rounded-full border-2 border-red-freedom border-t-transparent animate-spin" /></div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/capabilities" element={<CapabilitiesPage />} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
