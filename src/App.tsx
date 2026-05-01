@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
 const CapabilitiesPage = lazy(() => import('./pages/Capabilities').then(module => ({ default: module.CapabilitiesPage })));
+const Approach = lazy(() => import('./pages/Approach').then(module => ({ default: module.Approach })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/capabilities" element={<CapabilitiesPage />} />
+              <Route path="/approach" element={<Approach />} />
             </Routes>
           </Suspense>
         </main>

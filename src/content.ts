@@ -26,11 +26,11 @@ export const content = {
       },
       { 
         label: 'Approach', 
-        href: '#how-we-work',
+        href: '/approach',
         dropdown: [
-          { label: 'Execution & Delivery', href: '#execution' },
-          { label: 'Sustainability & HSE', href: '#hse' },
-          { label: 'Win Win Model', href: '#win-win' }
+          { label: 'Direct-to-Asset Execution', href: '/approach#direct-to-asset' },
+          { label: 'HSE & Local Capability', href: '/approach#hse-capability' },
+          { label: 'Commercial Alignment', href: '/approach#commercial-alignment' }
         ]
       },
       { 
@@ -151,7 +151,7 @@ export const content = {
       message: "Through strategic investment and comprehensive training, we return resource value to the people.\n\nWe work side-by-side with local communities to responsibly develop their energy potential—ensuring that today’s production growth builds a self-reliant workforce for the future."
     },
     ctaPrimary: 'Our Approach',
-    ctaPrimaryLink: '#how-we-work',
+    ctaPrimaryLink: '/approach',
     ctaSecondary: 'See Our Latest News',
     ctaSecondaryLink: '#insights'
   },
@@ -162,7 +162,8 @@ export const content = {
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },
         { label: 'Capabilities', href: '/capabilities' },
-        { label: 'Stakeholders', href: '#partnerships' },
+        { label: 'Approach', href: '/approach' },
+        { label: 'Stakeholders', href: '/#partnerships' },
       ]
     },
     contactForm: {
@@ -415,8 +416,14 @@ export const content = {
       cta: {
         header: 'American Engineering, Delivered Direct to the Asset.',
         message: 'See how we bring the capabilities of the U.S. energy sector straight to your toughest fields around the world.',
-        primary: { label: 'Explore Our Approach', href: '/#how-we-work' },
+        primary: { label: 'Explore Our Approach', href: '/approach' },
         secondary: { label: 'Contact Our Team', href: '/#contact' }
+      }
+    },
+    approachPage: {
+      hero: {
+        title: "Delivering Output in Barrels, Capability for the People and Value for the Nation.",
+        subtitle: "We step in as a true production partner. We execute in the most logistically demanding places and build technical systems your workforce can sustain, all backed by a performance-driven commercial model."
       }
     }
   };
