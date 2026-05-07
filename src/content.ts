@@ -35,16 +35,16 @@ export const content = {
       },
       { 
         label: 'Stakeholders', 
-        href: '#partnerships',
+        href: '/stakeholders',
         dropdown: [
-          { label: 'Operators', href: '#operators' },
-          { label: 'Governments', href: '#governments' },
-          { label: 'Strategic Partners', href: '#strategic-partners' }
+          { label: 'Operators', href: '/stakeholders#operators' },
+          { label: 'Host Nations', href: '/stakeholders#host-nations' },
+          { label: 'Strategic Partners', href: '/stakeholders#strategic-partners' }
         ]
       },
       { 
         label: 'Insights', 
-        href: '#insights'
+        href: '/insights'
       }
     ],
     languages: [
@@ -89,7 +89,7 @@ export const content = {
     header: 'In the Places Where Proven Execution Matters Most',
     message: 'When projects stall, output underperforms, or standard approaches fall short, Freedom First brings U.S. expertise to unlock energy potential.',
     cta: 'Stakeholders',
-    ctaLink: '#partnerships',
+    ctaLink: '/stakeholders',
     countries: [
       {
         id: 'libya',
@@ -163,7 +163,8 @@ export const content = {
         { label: 'About', href: '/about' },
         { label: 'Capabilities', href: '/capabilities' },
         { label: 'Approach', href: '/approach' },
-        { label: 'Stakeholders', href: '/#partnerships' },
+        { label: 'Stakeholders', href: '/stakeholders' },
+        { label: 'Insights', href: '/insights' },
       ]
     },
     contactForm: {
