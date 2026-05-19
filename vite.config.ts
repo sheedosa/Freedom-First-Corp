@@ -11,6 +11,10 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
+        // world-atlas 2.0.2 has no main/exports in package.json, so Vite/Rollup
+        // can't resolve it automatically. Alias the specific files used directly.
+        'world-atlas/countries-110m.json': path.resolve(__dirname, 'node_modules/world-atlas/countries-110m.json'),
+        'world-atlas/countries-50m.json': path.resolve(__dirname, 'node_modules/world-atlas/countries-50m.json'),
       },
     },
     server: {
@@ -28,7 +32,7 @@ export default defineConfig(({ mode }) => {
           manualChunks: {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
             'motion': ['motion'],
-            'map': ['react-simple-maps', 'd3-geo', 'world-atlas'],
+            'map': ['react-simple-maps', 'd3-geo'],
           },
         },
       },
