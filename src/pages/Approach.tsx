@@ -1,15 +1,21 @@
-import { motion } from 'motion/react';
-import { useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { content } from '../content';
 
 export const Approach = () => {
-  const { hero } = content.approachPage;
+  const { hero, stakeholderTabs } = content.approachPage;
+  const tabKeys = ['operators', 'host-nations', 'strategic-partners'] as const;
+  type TabKey = typeof tabKeys[number];
+  const [activeTab, setActiveTab] = useState<TabKey>('operators');
   const { hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
       const id = hash.replace('#', '');
+      if ((tabKeys as readonly string[]).includes(id)) {
+        setActiveTab(id as TabKey);
+      }
       const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
@@ -19,25 +25,20 @@ export const Approach = () => {
     }
   }, [hash]);
 
+  const activeContent = stakeholderTabs.tabs[activeTab];
+
   return (
     <div className="flex-grow">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center pt-40 pb-16 overflow-hidden bg-navy-deep">
+      <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/90 via-navy-deep/80 to-navy-deep opacity-90" />
-          
-          {/* Brand Blue Blobs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-freedom/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-freedom/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4" />
-
-          <div 
-            className="absolute inset-0 opacity-20"
-            style={{ 
-              backgroundImage: 'radial-gradient(circle, #134377 1px, transparent 1px)', 
-              backgroundSize: '40px 40px' 
-            }} 
+          <img
+            src="/images/approach-hero.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep/90" />
         </div>
 
         <div className="container relative z-10 px-6 mx-auto">
@@ -45,7 +46,7 @@ export const Approach = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.45 }}
             >
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
@@ -54,11 +55,11 @@ export const Approach = () => {
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-white uppercase leading-[1.05] tracking-tight mb-8">
-                Delivering <span className="text-blue-400 drop-shadow-[0_0_25px_rgba(96,165,250,0.4)]">Output in Barrels</span>, Capability for the People and Value for the Nation.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
+                {hero.title}
               </h1>
-              
-              <p className="text-off-white/80 text-lg md:text-2xl leading-relaxed font-medium max-w-2xl">
+
+              <p className="text-off-white/80 text-base md:text-lg leading-relaxed max-w-2xl opacity-90">
                 {hero.subtitle}
               </p>
             </motion.div>
@@ -76,7 +77,7 @@ export const Approach = () => {
           title: 'Built to Deliver in Demanding Environments without Delay', 
           eyebrow: 'Direct-to-Asset Execution',
           desc: "Reaching the world's most remote energy assets requires a mastery of complex international logistics. Freedom First is built to move specialized U.S. engineering teams, heavy equipment, and advanced technology in and out of the hardest-to-reach locations. By controlling the logistics straight to the wellhead, we are able to move with the speed and agility required to solve bottlenecks in real time, apply proven methodologies, and get stalled production moving again without delay.",
-          image: 'https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=2000&auto=format&fit=crop',
+          image: '/images/approach-direct.jpg',
           subHeader: 'Our Execution Edge',
           points: [
             { 
@@ -140,19 +141,20 @@ export const Approach = () => {
         const isPointsFocus = section.id === 'direct-to-asset' || section.id === 'hse-capability' || section.id === 'commercial-alignment';
         
         return (
-          <section 
-            key={section.id} 
-            id={section.id} 
-            className={`relative py-32 overflow-hidden ${isDark ? 'bg-navy-deep text-white' : index % 2 === 1 ? 'bg-off-white' : 'bg-white'}`}
+          <section
+            key={section.id}
+            id={section.id}
+            className={`relative py-20 md:py-24 overflow-hidden ${isDark ? 'text-white' : index % 2 === 1 ? 'bg-off-white' : 'bg-white'}`}
+            style={isDark ? { background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' } : undefined}
           >
             {isDark && (
-              <div 
-                className="absolute inset-0 opacity-10"
-                style={{ 
-                  backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', 
-                  backgroundSize: '40px 40px' 
-                }} 
-              />
+              <>
+                <div
+                  className="absolute inset-0 opacity-[0.05] pointer-events-none"
+                  style={{ backgroundImage: 'radial-gradient(circle, #4a9eff 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+                />
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-freedom/10 blur-[140px] rounded-full pointer-events-none" />
+              </>
             )}
             <div className="container relative z-10 px-6 mx-auto">
               <div className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse items-start' : 'lg:flex-row items-start'} gap-16 lg:gap-24`}>
@@ -161,17 +163,17 @@ export const Approach = () => {
                     initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.45 }}
                   >
                     <div className="flex items-center gap-4 mb-6">
                       <span className="text-[10px] font-mono font-bold text-red-freedom tracking-[0.3em] uppercase py-1 px-3 border border-red-freedom/30 rounded-sm bg-red-freedom/5">
                         {section.eyebrow}
                       </span>
                     </div>
-                    <h2 className={`text-3xl md:text-4xl lg:text-5xl font-sans font-medium mb-8 uppercase tracking-tight leading-tight ${isDark ? 'text-white' : 'text-navy-deep'}`}>
+                    <h2 className={`text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95] ${isDark ? 'text-white' : 'text-navy-deep'}`}>
                       {section.title}
                     </h2>
-                    <p className={`leading-relaxed mb-10 text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <p className={`leading-relaxed mb-10 text-lg ${isDark ? 'text-white/70' : 'text-navy-deep/80'}`}>
                       {section.desc}
                     </p>
                     
@@ -194,7 +196,7 @@ export const Approach = () => {
                                   <span className={`font-mono text-sm font-bold tracking-wider uppercase ${isDark ? 'text-white' : 'text-navy-deep'}`}>
                                     {point.title}
                                   </span>
-                                  <span className={`text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                                  <span className={`text-sm leading-relaxed ${isDark ? 'text-white/70' : 'text-navy-deep/75'}`}>
                                     {point.text}
                                   </span>
                                 </>
@@ -211,11 +213,11 @@ export const Approach = () => {
                     initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50, scale: isPointsFocus ? 1 : 0.95 }}
                     whileInView={{ opacity: 1, x: 0, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.45 }}
                     className="relative"
                   >
                     {isPointsFocus ? (
-                      <div className={`border p-8 md:p-12 rounded-3xl ${isDark ? 'bg-white/5 border-white/10' : 'bg-off-white/50 border-gray-100'}`}>
+                      <div className={`border p-8 md:p-12 rounded-2xl ${isDark ? 'bg-white/5 border-white/10' : 'bg-off-white/50 border-gray-100'}`}>
                         {section.subHeader && (
                           <h3 className={`text-xl font-sans font-medium mb-12 uppercase tracking-tight flex items-center gap-4 ${isDark ? 'text-white' : 'text-navy-deep'}`}>
                             <div className="w-8 h-[1px] bg-red-freedom" />
@@ -232,7 +234,7 @@ export const Approach = () => {
                                 <span className={`font-mono text-sm font-bold tracking-wider uppercase ${isDark ? 'text-white' : 'text-navy-deep'}`}>
                                   {point.title}
                                 </span>
-                                <span className={`text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                                <span className={`text-sm leading-relaxed ${isDark ? 'text-white/70' : 'text-navy-deep/75'}`}>
                                   {point.text}
                                 </span>
                               </div>
@@ -266,8 +268,138 @@ export const Approach = () => {
         );
       })}
 
+      {/* Stakeholder Tabs Section (moved from Stakeholders page) */}
+      <section id="stakeholders" className="bg-off-white py-20 md:py-24 relative overflow-hidden scroll-mt-24">
+        <div className="max-content-width">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="mb-12 md:mb-16 text-center max-w-4xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-12 h-[1px] bg-red-freedom" />
+              <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Stakeholders</span>
+              <div className="w-12 h-[1px] bg-red-freedom" />
+            </div>
+            <h2 className="text-navy-deep text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-6">
+              {stakeholderTabs.header}
+            </h2>
+            <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+              {stakeholderTabs.message}
+            </p>
+          </motion.div>
+
+          {/* Tabs */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-12 mb-12 border-b border-navy-deep/10">
+            {tabKeys.map((key) => {
+              const tab = stakeholderTabs.tabs[key];
+              return (
+                <button
+                  key={key}
+                  onClick={() => setActiveTab(key)}
+                  className={`py-5 px-2 text-sm md:text-base font-bold uppercase tracking-wider transition-all relative whitespace-nowrap ${
+                    activeTab === key ? 'text-red-freedom' : 'text-navy-deep/60 hover:text-navy-deep'
+                  }`}
+                >
+                  {tab.title}
+                  {activeTab === key && (
+                    <motion.div
+                      layoutId="approachActiveTab"
+                      className="absolute bottom-0 left-0 right-0 h-1 bg-red-freedom"
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Tab Content */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="bg-white rounded-2xl md:rounded-2xl p-8 md:p-16 shadow-xl border border-navy-deep/5"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                <div className="lg:col-span-5 flex flex-col justify-center">
+                  <span className="text-red-freedom font-mono text-sm tracking-widest uppercase mb-4 block">
+                    {activeContent.title}
+                  </span>
+                  <h3 className="text-2xl md:text-4xl font-display text-navy-deep mb-6 leading-tight tracking-tight uppercase">
+                    {activeContent.subtitle}
+                  </h3>
+                  <div className="w-16 h-1 bg-gradient-to-r from-red-freedom to-transparent mb-8" />
+                  <p className="text-base md:text-lg text-navy-deep/70 leading-relaxed mb-6">
+                    {activeContent.text}
+                  </p>
+                  <div className="bg-off-white p-6 md:p-8 rounded-2xl border border-navy-deep/5 mt-4">
+                    <h4 className="font-bold text-navy-deep tracking-wider uppercase mb-3 text-xs">The Partnership</h4>
+                    <p className="text-navy-deep/70 leading-relaxed text-sm md:text-base">
+                      {activeContent.partnership}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-7 flex flex-col justify-center">
+                  <div className="space-y-10">
+                    {activeContent.points.map((point, index) => (
+                      <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        key={index}
+                        className="flex gap-6 group"
+                      >
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full border border-red-freedom/20 flex items-center justify-center text-red-freedom font-mono text-sm font-bold group-hover:bg-red-freedom group-hover:text-white transition-all shadow-sm">
+                          0{index + 1}
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-navy-deep uppercase tracking-wide mb-2 group-hover:text-red-freedom transition-colors">
+                            {point.title}
+                          </h4>
+                          <p className="text-navy-deep/70 leading-relaxed">
+                            {point.text}
+                          </p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-16 pt-12 border-t border-navy-deep/5">
+                <div className="text-center max-w-3xl mx-auto">
+                  <h3 className="text-xl md:text-2xl font-display text-navy-deep uppercase tracking-tight mb-8">
+                    {activeContent.ctaMsg}
+                  </h3>
+                  <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    <a
+                      href={activeContent.cta1Href}
+                      className="px-7 py-3.5 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg text-center"
+                    >
+                      {activeContent.cta1Text}
+                    </a>
+                    <a
+                      href={activeContent.cta2Href}
+                      className="px-7 py-3.5 bg-white border border-navy-deep/10 text-navy-deep text-xs font-bold uppercase tracking-widest rounded-full hover:bg-off-white transition-all text-center"
+                    >
+                      {activeContent.cta2Text}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
-      <section className="py-24 bg-navy-deep text-white text-center relative overflow-hidden">
+      <section className="py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
         {/* Decorative Glows */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-freedom/10 blur-[100px] rounded-full translate-x-1/4 -translate-y-1/2" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-red-freedom/5 blur-[80px] rounded-full -translate-x-1/4 translate-y-1/2" />
@@ -285,10 +417,10 @@ export const Approach = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.45 }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-5xl font-sans font-medium mb-8 uppercase tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95]">
               Execute with a Fully Aligned <span className="text-blue-400">Production Partner</span>.
             </h2>
             <p className="text-lg md:text-xl text-blue-50/70 mb-12 leading-relaxed">
@@ -298,13 +430,13 @@ export const Approach = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a 
                 href="/#partnerships" 
-                className="w-full sm:w-auto px-12 py-5 bg-white text-navy-deep text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-50 transition-all hover:shadow-xl"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white text-navy-deep text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-50 transition-all hover:shadow-xl"
               >
                 Who We Work With
               </a>
               <a 
                 href="/#contact" 
-                className="w-full sm:w-auto px-12 py-5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
+                className="w-full sm:w-auto px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
               >
                 Contact Our Team
               </a>

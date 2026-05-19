@@ -7,8 +7,8 @@ const Home = lazy(() => import('./pages/Home').then(module => ({ default: module
 const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
 const CapabilitiesPage = lazy(() => import('./pages/Capabilities').then(module => ({ default: module.CapabilitiesPage })));
 const Approach = lazy(() => import('./pages/Approach').then(module => ({ default: module.Approach })));
-const Stakeholders = lazy(() => import('./pages/Stakeholders').then(module => ({ default: module.Stakeholders })));
 const Insights = lazy(() => import('./pages/Insights').then(module => ({ default: module.Insights })));
+const InsightLibya = lazy(() => import('./pages/InsightLibya').then(module => ({ default: module.InsightLibya })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,8 +33,9 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/capabilities" element={<CapabilitiesPage />} />
               <Route path="/approach" element={<Approach />} />
-              <Route path="/stakeholders" element={<Stakeholders />} />
+              <Route path="/stakeholders" element={<Approach />} />
               <Route path="/insights" element={<Insights />} />
+              <Route path="/insights/rebuilding-libya" element={<InsightLibya />} />
             </Routes>
           </Suspense>
         </main>

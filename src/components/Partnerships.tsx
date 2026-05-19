@@ -5,43 +5,43 @@ export const Partnerships = () => {
   const { section1, section2, ctaPrimary, ctaPrimaryLink, ctaSecondary, ctaSecondaryLink } = content.partnerships;
 
   return (
-    <section id="partnerships" className="bg-white py-10 md:py-16">
+    <section id="partnerships" className="bg-white py-20 md:py-24">
       <div className="max-content-width">
         {/* First Block - Text Left, Image Right */}
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mb-10 md:mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-1/2 space-y-6"
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="w-full lg:w-1/2 space-y-5"
           >
-            <div className="space-y-4 mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-red-freedom" />
-                <span className="text-red-freedom text-[10px] font-bold uppercase tracking-[0.3em]">Operational Excellence</span>
+            <div className="space-y-4 mb-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-[1px] bg-red-freedom" />
+                <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">01 — Operational Excellence</span>
               </div>
-              <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.1] uppercase tracking-tight">
+              <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.05] uppercase tracking-[-0.02em]">
                 {section1.header}
               </h2>
             </div>
-            <p className="text-navy-deep/80 text-base md:text-lg leading-relaxed whitespace-pre-line">
+            <p className="text-navy-deep/85 text-base md:text-lg leading-relaxed whitespace-pre-line">
               {section1.message}
             </p>
           </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
             className="w-full lg:w-1/2"
           >
-            <div className="aspect-[4/3] bg-navy-deep/5 relative overflow-hidden rounded-[3rem] shadow-xl shadow-navy-deep/10 gpu-accel">
-              <img 
-                src="https://lh3.googleusercontent.com/d/1kroLaWjvwK_OgROMCFh2v2ZSVAC6ImqQ" 
+            <div className="aspect-[4/3] bg-navy-deep/5 relative overflow-hidden rounded-2xl gpu-accel">
+              <img
+                src="/images/partnerships-1.jpg"
                 alt="Optimistic landscape"
-                className="w-full h-full object-cover opacity-90 sepia-[0.2] hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover grayscale-[15%] hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
@@ -51,40 +51,40 @@ export const Partnerships = () => {
         </div>
 
         {/* Second Block - Image Left, Text Right */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20 mb-10 md:mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16 mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-1/2 space-y-6"
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="w-full lg:w-1/2 space-y-5"
           >
-            <div className="space-y-4 mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-red-freedom" />
-                <span className="text-red-freedom text-[10px] font-bold uppercase tracking-[0.3em]">Synergy & Impact</span>
+            <div className="space-y-4 mb-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-[1px] bg-red-freedom" />
+                <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">02 — Synergy & Impact</span>
               </div>
-              <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.1] uppercase tracking-tight">
+              <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.05] uppercase tracking-[-0.02em]">
                 {section2.header}
               </h2>
             </div>
-            <p className="text-navy-deep/80 text-base md:text-lg leading-relaxed whitespace-pre-line">
+            <p className="text-navy-deep/85 text-base md:text-lg leading-relaxed whitespace-pre-line">
               {section2.message}
             </p>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
             className="w-full lg:w-1/2"
           >
-            <div className="aspect-[4/3] bg-navy-deep/5 relative overflow-hidden rounded-[3rem] shadow-xl shadow-navy-deep/10 gpu-accel">
-              <img 
-                src="https://lh3.googleusercontent.com/d/1V3jOstphVvSI79E12m1Z-R7MeUvL436l" 
+            <div className="aspect-[4/3] bg-navy-deep/5 relative overflow-hidden rounded-2xl gpu-accel">
+              <img
+                src="/images/partnerships-2.jpg"
                 alt="Community collaboration landscape"
-                className="w-full h-full object-cover opacity-90 sepia-[0.2] hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover grayscale-[15%] hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
@@ -94,25 +94,25 @@ export const Partnerships = () => {
         </div>
 
         {/* Action Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-12 md:mt-16">
-          <motion.a 
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 mt-12">
+          <motion.a
             href={ctaPrimaryLink}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-navy-deep text-white px-10 py-5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-black hover:shadow-xl shadow-navy-deep/20"
+            transition={{ duration: 0.4 }}
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-navy-deep text-white px-7 py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-black"
           >
             {ctaPrimary}
           </motion.a>
-          
-          <motion.a 
+
+          <motion.a
             href={ctaSecondaryLink}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="w-full sm:w-auto inline-flex items-center justify-center border border-gray-200 bg-white text-navy-deep px-10 py-5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:border-navy-deep hover:shadow-lg"
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="w-full sm:w-auto inline-flex items-center justify-center text-navy-deep px-7 py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:text-red-freedom"
           >
             {ctaSecondary}
           </motion.a>

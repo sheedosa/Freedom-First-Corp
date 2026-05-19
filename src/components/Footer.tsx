@@ -1,5 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Mail, Linkedin, Send, MapPin } from 'lucide-react';
+import { Mail, Linkedin, Send, MapPin, Facebook } from 'lucide-react';
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 import { content } from '../content';
 import { Logo } from './Logo';
 
@@ -22,7 +28,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-navy-deep text-white pt-16 pb-10 relative overflow-hidden border-t border-white/5">
+    <footer className="text-white pt-16 pb-10 relative overflow-hidden border-t border-white/5" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
       {/* Structural pattern background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -32,8 +38,8 @@ export const Footer = () => {
           
           {/* Column 1: Addresses */}
           <div className="lg:col-span-4 space-y-8">
-            <Link to="/">
-              <Logo variant="white" />
+            <Link to="/" className="inline-block pb-4">
+              <Logo variant="white" horizontal />
             </Link>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8">
               {company.offices.map((office) => (
@@ -90,16 +96,41 @@ export const Footer = () => {
                 </div>
                 <span className="text-[10px] font-bold tracking-widest uppercase">{company.social.email}</span>
               </a>
-              <a 
+              <a
                 href={company.social.linkedin}
                 target="_blank"
-                rel="no-referrer"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/5 flex items-center justify-center rounded-xl group-hover:bg-[#0077b5] transition-colors">
                   <Linkedin className="w-4 h-4" />
                 </div>
                 <span className="text-[10px] font-bold tracking-widest uppercase">LinkedIn</span>
+              </a>
+              <a
+                href={company.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
+              >
+                <div className="w-10 h-10 bg-white/5 flex items-center justify-center rounded-xl group-hover:bg-[#1877F2] transition-colors">
+                  <Facebook className="w-4 h-4" />
+                </div>
+                <span className="text-[10px] font-bold tracking-widest uppercase">Facebook</span>
+              </a>
+              <a
+                href={company.social.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
+              >
+                <div className="w-10 h-10 bg-white/5 flex items-center justify-center rounded-xl group-hover:bg-black transition-colors">
+                  <XIcon className="w-4 h-4" />
+                </div>
+                <span className="text-[10px] font-bold tracking-widest uppercase">X</span>
               </a>
             </div>
           </div>

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { content } from '../content';
 
 export const Hero = () => {
-  const { title, subhead, ctaPrimary, ctaSecondary, bgImage } = content.hero;
+  const { title, subhead, ctaPrimary, bgImage } = content.hero;
 
   return (
-    <section className="relative h-[100svh] w-full flex items-end overflow-hidden">
+    <section id="hero" className="relative h-[88svh] min-h-[640px] w-full flex items-end overflow-hidden">
       {/* Background with Overlays */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -30,29 +30,23 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl space-y-6 md:space-y-8 gpu-accel"
+          className="max-w-5xl space-y-5 md:space-y-6 gpu-accel"
         >
-          <h1 className="text-4xl xs:text-5xl md:text-6xl lg:text-7xl leading-[1.05] md:leading-[1] font-display uppercase tracking-tight text-white mb-6">
+          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5rem] leading-[0.98] font-display uppercase tracking-[-0.02em] text-white text-balance">
             {title}
           </h1>
 
-          <p className="text-off-white text-base md:text-lg leading-relaxed max-w-[600px] opacity-90 mb-8">
+          <p className="text-off-white text-base md:text-lg leading-relaxed max-w-[640px] opacity-90 mb-2">
             {subhead}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4">
-            <Link 
-              to="/capabilities" 
-              className="inline-block bg-red-freedom text-white px-10 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-freedom/30 md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.95] text-center"
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <Link
+              to="/capabilities"
+              className="inline-block bg-red-freedom text-white px-7 py-4 md:py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-md hover:shadow-red-freedom/30 md:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] text-center"
             >
               {ctaPrimary}
             </Link>
-            <a 
-              href="#contact" 
-              className="inline-block border-[1.5px] border-white/30 text-white px-10 py-5 md:py-4 text-xs font-bold uppercase tracking-[0.1em] rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy-deep md:hover:-translate-y-1 active:translate-y-0 active:scale-[0.95] text-center"
-            >
-              {ctaSecondary}
-            </a>
           </div>
         </motion.div>
       </div>

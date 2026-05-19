@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 type Category = 'All' | 'Emerging Markets' | 'Field Execution' | 'Company Updates';
 
@@ -12,24 +13,24 @@ export const Insights = () => {
   const articles = [
     {
       id: 1,
-      title: 'Breaking Deadlocks in Mature Fields',
-      category: 'Field Execution',
+      title: 'Rebuilding Libya Will Depend on Execution, Not Statements',
+      category: 'Emerging Markets',
       image: '',
-      href: '#', // Placeholder
+      href: '/insights/rebuilding-libya',
     },
     {
       id: 2,
-      title: 'Navigating New Opportunities in North Africa',
-      category: 'Emerging Markets',
+      title: 'Article Coming Soon',
+      category: 'Company Updates',
       image: '',
-      href: '#', // Placeholder
+      href: '#', // TBD
     },
     {
       id: 3,
-      title: 'Expanding Our Geographic Footprint',
-      category: 'Company Updates',
+      title: 'Article Coming Soon',
+      category: 'Field Execution',
       image: '',
-      href: '#', // Placeholder
+      href: '#', // TBD
     }
   ];
 
@@ -40,48 +41,37 @@ export const Insights = () => {
   return (
     <div className="flex-grow flex flex-col bg-off-white">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center pt-32 pb-16 overflow-hidden bg-navy-deep">
+      <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/90 via-navy-deep/80 to-navy-deep opacity-90" />
-          
-          {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-freedom/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-freedom/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4" />
-
-          <div 
-            className="absolute inset-0 opacity-20"
-            style={{ 
-              backgroundImage: 'radial-gradient(circle, #134377 1px, transparent 1px)', 
-              backgroundSize: '40px 40px' 
-            }} 
+          <img
+            src="/images/insights-hero.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep/90" />
         </div>
 
         <div className="container relative z-10 px-6 mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.45 }}
             >
-              <div className="inline-flex items-center justify-center gap-3 mb-6">
+              <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-red-freedom uppercase">
-                  Insights
-                </span>
-                <div className="w-10 h-[1px] bg-red-freedom" />
+                <span className="text-xs font-mono tracking-[0.3em] text-red-freedom uppercase">Insights</span>
               </div>
-              
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-white uppercase leading-[1.05] tracking-tight mb-8">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
                 Field Perspectives on the Work, the Markets and What It Takes To Deliver
               </h1>
-              
-              <p className="text-off-white/80 text-lg md:text-2xl leading-relaxed font-medium max-w-3xl mx-auto">
+              <p className="text-off-white/80 text-base md:text-lg leading-relaxed max-w-2xl opacity-90">
                 Freedom First shares insights from the field on moving hydrocarbon projects forward in demanding environments. From field execution to market developments and company updates, our perspective is shaped by the work itself.
               </p>
             </motion.div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-freedom/30 to-transparent" />
       </section>
 
       {/* Filter Bar */}
@@ -112,7 +102,7 @@ export const Insights = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-24 bg-off-white relative flex-grow">
+      <section className="py-20 bg-off-white relative flex-grow">
         <div className="container px-6 mx-auto max-w-7xl">
           <motion.div 
             layout
@@ -129,7 +119,7 @@ export const Insights = () => {
                   transition={{ duration: 0.4 }}
                   className="group"
                 >
-                  <a href={article.href} className="block w-full h-full">
+                  <Link to={article.href} className="block w-full h-full">
                     <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 shadow-xl relative cursor-pointer">
                       {/* Image */}
                       {article.image ? (
@@ -171,7 +161,7 @@ export const Insights = () => {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -186,7 +176,7 @@ export const Insights = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-navy-deep text-white text-center relative overflow-hidden">
+      <section className="py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
         {/* Decorative Glows */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[120px] rounded-full pointer-events-none" />
@@ -204,10 +194,10 @@ export const Insights = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.45 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-5xl font-sans font-medium mb-8 uppercase tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95]">
               For Projects That Demand More Than a <span className="text-blue-400">Standard Approach</span>.
             </h2>
             <p className="text-lg md:text-xl text-blue-50/70 mb-12 leading-relaxed">
@@ -217,13 +207,13 @@ export const Insights = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a 
                 href="/approach" 
-                className="w-full sm:w-auto px-12 py-5 bg-white text-navy-deep text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-50 transition-all hover:shadow-xl"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white text-navy-deep text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-50 transition-all hover:shadow-xl"
               >
                 Our Approach
               </a>
               <a 
                 href="/#contact" 
-                className="w-full sm:w-auto px-12 py-5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
+                className="w-full sm:w-auto px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
               >
                 Talk to Our Team
               </a>

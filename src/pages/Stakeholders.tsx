@@ -102,10 +102,10 @@ export const Stakeholders = () => {
   return (
     <div className="flex-grow flex flex-col bg-off-white">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center pt-32 pb-16 overflow-hidden bg-navy-deep">
+      <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/90 via-navy-deep/80 to-navy-deep opacity-90" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888081628-9710cced39f9?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay opacity-20" />
+          <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center mix-blend-overlay opacity-20" />
         </div>
 
         <div className="container relative z-10 px-6 mx-auto">
@@ -113,7 +113,7 @@ export const Stakeholders = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.45 }}
             >
               <div className="inline-flex justify-center items-center gap-3 mb-6">
                 <div className="w-10 h-[1px] bg-red-freedom" />
@@ -123,7 +123,7 @@ export const Stakeholders = () => {
                 <div className="w-10 h-[1px] bg-red-freedom" />
               </div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-white uppercase leading-[1.05] tracking-tight mb-8">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
                 Partnerships Built to Move <span className="text-blue-400 drop-shadow-[0_0_25px_rgba(96,165,250,0.4)]">Production Forward</span>.
               </h1>
               
@@ -143,7 +143,7 @@ export const Stakeholders = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`py-6 px-4 md:px-2 text-sm md:text-base font-bold uppercase tracking-wider transition-all relative whitespace-nowrap ${
+                className={`py-4 px-3 md:px-2 text-sm md:text-base font-bold uppercase tracking-wider transition-all relative whitespace-nowrap ${
                   activeTab === tab.id 
                     ? 'text-red-freedom' 
                     : 'text-navy-deep/60 hover:text-navy-deep'
@@ -163,7 +163,7 @@ export const Stakeholders = () => {
       </section>
 
       {/* Main Content Area */}
-      <section className="py-24 bg-off-white relative flex-grow">
+      <section className="py-20 bg-off-white relative flex-grow">
         <div className="container px-6 mx-auto max-w-6xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -172,7 +172,7 @@ export const Stakeholders = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-3xl p-8 md:p-16 shadow-xl border border-gray-100"
+              className="bg-white rounded-2xl p-8 md:p-16 shadow-xl border border-gray-100"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
                 
@@ -181,7 +181,7 @@ export const Stakeholders = () => {
                   <span className="text-red-freedom font-mono text-sm tracking-widest uppercase mb-4 block">
                     {activeContent.title}
                   </span>
-                  <h2 className="text-3xl md:text-5xl font-sans font-medium text-navy-deep mb-6 leading-tight tracking-tight uppercase">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-navy-deep mb-6 leading-[0.95] tracking-[-0.02em] uppercase">
                     {activeContent.subtitle}
                   </h2>
                   <div className="w-16 h-1 bg-gradient-to-r from-red-freedom to-transparent mb-8" />
@@ -234,13 +234,13 @@ export const Stakeholders = () => {
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <a 
                       href={activeContent.cta1Href} 
-                      className="px-8 py-4 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg hover:shadow-red-freedom/30 text-center"
+                      className="px-7 py-3.5 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg hover:shadow-red-freedom/30 text-center"
                     >
                       {activeContent.cta1Text}
                     </a>
                     <a 
                       href={activeContent.cta2Href} 
-                      className="px-8 py-4 bg-white border border-gray-200 text-navy-deep text-xs font-bold uppercase tracking-widest rounded-full hover:bg-gray-50 transition-all text-center"
+                      className="px-7 py-3.5 bg-white border border-gray-200 text-navy-deep text-xs font-bold uppercase tracking-widest rounded-full hover:bg-gray-50 transition-all text-center"
                     >
                       {activeContent.cta2Text}
                     </a>
@@ -253,7 +253,7 @@ export const Stakeholders = () => {
       </section>
 
       {/* Final Universal CTA Section */}
-      <section className="py-24 bg-navy-deep text-white text-center relative overflow-hidden">
+      <section className="py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
         {/* Decorative Glows */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[120px] rounded-full pointer-events-none" />
@@ -263,10 +263,10 @@ export const Stakeholders = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.45 }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-5xl font-sans font-medium mb-8 uppercase tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95]">
               Move Production Forward with Freedom First
             </h2>
             <p className="text-lg md:text-xl text-blue-50/70 mb-12 leading-relaxed">
@@ -275,7 +275,7 @@ export const Stakeholders = () => {
             
             <a 
               href="/#contact" 
-              className="inline-block px-12 py-5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
+              className="inline-block px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
             >
               Talk to Our Team
             </a>

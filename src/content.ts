@@ -2,30 +2,31 @@
 export const content = {
   nav: {
     items: [
-      { 
-        label: 'Home', 
+      {
+        label: 'Home',
         href: '/',
       },
-      { 
-        label: 'About', 
+      {
+        label: 'About',
         href: '/about',
         dropdown: [
-          { label: 'Who We Are', href: '/about' },
-          { label: 'Leadership', href: '#leadership' }
+          { label: 'Foundation', href: '/about#who-we-are' },
+          { label: 'CEO Message', href: '/about#ceomessage' },
+          { label: 'Leadership', href: '/about#leadership' }
         ]
       },
-      { 
-        label: 'Capabilities', 
+      {
+        label: 'Capabilities',
         href: '/capabilities',
         dropdown: [
-          { label: 'Overview', href: '/capabilities' },
-          { label: 'Greenfield Development', href: '/capabilities#greenfield' },
-          { label: 'Production Optimization', href: '/capabilities#optimization' },
-          { label: 'Recovery Enhancement', href: '/capabilities#recovery' }
+          { label: 'Upstream', href: '/capabilities#upstream' },
+          { label: 'Midstream', href: '/capabilities#midstream' },
+          { label: 'Downstream', href: '/capabilities#downstream' },
+          { label: 'Energy Trading', href: '/capabilities#energy-trading' }
         ]
       },
-      { 
-        label: 'Approach', 
+      {
+        label: 'Approach',
         href: '/approach',
         dropdown: [
           { label: 'Direct-to-Asset Execution', href: '/approach#direct-to-asset' },
@@ -33,17 +34,8 @@ export const content = {
           { label: 'Commercial Alignment', href: '/approach#commercial-alignment' }
         ]
       },
-      { 
-        label: 'Stakeholders', 
-        href: '/stakeholders',
-        dropdown: [
-          { label: 'Operators', href: '/stakeholders#operators' },
-          { label: 'Host Nations', href: '/stakeholders#host-nations' },
-          { label: 'Strategic Partners', href: '/stakeholders#strategic-partners' }
-        ]
-      },
-      { 
-        label: 'Insights', 
+      {
+        label: 'Insights',
         href: '/insights'
       }
     ],
@@ -57,45 +49,52 @@ export const content = {
   hero: {
     eyebrow: 'FREEDOM FIRST',
     title: 'American Engineering Brought to the Toughest Basins.',
-    subhead: 'Freedom First delivers decades of execution discipline directly to the asset, turning demanding environments into reliable, high-performing operations.',
+    subhead: 'Freedom First delivers decades of execution experience directly to the asset, turning demanding environments into reliable, high-performing operations.',
     ctaPrimary: 'Our Capabilities',
     ctaSecondary: 'Talk to Our Team',
-    bgImage: 'https://lh3.googleusercontent.com/d/1UB76CW3tFtlerlap900ji6Xa-W1i_usR'
+    bgImage: '/images/hero-bg.jpg'
   },
   capabilitiesSection: {
     header: 'We Drive Production Growth Across the Life of the Asset',
     items: [
       {
-        title: 'Greenfield Development',
-        description: 'Accelerate projects to first oil with American-grade engineering',
-        image: 'https://lh3.googleusercontent.com/d/1_GyXnu2HEka9vngDoMENqUPlhI6FAzPG',
-        link: '/capabilities#greenfield'
+        title: 'Upstream',
+        description: 'Maximize output from the reservoir to the wellhead with elite U.S. field execution.',
+        image: '/images/cap-upstream.jpg',
+        link: '/capabilities#upstream'
       },
       {
-        title: 'Production Optimization',
-        description: 'Increase asset output through field-tested U.S. methodologies.',
-        image: 'https://lh3.googleusercontent.com/d/157mQwSpVUBtsUDE_R3b70yL_HNz19Ahq',
-        link: '/capabilities#optimization'
+        title: 'Midstream',
+        description: 'Target bottlenecks and deploy high-capacity infrastructure to guarantee continuous hydrocarbon flow.',
+        image: '/images/cap-midstream.jpg',
+        link: '/capabilities#midstream'
       },
       {
-        title: 'Recovery Enhancement',
-        description: 'Deploy specialized technology and engineering to reactivate aged assets',
-        image: 'https://lh3.googleusercontent.com/d/1pQYi9RVfQ27ydNyea2cfV_DqqoAIZaZ_',
-        link: '/capabilities#recovery'
+        title: 'Downstream',
+        description: 'Lock in absolute facility uptime and maximize refining yields through elite U.S. engineering.',
+        image: '/images/cap-downstream.jpg',
+        link: '/capabilities#downstream'
+      },
+      {
+        title: 'Energy Trading',
+        description: 'Connect physical production directly to high-demand markets and secure maximum commercial returns.',
+        image: '/images/cap-trading.jpg',
+        link: '/capabilities#energy-trading'
       }
     ]
   },
   whereWeDoIt: {
     header: 'In the Places Where Proven Execution Matters Most',
     message: 'When projects stall, output underperforms, or standard approaches fall short, Freedom First brings U.S. expertise to unlock energy potential.',
-    cta: 'Stakeholders',
-    ctaLink: '/stakeholders',
+    cta: 'Who We Work With',
+    ctaLink: '/approach',
+    legendLabel: 'Our Operational Footprint',
     countries: [
       {
         id: 'libya',
         name: 'Libya',
         brief: 'Technical partnership and production enhancement in the Sirte and Murzuq basins, bringing stability and execution discipline to critical assets.',
-        coordinates: [17.2283, 26.3351] // Longitude, Latitude
+        coordinates: [17.2283, 26.3351]
       },
       {
         id: 'venezuela',
@@ -118,28 +117,28 @@ export const content = {
       {
         title: 'American-Tested Expertise',
         description: 'We apply field-tested methods and technical strategies that reduce guesswork, improve performance and deliver on production targets.',
-        image: 'https://lh3.googleusercontent.com/d/10uFoO7RFeVJcq1D9KylbceRWE6cCFnwA'
+        image: '/images/cap-trading.jpg'
       },
       {
-        title: 'Network of Specialists',
+        title: 'Network of Energy Specialists',
         description: 'We tap deep industry networks to bring in proven engineers, and technical specialists from across the U.S. hydrocarbon sector.',
-        image: 'https://lh3.googleusercontent.com/d/14HzCHycjhtlnUEFumy4p2jSou_c4FPy1'
+        image: '/images/adv-network.jpg'
       },
       {
         title: 'Agile, Independent Execution',
         description: 'We move without the drag of big-company bureaucracy—able to adjust across technical logistical and commercial realities to deliver results.',
-        image: 'https://lh3.googleusercontent.com/d/11x_IkHysI0D49PFbEleZ3KLtwsFSGFrD'
+        image: '/images/adv-agile.jpg'
       },
       {
         title: 'Direct Supply Chain Advantage',
         description: 'By working closer to the source, we help reduce value leakage, control cost, and improve project economics across the chain.',
-        image: 'https://lh3.googleusercontent.com/d/1W372T5N-DxNgmxaeasULLBN0NBX8g_L6'
+        image: '/images/adv-supply.jpg'
       }
     ],
-    ctaPrimary: 'Discuss Your Project',
-    ctaPrimaryLink: '#contact',
+    ctaPrimary: 'Our Capabilities',
+    ctaPrimaryLink: '/capabilities',
     ctaSecondary: 'Meet Our Team of Experts',
-    ctaSecondaryLink: '#leadership'
+    ctaSecondaryLink: '/about#leadership'
   },
   partnerships: {
     section1: {
@@ -148,12 +147,12 @@ export const content = {
     },
     section2: {
       header: 'Our approach is rooted in direct collaboration, not just extraction.',
-      message: "Through strategic investment and comprehensive training, we return resource value to the people.\n\nWe work side-by-side with local communities to responsibly develop their energy potential—ensuring that today’s production growth builds a self-reliant workforce for the future."
+      message: "Through strategic investment and comprehensive training, we return resource value to the people.\n\nWe work side-by-side with local communities to responsibly develop their energy potential—ensuring that today's production growth builds a self-reliant workforce for the future."
     },
     ctaPrimary: 'Our Approach',
     ctaPrimaryLink: '/approach',
     ctaSecondary: 'See Our Latest News',
-    ctaSecondaryLink: '#insights'
+    ctaSecondaryLink: '/insights'
   },
   footer: {
     navigate: {
@@ -163,7 +162,6 @@ export const content = {
         { label: 'About', href: '/about' },
         { label: 'Capabilities', href: '/capabilities' },
         { label: 'Approach', href: '/approach' },
-        { label: 'Stakeholders', href: '/stakeholders' },
         { label: 'Insights', href: '/insights' },
       ]
     },
@@ -195,22 +193,23 @@ export const content = {
       ],
       social: {
         email: 'info@freedomfirstcorp.com',
-        linkedin: 'https://www.linkedin.com/company/freedom-first-corp'
+        linkedin: 'https://www.linkedin.com/company/freedom-first-corp',
+        facebook: 'https://www.facebook.com/profile.php?id=61560491723699',
+        x: '#'
       }
     }
   },
   about: {
     hero: {
       title: 'A Technical Production Partner Built for the Field.',
-      image: 'https://images.unsplash.com/photo-1581094120527-130f9a947523?q=80&w=2000&auto=format&fit=crop'
+      image: '/images/about-hero.jpg'
     },
     content: {
       title: 'Our Foundation',
       paragraphs: [
-        "Freedom First was founded on a straightforward premise: the world’s most critical energy assets shouldn't underperform simply because the environment is difficult or traditional methods fall short.",
-        "Our foundation was built during the U.S. unconventional energy revolution. Leveraging decades of hands-on experience in challenging regions like the Permian and Barnett shales, our leadership team helped pioneer the agile, high-efficiency methodologies that transformed American energy production.",
-        "We recognize international markets faced with mature fields and complex operating conditions are often underserved by slow-moving industry giants. Freedom First was built to bridge that gap. We bring field-proven American engineering directly to the asset, planning around risk and removing operational guesswork to get stalled production moving again.",
-        "We do not just extract value; we build lasting capability. Our mandate is to establish a true win-win model: working side-by-side with host nations to safely achieve their production goals while upskilling the local workforce to sustain that success for the long term."
+        "Freedom First was founded on a single, uncompromising premise: critical energy assets should never underperform simply because the environment is difficult or traditional methods fall short.",
+        "Forged during the U.S. shale revolution, we bring the agile, high-efficiency engineering that transformed American production directly to complex international markets. We bypass bureaucratic drag, eliminate operational guesswork, and get stalled production moving again.",
+        "We do not just extract value; we engineer lasting capability from the ground up. As a true operational ally, we partner directly with host nations to hit aggressive production targets and upskill the local workforce. From transforming raw resources into high-value products to securing the best price in the global market, we maximize your return across the entire value chain and lock in that success for the long term."
       ]
     },
     principles: {
@@ -233,7 +232,7 @@ export const content = {
           },
           {
             label: 'Optimize the Asset',
-            text: 'We align our success directly with the host country’s priorities, maximizing output to achieve national production goals.'
+            text: "We align our success directly with the host country's priorities, maximizing output to achieve national production goals."
           },
           {
             label: 'Upskill the Workforce',
@@ -243,12 +242,12 @@ export const content = {
       }
     },
     leadership: {
-      header: 'Led by People Who Have Raised Production at Scale',
-      message: 'Freedom First is led by operators, engineers, and project leaders who have built, scaled, optimized, and recovered hydrocarbon assets across major markets.',
+      header: 'Founded by Proven Leaders Who Have Executed at Scale',
+      message: "Freedom First is led by seasoned operators and driven by the engineers and field leaders who have physically built, scaled, and reactivated heavy hydrocarbon assets across the globe's toughest markets.",
       members: [
         {
           name: 'Ryan Manicom',
-          role: 'President & CEO',
+          role: 'Co-Founder & CEO',
           summary: 'Global executive with business development and operational leadership experience across emerging energy markets.',
           bullets: [
             'Led business development and operations across Papua New Guinea, Myanmar, Iraq, and the U.S.',
@@ -258,37 +257,15 @@ export const content = {
           expandedBio: 'Ryan Manicom is President & CEO of Freedom First and brings broad international experience across business development, operations, and market expansion in the energy sector. He began his career in business development at Clockwork Solutions, helping expand asset performance management systems from defense into energy. Ryan later held leadership roles with Holloman Corporation and Holloman Energy, working across major projects and emerging markets including Papua New Guinea and Myanmar. He also served as Vice President of Orion Gas Processors, where he oversaw operations in Iraq and supported efforts to develop practical midstream solutions for flare mitigation and gas gathering. At Freedom First, Ryan brings the commercial insight, global operating perspective, and private sector-driven mindset needed to advance energy projects in challenging environments.'
         },
         {
-          name: 'Bryce Harrell',
-          role: 'Chief Operating Officer',
-          summary: '30+ years leading energy projects and operations across the U.S. and international markets.',
+          name: 'Erik Prince',
+          role: 'Co-Founder & Chairman',
+          summary: 'Entrepreneur and private investor with a track record of executing complex logistics and risk management projects in the world\'s most demanding environments.',
           bullets: [
-            'Rose from Job Superintendent to EVP & COO at Holloman Corporation',
-            'Led operations and international energy ventures across multiple markets',
-            'Deep experience in construction, infrastructure, and project execution'
+            'Built and scaled global organizations (Blackwater USA and Presidential Airways) in high-risk, austere regions.',
+            'Founded Frontier Resource Group to structure, fund, and execute natural resource projects globally',
+            'Leverages decades of experience navigating supply chains and mitigating risk in the world\'s most challenging markets.'
           ],
-          expandedBio: 'Bryce Harrell is a senior energy executive with more than three decades of experience across project execution, operations, and international energy development. He began his career at Holloman Corporation, rising from Job Superintendent to Executive Vice President & COO — a progression that reflects deep operational knowledge built through firsthand experience. Over the course of his career, Bryce has held leadership roles across construction, international operations, and energy infrastructure, including positions with Cisco Centerstream, C&H Laitepo PNG, Pilot Energy Solutions, C&H Global Construction and Equipment Leasing, and Orion Gas Processors. At Freedom First, he brings the leadership, field understanding, and execution focus required to deliver in demanding operating environments.'
-        },
-        {
-          name: 'Phillip Campbell',
-          role: 'Director of Energy Services',
-          summary: 'Engineering and project delivery leader with experience across complex well programs, performance optimization, and integrated oil and gas operations.',
-          bullets: [
-            'Delivered 20 single and multilateral wells as principal engineer and 8 as lead engineer',
-            'Oversaw 48 work-over wells in South Ghawar with strong KPI and AFE discipline',
-            'Applied performance optimization and drill bit design across hundreds of wells in the U.S. and Middle East'
-          ],
-          expandedBio: 'Phillip Campbell is Director of Energy Services at Freedom First and brings broad experience across well engineering, project delivery, and operational performance in the oil and gas sector. He built his career through technical and project leadership roles, including progression at Halliburton from Associate Technical Professional to Project Manager. Over the course of his career, Phillip has delivered 20 single and multilateral wells as principal engineer and 8 additional wells as lead engineer, overseeing both program and operational execution. He also led performance optimization work on 48 work-over wells in South Ghawar, supporting strong adherence to AFE and KPI targets through disciplined delivery and after-action review. His experience also includes project management support for a major integrated offshore project in UAE waters and engineering optimization work across hundreds of wells in Texas, Oklahoma, and Arkansas. At Freedom First, he brings technical depth, execution discipline, and performance-focused thinking to complex operating environments.'
-        },
-        {
-          name: 'Jim Govenlock',
-          role: 'Director of Upstream Operations',
-          summary: 'Upstream operations leader with 20+ years of experience across drilling, completions, hydraulic fracturing, and asset optimization.',
-          bullets: [
-            'Experience across 1,000+ wells, onshore and offshore',
-            'Led major drilling and operations programs with budgets from $200M to $1B',
-            'Improved performance by cutting cycle times from 100+ days to 20 and reducing well costs by up to 44%'
-          ],
-          expandedBio: 'Jim Govenlock is Director of Upstream Operations at Freedom First and brings more than 20 years of experience across drilling, completions, hydraulic fracturing, reservoir-related operations, and asset optimization. His career includes leadership roles across major U.S. producing regions, including the Marcellus, Barnett, and Permian, where he has helped deliver strong production outcomes through technical discipline and operational execution. Across more than 1,000 wells — onshore and offshore, vertical and horizontal, including HTHP and high CO₂/H₂S environments — Jim has led large-scale drilling and operations programs with budgets ranging from $200 million to $1 billion. His track record includes cutting cycle times from more than 100 days to 20, reducing well costs by up to 44%, and driving performance improvements through Kaizen, KPI management, process automation, and integrated team leadership. He also brings strong safety and regulatory credibility, having advised the EPA and state agencies on hydraulic fracturing and wellbore integrity. At Freedom First, Jim adds deep upstream operating experience, technical rigor, and execution leadership for complex hydrocarbon projects.'
+          expandedBio: "Erik Prince co-founded Freedom First and brings extensive experience in logistics, risk management, and field execution across the world's most demanding environments. A former U.S. Navy SEAL, Erik later founded Blackwater USA and Presidential Airways, building global organizations uniquely capable of sustaining complex logistical and aviation operations including operating a fleet of over 75 aircraft in austere and high-risk regions. Today, as an entrepreneur, private investor, and the founder of Frontier Resource Group, he applies his deep expertise in capital allocation and infrastructure to structure, fund, and execute complex natural resource and manufacturing projects globally. At Freedom First, Erik leverages this background in frontier operations to safely navigate supply chains, manage operational risk, and unlock high-value investment opportunities in emerging markets."
         }
       ]
     },
@@ -303,12 +280,6 @@ export const content = {
     advisors: {
       header: 'Backed by Experienced Strategic Advisors',
       members: [
-        {
-          name: 'Erik Prince',
-          role: 'Chairman',
-          summary: 'Erik brings extensive experience in logistics, risk management, and execution in the world’s most demanding environments. He leverages a deep background in frontier operations to help Freedom First safely navigate and manage supply chains in logistically challenging environments.',
-          expandedBio: 'A former Navy SEAL, Erik later founded Blackwater USA and Presidential Airways—building organizations uniquely capable of sustaining complex logistical and aviation operations in austere and high-risk regions. Today, as the founder of Frontier Resource Group, he applies his expertise in capital allocation and infrastructure to structure, fund, and execute complex natural resource projects globally.'
-        },
         {
           name: 'Ted Hogan',
           role: 'Vice Chairman',
@@ -325,7 +296,7 @@ export const content = {
           name: 'Richard Anderson',
           role: 'Advisor',
           summary: 'Richard is an energy executive and certified public accountant with extensive experience in international exploration and financial governance. He recently served as CEO of Coastline Exploration, leading offshore oil and gas operations in Somalia.',
-          expandedBio: 'His track record includes serving as Chief Financial Officer for Eurasia Drilling Company Limited and holding directorships at major global operators including Transocean Ltd. and Vanguard Natural Resources. Richard brings critical financial rigor, capital discipline, and public-market governance experience to Freedom First’s international operations.'
+          expandedBio: "His track record includes serving as Chief Financial Officer for Eurasia Drilling Company Limited and holding directorships at major global operators including Transocean Ltd. and Vanguard Natural Resources. Richard brings critical financial rigor, capital discipline, and public-market governance experience to Freedom First's international operations."
         }
       ]
     },
@@ -339,92 +310,157 @@ export const content = {
     finalCta: {
       items: [
         { label: 'Explore Our Capabilities', href: '/capabilities' },
-        { label: 'Contact Our Team', href: '#contact' }
+        { label: 'Contact Our Team', href: '/#contact' }
       ]
     }
   },
   capabilitiesPage: {
     hero: {
-      title: 'Driving Production Across the Life of the Asset.',
-        subtitle: 'From accelerating new developments to reactivating mature fields, Freedom First applies proven American engineering to maximize production at every stage of development.',
-      },
-      sections: [
-        {
-          id: 'greenfield',
-          tag: 'Greenfield Development',
-          header: 'Accelerating the Path to First Oil.',
-          message: 'Getting a new asset online in a complex environment requires more than capital; it requires aggressive project management and execution discipline. We bypass the bureaucracy that typically slows down international mega-projects. By applying field-tested U.S. engineering methodologies from day one, we remove operational guesswork, control costs, and accelerate your timeline to first production.',
-          deliverables: [
-            {
-              title: 'Hands-On Project Management',
-              text: 'Delivering end-to-end planning that keeps surface and subsurface work moving simultaneously.'
-            },
-            {
-              title: 'Direct-to-Asset Supply Chain',
-              text: 'Leveraging our U.S. network to procure and deploy necessary personnel and infrastructure without middleman delays.'
-            },
-            {
-              title: 'Risk-Mitigated Execution',
-              text: 'Maintaining strict safety and operational standards to prevent costly stand-downs in demanding environments.'
-            }
-          ]
-        },
-        {
-          id: 'optimization',
-          tag: 'Production Optimization',
-          header: 'Unlocking Bottlenecks to Maximize Output.',
-          message: 'Underperforming assets are often the result of operational bottlenecks and technical limitations. We bring decades of execution discipline and the latest technology directly to the wellhead to get stalled production moving again. Our teams step in to assess the field, identify the friction points holding back your output, and apply hands-on interventions that deliver immediate, verifiable production growth.',
-          deliverables: [
-            {
-              title: 'Targeted Field Interventions',
-              text: 'Applying targeted technical solutions to clear wellbore constraints and optimize flow rates.'
-            },
-            {
-              title: 'Facility Debottlenecking',
-              text: 'Upgrading and optimizing surface facilities to handle increased production volumes safely.'
-            },
-            {
-              title: 'Continuous Monitoring',
-              text: 'Implementing the operational systems and technologies to ensure production gains are sustained over the long term.'
-            }
-          ]
-        },
-        {
-          id: 'recovery',
-          tag: 'Recovery Enhancement',
-          header: 'Reactivating and Extending Mature Assets.',
-          message: 'We do not walk away when a field matures. We turn demanding, aged environments into reliable, high-performing operations. By deploying specialized technologies and secondary recovery methods, we extend the economic life of your brownfield assets. We specialize in stepping into stalled fields where standard approaches have failed, engineering the right solution to restore output and maximize your reserves.',
-          deliverables: [
-            {
-              title: 'Advanced Artificial Lift',
-              text: 'Designing and installing the exact lift mechanisms required to pull remaining reserves from declining wells.'
-            },
-            {
-              title: 'Wellbore Integrity & Reactivation',
-              text: 'Repairing and securing aging infrastructure to bring shut-in wells back online safely.'
-            },
-            {
-              title: 'Reservoir Management',
-              text: 'Deploying proven secondary recovery techniques, such as waterflooding, to maintain reservoir pressure and sweep efficiency.'
-            }
-          ]
-        }
-      ],
-      advantage: {
-        header: 'The Mid-Market Execution Advantage',
-        message: 'We execute at an elite level by serving as your direct gateway to the agile, highly specialized U.S. engineers and technical teams that drove the American unconventional revolution. You get tier-one engineering and field execution delivered directly to the asset without the drag of major-company bureaucracy.'
-      },
-      cta: {
-        header: 'American Engineering, Delivered Direct to the Asset.',
-        message: 'See how we bring the capabilities of the U.S. energy sector straight to your toughest fields around the world.',
-        primary: { label: 'Explore Our Approach', href: '/approach' },
-        secondary: { label: 'Contact Our Team', href: '/#contact' }
-      }
+      title: 'Driving Execution Across the Energy Value Chain.',
+      subtitle: 'From subsurface upstream operations to global market access, we maximize energy asset value at every stage of the lifecycle.'
     },
-    approachPage: {
-      hero: {
-        title: "Delivering Output in Barrels, Capability for the People and Value for the Nation.",
-        subtitle: "We step in as a true production partner. We execute in the most logistically demanding places and build technical systems your workforce can sustain, all backed by a performance-driven commercial model."
+    subNav: [
+      { label: 'Upstream', href: '#upstream' },
+      { label: 'Midstream', href: '#midstream' },
+      { label: 'Downstream', href: '#downstream' },
+      { label: 'Energy Trading & Logistics', href: '#energy-trading' }
+    ],
+    sections: [
+      {
+        id: 'upstream',
+        tag: 'Upstream',
+        header: 'Raising Output from the Reservoir to the Wellhead.',
+        message: 'We deliver tier-one U.S. engineering to drive verifiable production growth. From accelerating the path to first oil to reactivating stalled brownfield assets, our specialty is in engineering the solutions required to break operational deadlocks, deploy advanced extraction technologies, and keep the barrels flowing.',
+        deliverables: [
+          { title: 'Exploration & Subsurface Evaluation', text: 'Delivering detailed geological and seismic assessments to identify viable reserves and model the data required to drive development decisions.' },
+          { title: 'Advanced Drilling Services', text: 'Deploying advanced technologies and elite field teams to execute drilling programs that optimize placement, reduce non-productive time, and secure reserves.' },
+          { title: 'Workover & Well Optimization', text: 'Executing targeted well interventions ranging from routine maintenance to complex mechanical workovers to restore wellbore integrity and optimize flow performance.' },
+          { title: 'Field Operations & Facility Support', text: 'Directing end-to-end field management from commissioning and preventative maintenance to rapid emergency response protocols to ensure asset reliability.' }
+        ]
+      },
+      {
+        id: 'midstream',
+        tag: 'Midstream',
+        header: 'Optimizing the Path from Production to Processing.',
+        message: 'We build, manage, and scale the critical midstream infrastructure required to move hydrocarbons safely from the wellhead to processing facilities. Through rigorous engineering and precise logistics management, we eliminate supply chain bottlenecks and maximize the flow of resources to processing facilities and end markets.',
+        deliverables: [
+          { title: 'Infrastructure Development & Support', text: 'Directing the planning, construction, and operational support of pipelines, terminals, and storage facilities to deliver scalable infrastructure built for continuous flow.' },
+          { title: 'Transport & Logistics Coordination', text: 'Delivering end-to-end logistics and total operational oversight into and out of complex environments, integrating supply chain management directly with field execution.' },
+          { title: 'Storage & Handling Solutions', text: 'Managing complex storage operations to guarantee the secure containment and transfer of energy products to help sustain an uninterrupted market supply.' }
+        ]
+      },
+      {
+        id: 'downstream',
+        tag: 'Downstream',
+        header: 'Maximizing Yield, Uptime, and Market Delivery.',
+        message: 'We apply tier-one U.S. execution directly to downstream assets to maximize processing yields and lock in reliability of the refinery. We work to turn hydrocarbons into high-value products and manage the final terminal operations to drive a stable flow into the market.',
+        deliverables: [
+          { title: 'Operational & Technical Support', text: 'Executing targeted technical and operational interventions to maximize refinery yields and increase facility throughput.' },
+          { title: 'Asset Integrity & Turnaround Execution', text: 'Directing maintenance and turnaround programs to ensure technical integrity, mitigate operational risk, and eliminate unplanned downtime.' },
+          { title: 'Terminal Operations & Final Distribution', text: 'Managing end-to-end terminal logistics and securing the distribution networks to guarantee a stable, uninterrupted flow of market-ready energy products.' }
+        ]
+      },
+      {
+        id: 'energy-trading',
+        tag: 'Energy Trading & Logistics',
+        header: 'Maximizing Yield, Uptime, and Market Delivery.',
+        message: 'Our energy trading division integrates tier-one logistics with global market access, executing physical trades across crude oil, refined products, LNG, and NGLs. We connect producers directly to industrial end-users, commanding the physical flow of resources to guarantee reliable supply and maximize commercial value across the energy value chain.',
+        deliverables: [
+          { title: 'Global Trading & Offtake', text: 'Executing physical trading across crude, refined products, and gas liquids. We secure direct offtake and structure supply agreements that connect production straight to high-demand markets.' },
+          { title: 'End-to-End Logistics Execution', text: 'Managing the flow of hydrocarbons from the asset to the buyer — from shipping, storage, and delivery coordination — to guarantee reliable global delivery.' },
+          { title: 'Commercial Structuring & Monetization', text: 'Managing the full commercial lifecycle, from spot transactions to long-term supply, with the market insight to optimize pricing and position assets for maximum return.' }
+        ]
+      }
+    ],
+    advantage: {
+      header: 'The U.S. Mid-Market Execution Advantage',
+      message: 'We execute at an elite level serving as your gateway to the agile, highly specialized U.S. engineers and technical teams that drove the American unconventional revolution.'
+    },
+    midMarket: [
+      {
+        title: 'Elite U.S. Pedigree',
+        description: 'Access the specialized technical teams that drove U.S. hydrocarbon production.',
+        image: '/images/midmarket-1.jpg'
+      },
+      {
+        title: 'Direct-to-Asset Execution',
+        description: 'Secure tier-one engineering and field execution straight to the operation.',
+        image: '/images/midmarket-2.jpg'
+      },
+      {
+        title: 'Zero Bureaucratic Drag',
+        description: 'Bypass the red tape of major companies to accelerate timelines and execute with agility.',
+        image: '/images/midmarket-3.jpg'
+      }
+    ],
+    cta: {
+      header: 'American Engineering, Delivered Direct to the Asset.',
+      message: 'See how we bring the capabilities of the U.S. energy sector straight to your toughest fields around the world.',
+      primary: { label: 'Explore Our Approach', href: '/approach' },
+      secondary: { label: 'Contact Our Team', href: '/#contact' }
+    }
+  },
+  approachPage: {
+    hero: {
+      title: 'Delivering Output in Barrels and Value for the Nation.',
+      subtitle: 'We step in as a true production partner. We execute in the most logistically demanding places and build technical systems your workforce can sustain, all backed by a performance-driven commercial model.'
+    },
+    stakeholderTabs: {
+      header: 'Partnerships Built to Move Production Forward',
+      message: 'Freedom First works with operators, host nations, and strategic partners to move hydrocarbon projects forward in hard environments through proven U.S. engineering, disciplined execution, and partnership models built for long-term value.',
+      tabs: {
+        operators: {
+          id: 'operators',
+          title: 'Operators',
+          subtitle: 'Asset Owners and Producers',
+          text: 'We work with operators managing mature, legacy, or stalled assets where production is being held back by technical bottlenecks, execution challenges, or commercial constraints.',
+          partnership: 'Freedom First brings the engineering, project leadership, and execution model needed to help move difficult projects forward. Where standard contractor models fall short, we step in to break deadlocks, improve field economics, and raise output.',
+          points: [
+            { title: 'Production-Driven Alignment', text: 'We structure our role around one objective: raising output and improving field economics.' },
+            { title: 'Execution Where It Matters', text: 'We take on the operational, logistical, and subsurface challenges that keep production stuck.' },
+            { title: 'Performance-Driven Model', text: 'We operate with a model designed to reward production progress, not just activity.' }
+          ],
+          ctaMsg: 'Bring Proven Execution to Your Toughest Fields.',
+          cta1Text: 'Discuss Your Asset',
+          cta1Href: '/#contact',
+          cta2Text: 'See Our Capabilities',
+          cta2Href: '/capabilities'
+        },
+        'host-nations': {
+          id: 'host-nations',
+          title: 'Host Nations',
+          subtitle: 'Sovereigns and National Energy Planners',
+          text: 'We work with governments and national energy institutions seeking to increase domestic production, strengthen local capability, and develop energy resources in line with national priorities.',
+          partnership: 'Freedom First brings proven U.S. engineering, disciplined execution, and a partnership model built around long-term asset value. We work side by side with host nations to raise output, build stronger operating capability, and leave behind systems the local workforce can sustain long term.',
+          points: [
+            { title: 'Aligned with National Priorities', text: 'We structure projects to support production growth, long-term asset value, and broader national goals.' },
+            { title: 'Local Workforce Integration', text: 'We work with and develop local talent as part of execution, embedding local teams into the systems and standards established.' },
+            { title: 'Strict Standards in the Field', text: 'We apply strong HSE and operational standards to protect people, infrastructure, and continuity of operations.' }
+          ],
+          ctaMsg: 'Deliver American Engineering Directly to Your Sovereign Assets.',
+          cta1Text: 'Meet the Executive Team',
+          cta1Href: '/about#leadership',
+          cta2Text: 'Engage Our Leadership',
+          cta2Href: '/#contact'
+        },
+        'strategic-partners': {
+          id: 'strategic-partners',
+          title: 'Strategic Partners',
+          subtitle: 'In-Country Support Partners',
+          text: 'We work with in-country service companies, supply-chain partners, and infrastructure providers who bring critical local access, operating knowledge, and last-mile execution capability.',
+          partnership: 'We lead with specialized U.S. engineering, project management and direct capital investment and integrate that with trusted local footprints to keep work moving on the ground. We believe the strongest results come from combining technical depth with local capability, not working around it.',
+          points: [
+            { title: 'Field-Level Support', text: 'We work through local infrastructure, supply chains, and operating relationships to reduce delays and maintain momentum.' },
+            { title: 'Shared Standards', text: 'We partner with local entities willing to operate under our compliance standards, helping to elevate operations to a tier-one level.' },
+            { title: 'Long-Term Value', text: 'We build partnerships designed to create repeatable work, stronger execution, and sustained value for both sides.' }
+          ],
+          ctaMsg: 'See How Your Footprint Can Support Our Field Operations.',
+          cta1Text: 'Contact Our Team',
+          cta1Href: '/#contact',
+          cta2Text: 'See Our Capabilities',
+          cta2Href: '/capabilities'
+        }
       }
     }
-  };
+  }
+};

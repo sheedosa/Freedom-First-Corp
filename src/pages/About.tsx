@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronRight, Briefcase, Quote } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { content } from '../content';
 
 export const About = () => {
   const { hero, content: pageContent, leadership, dataStrip, advisors, ceoMessage, finalCta } = content.about;
-  
+
   type Person = {
     name: string;
     role: string;
@@ -17,6 +17,16 @@ export const About = () => {
 
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
   const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, [location.hash]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
@@ -37,50 +47,42 @@ export const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] flex items-center overflow-hidden">
-        <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0 z-0"
-        >
-          <img 
-            src={hero.image} 
-            alt="Technical team in the field" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-navy-deep/60 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/20" />
-        </motion.div>
-
-        <div className="max-content-width relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-red-freedom" />
-              <span className="text-white font-bold text-[10px] uppercase tracking-[0.3em]">Mission & Origin</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-white uppercase leading-[1.05] tracking-tight">
-              {hero.title}
-            </h1>
-          </motion.div>
+      <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
+        <div className="absolute inset-0 z-0">
+          <img src={hero.image} alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/70 to-navy-deep/40" />
+          <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, #134377 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>
+
+        <div className="container relative z-10 px-6 mx-auto">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+            >
+              <div className="inline-flex items-center gap-3 mb-3">
+                <div className="w-10 h-[1px] bg-red-freedom" />
+                <span className="text-xs font-mono tracking-[0.3em] text-red-freedom uppercase">Mission & Origin</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
+                {hero.title}
+              </h1>
+            </motion.div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-freedom/30 to-transparent" />
       </section>
 
       {/* Content Section */}
-      <section id="who-we-are" className="bg-white py-20 md:py-32">
+      <section id="who-we-are" className="bg-white py-20 md:py-24 scroll-mt-24">
         <div className="max-content-width">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
               className="lg:w-1/3"
             >
               <div className="sticky top-32">
@@ -99,13 +101,13 @@ export const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
               className="lg:w-2/3 space-y-8"
             >
               {pageContent.paragraphs.map((para, i) => (
-                <p 
-                  key={i} 
-                  className={`text-navy-deep/80 text-lg md:text-xl leading-relaxed ${i === 0 ? 'font-medium text-navy-deep italic border-l-4 border-red-freedom pl-6' : ''}`}
+                <p
+                  key={i}
+                  className="text-navy-deep text-lg md:text-xl leading-relaxed"
                 >
                   {para}
                 </p>
@@ -116,22 +118,23 @@ export const About = () => {
       </section>
 
       {/* Vision, Mission, Principles Section */}
-      <section className="bg-navy-deep py-16 md:py-20 text-white relative overflow-hidden">
-        <div className="blob-bg -bottom-48 -right-48 opacity-[0.05] floating-element" />
-        
+      <section className="py-16 md:py-20 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #002341 0%, #002f55 50%, #001428 100%)' }}>
+        <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #4a9eff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-freedom/15 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-red-freedom/5 blur-[100px] rounded-full pointer-events-none" />
         <div className="max-content-width relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
             className="mb-12 md:mb-16 max-w-4xl"
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-[1px] bg-red-freedom" />
               <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">Core Values</span>
             </div>
-            <h2 className="text-white text-3xl md:text-5xl font-display leading-[1.1] uppercase tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em]">
               {content.about.principles.header}
             </h2>
           </motion.div>
@@ -142,7 +145,7 @@ export const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
               className="space-y-4"
             >
               <div className="flex items-center gap-3">
@@ -161,7 +164,7 @@ export const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
               className="space-y-4"
             >
               <div className="flex items-center gap-3">
@@ -181,7 +184,7 @@ export const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.45, delay: 0.3, ease: "easeOut" }}
             className="pt-16 border-t border-white/10"
           >
             <div className="flex flex-col gap-12">
@@ -195,7 +198,7 @@ export const About = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {content.about.principles.principles.items.map((item, i) => (
-                  <div key={i} className="group p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/[0.08] hover:border-red-freedom/30 transition-all duration-300">
+                  <div key={i} className="group p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/[0.08] hover:border-red-freedom/30 transition-all duration-300">
                     <div className="flex gap-4 mb-4">
                       <div className="w-1.5 h-1.5 bg-red-freedom rounded-full shrink-0 mt-2" />
                       <span className="block font-bold text-white uppercase text-sm tracking-widest leading-relaxed">
@@ -214,26 +217,38 @@ export const About = () => {
       </section>
 
       {/* Leadership Section */}
-      <section id="leadership" className="bg-off-white py-24 md:py-32 relative overflow-hidden">
+      <section id="leadership" className="py-20 md:py-24 relative overflow-hidden scroll-mt-24" style={{ background: '#F5F3EF' }}>
         <div className="max-content-width">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-16 md:mb-20 text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="mb-16 md:mb-20 flex flex-col lg:flex-row items-start gap-10 lg:gap-16"
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-12 h-[1px] bg-red-freedom" />
-              <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Expertise</span>
-              <div className="w-12 h-[1px] bg-red-freedom" />
+            <div className="lg:w-1/2 max-w-2xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-[1px] bg-red-freedom" />
+                <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Leadership</span>
+              </div>
+              <h2 className="text-navy-deep text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-6">
+                {leadership.header}
+              </h2>
+              <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed font-medium">
+                {leadership.message}
+              </p>
             </div>
-            <h2 className="text-navy-deep text-4xl md:text-5xl font-display leading-[1.1] uppercase tracking-tight mb-8">
-              {leadership.header}
-            </h2>
-            <p className="text-navy-deep/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
-              {leadership.message}
-            </p>
+            <div className="lg:w-1/2 lg:ml-auto w-full">
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-navy-deep/5">
+                <img
+                  src="/images/leadership.jpg"
+                  alt="Freedom First leadership team in the field"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -243,8 +258,8 @@ export const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: Math.min(index * 0.1, 0.3), ease: "easeOut" }}
-                className="group bg-white rounded-[3rem] p-8 md:p-12 shadow-sm border border-navy-deep/5 hover:shadow-xl hover:shadow-navy-deep/5 transition-[background-color,border-color,box-shadow] duration-500 flex flex-col h-full will-change-[transform,opacity]"
+                transition={{ duration: 0.45, delay: Math.min(index * 0.1, 0.3), ease: "easeOut" }}
+                className="group bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-navy-deep/5 hover:shadow-xl hover:shadow-navy-deep/5 transition-[background-color,border-color,box-shadow] duration-500 flex flex-col h-full"
               >
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 pb-8 border-b border-navy-deep/5">
                   <div className="space-y-1">
@@ -322,14 +337,16 @@ export const About = () => {
       </section>
 
       {/* Advisors Section */}
-      <section id="advisors" className="bg-navy-deep py-24 md:py-32 relative overflow-hidden">
-        <div className="blob-bg -bottom-48 -left-48 opacity-[0.05] floating-element" />
-        <div className="max-content-width relative z-10">
+      <section id="advisors" className="py-20 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #001428 0%, #002341 40%, #002f55 100%)' }}>
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #4a9eff 1px, transparent 1px)', backgroundSize: '44px 44px' }} />
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[160px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[200px] h-[200px] bg-red-freedom/5 blur-[80px] rounded-full pointer-events-none" />
+                <div className="max-content-width relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
             className="mb-16 md:mb-20 text-center max-w-4xl mx-auto"
           >
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -337,7 +354,7 @@ export const About = () => {
               <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">Counsel</span>
               <div className="w-12 h-[1px] bg-red-freedom" />
             </div>
-            <h2 className="text-white text-4xl md:text-5xl font-display leading-[1.1] uppercase tracking-tight">
+            <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em]">
               {advisors.header}
             </h2>
           </motion.div>
@@ -349,8 +366,8 @@ export const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: Math.min(index * 0.1, 0.3), ease: "easeOut" }}
-                className="group bg-white/5 rounded-[3rem] p-8 md:p-12 border border-white/10 hover:bg-white/10 transition-[background-color,border-color] duration-500 will-change-[transform,opacity]"
+                transition={{ duration: 0.45, delay: Math.min(index * 0.1, 0.3), ease: "easeOut" }}
+                className="group bg-white/5 rounded-2xl p-8 md:p-12 border border-white/10 hover:bg-white/10 transition-[background-color,border-color] duration-500"
               >
                 <div className="space-y-6">
                   <div className="space-y-1">
@@ -379,21 +396,21 @@ export const About = () => {
       </section>
 
       {/* CEO Message Section */}
-      <section className="bg-white py-24 md:py-32 relative overflow-hidden">
+      <section id="ceomessage" className="bg-white py-20 md:py-24 relative overflow-hidden scroll-mt-24">
         <div className="max-content-width">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
               className="lg:w-2/5 relative"
             >
-              <div className="relative z-10 rounded-[3rem] overflow-hidden transition-all duration-700 shadow-2xl">
-                <img 
-                  src="https://lh3.googleusercontent.com/d/1KnZ0u0J25tIM6dbuGiOUIlZXNDe2JjH8" 
-                  alt="Ryan Manicom" 
-                  className="w-full h-auto"
+              <div className="relative z-10 rounded-2xl overflow-hidden transition-all duration-700 shadow-2xl">
+                <img
+                  src="/images/ryan-ceo.jpg"
+                  alt="Ryan Manicom — Freedom First Co-Founder & CEO"
+                  className="w-full h-auto object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-freedom rounded-full flex items-center justify-center z-20">
@@ -405,7 +422,7 @@ export const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
               className="lg:w-3/5 space-y-8"
             >
               <div className="space-y-2">
@@ -437,16 +454,17 @@ export const About = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-navy-deep py-20 relative overflow-hidden">
-        <div className="blob-bg -top-48 -right-48 opacity-[0.05] floating-element" />
-        <div className="max-content-width relative z-10">
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #002341 0%, #001828 60%, #002f55 100%)' }}>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-freedom/10 blur-[160px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+                <div className="max-content-width relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
             {finalCta.items.map((item, i) => (
               <Link
                 key={i}
                 to={item.href.startsWith('#') ? '/'+item.href : item.href}
                 onClick={(e) => handleNavClick(e as any, item.href)}
-                className={`group px-10 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center gap-3 ${
+                className={`group px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center gap-3 ${
                   i === 0 
                     ? 'bg-red-freedom text-white hover:bg-red-700 hover:shadow-xl hover:shadow-red-freedom/20' 
                     : 'border border-white/20 text-white hover:bg-white/10'
@@ -475,7 +493,7 @@ export const About = () => {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="fixed inset-x-4 top-[5%] bottom-[5%] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-3xl bg-white z-[101] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col"
+              className="fixed inset-x-4 top-[5%] bottom-[5%] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-3xl bg-white z-[101] rounded-2xl md:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
             >
               <div className="relative p-6 md:p-10 border-b border-navy-deep/5 bg-off-white shrink-0">
                 <button 
