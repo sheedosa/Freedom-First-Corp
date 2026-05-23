@@ -37,7 +37,7 @@ export const InsightLibya = () => {
       </section>
 
       {/* Article Body */}
-      <section className="py-20 bg-white flex-grow">
+      <section className="py-14 md:py-20 bg-white flex-grow">
         <div className="container px-6 mx-auto max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -89,7 +89,7 @@ export const InsightLibya = () => {
           </motion.div>
 
           {/* Divider & Back */}
-          <div className="mt-16 pt-12 border-t border-navy-deep/10 flex items-center justify-between">
+          <div className="mt-10 md:mt-16 pt-8 md:pt-12 border-t border-navy-deep/10 flex items-center justify-between">
             <Link
               to="/insights"
               className="inline-flex items-center gap-2 text-navy-deep font-bold text-xs uppercase tracking-widest hover:text-red-freedom transition-colors"

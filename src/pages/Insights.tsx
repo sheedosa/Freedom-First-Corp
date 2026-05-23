@@ -152,9 +152,9 @@ export const Insights = () => {
                             {article.title}
                           </h3>
                           <div className="flex items-center gap-3 text-red-freedom font-mono text-sm uppercase tracking-widest font-bold">
-                            <span className="relative overflow-hidden">
-                              <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">Read More</span>
-                              <span className="absolute top-0 left-0 inline-block transition-transform duration-300 translate-y-full group-hover:translate-y-0 text-white">Read More</span>
+                            <span className="md:relative md:overflow-hidden">
+                              <span className="md:inline-block md:transition-transform md:duration-300 md:group-hover:-translate-y-full">Read More</span>
+                              <span className="hidden md:absolute md:top-0 md:left-0 md:inline-block md:transition-transform md:duration-300 md:translate-y-full md:group-hover:translate-y-0 md:text-white">Read More</span>
                             </span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                           </div>

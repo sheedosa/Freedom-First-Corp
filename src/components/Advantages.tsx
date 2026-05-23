@@ -5,7 +5,7 @@ export const Advantages = () => {
   const { header, message, items } = content.advantages;
 
   return (
-    <section id="advantages" className="bg-off-white py-20 md:py-24 relative overflow-hidden">
+    <section id="advantages" className="bg-off-white py-14 md:py-24 relative overflow-hidden">
       <div className="max-content-width relative z-20">
         <div className="flex flex-col items-start mb-12 md:mb-16 max-w-3xl">
           <div className="flex items-center gap-4 mb-4">

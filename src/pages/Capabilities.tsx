@@ -86,7 +86,7 @@ export const CapabilitiesPage = () => {
       {/* Sticky Sub-Nav */}
       <nav className="bg-white border-b border-navy-deep/10 sticky top-[64px] md:top-[88px] z-40 shadow-sm">
         <div className="max-content-width">
-          <div className="flex flex-wrap justify-center md:justify-start items-center gap-x-8 md:gap-x-12 lg:gap-x-16 overflow-x-auto py-4">
+          <div className="flex flex-nowrap justify-start items-center gap-x-6 md:gap-x-12 lg:gap-x-16 overflow-x-auto hide-scrollbar py-4 px-1">
             {subNav.map((item) => {
               const id = item.href.replace('#', '');
               const isActive = activeSection === id;
@@ -129,7 +129,7 @@ export const CapabilitiesPage = () => {
             <section
               key={section.id}
               id={section.id}
-              className={`relative py-20 md:py-28 overflow-hidden scroll-mt-32 ${isEven ? 'bg-white' : 'bg-off-white'}`}
+              className={`relative py-14 md:py-28 overflow-hidden scroll-mt-32 ${isEven ? 'bg-white' : 'bg-off-white'}`}
             >
               <div className="max-content-width">
                 <div className="relative lg:grid lg:grid-cols-2 lg:gap-x-24 xl:gap-x-32">
@@ -288,7 +288,7 @@ export const CapabilitiesPage = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-white py-20 md:py-24 relative overflow-hidden">
+      <section className="bg-white py-14 md:py-24 relative overflow-hidden">
         <div className="max-content-width relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
             <motion.div

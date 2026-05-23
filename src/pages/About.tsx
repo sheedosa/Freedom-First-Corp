@@ -75,7 +75,7 @@ export const About = () => {
       </section>
 
       {/* Content Section */}
-      <section id="who-we-are" className="bg-white py-20 md:py-24 scroll-mt-24">
+      <section id="who-we-are" className="bg-white py-14 md:py-24 scroll-mt-24">
         <div className="max-content-width">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
             <motion.div 
@@ -217,7 +217,7 @@ export const About = () => {
       </section>
 
       {/* Leadership Section */}
-      <section id="leadership" className="py-20 md:py-24 relative overflow-hidden scroll-mt-24" style={{ background: '#F5F3EF' }}>
+      <section id="leadership" className="py-14 md:py-24 relative overflow-hidden scroll-mt-24" style={{ background: '#F5F3EF' }}>
         <div className="max-content-width">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -337,7 +337,7 @@ export const About = () => {
       </section>
 
       {/* Advisors Section */}
-      <section id="advisors" className="py-20 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #001428 0%, #002341 40%, #002f55 100%)' }}>
+      <section id="advisors" className="py-14 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #001428 0%, #002341 40%, #002f55 100%)' }}>
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #4a9eff 1px, transparent 1px)', backgroundSize: '44px 44px' }} />
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[160px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-[200px] h-[200px] bg-red-freedom/5 blur-[80px] rounded-full pointer-events-none" />
@@ -396,9 +396,9 @@ export const About = () => {
       </section>
 
       {/* CEO Message Section */}
-      <section id="ceomessage" className="bg-white py-20 md:py-24 relative overflow-hidden scroll-mt-24">
+      <section id="ceomessage" className="bg-white py-14 md:py-24 relative overflow-hidden scroll-mt-24">
         <div className="max-content-width">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}

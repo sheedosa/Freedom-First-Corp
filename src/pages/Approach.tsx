@@ -144,7 +144,7 @@ export const Approach = () => {
           <section
             key={section.id}
             id={section.id}
-            className={`relative py-20 md:py-24 overflow-hidden ${isDark ? 'text-white' : index % 2 === 1 ? 'bg-off-white' : 'bg-white'}`}
+            className={`relative py-14 md:py-24 overflow-hidden ${isDark ? 'text-white' : index % 2 === 1 ? 'bg-off-white' : 'bg-white'}`}
             style={isDark ? { background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' } : undefined}
           >
             {isDark && (
@@ -157,7 +157,7 @@ export const Approach = () => {
               </>
             )}
             <div className="container relative z-10 px-6 mx-auto">
-              <div className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse items-start' : 'lg:flex-row items-start'} gap-16 lg:gap-24`}>
+              <div className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse items-start' : 'lg:flex-row items-start'} gap-10 lg:gap-24`}>
                 <div className="w-full lg:w-1/2">
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
@@ -217,7 +217,7 @@ export const Approach = () => {
                     className="relative"
                   >
                     {isPointsFocus ? (
-                      <div className={`border p-8 md:p-12 rounded-2xl ${isDark ? 'bg-white/5 border-white/10' : 'bg-off-white/50 border-gray-100'}`}>
+                      <div className={`border p-6 md:p-12 rounded-2xl ${isDark ? 'bg-white/5 border-white/10' : 'bg-off-white/50 border-gray-100'}`}>
                         {section.subHeader && (
                           <h3 className={`text-xl font-sans font-medium mb-12 uppercase tracking-tight flex items-center gap-4 ${isDark ? 'text-white' : 'text-navy-deep'}`}>
                             <div className="w-8 h-[1px] bg-red-freedom" />
@@ -269,7 +269,7 @@ export const Approach = () => {
       })}
 
       {/* Stakeholder Tabs Section (moved from Stakeholders page) */}
-      <section id="stakeholders" className="bg-off-white py-20 md:py-24 relative overflow-hidden scroll-mt-24">
+      <section id="stakeholders" className="bg-off-white py-14 md:py-24 relative overflow-hidden scroll-mt-24">
         <div className="max-content-width">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

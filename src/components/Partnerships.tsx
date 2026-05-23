@@ -5,7 +5,7 @@ export const Partnerships = () => {
   const { section1, section2, ctaPrimary, ctaPrimaryLink, ctaSecondary, ctaSecondaryLink } = content.partnerships;
 
   return (
-    <section id="partnerships" className="bg-white py-20 md:py-24">
+    <section id="partnerships" className="bg-white py-14 md:py-24">
       <div className="max-content-width">
         {/* First Block - Text Left, Image Right */}
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-16 md:mb-20">

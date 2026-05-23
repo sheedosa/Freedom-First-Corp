@@ -138,7 +138,7 @@ export const Stakeholders = () => {
       {/* Tabs Navigation */}
       <section className="bg-white border-b border-gray-200 sticky top-[72px] md:top-[88px] z-40 shadow-sm">
         <div className="container px-6 mx-auto">
-          <div className="flex flex-wrap justify-center overflow-x-auto gap-4 md:gap-12 hide-scrollbar">
+          <div className="flex flex-nowrap justify-start overflow-x-auto gap-4 md:gap-12 hide-scrollbar px-2 md:px-0 md:justify-center">
             {Object.values(stakeholders).map((tab) => (
               <button
                 key={tab.id}
@@ -163,7 +163,7 @@ export const Stakeholders = () => {
       </section>
 
       {/* Main Content Area */}
-      <section className="py-20 bg-off-white relative flex-grow">
+      <section className="py-14 md:py-20 bg-off-white relative flex-grow">
         <div className="container px-6 mx-auto max-w-6xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -172,9 +172,9 @@ export const Stakeholders = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 md:p-16 shadow-xl border border-gray-100"
+              className="bg-white rounded-2xl p-6 md:p-16 shadow-xl border border-gray-100"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20">
                 
                 {/* Left Column - Intro */}
                 <div className="lg:col-span-5 flex flex-col justify-center">
@@ -226,7 +226,7 @@ export const Stakeholders = () => {
               </div>
 
               {/* Tab Specific CTA */}
-              <div className="mt-20 pt-16 border-t border-gray-100">
+              <div className="mt-10 md:mt-20 pt-10 md:pt-16 border-t border-gray-100">
                 <div className="text-center max-w-3xl mx-auto">
                   <h3 className="text-2xl font-medium text-navy-deep uppercase tracking-tight mb-8">
                     {activeContent.ctaMsg}
@@ -253,7 +253,7 @@ export const Stakeholders = () => {
       </section>
 
       {/* Final Universal CTA Section */}
-      <section className="py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
+      <section className="py-14 md:py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
         {/* Decorative Glows */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[120px] rounded-full pointer-events-none" />
