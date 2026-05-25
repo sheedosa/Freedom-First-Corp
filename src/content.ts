@@ -140,6 +140,13 @@ export const content = {
     ctaSecondary: 'Meet Our Team of Experts',
     ctaSecondaryLink: '/about#leadership'
   },
+  homeCta: {
+    eyebrow: 'Ready to Move',
+    header: 'Move Stalled Production Forward.',
+    message: 'Connect with our team today to diagnose your constraints, engineer the solution, and get stalled production moving.',
+    ctaLabel: 'Talk to Our Team',
+    ctaLink: '/contact'
+  },
   partnerships: {
     section1: {
       header: 'We equip emerging markets with the tools to achieve self reliance.',
