@@ -37,43 +37,9 @@ export const Advantages = () => {
   return (
     <section id="advantages" className="bg-off-white py-14 md:py-24 relative overflow-hidden">
       <div className="max-content-width relative z-20">
-        {/* Heading block — sits above the dark stage */}
-        <div className="flex flex-col items-start mb-12 md:mb-16 max-w-3xl">
-          <div className="flex items-center gap-4 mb-4">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: 40 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="h-[1px] bg-red-freedom"
-            />
-            <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">Advantages</span>
-          </div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="text-navy-deep text-3xl sm:text-4xl md:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-5"
-          >
-            {header}
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
-            className="text-navy-deep/70 text-base md:text-lg font-medium leading-relaxed max-w-2xl"
-          >
-            {message}
-          </motion.p>
-        </div>
-
-        {/* Stage — deep navy gradient that frames the card grid (mirror of Capabilities) */}
+        {/* Stage — deep navy gradient that frames the WHOLE section (heading + cards) */}
         <div
-          className="relative rounded-3xl overflow-hidden p-6 md:p-10 lg:p-14"
+          className="relative rounded-3xl overflow-hidden p-8 md:p-12 lg:p-16"
           style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}
         >
           {/* Ambient drifting dot pattern */}
@@ -96,6 +62,40 @@ export const Advantages = () => {
           <Bracket position="tr" />
           <Bracket position="bl" />
           <Bracket position="br" />
+
+          {/* Heading block — now INSIDE the stage */}
+          <div className="relative z-[5] flex flex-col items-start mb-10 md:mb-14 max-w-3xl">
+            <div className="flex items-center gap-4 mb-4">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 40 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                className="h-[1px] bg-red-freedom"
+              />
+              <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">Advantages</span>
+            </div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, ease: 'easeOut' }}
+              className="text-white text-3xl sm:text-4xl md:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-5"
+            >
+              {header}
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
+              className="text-white/75 text-base md:text-lg font-medium leading-relaxed max-w-2xl"
+            >
+              {message}
+            </motion.p>
+          </div>
 
           {/* Card grid */}
           <div className="relative z-[5] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
