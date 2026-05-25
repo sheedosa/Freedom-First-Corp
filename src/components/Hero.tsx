@@ -25,22 +25,22 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-content-width w-full pb-10 md:pb-16">
-        <motion.div 
+      <div className="relative z-10 max-content-width w-full pb-24 md:pb-32">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-5xl space-y-5 md:space-y-6 gpu-accel"
+          className="max-w-5xl space-y-7 md:space-y-9 gpu-accel"
         >
           <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5rem] leading-[0.98] font-display uppercase tracking-[-0.02em] text-white text-balance">
             {title}
           </h1>
 
-          <p className="text-off-white text-base md:text-lg leading-relaxed max-w-[640px] opacity-90 mb-2">
+          <p className="text-off-white text-base md:text-lg leading-relaxed max-w-[640px] opacity-90">
             {subhead}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/capabilities"
               className="inline-block bg-red-freedom text-white px-7 py-4 md:py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-md hover:shadow-red-freedom/30 md:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] text-center"
