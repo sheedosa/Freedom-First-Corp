@@ -63,38 +63,80 @@ export const Advantages = () => {
           <Bracket position="bl" />
           <Bracket position="br" />
 
-          {/* Heading block — now INSIDE the stage */}
-          <div className="relative z-[5] flex flex-col items-start mb-10 md:mb-14 max-w-3xl">
-            <div className="flex items-center gap-4 mb-4">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: 40 }}
+          {/* Watermark — huge outline word behind the heading */}
+          <div
+            className="absolute -top-4 md:-top-6 right-6 md:right-12 pointer-events-none select-none hidden md:block"
+            aria-hidden
+          >
+            <span
+              className="font-display uppercase leading-none tracking-[-0.05em] text-[8rem] lg:text-[12rem] xl:text-[14rem] whitespace-nowrap"
+              style={{
+                color: 'transparent',
+                WebkitTextStroke: '1px rgba(255, 255, 255, 0.06)',
+              }}
+            >
+              Advantages
+            </span>
+          </div>
+
+          {/* Heading block — 2-column on lg+: title (left) + message + preview chips (right) */}
+          <div className="relative z-[5] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 mb-12 md:mb-16">
+            {/* Left: eyebrow + title */}
+            <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start">
+              <div className="flex items-center gap-4 mb-5">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 40 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                  className="h-[1px] bg-red-freedom"
+                />
+                <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">Advantages</span>
+              </div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="h-[1px] bg-red-freedom"
-              />
-              <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">Advantages</span>
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-7xl font-display leading-[0.92] uppercase tracking-[-0.03em]"
+              >
+                {header}
+              </motion.h2>
             </div>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, ease: 'easeOut' }}
-              className="text-white text-3xl sm:text-4xl md:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-5"
-            >
-              {header}
-            </motion.h2>
+            {/* Right: message + preview chips */}
+            <div className="lg:col-span-6 xl:col-span-5 lg:pl-10 xl:pl-12 lg:border-l lg:border-white/15 flex flex-col justify-end gap-6">
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.1, ease: 'easeOut' }}
+                className="text-white/75 text-base md:text-lg font-medium leading-relaxed"
+              >
+                {message}
+              </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
-              className="text-white/75 text-base md:text-lg font-medium leading-relaxed max-w-2xl"
-            >
-              {message}
-            </motion.p>
+              {/* Preview chips — small monospace tags listing the 4 advantages */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.2, ease: 'easeOut' }}
+                className="flex flex-wrap gap-2"
+              >
+                {items.map((item, i) => (
+                  <span
+                    key={item.title}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 bg-white/[0.03] text-white/55 font-mono text-[10px] uppercase tracking-[0.2em] hover:bg-white/10 hover:text-white/85 hover:border-white/30 transition-colors duration-300"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-red-freedom" />
+                    <span className="text-white/40">0{i + 1}</span>
+                    <span>{item.title}</span>
+                  </span>
+                ))}
+              </motion.div>
+            </div>
           </div>
 
           {/* Card grid */}
