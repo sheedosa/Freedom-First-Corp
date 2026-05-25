@@ -59,11 +59,13 @@ export const Contact = () => {
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero-bg.jpg"
+            src="/images/contact-hero.jpg"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/75 via-navy-deep/65 to-navy-deep/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep/90" />
         </div>
 
         <div className="container relative z-10 px-6 mx-auto">
@@ -194,10 +196,18 @@ export const Contact = () => {
       </section>
 
       {/* Direct Contact Section */}
-      <section
-        className="py-14 md:py-24 text-white relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}
-      >
+      <section className="py-14 md:py-24 text-white relative overflow-hidden">
+        {/* HQ office image with FF gradient overlay */}
+        <img
+          src="/images/office-hq.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg, rgba(0,20,40,0.92) 0%, rgba(0,35,65,0.88) 45%, rgba(0,47,85,0.92) 100%)' }}
+        />
         {/* Background pattern */}
         <div
           className="absolute inset-0 opacity-[0.05] pointer-events-none"

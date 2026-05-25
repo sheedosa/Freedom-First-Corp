@@ -117,7 +117,7 @@ export const content = {
       {
         title: 'Field-Proven Expertise',
         description: 'We apply field-tested methods and technical strategies that reduce guesswork, improve performance and deliver on production targets.',
-        image: '/images/cap-trading.jpg'
+        image: '/images/us-expertise.jpg'
       },
       {
         title: 'Network of Energy Specialists',

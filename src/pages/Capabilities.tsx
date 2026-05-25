@@ -57,6 +57,14 @@ export const CapabilitiesPage = () => {
       {/* Hero Section */}
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
+          <img
+            src="/images/capabilities-hero.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep/90" />
           <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, #134377 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>
 

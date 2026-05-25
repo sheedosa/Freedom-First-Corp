@@ -7,7 +7,6 @@ const XIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 import { content } from '../content';
-import { Logo } from './Logo';
 
 export const Footer = () => {
   const { navigate: navData, contactForm, company } = content.footer;
@@ -38,8 +37,13 @@ export const Footer = () => {
           
           {/* Column 1: Addresses */}
           <div className="lg:col-span-4 space-y-8">
-            <Link to="/" className="inline-block pb-4">
-              <Logo variant="white" horizontal />
+            <Link to="/" className="inline-block pb-6">
+              <img
+                src="/images/logo-horizontal.png"
+                alt="Freedom First Global"
+                className="h-12 md:h-14 w-auto"
+                loading="lazy"
+              />
             </Link>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8">
               {company.offices.map((office) => (

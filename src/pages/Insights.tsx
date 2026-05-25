@@ -15,22 +15,22 @@ export const Insights = () => {
       id: 1,
       title: 'Rebuilding Libya Will Depend on Execution, Not Statements',
       category: 'Emerging Markets',
-      image: '',
+      image: '/images/article-1-libya.jpg',
       href: '/insights/rebuilding-libya',
     },
     {
       id: 2,
       title: 'Freedom First CEO Joins Panel at the U.S. Africa Energy Forum',
       category: 'Company Updates',
-      image: '',
+      image: '/images/article-2-us-africa.jpg',
       href: '#', // TBD — body content pending from client
     },
     {
       id: 3,
       title: 'The Transferrable Lessons and Methods Learned in the Permian Basin',
       category: 'Field Execution',
-      image: '',
-      href: '#', // TBD — body content + image pending from client
+      image: '/images/article-3-permian.jpg',
+      href: '#', // TBD — body content pending from client
     }
   ];
 
