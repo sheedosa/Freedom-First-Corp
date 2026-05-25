@@ -117,7 +117,7 @@ export const Stakeholders = () => {
             >
               <div className="inline-flex justify-center items-center gap-3 mb-6">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-red-freedom uppercase">
+                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">
                   Stakeholders
                 </span>
                 <div className="w-10 h-[1px] bg-red-freedom" />

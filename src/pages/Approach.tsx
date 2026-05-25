@@ -50,7 +50,7 @@ export const Approach = () => {
             >
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-red-freedom uppercase">
+                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">
                   Our Approach
                 </span>
               </div>

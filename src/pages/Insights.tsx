@@ -60,7 +60,7 @@ export const Insights = () => {
             >
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-red-freedom uppercase">Insights</span>
+                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">Insights</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
                 Field Perspectives on the Work, the Markets and What It Takes To Deliver

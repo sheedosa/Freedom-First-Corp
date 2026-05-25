@@ -77,7 +77,7 @@ export const CapabilitiesPage = () => {
             >
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-red-freedom uppercase">Capabilities</span>
+                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">Capabilities</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
                 {hero.title}
