@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { content } from '../content';
 
@@ -18,7 +17,6 @@ const Counter = ({ value, duration = 1800 }: { value: string; duration?: number 
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    // Small targets snap (count-up is imperceptible)
     if (target <= 10) {
       setCurrent(target);
       return;
@@ -28,7 +26,7 @@ const Counter = ({ value, duration = 1800 }: { value: string; duration?: number 
     const tick = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       setCurrent(Math.floor(eased * target));
       if (progress < 1) frame = requestAnimationFrame(tick);
       else setCurrent(target);
@@ -53,7 +51,10 @@ export const Hero = () => {
   const stats = content.about.dataStrip.stats;
 
   return (
-    <section id="hero" className="relative h-[92svh] min-h-[720px] w-full flex flex-col justify-end overflow-hidden">
+    <section
+      id="hero"
+      className="relative h-[100svh] min-h-[720px] w-full flex flex-col overflow-hidden"
+    >
       {/* Background with Overlays */}
       <div className="absolute inset-0 z-0">
         <img
@@ -65,24 +66,27 @@ export const Hero = () => {
           loading="eager"
           fetchPriority="high"
         />
-        {/* Gradients for legibility from High Density theme */}
+        {/* Gradients for legibility */}
         <div className="absolute inset-0" style={{ background: 'var(--gradient-overlay-dark)' }} />
         <div className="absolute inset-0" style={{ background: 'var(--gradient-left-mask)' }} />
         {/* Extra darkening at the bottom band to anchor the stats row */}
         <div
-          className="absolute inset-x-0 bottom-0 h-[40%]"
-          style={{ background: 'linear-gradient(to top, rgba(0,20,40,0.85) 0%, rgba(0,20,40,0.55) 50%, rgba(0,20,40,0) 100%)' }}
+          className="absolute inset-x-0 bottom-0 h-[35%]"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(0,20,40,0.85) 0%, rgba(0,20,40,0.5) 60%, rgba(0,20,40,0) 100%)',
+          }}
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-content-width w-full">
-        {/* Title block (lifted off the stats band) */}
+      {/* Foreground — flex column. Title block sits below header; stats anchored to bottom. */}
+      <div className="relative z-10 max-content-width w-full flex flex-col flex-grow">
+        {/* Title block — top, with explicit header clearance */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="max-w-5xl space-y-7 md:space-y-9 pb-10 md:pb-14 gpu-accel"
+          className="max-w-5xl space-y-7 md:space-y-9 pt-28 md:pt-36 lg:pt-40 gpu-accel"
         >
           {eyebrow && (
             <div className="inline-flex items-center gap-3">
@@ -122,12 +126,12 @@ export const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Stats row — pinned to bottom of hero content, full bleed */}
+        {/* Stats row — pushed to the bottom of the hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-          className="border-t border-white/10 pt-8 pb-10 md:pt-10 md:pb-12"
+          className="mt-auto border-t border-white/10 pt-8 pb-8 md:pt-10 md:pb-10"
         >
           <div className="grid grid-cols-3 gap-3 md:gap-8 lg:gap-16 divide-x divide-white/10">
             {stats.map((stat, i) => (
@@ -152,15 +156,6 @@ export const Hero = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator — small, top of stats area */}
-      <motion.div
-        className="hidden md:flex absolute bottom-2 left-1/2 -translate-x-1/2 flex-col items-center gap-1 opacity-40 pointer-events-none z-20"
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <ChevronDown className="text-white w-4 h-4" strokeWidth={2} />
-      </motion.div>
     </section>
   );
 };
