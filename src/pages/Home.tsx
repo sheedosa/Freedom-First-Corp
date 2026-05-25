@@ -1,5 +1,4 @@
 import { Hero } from '../components/Hero';
-import { StatsStrip } from '../components/StatsStrip';
 import { CapabilitiesSection } from '../components/Capabilities';
 import { IndustrialDivider } from '../components/IndustrialDivider';
 import { ServiceMap } from '../components/ServiceMap';
@@ -11,9 +10,8 @@ export const Home = () => {
   return (
     <>
       <Hero />
-      <StatsStrip />
       <CapabilitiesSection />
-      <IndustrialDivider label="Section 03 · Global Operations" />
+      <IndustrialDivider label="Section 02 · Global Operations" />
       <ServiceMap />
       <Advantages />
       <Partnerships />

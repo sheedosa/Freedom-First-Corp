@@ -1,13 +1,59 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { content } from '../content';
 
-export const Hero = () => {
-  const { eyebrow, title, subhead, ctaPrimary, bgImage } = content.hero;
+/* ---------------- Stat counter helpers (in-hero) ---------------- */
+
+const parseStat = (value: string): { prefix: string; num: number; suffix: string } => {
+  const match = value.match(/^([^\d]*)([\d,]+)(.*)$/);
+  if (!match) return { prefix: '', num: 0, suffix: value };
+  const [, prefix, numStr, suffix] = match;
+  return { prefix, num: parseInt(numStr.replace(/,/g, ''), 10), suffix };
+};
+
+const Counter = ({ value, duration = 1800 }: { value: string; duration?: number }) => {
+  const { prefix, num: target, suffix } = parseStat(value);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    // Small targets snap (count-up is imperceptible)
+    if (target <= 10) {
+      setCurrent(target);
+      return;
+    }
+    let frame: number;
+    const startTime = performance.now();
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      setCurrent(Math.floor(eased * target));
+      if (progress < 1) frame = requestAnimationFrame(tick);
+      else setCurrent(target);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [target, duration]);
 
   return (
-    <section id="hero" className="relative h-[88svh] min-h-[640px] w-full flex items-end overflow-hidden">
+    <>
+      {prefix}
+      {target > 10 ? current.toLocaleString() : target}
+      {suffix}
+    </>
+  );
+};
+
+/* ---------------- Hero ---------------- */
+
+export const Hero = () => {
+  const { eyebrow, title, subhead, ctaPrimary, bgImage } = content.hero;
+  const stats = content.about.dataStrip.stats;
+
+  return (
+    <section id="hero" className="relative h-[92svh] min-h-[720px] w-full flex flex-col justify-end overflow-hidden">
       {/* Background with Overlays */}
       <div className="absolute inset-0 z-0">
         <img
@@ -22,17 +68,22 @@ export const Hero = () => {
         {/* Gradients for legibility from High Density theme */}
         <div className="absolute inset-0" style={{ background: 'var(--gradient-overlay-dark)' }} />
         <div className="absolute inset-0" style={{ background: 'var(--gradient-left-mask)' }} />
+        {/* Extra darkening at the bottom band to anchor the stats row */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-[40%]"
+          style={{ background: 'linear-gradient(to top, rgba(0,20,40,0.85) 0%, rgba(0,20,40,0.55) 50%, rgba(0,20,40,0) 100%)' }}
+        />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-content-width w-full pb-24 md:pb-32">
+      <div className="relative z-10 max-content-width w-full">
+        {/* Title block (lifted off the stats band) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-5xl space-y-7 md:space-y-9 gpu-accel"
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="max-w-5xl space-y-7 md:space-y-9 pb-10 md:pb-14 gpu-accel"
         >
-          {/* Eyebrow */}
           {eyebrow && (
             <div className="inline-flex items-center gap-3">
               <motion.div
@@ -70,28 +121,45 @@ export const Hero = () => {
             </Link>
           </div>
         </motion.div>
+
+        {/* Stats row — pinned to bottom of hero content, full bleed */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+          className="border-t border-white/10 pt-8 pb-10 md:pt-10 md:pb-12"
+        >
+          <div className="grid grid-cols-3 gap-3 md:gap-8 lg:gap-16 divide-x divide-white/10">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className="flex flex-col text-left first:pl-0 md:pl-6 lg:pl-8 pl-3"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-3 h-[1px] bg-red-freedom" />
+                  <span className="text-white/40 font-mono text-[9px] uppercase tracking-[0.3em]">
+                    {`0${i + 1}`}
+                  </span>
+                </div>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-none tracking-[-0.02em] text-white mb-2 md:mb-3">
+                  <Counter value={stat.value} />
+                </div>
+                <div className="text-white/75 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] leading-tight">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
-      {/* Status readout — bottom right, desktop only */}
-      <div className="hidden md:flex absolute bottom-6 right-6 lg:right-12 items-center gap-4 text-white/45 font-mono text-[10px] tracking-[0.3em] uppercase select-none pointer-events-none">
-        <span className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 bg-red-freedom rounded-full animate-pulse" />
-          Active in 3 Markets
-        </span>
-        <span className="opacity-50">·</span>
-        <span>1,000+ Wells Managed</span>
-        <span className="opacity-50">·</span>
-        <span>Field-Proven</span>
-      </div>
-
-      {/* Scroll Indicator — visible all sizes */}
+      {/* Scroll Indicator — small, top of stats area */}
       <motion.div
-        className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 pointer-events-none"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+        className="hidden md:flex absolute bottom-2 left-1/2 -translate-x-1/2 flex-col items-center gap-1 opacity-40 pointer-events-none z-20"
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <span className="hidden lg:inline text-white text-[10px] tracking-widest uppercase font-bold">Explore</span>
-        <ChevronDown className="text-white w-5 h-5" strokeWidth={2} />
+        <ChevronDown className="text-white w-4 h-4" strokeWidth={2} />
       </motion.div>
     </section>
   );
