@@ -227,9 +227,7 @@ export const Approach = () => {
                         <ul className="space-y-10">
                           {section.points.map((point: any, i: number) => (
                             <li key={i} className="flex items-start gap-6 group">
-                              <div className={`w-10 h-10 rounded-full border flex items-center justify-center flex-shrink-0 group-hover:bg-red-freedom group-hover:text-white transition-all ${isDark ? 'border-white/20 text-gray-400' : 'border-red-freedom/20 text-navy-deep'}`}>
-                                <span className="font-mono text-xs">0{i + 1}</span>
-                              </div>
+                              <div className={`w-3 h-3 mt-2 rounded-full flex-shrink-0 transition-colors ${isDark ? 'bg-red-freedom' : 'bg-red-freedom'}`} />
                               <div className="flex flex-col gap-2">
                                 <span className={`font-mono text-sm font-bold tracking-wider uppercase ${isDark ? 'text-white' : 'text-navy-deep'}`}>
                                   {point.title}
@@ -355,9 +353,7 @@ export const Approach = () => {
                         key={index}
                         className="flex gap-6 group"
                       >
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full border border-red-freedom/20 flex items-center justify-center text-red-freedom font-mono text-sm font-bold group-hover:bg-red-freedom group-hover:text-white transition-all shadow-sm">
-                          0{index + 1}
-                        </div>
+                        <div className="flex-shrink-0 w-3 h-3 mt-2 rounded-full bg-red-freedom" />
                         <div>
                           <h4 className="text-lg font-bold text-navy-deep uppercase tracking-wide mb-2 group-hover:text-red-freedom transition-colors">
                             {point.title}

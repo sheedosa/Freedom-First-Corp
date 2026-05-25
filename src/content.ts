@@ -11,8 +11,8 @@ export const content = {
         href: '/about',
         dropdown: [
           { label: 'Foundation', href: '/about#who-we-are' },
-          { label: 'CEO Message', href: '/about#ceomessage' },
-          { label: 'Leadership', href: '/about#leadership' }
+          { label: 'Leadership', href: '/about#leadership' },
+          { label: 'CEO Message', href: '/about#ceomessage' }
         ]
       },
       {
@@ -48,8 +48,8 @@ export const content = {
   },
   hero: {
     eyebrow: 'FREEDOM FIRST',
-    title: 'American Engineering Brought to the Toughest Basins.',
-    subhead: 'Freedom First delivers decades of execution experience directly to the asset, turning demanding environments into reliable, high-performing operations.',
+    title: 'Private-Sector Solutions Built for Stability and Growth',
+    subhead: 'By combining energy development, infrastructure investment and strategic asset protection, we help build stronger, self-reliant economies.',
     ctaPrimary: 'Our Capabilities',
     ctaSecondary: 'Talk to Our Team',
     bgImage: '/images/hero-bg.jpg'
@@ -87,13 +87,13 @@ export const content = {
     header: 'In the Places Where Proven Execution Matters Most',
     message: 'When projects stall, output underperforms, or standard approaches fall short, Freedom First brings U.S. expertise to unlock energy potential.',
     cta: 'Who We Work With',
-    ctaLink: '/approach',
+    ctaLink: '/approach#stakeholders',
     legendLabel: 'Our Operational Footprint',
     countries: [
       {
         id: 'libya',
         name: 'Libya',
-        brief: 'Technical partnership and production enhancement in the Sirte and Murzuq basins, bringing stability and execution discipline to critical assets.',
+        brief: 'Technical partnership and production enhancement, bringing stability and execution discipline to critical assets.',
         coordinates: [17.2283, 26.3351]
       },
       {
@@ -105,23 +105,23 @@ export const content = {
       {
         id: 'somalia',
         name: 'Somalia',
-        brief: 'Greenfield exploration support and regulatory advisory, helping establish world-class standards for a developing energy sector.',
+        brief: 'Greenfield exploration and regulatory advisory, helping establish world-class standards for a developing energy sector.',
         coordinates: [46.1996, 5.1521]
       }
     ]
   },
   advantages: {
     header: 'Built on Technical Depth and Field Agility',
-    message: 'Freedom First delivers the project leadership and specialist expertise on the ground to execute with the speed, flexibility, and local readiness needed to keep work moving in difficult environments.',
+    message: 'Freedom First delivers a by, with, and through approach to execute with the speed, flexibility, and local readiness needed to keep work moving in difficult environments.',
     items: [
       {
-        title: 'American-Tested Expertise',
+        title: 'Field-Proven Expertise',
         description: 'We apply field-tested methods and technical strategies that reduce guesswork, improve performance and deliver on production targets.',
         image: '/images/cap-trading.jpg'
       },
       {
         title: 'Network of Energy Specialists',
-        description: 'We tap deep industry networks to bring in proven engineers, and technical specialists from across the U.S. hydrocarbon sector.',
+        description: 'We tap deep industry networks to bring in proven engineers, and technical specialists from across the U.S. and global hydrocarbon sector.',
         image: '/images/adv-network.jpg'
       },
       {
@@ -147,7 +147,7 @@ export const content = {
     },
     section2: {
       header: 'Our approach is rooted in direct collaboration, not just extraction.',
-      message: "Through strategic investment and comprehensive training, we return resource value to the people.\n\nWe work side-by-side with local communities to responsibly develop their energy potential—ensuring that today's production growth builds a self-reliant workforce for the future."
+      message: "Through strategic investment and comprehensive training, we return resource value to the people.\n\nWe work side-by-side with host countries to responsibly develop their energy potential—ensuring that today's production growth builds a self-reliant workforce for the future."
     },
     ctaPrimary: 'Our Approach',
     ctaPrimaryLink: '/approach',
@@ -163,6 +163,7 @@ export const content = {
         { label: 'Capabilities', href: '/capabilities' },
         { label: 'Approach', href: '/approach' },
         { label: 'Insights', href: '/insights' },
+        { label: 'Contact', href: '/contact' },
       ]
     },
     contactForm: {
@@ -176,23 +177,15 @@ export const content = {
       cta: 'Send Message'
     },
     company: {
-      name: 'Freedom First Corp.',
+      name: 'Freedom First Global',
       offices: [
         {
           city: 'The Woodlands, TX',
           address: '2700 Research Forest Dr.\nSuite 105\nThe Woodlands, TX 77381'
-        },
-        {
-          city: 'Edmond, OK',
-          address: '2575 Kelley Pointe Pkwy\nSuite 100\nEdmond, OK 73013'
-        },
-        {
-          city: 'Odessa, TX',
-          address: '6010 E. Highway 191\nSuite 140\nOdessa, Texas 79762'
         }
       ],
       social: {
-        email: 'info@freedomfirstcorp.com',
+        email: 'info@freedomfirstglobal.com',
         linkedin: 'https://www.linkedin.com/company/freedom-first-corp',
         facebook: 'https://www.facebook.com/profile.php?id=61560491723699',
         x: '#'
@@ -213,18 +206,18 @@ export const content = {
       ]
     },
     principles: {
-      header: 'Guided by a Mandate to Execute, Optimize, and Upskill',
+      header: 'Guided by a Mandate to Execute, Optimize, and Localize Capabilities',
       vision: {
         title: 'Our Vision',
         text: 'To see resource-rich nations achieve true economic self-sufficiency by having the technical capability and infrastructure to fully control, operate, and maximize their own energy potential.'
       },
       mission: {
         title: 'Our Mission',
-        text: 'To deliver field-proven American engineering directly to the asset. We bypass hurdles to accelerate production, optimize existing fields, and build local workforce capacity for a resilient, independent energy sector.'
+        text: 'To deliver field-proven capabilities directly to the asset. We bypass hurdles to accelerate production, optimize existing fields, and build local workforce capacity for a resilient, independent energy sector.'
       },
       principles: {
         title: 'Our Principles',
-        intro: 'We reject the cycle of external dependency by focusing strictly on technical delivery and capability building. Our work is guided by three core tenets:',
+        intro: 'We reject the cycle of external dependency by focusing strictly on delivery and capacity building. Our work is guided by three core principles:',
         items: [
           {
             label: 'Execute with Discipline',
@@ -235,7 +228,7 @@ export const content = {
             text: "We align our success directly with the host country's priorities, maximizing output to achieve national production goals."
           },
           {
-            label: 'Upskill the Workforce',
+            label: 'Localize the Workforce',
             text: 'We do not just extract value; we ensure every project drives true knowledge transfer to empower the people who operate the assets.'
           }
         ]
@@ -270,7 +263,7 @@ export const content = {
       ]
     },
     dataStrip: {
-      header: 'Defined by a Track Record of Field Execution.',
+      header: 'Defined by a track record of execution',
       stats: [
         { label: 'Wells Managed', value: '1,000+', sublabel: '(Onshore & Offshore)' },
         { label: 'Peak Production Achieved', value: '1 BSCFD', sublabel: '(Barnett Shale)' },
@@ -310,14 +303,14 @@ export const content = {
     finalCta: {
       items: [
         { label: 'Explore Our Capabilities', href: '/capabilities' },
-        { label: 'Contact Our Team', href: '/#contact' }
+        { label: 'Contact Our Team', href: '/contact' }
       ]
     }
   },
   capabilitiesPage: {
     hero: {
       title: 'Driving Execution Across the Energy Value Chain.',
-      subtitle: 'From subsurface upstream operations to global market access, we maximize energy asset value at every stage of the lifecycle.'
+      subtitle: 'From upstream operations to global market access, we maximize energy asset value at every stage of the lifecycle.'
     },
     subNav: [
       { label: 'Upstream', href: '#upstream' },
@@ -329,7 +322,7 @@ export const content = {
       {
         id: 'upstream',
         tag: 'Upstream',
-        header: 'Raising Output from the Reservoir to the Wellhead.',
+        header: 'Delivering Measurable Production Growth',
         message: 'We deliver tier-one U.S. engineering to drive verifiable production growth. From accelerating the path to first oil to reactivating stalled brownfield assets, our specialty is in engineering the solutions required to break operational deadlocks, deploy advanced extraction technologies, and keep the barrels flowing.',
         deliverables: [
           { title: 'Exploration & Subsurface Evaluation', text: 'Delivering detailed geological and seismic assessments to identify viable reserves and model the data required to drive development decisions.' },
@@ -374,12 +367,12 @@ export const content = {
     ],
     advantage: {
       header: 'The U.S. Mid-Market Execution Advantage',
-      message: 'We execute at an elite level serving as your gateway to the agile, highly specialized U.S. engineers and technical teams that drove the American unconventional revolution.'
+      message: 'We execute at an elite level serving as your gateway to the agile, highly specialized commercial and technical teams that drove the American unconventional revolution.'
     },
     midMarket: [
       {
-        title: 'Elite U.S. Pedigree',
-        description: 'Access the specialized technical teams that drove U.S. hydrocarbon production.',
+        title: 'Elite Pedigree',
+        description: 'Access the specialized technical teams that drove U.S. hydrocarbon growth.',
         image: '/images/midmarket-1.jpg'
       },
       {
@@ -394,20 +387,20 @@ export const content = {
       }
     ],
     cta: {
-      header: 'American Engineering, Delivered Direct to the Asset.',
-      message: 'See how we bring the capabilities of the U.S. energy sector straight to your toughest fields around the world.',
+      header: 'Permian Basin Experience Delivered Direct to the Asset',
+      message: 'See how we bring the capabilities of the Permian Basin straight to your toughest fields around the world',
       primary: { label: 'Explore Our Approach', href: '/approach' },
-      secondary: { label: 'Contact Our Team', href: '/#contact' }
+      secondary: { label: 'Contact Our Team', href: '/contact' }
     }
   },
   approachPage: {
     hero: {
-      title: 'Delivering Output in Barrels and Value for the Nation.',
+      title: 'Delivering Output in Barrels and Value for the Host Nation.',
       subtitle: 'We step in as a true production partner. We execute in the most logistically demanding places and build technical systems your workforce can sustain, all backed by a performance-driven commercial model.'
     },
     stakeholderTabs: {
-      header: 'Partnerships Built to Move Production Forward',
-      message: 'Freedom First works with operators, host nations, and strategic partners to move hydrocarbon projects forward in hard environments through proven U.S. engineering, disciplined execution, and partnership models built for long-term value.',
+      header: 'Partnerships Built to Move Energy Growth Forward',
+      message: 'Freedom First works with operators, host nations, and strategic partners to move hydrocarbon projects forward in difficult environments through proven execution and partnership models built for long-term value.',
       tabs: {
         operators: {
           id: 'operators',
@@ -422,7 +415,7 @@ export const content = {
           ],
           ctaMsg: 'Bring Proven Execution to Your Toughest Fields.',
           cta1Text: 'Discuss Your Asset',
-          cta1Href: '/#contact',
+          cta1Href: '/contact',
           cta2Text: 'See Our Capabilities',
           cta2Href: '/capabilities'
         },
@@ -431,7 +424,7 @@ export const content = {
           title: 'Host Nations',
           subtitle: 'Sovereigns and National Energy Planners',
           text: 'We work with governments and national energy institutions seeking to increase domestic production, strengthen local capability, and develop energy resources in line with national priorities.',
-          partnership: 'Freedom First brings proven U.S. engineering, disciplined execution, and a partnership model built around long-term asset value. We work side by side with host nations to raise output, build stronger operating capability, and leave behind systems the local workforce can sustain long term.',
+          partnership: 'Freedom First works side by side with host nations to raise output, build stronger operating capability, and leave behind systems the local workforce can sustain long term.',
           points: [
             { title: 'Aligned with National Priorities', text: 'We structure projects to support production growth, long-term asset value, and broader national goals.' },
             { title: 'Local Workforce Integration', text: 'We work with and develop local talent as part of execution, embedding local teams into the systems and standards established.' },
@@ -441,14 +434,14 @@ export const content = {
           cta1Text: 'Meet the Executive Team',
           cta1Href: '/about#leadership',
           cta2Text: 'Engage Our Leadership',
-          cta2Href: '/#contact'
+          cta2Href: '/contact'
         },
         'strategic-partners': {
           id: 'strategic-partners',
           title: 'Strategic Partners',
           subtitle: 'In-Country Support Partners',
           text: 'We work with in-country service companies, supply-chain partners, and infrastructure providers who bring critical local access, operating knowledge, and last-mile execution capability.',
-          partnership: 'We lead with specialized U.S. engineering, project management and direct capital investment and integrate that with trusted local footprints to keep work moving on the ground. We believe the strongest results come from combining technical depth with local capability, not working around it.',
+          partnership: 'We lead with specialized project management and direct capital investment that integrates with trusted local partners. We believe the strongest results come from combining technical depth with local capabilities, not working around it.',
           points: [
             { title: 'Field-Level Support', text: 'We work through local infrastructure, supply chains, and operating relationships to reduce delays and maintain momentum.' },
             { title: 'Shared Standards', text: 'We partner with local entities willing to operate under our compliance standards, helping to elevate operations to a tier-one level.' },
@@ -456,7 +449,7 @@ export const content = {
           ],
           ctaMsg: 'See How Your Footprint Can Support Our Field Operations.',
           cta1Text: 'Contact Our Team',
-          cta1Href: '/#contact',
+          cta1Href: '/contact',
           cta2Text: 'See Our Capabilities',
           cta2Href: '/capabilities'
         }

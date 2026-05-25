@@ -134,18 +134,17 @@ export const CapabilitiesPage = () => {
               <div className="max-content-width">
                 <div className="relative lg:grid lg:grid-cols-2 lg:gap-x-24 xl:gap-x-32">
 
-                  {/* Centered node — desktop */}
+                  {/* Centered dot — desktop. Active scales up + fills red. */}
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true, margin: '-20% 0px' }}
                     transition={{ duration: 0.45, ease: 'easeOut' }}
-                    className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-0 w-16 h-16 rounded-full bg-navy-deep border-4 border-white shadow-2xl items-center justify-center z-20"
-                  >
-                    <span className="text-white font-mono text-xs font-bold tracking-wider">
-                      0{index + 1}
-                    </span>
-                  </motion.div>
+                    animate={{ scale: activeSection === section.id ? 1.6 : 1 }}
+                    className={`hidden lg:block absolute left-1/2 -translate-x-1/2 top-2 w-4 h-4 rounded-full border-[3px] border-white shadow-lg z-20 transition-colors duration-300 ${
+                      activeSection === section.id ? 'bg-red-freedom' : 'bg-navy-deep'
+                    }`}
+                  />
 
                   {/* Intro block — left on even, right on odd */}
                   <motion.div
@@ -155,11 +154,9 @@ export const CapabilitiesPage = () => {
                     transition={{ duration: 0.5, ease: 'easeOut' }}
                     className={`mb-12 lg:mb-0 lg:pt-10 ${isEven ? 'lg:pr-14' : 'lg:order-2 lg:pl-14'}`}
                   >
-                    {/* Mobile node */}
+                    {/* Mobile dot */}
                     <div className="lg:hidden flex items-center gap-4 mb-8">
-                      <div className="w-12 h-12 rounded-full bg-navy-deep flex items-center justify-center shrink-0 shadow-lg">
-                        <span className="text-white font-mono text-xs font-bold">0{index + 1}</span>
-                      </div>
+                      <div className="w-3 h-3 rounded-full bg-red-freedom shrink-0 shadow-md" />
                       <div className="flex-1 h-[1px] bg-gradient-to-r from-red-freedom/50 to-transparent" />
                     </div>
 
@@ -185,7 +182,7 @@ export const CapabilitiesPage = () => {
                     transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
                     className={`${isEven ? 'lg:pl-14' : 'lg:order-1 lg:pr-14'}`}
                   >
-                    <div className={`grid grid-cols-1 gap-4 md:gap-5 ${section.deliverables.length >= 4 ? 'sm:grid-cols-2' : ''}`}>
+                    <div className="grid grid-cols-1 gap-4 md:gap-5">
                       {section.deliverables.map((item, i) => (
                         <motion.div
                           key={i}
@@ -196,11 +193,8 @@ export const CapabilitiesPage = () => {
                           whileHover={{ y: -4 }}
                           className="group p-6 rounded-2xl text-white border border-white/5 hover:border-white/10 transition-colors duration-300 shadow-lg hover:shadow-xl will-change-transform" style={{ background: 'linear-gradient(135deg, #002341 0%, #001828 100%)' }}
                         >
-                          <div className="flex items-start gap-3 mb-3">
-                            <div className="shrink-0 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-red-freedom font-mono text-[10px] font-bold group-hover:bg-red-freedom group-hover:text-white group-hover:border-red-freedom transition-all">
-                              {String(i + 1).padStart(2, '0')}
-                            </div>
-                            <h4 className="text-white font-display text-sm md:text-base uppercase tracking-tight leading-tight pt-1">
+                          <div className="mb-3">
+                            <h4 className="text-white font-display text-sm md:text-base uppercase tracking-tight leading-tight">
                               {item.title}
                             </h4>
                           </div>
@@ -270,9 +264,6 @@ export const CapabilitiesPage = () => {
                 <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-8 h-[1px] bg-red-freedom" />
-                    <span className="text-red-freedom font-mono text-[10px] font-bold tracking-[0.3em] uppercase">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
                   </div>
                   <h3 className="text-white text-xl md:text-2xl font-display uppercase tracking-tight leading-[1.1] mb-4">
                     {card.title}

@@ -336,7 +336,8 @@ export const About = () => {
         </div>
       </section>
 
-      {/* Advisors Section */}
+      {/* Advisors Section — HIDDEN per client request. Keep code intact in case it returns. */}
+      {false && (
       <section id="advisors" className="py-14 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #001428 0%, #002341 40%, #002f55 100%)' }}>
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #4a9eff 1px, transparent 1px)', backgroundSize: '44px 44px' }} />
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[160px] rounded-full pointer-events-none" />
@@ -394,6 +395,8 @@ export const About = () => {
           </div>
         </div>
       </section>
+
+      )}
 
       {/* CEO Message Section */}
       <section id="ceomessage" className="bg-white py-14 md:py-24 relative overflow-hidden scroll-mt-24">

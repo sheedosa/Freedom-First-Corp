@@ -19,7 +19,7 @@ export const Partnerships = () => {
             <div className="space-y-4 mb-4">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">01 — Operational Excellence</span>
+                <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">Economic Empowerment</span>
               </div>
               <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.05] uppercase tracking-[-0.02em]">
                 {section1.header}
@@ -62,7 +62,7 @@ export const Partnerships = () => {
             <div className="space-y-4 mb-4">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">02 — Synergy & Impact</span>
+                <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">Synergy & Impact</span>
               </div>
               <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.05] uppercase tracking-[-0.02em]">
                 {section2.header}

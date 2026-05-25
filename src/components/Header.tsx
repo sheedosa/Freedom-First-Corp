@@ -178,13 +178,12 @@ export const Header = () => {
             </div>
           </div>
  
-          <a 
-            href="#contact" 
-            onClick={(e) => handleNavClick(e, '#contact')}
+          <Link
+            to="/contact"
             className="bg-red-freedom text-white px-8 py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-freedom/30 hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
           >
             {content.nav.cta}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile menu toggle */}
@@ -332,13 +331,13 @@ export const Header = () => {
                   </AnimatePresence>
                 </div>
  
-                <a 
-                  href="#contact"
-                  onClick={(e) => handleNavClick(e, '#contact')}
+                <Link
+                  to="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full bg-red-freedom text-white text-center py-5 text-lg font-bold uppercase tracking-widest rounded-2xl active:scale-[0.98] transition-transform shadow-xl shadow-red-freedom/20"
                 >
                   {content.nav.cta}
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

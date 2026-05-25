@@ -20,17 +20,17 @@ export const Insights = () => {
     },
     {
       id: 2,
-      title: 'Article Coming Soon',
+      title: 'Freedom First CEO Joins Panel at the U.S. Africa Energy Forum',
       category: 'Company Updates',
       image: '',
-      href: '#', // TBD
+      href: '#', // TBD — body content pending from client
     },
     {
       id: 3,
-      title: 'Article Coming Soon',
+      title: 'The Transferrable Lessons and Methods Learned in the Permian Basin',
       category: 'Field Execution',
       image: '',
-      href: '#', // TBD
+      href: '#', // TBD — body content + image pending from client
     }
   ];
 
@@ -66,7 +66,7 @@ export const Insights = () => {
                 Field Perspectives on the Work, the Markets and What It Takes To Deliver
               </h1>
               <p className="text-off-white/80 text-base md:text-lg leading-relaxed max-w-2xl opacity-90">
-                Freedom First shares insights from the field on moving hydrocarbon projects forward in demanding environments. From field execution to market developments and company updates, our perspective is shaped by the work itself.
+                Freedom First shares insights from the field on moving hydrocarbon projects forward in demanding environments. From field execution to market and company updates, our perspective is shaped by the work itself.
               </p>
             </motion.div>
           </div>
@@ -120,7 +120,7 @@ export const Insights = () => {
                   className="group"
                 >
                   <Link to={article.href} className="block w-full h-full">
-                    <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6 shadow-xl relative cursor-pointer">
+                    <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 shadow-xl relative cursor-pointer">
                       {/* Image */}
                       {article.image ? (
                         <img 
@@ -198,7 +198,7 @@ export const Insights = () => {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95]">
-              For Projects That Demand More Than a <span className="text-blue-400">Standard Approach</span>.
+              For Projects That Demand More Than a <span className="text-white">Standard Approach</span>.
             </h2>
             <p className="text-lg md:text-xl text-blue-50/70 mb-12 leading-relaxed">
               Freedom First brings American-grade engineering directly to the asset, helping move difficult projects forward in demanding environments.

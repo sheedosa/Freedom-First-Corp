@@ -208,9 +208,7 @@ export const Stakeholders = () => {
                         key={index} 
                         className="flex gap-6 group"
                       >
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full border border-red-freedom/20 flex items-center justify-center text-red-freedom font-mono text-sm font-bold group-hover:bg-red-freedom group-hover:text-white transition-all shadow-sm">
-                          0{index + 1}
-                        </div>
+                        <div className="flex-shrink-0 w-3 h-3 mt-2 rounded-full bg-red-freedom" />
                         <div>
                           <h4 className="text-lg font-bold text-navy-deep uppercase tracking-wide mb-2 group-hover:text-red-freedom transition-colors">
                             {point.title}

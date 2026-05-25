@@ -173,7 +173,7 @@ export const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
            <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-mono">
-            © {new Date().getFullYear()} {company.name} All rights reserved.
+            © 2026 Freedom First Global. All rights reserved.
           </p>
           <div className="flex gap-8">
             <a href="#privacy" className="text-[10px] text-white/40 hover:text-white uppercase tracking-[0.2em] transition-colors">Privacy</a>

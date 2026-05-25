@@ -20,7 +20,7 @@ export const CapabilitiesSection = () => {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-10 h-[1px] bg-red-freedom" />
-            <span className="text-navy-deep/50 font-mono text-[10px] tracking-[0.3em] uppercase">Intelligence</span>
+            <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">Capabilities</span>
           </div>
           <h2 className="text-navy-deep text-3xl sm:text-4xl md:text-5xl font-display leading-[0.95] uppercase text-left max-w-3xl tracking-[-0.02em]">
             {header}
