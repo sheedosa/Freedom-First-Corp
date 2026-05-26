@@ -12,19 +12,14 @@ export const FinalCta = () => {
       className="relative py-14 sm:py-20 md:py-28 lg:py-32 overflow-hidden text-white"
       style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}
     >
-      {/* Ambient drifting dot pattern */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
+      {/* Subtle dot pattern — matches the footer's static treatment at the same opacity */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
-        animate={{ backgroundPosition: ['0px 0px', '40px 40px'] }}
-        transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
       />
-      {/* Glow accents */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-freedom/12 blur-[160px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-red-freedom/8 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-content-width relative z-10">
         <motion.div
