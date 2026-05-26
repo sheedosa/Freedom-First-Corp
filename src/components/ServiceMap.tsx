@@ -126,47 +126,6 @@ export const ServiceMap = () => {
                 {cta}
                 <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
-
-              {/* Operations log */}
-              <div className="mt-12 pt-8 border-t border-white/10">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-6 h-[1px] bg-red-freedom" />
-                  <span className="text-white/50 font-mono text-[10px] uppercase tracking-[0.3em]">
-                    Active Operations
-                  </span>
-                </div>
-                <div className="space-y-1">
-                  {countries.map((country) => {
-                    // Derive status from the first word of the brief
-                    const statusMap: Record<string, string> = {
-                      libya: 'Active',
-                      venezuela: 'Advisory',
-                      somalia: 'Greenfield',
-                    };
-                    const status = statusMap[country.id] || 'Active';
-                    return (
-                      <button
-                        key={country.id}
-                        onClick={() => setSelectedId(country.id)}
-                        onMouseEnter={() => setSelectedId(country.id)}
-                        className="group w-full flex items-center gap-4 py-3 px-2 -mx-2 rounded-lg hover:bg-white/5 transition-colors text-left"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-red-freedom shrink-0 group-hover:scale-150 transition-transform" />
-                        <span className="text-white text-sm font-bold uppercase tracking-wider min-w-[80px] group-hover:text-red-freedom transition-colors">
-                          {country.name}
-                        </span>
-                        <span className="text-white/35 font-mono text-[10px] uppercase tracking-[0.25em] shrink-0">
-                          {status}
-                        </span>
-                        <span className="text-white/50 text-xs leading-relaxed hidden lg:block flex-1 truncate">
-                          {country.brief.split(',')[0]}
-                        </span>
-                        <ArrowRight className="w-3.5 h-3.5 text-white/30 group-hover:text-red-freedom group-hover:translate-x-1 transition-all shrink-0" />
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
             </motion.div>
           ) : (
             <motion.div

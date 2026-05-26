@@ -393,53 +393,6 @@ export const Approach = () => {
           </AnimatePresence>
         </div>
       </section>
-
-      {/* Final CTA Section */}
-      <section className="py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
-        {/* Decorative Glows */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-freedom/10 blur-[100px] rounded-full translate-x-1/4 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-red-freedom/5 blur-[80px] rounded-full -translate-x-1/4 translate-y-1/2" />
-        
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{ 
-            backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', 
-            backgroundSize: '30px 30px' 
-          }} 
-        />
-        
-        <div className="container px-6 mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95]">
-              Execute with a Fully Aligned <span className="text-blue-400">Production Partner</span>.
-            </h2>
-            <p className="text-lg md:text-xl text-blue-50/70 mb-12 leading-relaxed">
-              Bring American field execution directly to your asset. Connect with our team to build a partnership engineered for output.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a 
-                href="/#partnerships" 
-                className="w-full sm:w-auto px-7 py-3.5 bg-white text-navy-deep text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-50 transition-all hover:shadow-xl"
-              >
-                Who We Work With
-              </a>
-              <a 
-                href="/#contact" 
-                className="w-full sm:w-auto px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
-              >
-                Contact Our Team
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
