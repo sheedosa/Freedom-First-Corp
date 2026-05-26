@@ -17,6 +17,7 @@ export const CapabilitiesPage = () => {
   const smoothFillHeight = useSpring(fillHeight, { stiffness: 80, damping: 20 });
 
   const [activeSection, setActiveSection] = useState<string>(sections[0].id);
+  const [passedSections, setPassedSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     if (hash) {
@@ -34,6 +35,14 @@ export const CapabilitiesPage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            // Once a section has been seen, mark it as 'passed' permanently
+            // so the dot stays red as the user continues scrolling
+            setPassedSections((prev) => {
+              if (prev.has(entry.target.id)) return prev;
+              const next = new Set(prev);
+              next.add(entry.target.id);
+              return next;
+            });
           }
         });
       },
@@ -122,13 +131,29 @@ export const CapabilitiesPage = () => {
 
       {/* Sections with Animated Timeline */}
       <div ref={timelineRef} className="relative">
-        {/* Centered spine — desktop only */}
-        <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] z-0 pointer-events-none">
-          <div className="absolute inset-0 bg-navy-deep/10" />
+        {/* Centered spine — visible md+. Animated red fill marks scroll progress
+            from dot to dot through the capability sections. */}
+        <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px] z-0 pointer-events-none">
+          {/* Base track */}
+          <div className="absolute inset-0 bg-navy-deep/15 rounded-full" />
+
+          {/* Animated red fill — height follows scroll progress with a spring */}
           <motion.div
             style={{ height: smoothFillHeight }}
-            className="absolute top-0 left-0 right-0 bg-red-freedom origin-top"
+            className="absolute top-0 left-0 right-0 bg-red-freedom rounded-full origin-top shadow-[0_0_12px_rgba(213,41,40,0.45)]"
           />
+
+          {/* Leading-edge glow — a small pulsing dot that rides the top of the fill */}
+          <motion.div
+            style={{ top: smoothFillHeight }}
+            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-red-freedom shadow-[0_0_18px_4px_rgba(213,41,40,0.55)]"
+          >
+            <motion.span
+              className="absolute inset-0 rounded-full bg-red-freedom"
+              animate={{ scale: [1, 1.8, 1], opacity: [0.6, 0, 0.6] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeOut' }}
+            />
+          </motion.div>
         </div>
 
         {sections.map((section, index) => {
@@ -142,17 +167,28 @@ export const CapabilitiesPage = () => {
               <div className="max-content-width">
                 <div className="relative lg:grid lg:grid-cols-2 lg:gap-x-24 xl:gap-x-32">
 
-                  {/* Centered dot — desktop. Active scales up + fills red. */}
-                  <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: '-20% 0px' }}
-                    transition={{ duration: 0.45, ease: 'easeOut' }}
-                    animate={{ scale: activeSection === section.id ? 1.6 : 1 }}
-                    className={`hidden lg:block absolute left-1/2 -translate-x-1/2 top-2 w-4 h-4 rounded-full border-[3px] border-white shadow-lg z-20 transition-colors duration-300 ${
-                      activeSection === section.id ? 'bg-red-freedom' : 'bg-navy-deep'
-                    }`}
-                  />
+                  {/* Centered dot — visible md+. States:
+                      - Future: navy
+                      - Passed (scrolled past): red, normal size
+                      - Active: red, scaled up + ring glow
+                  */}
+                  {(() => {
+                    const isActive = activeSection === section.id;
+                    const isPassed = passedSections.has(section.id);
+                    const isRed = isActive || isPassed;
+                    return (
+                      <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, margin: '-20% 0px' }}
+                        transition={{ duration: 0.45, ease: 'easeOut' }}
+                        animate={{ scale: isActive ? 1.8 : 1 }}
+                        className={`hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-5 h-5 rounded-full border-[3px] border-white shadow-lg z-20 transition-colors duration-300 ${
+                          isRed ? 'bg-red-freedom' : 'bg-navy-deep'
+                        } ${isActive ? 'shadow-[0_0_20px_4px_rgba(213,41,40,0.5)]' : ''}`}
+                      />
+                    );
+                  })()}
 
                   {/* Intro block — left on even, right on odd */}
                   <motion.div
