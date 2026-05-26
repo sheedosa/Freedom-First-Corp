@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin, Mail, Globe, ExternalLink } from 'lucide-react';
 
 type FormState = {
   name: string;
@@ -238,66 +238,98 @@ export const Contact = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
             {/* HQ Address */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-[1px] bg-red-freedom" />
+            <div className="group relative flex flex-col h-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 rounded-2xl p-6 md:p-8 transition-colors duration-300">
+              <div className="absolute top-0 left-6 md:left-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
+                <MapPin className="w-5 h-5 text-white" strokeWidth={2} />
+              </div>
+
+              <div className="mt-4 mb-5">
                 <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
                   Headquarters
                 </span>
+                <h3 className="text-white font-display text-xl md:text-2xl uppercase tracking-tight leading-tight mt-2">
+                  The Woodlands, TX
+                </h3>
               </div>
-              <p className="text-white/80 text-sm md:text-base leading-relaxed whitespace-pre-line font-mono">
-                {`Freedom First Headquarters
-2700 Research Forest Dr. Suite 105
-The Woodlands, Texas 77381
-United States of America`}
-              </p>
+
+              <address className="not-italic text-white/80 text-sm md:text-[15px] leading-relaxed">
+                <p>2700 Research Forest Dr.</p>
+                <p>Suite 105</p>
+                <p className="mt-2">The Woodlands, Texas 77381</p>
+                <p className="text-white/55">United States of America</p>
+              </address>
+
+              <a
+                href="https://maps.google.com/?q=2700+Research+Forest+Dr+Suite+105+The+Woodlands+TX+77381"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto pt-6 inline-flex items-center gap-2 text-white/55 hover:text-red-freedom text-[10px] font-bold uppercase tracking-[0.25em] transition-colors w-fit"
+              >
+                Get Directions
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
 
             {/* Email */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-[1px] bg-red-freedom" />
-                <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
-                  Contact via Email
-                </span>
+            <div className="group relative flex flex-col h-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 rounded-2xl p-6 md:p-8 transition-colors duration-300">
+              <div className="absolute top-0 left-6 md:left-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
+                <Mail className="w-5 h-5 text-white" strokeWidth={2} />
               </div>
+
+              <div className="mt-4 mb-5">
+                <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
+                  Email
+                </span>
+                <h3 className="text-white font-display text-xl md:text-2xl uppercase tracking-tight leading-tight mt-2">
+                  Get in Touch
+                </h3>
+              </div>
+
               <div className="space-y-4">
-                <div>
-                  <p className="text-white/50 text-[10px] uppercase tracking-widest mb-1">
+                <a
+                  href="mailto:info@freedomfirstglobal.com"
+                  className="group/email block py-2 border-l-2 border-white/15 hover:border-red-freedom pl-3 transition-colors"
+                >
+                  <p className="text-white/45 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">
                     General Inquiries
                   </p>
-                  <a
-                    href="mailto:info@freedomfirstglobal.com"
-                    className="text-white hover:text-red-freedom transition-colors text-sm md:text-base font-mono break-all"
-                  >
+                  <p className="text-white group-hover/email:text-red-freedom transition-colors text-sm md:text-[15px] font-mono break-all">
                     info@freedomfirstglobal.com
-                  </a>
-                </div>
-                <div>
-                  <p className="text-white/50 text-[10px] uppercase tracking-widest mb-1">
-                    Media & Press
                   </p>
-                  <a
-                    href="mailto:media@freedomfirstglobal.com"
-                    className="text-white hover:text-red-freedom transition-colors text-sm md:text-base font-mono break-all"
-                  >
+                </a>
+
+                <a
+                  href="mailto:media@freedomfirstglobal.com"
+                  className="group/email block py-2 border-l-2 border-white/15 hover:border-red-freedom pl-3 transition-colors"
+                >
+                  <p className="text-white/45 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">
+                    Media &amp; Press
+                  </p>
+                  <p className="text-white group-hover/email:text-red-freedom transition-colors text-sm md:text-[15px] font-mono break-all">
                     media@freedomfirstglobal.com
-                  </a>
-                </div>
+                  </p>
+                </a>
               </div>
             </div>
 
             {/* Global Footprint */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-[1px] bg-red-freedom" />
-                <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
-                  Global Operating Footprint
-                </span>
+            <div className="group relative flex flex-col h-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 rounded-2xl p-6 md:p-8 transition-colors duration-300">
+              <div className="absolute top-0 left-6 md:left-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
+                <Globe className="w-5 h-5 text-white" strokeWidth={2} />
               </div>
-              <p className="text-white/80 text-sm md:text-base leading-relaxed">
+
+              <div className="mt-4 mb-5">
+                <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
+                  Operating Footprint
+                </span>
+                <h3 className="text-white font-display text-xl md:text-2xl uppercase tracking-tight leading-tight mt-2">
+                  Deployed Globally
+                </h3>
+              </div>
+
+              <p className="text-white/80 text-sm md:text-[15px] leading-relaxed">
                 Freedom First deploys engineers and operators globally. Whether assets are located in mature domestic basins or the world's most logistically challenging emerging markets, we bring the execution directly to the wellhead.
               </p>
             </div>
