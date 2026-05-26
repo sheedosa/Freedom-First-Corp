@@ -199,7 +199,7 @@ export const CapabilitiesPage = () => {
                           viewport={{ once: true, margin: '-50px' }}
                           transition={{ duration: 0.4, delay: i * 0.06, ease: 'easeOut' }}
                           whileHover={{ y: -4 }}
-                          className="group p-6 rounded-2xl text-white border border-white/5 hover:border-white/10 transition-colors duration-300 shadow-lg hover:shadow-xl will-change-transform" style={{ background: 'linear-gradient(135deg, #002341 0%, #001828 100%)' }}
+                          className="group p-6 rounded-2xl text-white border border-white/5 hover:border-white/10 transition-colors duration-300 shadow-lg hover:shadow-xl" style={{ background: 'linear-gradient(135deg, #002341 0%, #001828 100%)' }}
                         >
                           <div className="mb-3">
                             <h4 className="text-white font-display text-sm md:text-base uppercase tracking-tight leading-tight">

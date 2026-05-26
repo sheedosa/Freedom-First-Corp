@@ -60,7 +60,7 @@ export const Hero = () => {
         <img
           src={bgImage}
           alt="Industrial energy facility"
-          className="w-full h-full object-cover grayscale-[20%] gpu-accel"
+          className="w-full h-full object-cover grayscale-[20%]"
           referrerPolicy="no-referrer"
           decoding="sync"
           loading="eager"
@@ -86,7 +86,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="max-w-5xl space-y-7 md:space-y-9 pt-28 md:pt-36 lg:pt-40 gpu-accel"
+          className="max-w-5xl space-y-7 md:space-y-9 pt-28 md:pt-36 lg:pt-40"
         >
           {eyebrow && (
             <div className="inline-flex items-center gap-3">

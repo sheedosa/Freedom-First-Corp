@@ -9,7 +9,7 @@ export const CapabilitiesSection = () => {
   const { header, items } = content.capabilitiesSection;
 
   return (
-    <section id="capabilities" className="bg-white pt-16 pb-20 md:pt-24 md:pb-24 relative overflow-hidden fluid-section-transition">
+    <section id="capabilities" className="bg-white pt-16 pb-20 md:pt-24 md:pb-24 relative overflow-hidden">
       <div className="max-content-width relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -37,7 +37,7 @@ export const CapabilitiesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
               whileHover={{ y: -4 }}
-              className="flex flex-col group block bg-navy-deep relative overflow-hidden rounded-2xl min-h-[340px] md:min-h-[420px] will-change-transform"
+              className="flex flex-col group block bg-navy-deep relative overflow-hidden rounded-2xl min-h-[340px] md:min-h-[420px]"
             >
               <div className="absolute inset-0 z-0 h-full bg-navy-deep">
                 <img

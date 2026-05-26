@@ -43,7 +43,7 @@ export const Advantages = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
               whileHover={{ y: -4 }}
-              className="group h-full will-change-transform"
+              className="group h-full"
             >
               <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden transition-shadow duration-300 ease-out border border-navy-deep/5">
                 <div className="relative aspect-[4/3] overflow-hidden bg-navy-deep/5">
