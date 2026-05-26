@@ -67,7 +67,7 @@ export const CapabilitiesSection = () => {
         </motion.div>
 
         {/* Stage — warm cream tonal panel that frames the card grid */}
-        <div className="relative rounded-2xl md:rounded-3xl overflow-hidden p-5 sm:p-8 md:p-10 lg:p-14" style={{ background: '#F5F1EA' }}>
+        <div className="relative rounded-2xl md:rounded-3xl overflow-hidden p-6 sm:p-10 md:p-14 lg:p-16 xl:p-20" style={{ background: '#F5F1EA' }}>
           {/* Ambient drifting dot pattern */}
           <motion.div
             className="absolute inset-0 pointer-events-none"
@@ -86,7 +86,7 @@ export const CapabilitiesSection = () => {
           <Bracket position="br" />
 
           {/* Card grid */}
-          <div className="relative z-[5] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-8">
+          <div className="relative z-[5] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 lg:gap-10">
             {items.map((capability, index) => {
               const fromLeft = index % 2 === 0;
               return (

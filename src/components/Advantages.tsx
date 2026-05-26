@@ -39,7 +39,7 @@ export const Advantages = () => {
       <div className="max-content-width relative z-20">
         {/* Stage — deep navy gradient that frames the WHOLE section (heading + cards) */}
         <div
-          className="relative rounded-2xl md:rounded-3xl overflow-hidden p-5 sm:p-8 md:p-12 lg:p-16"
+          className="relative rounded-2xl md:rounded-3xl overflow-hidden p-6 sm:p-10 md:p-14 lg:p-16 xl:p-20"
           style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}
         >
           {/* Ambient drifting dot pattern */}
@@ -80,7 +80,7 @@ export const Advantages = () => {
           </div>
 
           {/* Heading block — 2-column on lg+: title (left) + message + preview chips (right) */}
-          <div className="relative z-[5] grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 mb-8 sm:mb-12 md:mb-16">
+          <div className="relative z-[5] grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 mb-10 sm:mb-14 md:mb-16 lg:mb-20">
             {/* Left: eyebrow + title */}
             <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
@@ -140,7 +140,7 @@ export const Advantages = () => {
           </div>
 
           {/* Card grid */}
-          <div className="relative z-[5] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          <div className="relative z-[5] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
             {items.map((item, index) => {
               const fromLeft = index % 2 === 0;
               return (
