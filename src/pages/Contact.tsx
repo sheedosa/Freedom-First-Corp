@@ -224,18 +224,31 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.45 }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
           >
-            <div className="inline-flex items-center justify-center gap-3 mb-4">
+            {/* Small brand spec line above the title */}
+            <p className="text-white/35 font-mono text-[10px] tracking-[0.3em] uppercase mb-5">
+              Freedom First Global
+            </p>
+
+            {/* Eyebrow with double red rule */}
+            <div className="inline-flex items-center justify-center gap-3 mb-6">
               <div className="w-12 h-[1px] bg-red-freedom" />
               <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
                 Direct Contact
               </span>
               <div className="w-12 h-[1px] bg-red-freedom" />
             </div>
-            <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-display uppercase tracking-[-0.02em] leading-[0.95]">
-              Freedom First Global
+
+            {/* Primary heading — action-oriented */}
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display uppercase tracking-[-0.02em] leading-[0.95] mb-5">
+              Reach Our Team Directly
             </h2>
+
+            {/* Subtitle framing what the 3 cards below are for */}
+            <p className="text-white/65 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+              Our Houston headquarters, two direct inboxes, and the global operating presence behind every deployment.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
