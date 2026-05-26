@@ -67,7 +67,7 @@ export const CapabilitiesSection = () => {
         </motion.div>
 
         {/* Stage — warm cream tonal panel that frames the card grid */}
-        <div className="relative rounded-3xl overflow-hidden p-6 md:p-10 lg:p-14" style={{ background: '#F5F1EA' }}>
+        <div className="relative rounded-2xl md:rounded-3xl overflow-hidden p-5 sm:p-8 md:p-10 lg:p-14" style={{ background: '#F5F1EA' }}>
           {/* Ambient drifting dot pattern */}
           <motion.div
             className="absolute inset-0 pointer-events-none"

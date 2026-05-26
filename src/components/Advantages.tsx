@@ -39,7 +39,7 @@ export const Advantages = () => {
       <div className="max-content-width relative z-20">
         {/* Stage — deep navy gradient that frames the WHOLE section (heading + cards) */}
         <div
-          className="relative rounded-3xl overflow-hidden p-8 md:p-12 lg:p-16"
+          className="relative rounded-2xl md:rounded-3xl overflow-hidden p-5 sm:p-8 md:p-12 lg:p-16"
           style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}
         >
           {/* Ambient drifting dot pattern */}
@@ -80,10 +80,10 @@ export const Advantages = () => {
           </div>
 
           {/* Heading block — 2-column on lg+: title (left) + message + preview chips (right) */}
-          <div className="relative z-[5] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 mb-12 md:mb-16">
+          <div className="relative z-[5] grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 mb-8 sm:mb-12 md:mb-16">
             {/* Left: eyebrow + title */}
             <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start">
-              <div className="flex items-center gap-4 mb-5">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: 40 }}
@@ -99,20 +99,20 @@ export const Advantages = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-7xl font-display leading-[0.92] uppercase tracking-[-0.03em]"
+                className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-7xl font-display leading-[0.95] sm:leading-[0.92] uppercase tracking-[-0.02em] sm:tracking-[-0.03em]"
               >
                 {header}
               </motion.h2>
             </div>
 
             {/* Right: message + preview chips */}
-            <div className="lg:col-span-6 xl:col-span-5 lg:pl-10 xl:pl-12 lg:border-l lg:border-white/15 flex flex-col justify-end gap-6">
+            <div className="lg:col-span-6 xl:col-span-5 lg:pl-10 xl:pl-12 lg:border-l lg:border-white/15 flex flex-col justify-end gap-5 sm:gap-6">
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: 0.1, ease: 'easeOut' }}
-                className="text-white/75 text-base md:text-lg font-medium leading-relaxed"
+                className="text-white/75 text-sm sm:text-base md:text-lg font-medium leading-relaxed"
               >
                 {message}
               </motion.p>
@@ -123,16 +123,16 @@ export const Advantages = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: 0.2, ease: 'easeOut' }}
-                className="flex flex-wrap gap-2"
+                className="flex flex-wrap gap-1.5 sm:gap-2"
               >
                 {items.map((item, i) => (
                   <span
                     key={item.title}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 bg-white/[0.03] text-white/55 font-mono text-[10px] uppercase tracking-[0.2em] hover:bg-white/10 hover:text-white/85 hover:border-white/30 transition-colors duration-300"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/15 bg-white/[0.03] text-white/55 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.2em] hover:bg-white/10 hover:text-white/85 hover:border-white/30 transition-colors duration-300"
                   >
-                    <span className="w-1 h-1 rounded-full bg-red-freedom" />
-                    <span className="text-white/40">0{i + 1}</span>
-                    <span>{item.title}</span>
+                    <span className="w-1 h-1 rounded-full bg-red-freedom shrink-0" />
+                    <span className="text-white/40 shrink-0">0{i + 1}</span>
+                    <span className="truncate max-w-[180px] sm:max-w-none">{item.title}</span>
                   </span>
                 ))}
               </motion.div>

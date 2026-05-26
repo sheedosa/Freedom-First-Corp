@@ -126,29 +126,42 @@ export const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Stats row — pushed to the bottom of the hero */}
+        {/* Stats row — pushed to the bottom of the hero
+            Mobile: stacked rows with horizontal layout per stat
+            sm+:    3-column grid with vertical dividers */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
-          className="mt-auto border-t border-white/10 pt-8 pb-8 md:pt-10 md:pb-10"
+          className="mt-auto border-t border-white/10 pt-4 pb-6 sm:pt-8 sm:pb-8 md:pt-10 md:pb-10"
         >
-          <div className="grid grid-cols-3 gap-3 md:gap-8 lg:gap-16 divide-x divide-white/10">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 sm:gap-3 md:gap-8 lg:gap-16 sm:divide-x sm:divide-white/10">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className="flex flex-col text-left first:pl-0 md:pl-6 lg:pl-8 pl-3"
+                className={[
+                  // MOBILE: horizontal row layout — eyebrow / value / label
+                  'flex items-center gap-3 py-3 border-t border-white/10 first:border-t-0 first:pt-2',
+                  // sm+: column layout, vertical dividers handled by parent
+                  'sm:flex sm:flex-col sm:items-start sm:gap-0 sm:py-0 sm:border-t-0 sm:first:pt-0',
+                  'sm:first:pl-0 sm:pl-3 md:pl-6 lg:pl-8',
+                ].join(' ')}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="w-3 h-[1px] bg-red-freedom" />
+                {/* Eyebrow (mobile: tiny "01" on left, sm+: above the value) */}
+                <div className="flex items-center gap-2 sm:mb-2 shrink-0 w-7 sm:w-auto">
+                  <span className="hidden sm:inline-block w-3 h-[1px] bg-red-freedom" />
                   <span className="text-white/40 font-mono text-[9px] uppercase tracking-[0.3em]">
                     {`0${i + 1}`}
                   </span>
                 </div>
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-none tracking-[-0.02em] text-white mb-2 md:mb-3">
+
+                {/* Value (BIG number) */}
+                <div className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-none tracking-[-0.02em] text-white sm:mb-2 md:mb-3 shrink-0">
                   <Counter value={stat.value} />
                 </div>
-                <div className="text-white/75 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] leading-tight">
+
+                {/* Label */}
+                <div className="text-white/75 text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] leading-tight ml-auto sm:ml-0 text-right sm:text-left max-w-[55%] sm:max-w-none">
                   {stat.label}
                 </div>
               </div>
