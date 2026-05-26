@@ -212,7 +212,7 @@ export const Insights = () => {
                 Our Approach
               </a>
               <a 
-                href="/#contact" 
+                href="/contact" 
                 className="w-full sm:w-auto px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
               >
                 Talk to Our Team

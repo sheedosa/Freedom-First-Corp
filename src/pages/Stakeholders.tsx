@@ -39,7 +39,7 @@ export const Stakeholders = () => {
       ],
       ctaMsg: 'Bring Proven Execution to Your Toughest Fields.',
       cta1Text: 'Discuss Your Asset',
-      cta1Href: '/#contact',
+      cta1Href: '/contact',
       cta2Text: 'See Our Capabilities',
       cta2Href: '/capabilities'
     },
@@ -93,7 +93,7 @@ export const Stakeholders = () => {
       cta1Text: 'See How We Work',
       cta1Href: '/approach',
       cta2Text: 'Contact Our Team',
-      cta2Href: '/#contact'
+      cta2Href: '/contact'
     }
   };
 
@@ -272,7 +272,7 @@ export const Stakeholders = () => {
             </p>
             
             <a 
-              href="/#contact" 
+              href="/contact" 
               className="inline-block px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
             >
               Talk to Our Team

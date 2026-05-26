@@ -98,7 +98,7 @@ export const InsightLibya = () => {
               All Insights
             </Link>
             <a
-              href="/#contact"
+              href="/contact"
               className="px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all"
             >
               Talk to Our Team

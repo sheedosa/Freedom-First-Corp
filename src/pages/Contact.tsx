@@ -300,31 +300,17 @@ export const Contact = () => {
                 </h3>
               </div>
 
-              <div className="space-y-4">
-                <a
-                  href="mailto:info@freedomfirstglobal.com"
-                  className="group/email block py-2 border-l-2 border-white/15 hover:border-red-freedom pl-3 transition-colors"
-                >
-                  <p className="text-white/45 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">
-                    General Inquiries
-                  </p>
-                  <p className="text-white group-hover/email:text-red-freedom transition-colors text-sm md:text-[15px] font-mono break-all">
-                    info@freedomfirstglobal.com
-                  </p>
-                </a>
-
-                <a
-                  href="mailto:media@freedomfirstglobal.com"
-                  className="group/email block py-2 border-l-2 border-white/15 hover:border-red-freedom pl-3 transition-colors"
-                >
-                  <p className="text-white/45 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">
-                    Media &amp; Press
-                  </p>
-                  <p className="text-white group-hover/email:text-red-freedom transition-colors text-sm md:text-[15px] font-mono break-all">
-                    media@freedomfirstglobal.com
-                  </p>
-                </a>
-              </div>
+              <a
+                href="mailto:info@freedomfirstglobal.com"
+                className="group/email block py-2 border-l-2 border-white/15 hover:border-red-freedom pl-3 transition-colors"
+              >
+                <p className="text-white/45 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">
+                  General Inquiries
+                </p>
+                <p className="text-white group-hover/email:text-red-freedom transition-colors text-sm md:text-[15px] font-mono break-all">
+                  info@freedomfirstglobal.com
+                </p>
+              </a>
             </div>
 
             {/* Global Footprint */}
