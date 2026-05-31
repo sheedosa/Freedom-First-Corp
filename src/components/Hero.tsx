@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative h-[100svh] min-h-[600px] sm:min-h-[640px] md:min-h-[720px] w-full flex flex-col justify-end overflow-hidden"
+      className="relative h-[100svh] min-h-[600px] sm:min-h-[640px] md:min-h-[720px] w-full flex flex-col justify-center sm:justify-end overflow-hidden"
     >
       {/* Background with Overlays */}
       <div className="absolute inset-0 z-0">
