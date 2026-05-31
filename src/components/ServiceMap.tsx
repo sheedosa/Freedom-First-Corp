@@ -7,7 +7,7 @@ type Country = {
   id: string;
   name: string;
   brief: string;
-  coordinates: [number, number];
+  coordinates: number[];
 };
 
 const WorldMap = lazy(() => Promise.all([
