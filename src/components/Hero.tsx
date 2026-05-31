@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative h-[100svh] min-h-[720px] w-full flex flex-col overflow-hidden"
+      className="relative h-[100svh] min-h-[600px] sm:min-h-[640px] md:min-h-[720px] w-full flex flex-col justify-end overflow-hidden"
     >
       {/* Background with Overlays */}
       <div className="absolute inset-0 z-0">
@@ -26,13 +26,13 @@ export const Hero = () => {
         <div className="absolute inset-0" style={{ background: 'var(--gradient-left-mask)' }} />
       </div>
 
-      {/* Foreground — title block sits below the header with clearance */}
-      <div className="relative z-10 max-content-width w-full flex flex-col flex-grow">
+      {/* Foreground — title block anchored to the bottom of the hero */}
+      <div className="relative z-10 max-content-width w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="max-w-5xl space-y-7 md:space-y-9 pt-28 md:pt-36 lg:pt-40 pb-16 md:pb-24"
+          className="max-w-5xl space-y-5 sm:space-y-6 md:space-y-9 pb-14 sm:pb-20 md:pb-24 lg:pb-28"
         >
           {eyebrow && (
             <div className="inline-flex items-center gap-3">
