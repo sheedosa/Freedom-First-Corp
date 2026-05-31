@@ -28,22 +28,6 @@ export const About = () => {
     }
   }, [location.hash]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      if (location.pathname !== '/') {
-        // If not on home, navigating to /#hash will be handled by Router
-        // but smooth scroll won't work automatically across pages.
-        // For now, let normal Link/navigation happen.
-      } else {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-  };
-
   return (
     <div>
       {/* Hero Section */}
@@ -456,28 +440,39 @@ export const About = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #002341 0%, #001828 60%, #002f55 100%)' }}>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-freedom/10 blur-[160px] rounded-full pointer-events-none" />
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
-                <div className="max-content-width relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
-            {finalCta.items.map((item, i) => (
-              <Link
-                key={i}
-                to={item.href.startsWith('#') ? '/'+item.href : item.href}
-                onClick={(e) => handleNavClick(e as any, item.href)}
-                className={`group px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center gap-3 ${
-                  i === 0 
-                    ? 'bg-red-freedom text-white hover:bg-red-700 hover:shadow-xl hover:shadow-red-freedom/20' 
-                    : 'border border-white/20 text-white hover:bg-white/10'
-                }`}
-              >
-                {item.label}
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            ))}
-          </div>
+      {/* Final CTA Section — slim white panel before the navy footer */}
+      <section className="bg-white py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.45, ease: 'easeOut' }}
+          >
+            <div className="inline-flex items-center gap-3 mb-4">
+              <span className="w-8 h-[1px] bg-red-freedom" />
+              <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">
+                Next Step
+              </span>
+              <span className="w-8 h-[1px] bg-red-freedom" />
+            </div>
+
+            <h2 className="text-navy-deep text-3xl sm:text-4xl md:text-5xl font-display uppercase tracking-[-0.02em] leading-[0.95] mb-5">
+              {finalCta.header}
+            </h2>
+
+            <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+              {finalCta.message}
+            </p>
+
+            <Link
+              to={finalCta.ctaLink}
+              className="group inline-flex items-center gap-3 bg-red-freedom text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all duration-300 hover:shadow-xl hover:shadow-red-freedom/20"
+            >
+              {finalCta.ctaLabel}
+              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

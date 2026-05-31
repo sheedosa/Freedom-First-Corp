@@ -250,36 +250,6 @@ export const Stakeholders = () => {
         </div>
       </section>
 
-      {/* Final Universal CTA Section */}
-      <section className="py-14 md:py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
-        {/* Decorative Glows */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[120px] rounded-full pointer-events-none" />
-        
-        <div className="container px-6 mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95]">
-              Move Production Forward with Freedom First
-            </h2>
-            <p className="text-lg md:text-xl text-blue-50/70 mb-12 leading-relaxed">
-              Whether you are operating the asset, shaping national priorities, or supporting delivery on the ground, Freedom First brings American-grade engineering directly to the wellhead and moves difficult projects forward in the toughest conditions.
-            </p>
-            
-            <a 
-              href="/contact" 
-              className="inline-block px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
-            >
-              Talk to Our Team
-            </a>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };

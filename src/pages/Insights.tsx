@@ -174,53 +174,6 @@ export const Insights = () => {
           )}
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001428 0%, #002341 45%, #002f55 100%)' }}>
-        {/* Decorative Glows */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-freedom/10 blur-[120px] rounded-full pointer-events-none" />
-        
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{ 
-            backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', 
-            backgroundSize: '30px 30px' 
-          }} 
-        />
-        
-        <div className="container px-6 mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-6 uppercase tracking-[-0.02em] leading-[0.95]">
-              For Projects That Demand More Than a <span className="text-white">Standard Approach</span>.
-            </h2>
-            <p className="text-lg md:text-xl text-blue-50/70 mb-12 leading-relaxed">
-              Freedom First brings American-grade engineering directly to the asset, helping move difficult projects forward in demanding environments.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a 
-                href="/approach" 
-                className="w-full sm:w-auto px-7 py-3.5 bg-white text-navy-deep text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-50 transition-all hover:shadow-xl"
-              >
-                Our Approach
-              </a>
-              <a 
-                href="/contact" 
-                className="w-full sm:w-auto px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-2xl hover:shadow-red-freedom/30"
-              >
-                Talk to Our Team
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };

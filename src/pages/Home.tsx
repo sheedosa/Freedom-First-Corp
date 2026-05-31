@@ -3,7 +3,6 @@ import { Hero } from '../components/Hero';
 import { CapabilitiesSection } from '../components/Capabilities';
 import { Advantages } from '../components/Advantages';
 import { Partnerships } from '../components/Partnerships';
-import { FinalCta } from '../components/FinalCta';
 
 // ServiceMap pulls in react-simple-maps + d3-geo + countries-110m JSON (~210 KB
 // across chunks). Lazy-load it so the rest of the homepage renders first; map
@@ -30,7 +29,6 @@ export const Home = () => {
       </Suspense>
       <Advantages />
       <Partnerships />
-      <FinalCta />
     </>
   );
 };

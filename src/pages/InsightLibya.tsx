@@ -89,7 +89,7 @@ export const InsightLibya = () => {
           </motion.div>
 
           {/* Divider & Back */}
-          <div className="mt-10 md:mt-16 pt-8 md:pt-12 border-t border-navy-deep/10 flex items-center justify-between">
+          <div className="mt-10 md:mt-16 pt-8 md:pt-12 border-t border-navy-deep/10">
             <Link
               to="/insights"
               className="inline-flex items-center gap-2 text-navy-deep font-bold text-xs uppercase tracking-widest hover:text-red-freedom transition-colors"
@@ -97,12 +97,6 @@ export const InsightLibya = () => {
               <ArrowLeft className="w-4 h-4" />
               All Insights
             </Link>
-            <a
-              href="/contact"
-              className="px-7 py-3.5 bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all"
-            >
-              Talk to Our Team
-            </a>
           </div>
         </div>
       </section>

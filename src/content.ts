@@ -51,7 +51,6 @@ export const content = {
     title: 'Private-Sector Solutions Built for Stability and Growth',
     subhead: 'By combining energy development, infrastructure investment and strategic asset protection, we help build stronger, self-reliant economies.',
     ctaPrimary: 'Our Capabilities',
-    ctaSecondary: 'Talk to Our Team',
     bgImage: '/images/hero-bg.jpg'
   },
   capabilitiesSection: {
@@ -139,13 +138,6 @@ export const content = {
     ctaPrimaryLink: '/capabilities',
     ctaSecondary: 'Meet Our Team of Experts',
     ctaSecondaryLink: '/about#leadership'
-  },
-  homeCta: {
-    eyebrow: 'Ready to Move',
-    header: 'Move Stalled Production Forward.',
-    message: 'Connect with our team today to diagnose your constraints, engineer the solution, and get stalled production moving.',
-    ctaLabel: 'Talk to Our Team',
-    ctaLink: '/contact'
   },
   partnerships: {
     section1: {
@@ -308,10 +300,10 @@ export const content = {
       authorTitle: 'President/CEO'
     },
     finalCta: {
-      items: [
-        { label: 'Explore Our Capabilities', href: '/capabilities' },
-        { label: 'Contact Our Team', href: '/contact' }
-      ]
+      header: 'Move Stalled Production Forward',
+      message: 'See how our team diagnoses your constraints, engineers the solutions and gets stalled production moving again.',
+      ctaLabel: 'Explore Our Capabilities',
+      ctaLink: '/capabilities'
     }
   },
   capabilitiesPage: {

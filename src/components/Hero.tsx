@@ -56,18 +56,12 @@ export const Hero = () => {
             {subhead}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div>
             <Link
               to="/capabilities"
               className="inline-flex items-center justify-center bg-red-freedom text-white px-7 py-4 md:py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-md hover:shadow-red-freedom/30 md:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] text-center"
             >
               {ctaPrimary}
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center text-white border border-white/30 px-7 py-4 md:py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/60 md:hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] text-center"
-            >
-              Talk to Our Team
             </Link>
           </div>
         </motion.div>
