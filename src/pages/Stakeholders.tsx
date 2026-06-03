@@ -124,7 +124,7 @@ export const Stakeholders = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
-                Partnerships Built to Move <span className="text-blue-400 drop-shadow-[0_0_25px_rgba(96,165,250,0.4)]">Production Forward</span>.
+                Partnerships Built to Move <span className="text-blue-400 drop-shadow-[0_0_25px_rgba(96,165,250,0.4)]">Production Forward</span>
               </h1>
               
               <p className="text-off-white/80 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">

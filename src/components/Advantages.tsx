@@ -59,7 +59,11 @@ export const Advantages = () => {
 
                 <div className="p-6 md:p-7 flex flex-col flex-grow">
                   <h3 className="text-navy-deep text-base md:text-lg font-display uppercase tracking-tight leading-[1.2] mb-3">
-                    {item.title}
+                    {item.title.split(/(\*[^*]+\*)/g).map((part, i) =>
+                      part.startsWith('*') && part.endsWith('*')
+                        ? <em key={i} className="italic">{part.slice(1, -1)}</em>
+                        : part
+                    )}
                   </h3>
                   <p className="text-navy-deep/70 text-sm leading-relaxed">
                     {item.description}

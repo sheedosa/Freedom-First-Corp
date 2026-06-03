@@ -22,6 +22,7 @@ export const content = {
           { label: 'Upstream', href: '/capabilities#upstream' },
           { label: 'Midstream', href: '/capabilities#midstream' },
           { label: 'Downstream', href: '/capabilities#downstream' },
+          { label: 'Asset Protection', href: '/capabilities#asset-protection' },
           { label: 'Energy Trading', href: '/capabilities#energy-trading' }
         ]
       },
@@ -110,11 +111,11 @@ export const content = {
     ]
   },
   advantages: {
-    header: 'Built on Technical Depth and Field Agility',
+    header: 'Built for the Realities of the Field',
     message: 'Freedom First delivers a by, with, and through approach to execute with the speed, flexibility, and local readiness needed to keep work moving in difficult environments.',
     items: [
       {
-        title: 'Field-Proven Expertise',
+        title: 'Field-Proven *Field* Expertise',
         description: 'We apply field-tested methods and technical strategies that reduce guesswork, improve performance and deliver on production targets.',
         image: '/images/us-expertise.jpg'
       },
@@ -139,13 +140,20 @@ export const content = {
     ctaSecondary: 'Meet Our Team of Experts',
     ctaSecondaryLink: '/about#leadership'
   },
+  homeCta: {
+    eyebrow: 'Ready to Move',
+    header: 'Unlock the True Value of Your Assets',
+    message: 'See how our team diagnoses your constraints, engineers the solutions and gets stalled production moving again.',
+    ctaLabel: 'Explore Our Capabilities',
+    ctaLink: '/capabilities'
+  },
   partnerships: {
     section1: {
-      header: 'We equip emerging markets with the tools to achieve self reliance.',
+      header: 'We equip emerging markets with the tools to achieve self reliance',
       message: "The world's most resource-rich markets are too often held back by a lack of investment and technical barriers.\n\nAt Freedom First, we believe these nations should have the tools to develop their own assets, move beyond external aid, and build true economic self-sufficiency."
     },
     section2: {
-      header: 'Our approach is rooted in direct collaboration, not just extraction.',
+      header: 'Our approach is rooted in direct collaboration, not just extraction',
       message: "Through strategic investment and comprehensive training, we return resource value to the people.\n\nWe work side-by-side with host countries to responsibly develop their energy potential—ensuring that today's production growth builds a self-reliant workforce for the future."
     },
     ctaPrimary: 'Our Approach',
@@ -181,6 +189,10 @@ export const content = {
         {
           city: 'The Woodlands, TX',
           address: '2700 Research Forest Dr.\nSuite 105\nThe Woodlands, TX 77381'
+        },
+        {
+          city: 'Abu Dhabi, UAE',
+          address: '811N, Floor 8, Tamouh Tower,\nTamouh, Al Reem Island, Abu Dhabi\nUnited Arab Emirates'
         }
       ],
       social: {
@@ -193,15 +205,17 @@ export const content = {
   },
   about: {
     hero: {
-      title: 'A Technical Production Partner Built for the Field.',
+      title: 'A Technical Production Partner Built for the Field',
       image: '/images/about-hero.jpg'
     },
     content: {
       title: 'Our Foundation',
       paragraphs: [
-        "Freedom First was founded on a single, uncompromising premise: critical energy assets should never underperform simply because the environment is difficult or traditional methods fall short.",
-        "Forged during the U.S. shale revolution, we bring the agile, high-efficiency engineering that transformed American production directly to complex international markets. We bypass bureaucratic drag, eliminate operational guesswork, and get stalled production moving again.",
-        "We do not just extract value; we engineer lasting capability from the ground up. As a true operational ally, we partner directly with host nations to hit aggressive production targets and upskill the local workforce. From transforming raw resources into high-value products to securing the best price in the global market, we maximize your return across the entire value chain and lock in that success for the long term."
+        "Freedom First was founded on a simple belief: energy development should strengthen nations, expand economic opportunity, and create lasting stability, not just for governments or investors, but for the people who call those nations home.",
+        "Built in Texas, we bring the entrepreneurial spirit, engineering expertise, and execution-driven culture that transformed American energy production to emerging markets around the world. We believe the private sector performs best when guided by accountability, speed, and practical problem-solving, not bureaucracy. And we step in where others have stepped away.",
+        "We partner directly with host nations and local operators to restore production, modernize infrastructure, and unlock the full value of critical energy assets. But our work goes beyond the field. We invest in local capability, strengthen energy independence, and build resilient systems designed for long-term growth, because true development means communities standing on their own.",
+        "We do not just extract value and walk away. We build systems, develop talent, and create engines of opportunity that let people reclaim ownership of their future. The real shareholders of any resource-rich nation are its people, and that's exactly who we work for.",
+        "Our mission is straightforward: help nations convert their natural assets into durable economic strength through trusted partnership, technical excellence, and results that last."
       ]
     },
     principles: {
@@ -234,30 +248,28 @@ export const content = {
       }
     },
     leadership: {
-      header: 'Founded by Proven Leaders Who Have Executed at Scale',
-      message: "Freedom First is led by seasoned operators and driven by the engineers and field leaders who have physically built, scaled, and reactivated heavy hydrocarbon assets across the globe's toughest markets.",
       members: [
         {
           name: 'Ryan Manicom',
-          role: 'Co-Founder & CEO',
-          summary: 'Global executive with business development and operational leadership experience across emerging energy markets.',
-          bullets: [
-            'Led business development and operations across Papua New Guinea, Myanmar, Iraq, and the U.S.',
-            'Experience spanning major energy projects, market entry, and operational growth',
-            'Brings a strong commercial vision for deploying U.S. private sector capability in complex markets'
-          ],
-          expandedBio: 'Ryan Manicom is President & CEO of Freedom First and brings broad international experience across business development, operations, and market expansion in the energy sector. He began his career in business development at Clockwork Solutions, helping expand asset performance management systems from defense into energy. Ryan later held leadership roles with Holloman Corporation and Holloman Energy, working across major projects and emerging markets including Papua New Guinea and Myanmar. He also served as Vice President of Orion Gas Processors, where he oversaw operations in Iraq and supported efforts to develop practical midstream solutions for flare mitigation and gas gathering. At Freedom First, Ryan brings the commercial insight, global operating perspective, and private sector-driven mindset needed to advance energy projects in challenging environments.'
+          role: 'Co-Founder, President & CEO',
+          paragraphs: [
+            'Ryan is the Co-Founder, President & CEO of Freedom First Global, where he leads a diverse portfolio of international business ventures. A graduate of Texas Tech University, he began his career in business development, helping expand advanced asset performance solutions from defense into the energy sector.',
+            'He went on to hold leadership roles across global energy markets, including Papua New Guinea, Myanmar, and Iraq. His work has focused on large-scale project development, operational leadership, and innovative approaches to energy infrastructure—most notably pioneering solutions for gas flare mitigation in emerging markets.',
+            "Based in Houston, Ryan is a strong advocate for private sector leadership in global development. He is particularly passionate about extending the success and innovation of Texas's energy industry, including the Permian Basin, into high-growth regions around the world.",
+            'Through Freedom First Global, Ryan is committed to investing in, educating, and empowering communities—driven by a belief that ingenuity and opportunity exist in every market.'
+          ]
         },
         {
           name: 'Erik Prince',
-          role: 'Co-Founder & Chairman',
-          summary: 'Entrepreneur and private investor with a track record of executing complex logistics and risk management projects in the world\'s most demanding environments.',
-          bullets: [
-            'Built and scaled global organizations (Blackwater USA and Presidential Airways) in high-risk, austere regions.',
-            'Founded Frontier Resource Group to structure, fund, and execute natural resource projects globally',
-            'Leverages decades of experience navigating supply chains and mitigating risk in the world\'s most challenging markets.'
+          role: 'Co-Founder',
+          paragraphs: [
+            "Erik is an American businessman, investor, author, and former U.S. Navy SEAL officer who founded Blackwater, one of the first global private military companies. Under Erik's leadership, Blackwater executed more than USD 2 billion in government security contracts, covering operations in countries globally, such as Iraq, Afghanistan, Bosnia, Israel, Azerbaijan, Japan, Pakistan, and Uzbekistan."
           ],
-          expandedBio: "Erik Prince co-founded Freedom First and brings extensive experience in logistics, risk management, and field execution across the world's most demanding environments. A former U.S. Navy SEAL, Erik later founded Blackwater USA and Presidential Airways, building global organizations uniquely capable of sustaining complex logistical and aviation operations including operating a fleet of over 75 aircraft in austere and high-risk regions. Today, as an entrepreneur, private investor, and the founder of Frontier Resource Group, he applies his deep expertise in capital allocation and infrastructure to structure, fund, and execute complex natural resource and manufacturing projects globally. At Freedom First, Erik leverages this background in frontier operations to safely navigate supply chains, manage operational risk, and unlock high-value investment opportunities in emerging markets."
+          bullets: [
+            'He is the Co-founder of Freedom First, which invests in energy, agriculture, technology, and infrastructure projects in regions where security, logistics, and investment overlap.',
+            'Previously, Erik founded Frontier Resource Group, a private equity firm, and was Chairman of Hong Kong-listed Frontier Service Group until 2021; Frontier focused on the extractive industries in Asia and Africa.',
+            "Erik's current security-focused enterprise, Vectus, helps governments with national security issues and assists with funding the security solutions via increasing domestic revenues through the implementation of effective tax and tariff collection plans, inter alia."
+          ]
         }
       ]
     },
@@ -294,8 +306,8 @@ export const content = {
     },
     ceoMessage: {
       header: 'CEO Message',
-      subheader: 'From the Permian Basin to Emerging Markets.',
-      quote: "“Freedom First has long been a vision to bridge the gaps in the development of emerging markets, with American ingenuity. With a focus on energy, we aim to harness the experience and lessons learned from the Permian Basin. The rapid growth and technical innovation of this part of Texas is unprecedented and embodies the moral values Freedom First aims to lead globally. Our team is the best of the best in every facet of energy development, all with a shared vision of investing directly into new markets, educating the local workforce and empowering the next generation of private sector leaders.”",
+      subheader: 'From the Permian Basin to Emerging Markets',
+      quote: "“Freedom First was founded on the belief that American leadership, free enterprise, and strong governance can drive lasting prosperity in emerging markets. Inspired by the strength, innovation, and energy independence of the Permian Basin, we seek to export the proven principles that transformed Texas into a global energy leader.\n\nOur team brings together top experts across every facet of energy development, united by a mission to invest in strategic markets, empower local workforces, and advance the next generation of private-sector leadership. Through strategic investment, operational excellence, and value-driven partnerships, Freedom First is committed to strengthening energy security, economic growth, and long-term stability worldwide.”",
       author: 'Ryan Manicom',
       authorTitle: 'President/CEO'
     },
@@ -308,13 +320,14 @@ export const content = {
   },
   capabilitiesPage: {
     hero: {
-      title: 'Driving Execution Across the Energy Value Chain.',
+      title: 'Driving Execution Across the Energy Value Chain',
       subtitle: 'From upstream operations to global market access, we maximize energy asset value at every stage of the lifecycle.'
     },
     subNav: [
       { label: 'Upstream', href: '#upstream' },
       { label: 'Midstream', href: '#midstream' },
       { label: 'Downstream', href: '#downstream' },
+      { label: 'Asset Protection', href: '#asset-protection' },
       { label: 'Energy Trading & Logistics', href: '#energy-trading' }
     ],
     sections: [
@@ -322,7 +335,7 @@ export const content = {
         id: 'upstream',
         tag: 'Upstream',
         header: 'Delivering Measurable Production Growth',
-        message: 'We deliver tier-one U.S. engineering to drive verifiable production growth. From accelerating the path to first oil to reactivating stalled brownfield assets, our specialty is in engineering the solutions required to break operational deadlocks, deploy advanced extraction technologies, and keep the barrels flowing.',
+        message: 'We deliver tier-one U.S. expertise to drive verifiable production growth. From accelerating the path to first oil to reactivating stalled brownfield assets, our specialty is in engineering the solutions required to break operational deadlocks, deploy advanced extraction technologies, and keep the barrels flowing.',
         deliverables: [
           { title: 'Exploration & Subsurface Evaluation', text: 'Delivering detailed geological and seismic assessments to identify viable reserves and model the data required to drive development decisions.' },
           { title: 'Advanced Drilling Services', text: 'Deploying advanced technologies and elite field teams to execute drilling programs that optimize placement, reduce non-productive time, and secure reserves.' },
@@ -333,7 +346,7 @@ export const content = {
       {
         id: 'midstream',
         tag: 'Midstream',
-        header: 'Optimizing the Path from Production to Processing.',
+        header: 'Optimizing the Path from Production to Processing',
         message: 'We build, manage, and scale the critical midstream infrastructure required to move hydrocarbons safely from the wellhead to processing facilities. Through rigorous engineering and precise logistics management, we eliminate supply chain bottlenecks and maximize the flow of resources to processing facilities and end markets.',
         deliverables: [
           { title: 'Infrastructure Development & Support', text: 'Directing the planning, construction, and operational support of pipelines, terminals, and storage facilities to deliver scalable infrastructure built for continuous flow.' },
@@ -344,7 +357,7 @@ export const content = {
       {
         id: 'downstream',
         tag: 'Downstream',
-        header: 'Maximizing Yield, Uptime, and Market Delivery.',
+        header: 'Maximizing Yield, Uptime, and Market Delivery',
         message: 'We apply tier-one U.S. execution directly to downstream assets to maximize processing yields and lock in reliability of the refinery. We work to turn hydrocarbons into high-value products and manage the final terminal operations to drive a stable flow into the market.',
         deliverables: [
           { title: 'Operational & Technical Support', text: 'Executing targeted technical and operational interventions to maximize refinery yields and increase facility throughput.' },
@@ -353,9 +366,25 @@ export const content = {
         ]
       },
       {
+        id: 'asset-protection',
+        tag: 'Asset Protection',
+        header: 'Protecting Critical Assets and Operational Continuity',
+        message: 'Energy development and asset protection are fundamental to national growth. As nations expand production and invest in critical infrastructure, securing these assets is essential to protecting revenue, maintaining operational continuity, and attracting long-term investment.',
+        deliverables: [
+          { title: 'Critical infrastructure security assessments and protection planning' },
+          { title: 'Oil, gas, power, and pipeline security programs' },
+          { title: 'Protective force training and capability development' },
+          { title: 'Security operations and command center advisory services' },
+          { title: 'Risk assessment, threat analysis, and crisis response planning' },
+          { title: 'Emergency preparedness and business continuity programs' },
+          { title: 'Security doctrine, procedures, and workforce development' },
+          { title: 'Strategic advisory support for governments and energy operators' }
+        ]
+      },
+      {
         id: 'energy-trading',
         tag: 'Energy Trading & Logistics',
-        header: 'Maximizing Yield, Uptime, and Market Delivery.',
+        header: 'Connecting Production to High-Demand Markets',
         message: 'Our energy trading division integrates tier-one logistics with global market access, executing physical trades across crude oil, refined products, LNG, and NGLs. We connect producers directly to industrial end-users, commanding the physical flow of resources to guarantee reliable supply and maximize commercial value across the energy value chain.',
         deliverables: [
           { title: 'Global Trading & Offtake', text: 'Executing physical trading across crude, refined products, and gas liquids. We secure direct offtake and structure supply agreements that connect production straight to high-demand markets.' },
@@ -387,14 +416,14 @@ export const content = {
     ],
     cta: {
       header: 'Permian Basin Experience Delivered Direct to the Asset',
-      message: 'See how we bring the capabilities of the Permian Basin straight to your toughest fields around the world',
+      message: 'See how we bring the capabilities of the Permian Basin straight to your toughest fields around the world.',
       primary: { label: 'Explore Our Approach', href: '/approach' },
       secondary: { label: 'Contact Our Team', href: '/contact' }
     }
   },
   approachPage: {
     hero: {
-      title: 'Delivering Output in Barrels and Value for the Host Nation.',
+      title: 'Turning Resources into Economic Freedom and Stability',
       subtitle: 'We step in as a true production partner. We execute in the most logistically demanding places and build technical systems your workforce can sustain, all backed by a performance-driven commercial model.'
     },
     stakeholderTabs: {
@@ -412,11 +441,9 @@ export const content = {
             { title: 'Execution Where It Matters', text: 'We take on the operational, logistical, and subsurface challenges that keep production stuck.' },
             { title: 'Performance-Driven Model', text: 'We operate with a model designed to reward production progress, not just activity.' }
           ],
-          ctaMsg: 'Bring Proven Execution to Your Toughest Fields.',
-          cta1Text: 'Discuss Your Asset',
-          cta1Href: '/contact',
-          cta2Text: 'See Our Capabilities',
-          cta2Href: '/capabilities'
+          ctaMsg: 'Bring Proven Execution to Your Toughest Fields',
+          ctaText: 'Explore Our Capabilities',
+          ctaHref: '/capabilities'
         },
         'host-nations': {
           id: 'host-nations',
@@ -429,11 +456,9 @@ export const content = {
             { title: 'Local Workforce Integration', text: 'We work with and develop local talent as part of execution, embedding local teams into the systems and standards established.' },
             { title: 'Strict Standards in the Field', text: 'We apply strong HSE and operational standards to protect people, infrastructure, and continuity of operations.' }
           ],
-          ctaMsg: 'Deliver American Engineering Directly to Your Sovereign Assets.',
-          cta1Text: 'Meet the Executive Team',
-          cta1Href: '/about#leadership',
-          cta2Text: 'Engage Our Leadership',
-          cta2Href: '/contact'
+          ctaMsg: 'Deliver American Engineering Directly to Your Sovereign Assets',
+          ctaText: 'Meet the Executive Team',
+          ctaHref: '/about#leadership'
         },
         'strategic-partners': {
           id: 'strategic-partners',
@@ -446,11 +471,9 @@ export const content = {
             { title: 'Shared Standards', text: 'We partner with local entities willing to operate under our compliance standards, helping to elevate operations to a tier-one level.' },
             { title: 'Long-Term Value', text: 'We build partnerships designed to create repeatable work, stronger execution, and sustained value for both sides.' }
           ],
-          ctaMsg: 'See How Your Footprint Can Support Our Field Operations.',
-          cta1Text: 'Contact Our Team',
-          cta1Href: '/contact',
-          cta2Text: 'See Our Capabilities',
-          cta2Href: '/capabilities'
+          ctaMsg: 'See How Your Footprint Can Support Our Field Operations',
+          ctaText: 'Explore Our Capabilities',
+          ctaHref: '/capabilities'
         }
       }
     }

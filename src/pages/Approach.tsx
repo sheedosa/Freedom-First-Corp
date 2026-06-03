@@ -76,7 +76,7 @@ export const Approach = () => {
           id: 'direct-to-asset', 
           title: 'Built to Deliver in Demanding Environments without Delay', 
           eyebrow: 'Direct-to-Asset Execution',
-          desc: "Reaching the world's most remote energy assets requires a mastery of complex international logistics. Freedom First is built to move specialized U.S. engineering teams, heavy equipment, and advanced technology in and out of the hardest-to-reach locations. By controlling the logistics straight to the wellhead, we are able to move with the speed and agility required to solve bottlenecks in real time, apply proven methodologies, and get stalled production moving again without delay.",
+          desc: "Reaching the world's most remote energy assets requires a mastery of complex international logistics. Freedom First is built to move specialized teams, heavy equipment, and advanced technology in and out of the hardest-to-reach locations. By controlling the logistics, we are able to move with the speed and agility required to solve bottlenecks in real time, apply proven methodologies, and get stalled production moving again without delay.",
           image: '/images/approach-direct.jpg',
           subHeader: 'Our Execution Edge',
           points: [
@@ -373,18 +373,12 @@ export const Approach = () => {
                   <h3 className="text-xl md:text-2xl font-display text-navy-deep uppercase tracking-tight mb-8">
                     {activeContent.ctaMsg}
                   </h3>
-                  <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <div className="flex justify-center">
                     <a
-                      href={activeContent.cta1Href}
+                      href={activeContent.ctaHref}
                       className="px-7 py-3.5 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg text-center"
                     >
-                      {activeContent.cta1Text}
-                    </a>
-                    <a
-                      href={activeContent.cta2Href}
-                      className="px-7 py-3.5 bg-white border border-navy-deep/10 text-navy-deep text-xs font-bold uppercase tracking-widest rounded-full hover:bg-off-white transition-all text-center"
-                    >
-                      {activeContent.cta2Text}
+                      {activeContent.ctaText}
                     </a>
                   </div>
                 </div>

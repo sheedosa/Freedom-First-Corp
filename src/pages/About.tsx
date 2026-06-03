@@ -203,37 +203,10 @@ export const About = () => {
       {/* Leadership Section */}
       <section id="leadership" className="py-14 md:py-24 relative overflow-hidden scroll-mt-24" style={{ background: '#F5F3EF' }}>
         <div className="max-content-width">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="mb-16 md:mb-20 flex flex-col lg:flex-row items-start gap-10 lg:gap-16"
-          >
-            <div className="lg:w-1/2 max-w-2xl">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Leadership</span>
-              </div>
-              <h2 className="text-navy-deep text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-6">
-                {leadership.header}
-              </h2>
-              <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed font-medium">
-                {leadership.message}
-              </p>
-            </div>
-            <div className="lg:w-1/2 lg:ml-auto w-full">
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-navy-deep/5">
-                <img
-                  src="/images/leadership.jpg"
-                  alt="Freedom First leadership team in the field"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-          </motion.div>
+          <div className="flex items-center gap-4 mb-12 md:mb-16">
+            <div className="w-10 h-[1px] bg-red-freedom" />
+            <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Leadership</span>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {leadership.members.map((member, index) => (
@@ -243,9 +216,9 @@ export const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.45, delay: Math.min(index * 0.1, 0.3), ease: "easeOut" }}
-                className="group bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-navy-deep/5 hover:shadow-xl hover:shadow-navy-deep/5 transition-[background-color,border-color,box-shadow] duration-500 flex flex-col h-full"
+                className="group bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-navy-deep/5 hover:shadow-xl hover:shadow-navy-deep/5 transition-[background-color,border-color,box-shadow] duration-500 flex flex-col h-full"
               >
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 pb-8 border-b border-navy-deep/5">
+                <div className="flex items-start justify-between gap-6 mb-8 pb-8 border-b border-navy-deep/5">
                   <div className="space-y-1">
                     <h3 className="text-navy-deep text-2xl md:text-3xl font-display uppercase tracking-tight group-hover:text-red-freedom transition-colors">
                       {member.name}
@@ -254,35 +227,29 @@ export const About = () => {
                       {member.role}
                     </p>
                   </div>
-                  <div className="bg-navy-deep/5 p-3 rounded-2xl group-hover:bg-red-freedom/10 transition-colors">
+                  <div className="bg-navy-deep/5 p-3 rounded-2xl group-hover:bg-red-freedom/10 transition-colors shrink-0">
                     <Briefcase className="w-5 h-5 text-navy-deep group-hover:text-red-freedom transition-colors" />
                   </div>
                 </div>
 
-                <div className="space-y-6 flex-grow">
-                  <p className="text-navy-deep font-medium text-lg italic leading-relaxed">
-                    "{member.summary}"
-                  </p>
-                  <ul className="space-y-4">
-                    {member.bullets.map((bullet, i) => (
-                      <li key={i} className="flex gap-4">
-                        <div className="w-1.5 h-1.5 bg-red-freedom rounded-full shrink-0 mt-2" />
-                        <p className="text-navy-deep/70 text-sm leading-relaxed">
-                          {bullet}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-10 pt-8 border-t border-navy-deep/5">
-                  <button 
-                    onClick={() => setSelectedPerson(member)}
-                    className="flex items-center gap-2 text-navy-deep font-bold uppercase text-[10px] tracking-[0.2em] group/btn"
-                  >
-                    Read Full Bio
-                    <ChevronRight className="w-4 h-4 text-red-freedom group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+                <div className="space-y-4 flex-grow">
+                  {member.paragraphs.map((para, i) => (
+                    <p key={i} className="text-navy-deep/70 text-sm md:text-[15px] leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                  {'bullets' in member && member.bullets && (
+                    <ul className="space-y-3 pt-2">
+                      {member.bullets.map((bullet, i) => (
+                        <li key={i} className="flex gap-3">
+                          <div className="w-1.5 h-1.5 bg-red-freedom rounded-full shrink-0 mt-2" />
+                          <p className="text-navy-deep/70 text-sm md:text-[15px] leading-relaxed">
+                            {bullet}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -393,11 +360,11 @@ export const About = () => {
               transition={{ duration: 0.45, ease: "easeOut" }}
               className="lg:w-2/5 relative"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden transition-all duration-700 shadow-2xl">
+              <div className="relative z-10 rounded-2xl overflow-hidden transition-all duration-700 shadow-2xl bg-navy-deep flex items-center justify-center aspect-[4/5] p-12" style={{ background: 'linear-gradient(135deg, #002341 0%, #001828 60%, #002f55 100%)' }}>
                 <img
-                  src="/images/ryan-ceo.jpg"
-                  alt="Ryan Manicom — Freedom First Co-Founder & CEO"
-                  className="w-full h-auto object-cover"
+                  src="/images/logo.png"
+                  alt="Freedom First Global"
+                  className="w-2/3 max-w-[240px] h-auto brightness-0 invert"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-freedom rounded-full flex items-center justify-center z-20">
@@ -424,7 +391,7 @@ export const About = () => {
               
               <div className="relative">
                 <span className="absolute -left-6 -top-4 text-8xl text-navy-deep opacity-[0.03] font-serif leading-none">“</span>
-                <p className="text-navy-deep/80 text-lg md:text-xl leading-relaxed italic relative z-10">
+                <p className="text-navy-deep/80 text-lg md:text-xl leading-relaxed italic relative z-10 whitespace-pre-line">
                   {ceoMessage.quote}
                 </p>
               </div>

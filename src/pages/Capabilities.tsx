@@ -226,7 +226,7 @@ export const CapabilitiesPage = () => {
                     transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
                     className={`${isEven ? 'lg:pl-14' : 'lg:order-1 lg:pr-14'}`}
                   >
-                    <div className="grid grid-cols-1 gap-4 md:gap-5">
+                    <div className={`grid grid-cols-1 gap-4 md:gap-5 ${section.deliverables.length > 5 ? 'sm:grid-cols-2' : ''}`}>
                       {section.deliverables.map((item, i) => (
                         <motion.div
                           key={i}
@@ -237,14 +237,25 @@ export const CapabilitiesPage = () => {
                           whileHover={{ y: -4 }}
                           className="group p-6 rounded-2xl text-white border border-white/5 hover:border-white/10 transition-colors duration-300 shadow-lg hover:shadow-xl" style={{ background: 'linear-gradient(135deg, #002341 0%, #001828 100%)' }}
                         >
-                          <div className="mb-3">
-                            <h4 className="text-white font-display text-sm md:text-base uppercase tracking-tight leading-tight">
-                              {item.title}
-                            </h4>
-                          </div>
-                          <p className="text-white/60 text-xs md:text-sm leading-relaxed">
-                            {item.text}
-                          </p>
+                          {'text' in item ? (
+                            <>
+                              <div className="mb-3">
+                                <h4 className="text-white font-display text-sm md:text-base uppercase tracking-tight leading-tight">
+                                  {item.title}
+                                </h4>
+                              </div>
+                              <p className="text-white/60 text-xs md:text-sm leading-relaxed">
+                                {item.text}
+                              </p>
+                            </>
+                          ) : (
+                            <div className="flex items-start gap-3">
+                              <span className="w-1.5 h-1.5 rounded-full bg-red-freedom mt-2 shrink-0" />
+                              <p className="text-white/85 text-sm md:text-[15px] leading-snug">
+                                {item.title}
+                              </p>
+                            </div>
+                          )}
                         </motion.div>
                       ))}
                     </div>
