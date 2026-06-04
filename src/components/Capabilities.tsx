@@ -59,7 +59,7 @@ export const CapabilitiesSection = () => {
                     {capability.title}
                   </h3>
 
-                  <p className="text-white/70 text-[13px] leading-[1.5] min-h-[5.25rem] mb-5">
+                  <p className="text-white/70 text-[13px] leading-[1.5] min-h-[5.25rem] lg:min-h-[6.5rem] mb-5">
                     {capability.description}
                   </p>
 

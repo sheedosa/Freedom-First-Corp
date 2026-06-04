@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { content } from '../content';
 import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
@@ -384,12 +384,12 @@ export const Approach = () => {
                     {activeContent.ctaMsg}
                   </h3>
                   <div className="flex justify-center">
-                    <a
-                      href={activeContent.ctaHref}
+                    <Link
+                      to={activeContent.ctaHref}
                       className="px-7 py-3.5 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg text-center"
                     >
                       {activeContent.ctaText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
