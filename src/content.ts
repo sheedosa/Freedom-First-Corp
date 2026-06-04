@@ -76,6 +76,12 @@ export const content = {
         link: '/capabilities#downstream'
       },
       {
+        title: 'Asset Protection',
+        description: 'Create secure environments that reduce risk, attract investment, and protect critical assets.',
+        image: '/images/cap-asset-protection.jpg',
+        link: '/capabilities#asset-protection'
+      },
+      {
         title: 'Energy Trading',
         description: 'Connect physical production directly to high-demand markets and secure maximum commercial returns.',
         image: '/images/cap-trading.jpg',

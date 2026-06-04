@@ -27,7 +27,7 @@ export const CapabilitiesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-6 lg:gap-5">
           {items.map((capability, index) => (
             <MotionLink
               to={capability.link}
@@ -55,7 +55,7 @@ export const CapabilitiesSection = () => {
                 <div className="mt-auto">
                   <span className="block w-8 h-[1px] bg-red-freedom mb-4" />
 
-                  <h3 className="text-white text-2xl md:text-3xl font-display uppercase leading-[0.95] tracking-[-0.02em] min-h-[2.25rem] md:min-h-[2.5rem] mb-3">
+                  <h3 className="text-white text-2xl md:text-3xl lg:text-[1.35rem] font-display uppercase leading-[0.95] tracking-[-0.02em] min-h-[2.25rem] md:min-h-[2.5rem] mb-3">
                     {capability.title}
                   </h3>
 
