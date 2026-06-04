@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 type Category = 'All' | 'Emerging Markets' | 'Field Execution' | 'Company Updates';
 
@@ -43,9 +44,18 @@ export const Insights = () => {
       {/* Hero Section */}
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
+          <Seo
+            path="/insights"
+            title="Insights"
+            description="Field perspectives from Freedom First Global on moving hydrocarbon projects forward in demanding environments — from field execution and emerging markets to company updates."
+            jsonLd={[
+              webPageLd('Insights | Freedom First Global', 'Field perspectives on energy execution, emerging markets and company updates from Freedom First Global.', '/insights'),
+              breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Insights', path: '/insights' }]),
+            ]}
+          />
           <img
             src="/images/insights-hero.jpg"
-            alt=""
+            alt="Energy field operations at dusk"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep/90" />

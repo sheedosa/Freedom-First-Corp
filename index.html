@@ -3,28 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
-    <title>Freedom First | Technical Depth & Field Agility</title>
-    <meta name="description" content="Freedom First delivers decades of execution discipline directly to the energy asset, turning demanding environments into reliable, high-performing operations." />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Primary fallback title (React sets a per-page title at runtime).
+         Per-page <meta name="description"> + canonical are managed by React. -->
+    <title>Freedom First Global — Private-Sector Energy Solutions for Emerging Markets</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Freedom First Global" />
+    <meta name="theme-color" content="#002341" />
+
+    <!-- Favicons / PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph (homepage — serves no-JS social crawlers on any route) -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Freedom First | Technical Depth & Field Agility" />
-    <meta property="og:description" content="Freedom First delivers decades of execution discipline directly to the energy asset, turning demanding environments into reliable, high-performing operations." />
-    <meta property="og:image" content="/images/og-image.png" />
+    <meta property="og:site_name" content="Freedom First Global" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Freedom First Global — Private-Sector Energy Solutions for Emerging Markets" />
+    <meta property="og:description" content="Freedom First Global brings field-proven U.S. energy expertise — upstream, midstream, downstream, asset protection and trading — directly to critical assets in emerging markets." />
+    <meta property="og:url" content="https://freedomfirstglobal.com" />
+    <meta property="og:image" content="https://freedomfirstglobal.com/images/og-image.png" />
+    <meta property="og:image:alt" content="Freedom First Global — American-grade energy execution" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Freedom First | Technical Depth & Field Agility" />
-    <meta property="twitter:description" content="Freedom First delivers decades of execution discipline directly to the energy asset, turning demanding environments into reliable, high-performing operations." />
-    <meta property="twitter:image" content="/images/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Freedom First Global — Private-Sector Energy Solutions for Emerging Markets" />
+    <meta name="twitter:description" content="Field-proven U.S. energy expertise delivered directly to critical assets in emerging markets." />
+    <meta name="twitter:image" content="https://freedomfirstglobal.com/images/og-image.png" />
 
-    <!-- Performance: preconnect for external resources -->
+    <!-- Performance: preconnect + fonts (parallel, non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Fonts: loaded in parallel with the document (not via blocking CSS @import).
-         Only the 3 weights actually used by the site are requested. -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
@@ -32,6 +44,53 @@
 
     <!-- Preload critical above-fold hero image -->
     <link rel="preload" as="image" href="/images/hero-bg.jpg" fetchpriority="high" />
+
+    <!-- Organization + WebSite structured data (static so even non-JS crawlers
+         and AI bots get the company identity on any route). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://freedomfirstglobal.com/#organization",
+            "name": "Freedom First Global",
+            "url": "https://freedomfirstglobal.com",
+            "logo": "https://freedomfirstglobal.com/images/logo.png",
+            "description": "Freedom First Global is a private-sector energy company delivering field-proven U.S. expertise — upstream, midstream, downstream, asset protection and energy trading — directly to critical assets in emerging markets.",
+            "email": "info@freedomfirstglobal.com",
+            "address": [
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "2700 Research Forest Dr. Suite 105",
+                "addressLocality": "The Woodlands",
+                "addressRegion": "TX",
+                "postalCode": "77381",
+                "addressCountry": "US"
+              },
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "811N, Floor 8, Tamouh Tower, Al Reem Island",
+                "addressLocality": "Abu Dhabi",
+                "addressCountry": "AE"
+              }
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/company/freedom-first-corp",
+              "https://www.facebook.com/profile.php?id=61560491723699"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://freedomfirstglobal.com/#website",
+            "url": "https://freedomfirstglobal.com",
+            "name": "Freedom First Global",
+            "publisher": { "@id": "https://freedomfirstglobal.com/#organization" },
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

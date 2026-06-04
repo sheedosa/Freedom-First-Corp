@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { content } from '../content';
+import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 export const CapabilitiesPage = () => {
   const { hero, subNav, sections, advantage, midMarket, cta } = content.capabilitiesPage;
@@ -66,9 +67,18 @@ export const CapabilitiesPage = () => {
       {/* Hero Section */}
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
+          <Seo
+            path="/capabilities"
+            title="Capabilities"
+            description="From upstream operations and midstream infrastructure to downstream processing, asset protection and energy trading, Freedom First Global drives measurable production growth across the entire energy value chain."
+            jsonLd={[
+              webPageLd('Capabilities | Freedom First Global', 'Upstream, midstream, downstream, asset protection and energy trading capabilities delivered direct to the asset.', '/capabilities'),
+              breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Capabilities', path: '/capabilities' }]),
+            ]}
+          />
           <img
             src="/images/capabilities-hero.jpg"
-            alt=""
+            alt="Energy infrastructure across the value chain — wellheads, pipelines and processing facilities"
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"

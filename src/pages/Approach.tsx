@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { content } from '../content';
+import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 export const Approach = () => {
   const { hero, stakeholderTabs } = content.approachPage;
@@ -33,9 +34,18 @@ export const Approach = () => {
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0">
+          <Seo
+            path="/approach"
+            title="Our Approach"
+            description="Freedom First Global turns resources into economic freedom and stability — executing in the most logistically demanding environments with direct-to-asset logistics, local workforce development and performance-driven partnerships."
+            jsonLd={[
+              webPageLd('Our Approach | Freedom First Global', 'How Freedom First Global delivers output and value for host nations through direct-to-asset execution and aligned partnerships.', '/approach'),
+              breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Approach', path: '/approach' }]),
+            ]}
+          />
           <img
             src="/images/approach-hero.jpg"
-            alt=""
+            alt="Freedom First Global team executing in a demanding field environment"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep/90" />

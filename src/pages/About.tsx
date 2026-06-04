@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronRight, Briefcase, Quote } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { content } from '../content';
+import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 export const About = () => {
   const { hero, content: pageContent, leadership, dataStrip, advisors, ceoMessage, finalCta } = content.about;
@@ -30,10 +31,19 @@ export const About = () => {
 
   return (
     <div>
+      <Seo
+        path="/about"
+        title="About"
+        description="Freedom First Global is a technical production partner built for the field. Founded in Texas, we bring entrepreneurial energy expertise and an execution-driven culture to emerging markets — restoring production, modernizing infrastructure and building local capability."
+        jsonLd={[
+          webPageLd('About | Freedom First Global', 'Freedom First Global is a technical production partner built for the field, bringing American energy expertise to emerging markets.', '/about'),
+          breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]),
+        ]}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
-          <img src={hero.image} alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" />
+          <img src={hero.image} alt="Freedom First Global leadership reviewing operations at an energy facility" className="absolute inset-0 w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/70 to-navy-deep/40" />
           <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, #134377 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>

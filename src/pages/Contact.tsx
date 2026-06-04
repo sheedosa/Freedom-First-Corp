@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin, Mail, Globe, ExternalLink } from 'lucide-react';
+import { Seo, SITE_URL, SITE_NAME, canonicalFor, breadcrumbLd } from '../seo';
 
 type FormState = {
   name: string;
@@ -55,12 +56,48 @@ export const Contact = () => {
 
   return (
     <div className="flex-grow flex flex-col bg-off-white">
+      <Seo
+        path="/contact"
+        title="Contact"
+        description="Engage the engineers behind high-yield production. Connect with Freedom First Global to diagnose constraints, engineer solutions and get stalled production moving. Offices in The Woodlands, Texas and Abu Dhabi, UAE."
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact | Freedom First Global',
+            url: canonicalFor('/contact'),
+            mainEntity: {
+              '@type': 'Organization',
+              name: SITE_NAME,
+              url: SITE_URL,
+              email: 'info@freedomfirstglobal.com',
+              address: [
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: '2700 Research Forest Dr. Suite 105',
+                  addressLocality: 'The Woodlands',
+                  addressRegion: 'TX',
+                  postalCode: '77381',
+                  addressCountry: 'US',
+                },
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: '811N, Floor 8, Tamouh Tower, Al Reem Island',
+                  addressLocality: 'Abu Dhabi',
+                  addressCountry: 'AE',
+                },
+              ],
+            },
+          },
+          breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]),
+        ]}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/contact-hero.jpg"
-            alt=""
+            alt="Freedom First Global energy operations site"
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
@@ -200,7 +237,7 @@ export const Contact = () => {
         {/* HQ office image with FF gradient overlay */}
         <img
           src="/images/office-hq.jpg"
-          alt=""
+          alt="Freedom First Global headquarters in The Woodlands, Texas"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />

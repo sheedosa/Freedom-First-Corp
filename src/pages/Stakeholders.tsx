@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLocation } from 'react-router-dom';
+import { Seo } from '../seo';
 
 export const Stakeholders = () => {
   const [activeTab, setActiveTab] = useState<'operators' | 'host-nations' | 'strategic-partners'>('operators');
@@ -101,6 +102,12 @@ export const Stakeholders = () => {
 
   return (
     <div className="flex-grow flex flex-col bg-off-white">
+      <Seo
+        noindex
+        path="/stakeholders"
+        title="Stakeholders"
+        description="Freedom First Global partners with operators, host nations and strategic partners to move energy projects forward through proven execution and long-term value."
+      />
       {/* Hero Section */}
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">

@@ -7,6 +7,7 @@ import { CapabilitiesSection } from '../components/Capabilities';
 import { Advantages } from '../components/Advantages';
 import { Partnerships } from '../components/Partnerships';
 import { content } from '../content';
+import { Seo } from '../seo';
 
 // ServiceMap pulls in react-simple-maps + d3-geo + countries-110m JSON (~210 KB
 // across chunks). Lazy-load it so the rest of the homepage renders first; map
@@ -66,6 +67,12 @@ const HomeCta = () => {
 export const Home = () => {
   return (
     <>
+      <Seo
+        noSuffix
+        path="/"
+        title="Freedom First Global — Private-Sector Energy Solutions for Emerging Markets"
+        description="Freedom First Global brings field-proven U.S. energy expertise — upstream, midstream, downstream, asset protection and trading — directly to critical assets in emerging markets. Private-sector solutions built for stability and growth."
+      />
       <Hero />
       <CapabilitiesSection />
       <Suspense fallback={<ServiceMapFallback />}>

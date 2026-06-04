@@ -1,10 +1,44 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { Seo, SITE_URL, SITE_NAME, canonicalFor, breadcrumbLd } from '../seo';
 
 export const InsightLibya = () => {
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Rebuilding Libya Will Depend on Execution, Not Statements',
+    description:
+      "Libya's stability will be built by companies that invest capital, construct infrastructure and operate critical systems — and American private enterprise should lead.",
+    image: `${SITE_URL}/images/article-1-libya.jpg`,
+    articleSection: 'Emerging Markets',
+    inLanguage: 'en',
+    url: canonicalFor('/insights/rebuilding-libya'),
+    mainEntityOfPage: canonicalFor('/insights/rebuilding-libya'),
+    author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.png` },
+    },
+  };
+
   return (
     <div className="flex-grow flex flex-col bg-off-white">
+      <Seo
+        path="/insights/rebuilding-libya"
+        title="Rebuilding Libya Will Depend on Execution, Not Statements"
+        description="Libya's stability will be built by companies that invest capital, construct infrastructure and operate critical systems — and American private enterprise should lead. A Freedom First Global field perspective."
+        jsonLd={[
+          articleLd,
+          breadcrumbLd([
+            { name: 'Home', path: '/' },
+            { name: 'Insights', path: '/insights' },
+            { name: 'Rebuilding Libya', path: '/insights/rebuilding-libya' },
+          ]),
+        ]}
+      />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-32 pb-16 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
