@@ -93,7 +93,7 @@ export const Contact = () => {
         ]}
       />
       {/* Hero Section */}
-      <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
+      <section className="relative min-h-[38vh] flex items-center pt-28 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/contact-hero.jpg"
@@ -118,11 +118,11 @@ export const Contact = () => {
                   Contact
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-4">
                 Engage the Engineers Behind High-Yield Production
               </h1>
-              <p className="text-off-white/80 text-base md:text-lg leading-relaxed max-w-2xl opacity-90">
-                Connect with our team today to diagnose your constraints, engineer the solution, and get stalled production moving.
+              <p className="text-off-white/80 text-base leading-relaxed max-w-xl opacity-90">
+                Tell us about your asset and we'll get stalled production moving.
               </p>
             </motion.div>
           </div>
@@ -131,7 +131,7 @@ export const Contact = () => {
       </section>
 
       {/* Intake Form */}
-      <section className="bg-white py-14 md:py-24">
+      <section className="bg-white py-12 md:py-16">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -139,20 +139,16 @@ export const Contact = () => {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-center mb-12 md:mb-16">
-              <div className="inline-flex items-center justify-center gap-3 mb-4">
+            <div className="mb-8 md:mb-10">
+              <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
                 <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">
-                  Initiate Contact
+                  Project Intake
                 </span>
-                <div className="w-10 h-[1px] bg-red-freedom" />
               </div>
-              <h2 className="text-navy-deep text-3xl md:text-4xl lg:text-5xl font-display uppercase tracking-[-0.02em] leading-[0.95] mb-6">
-                The Freedom First Intake Form
+              <h2 className="block text-navy-deep text-2xl md:text-3xl lg:text-4xl font-display uppercase tracking-[-0.02em] leading-[0.95]">
+                Tell Us About Your Asset
               </h2>
-              <p className="text-navy-deep/75 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-                Submit your operational requirements below. We review all serious inquiries and deploy around the world to diagnose constraints and execute solutions on the ground.
-              </p>
             </div>
 
             <form
@@ -233,7 +229,7 @@ export const Contact = () => {
       </section>
 
       {/* Direct Contact Section */}
-      <section className="py-14 md:py-24 text-white relative overflow-hidden">
+      <section className="py-12 md:py-16 text-white relative overflow-hidden">
         {/* HQ office image with FF gradient overlay */}
         <img
           src="/images/office-hq.jpg"
@@ -261,31 +257,17 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.45 }}
-            className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
+            className="mb-10 md:mb-12"
           >
-            {/* Small brand spec line above the title */}
-            <p className="text-white/35 font-mono text-[10px] tracking-[0.3em] uppercase mb-5">
-              Freedom First Global
-            </p>
-
-            {/* Eyebrow with double red rule */}
-            <div className="inline-flex items-center justify-center gap-3 mb-6">
-              <div className="w-12 h-[1px] bg-red-freedom" />
+            <div className="inline-flex items-center gap-3 mb-3">
+              <div className="w-10 h-[1px] bg-red-freedom" />
               <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
                 Direct Contact
               </span>
-              <div className="w-12 h-[1px] bg-red-freedom" />
             </div>
-
-            {/* Primary heading — action-oriented */}
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display uppercase tracking-[-0.02em] leading-[0.95] mb-5">
+            <h2 className="block text-white text-2xl md:text-3xl lg:text-4xl font-display uppercase tracking-[-0.02em] leading-[0.95]">
               Reach Our Team Directly
             </h2>
-
-            {/* Subtitle framing what the 3 cards below are for */}
-            <p className="text-white/65 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
-              Our Houston headquarters, two direct inboxes, and the global operating presence behind every deployment.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
