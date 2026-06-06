@@ -6,7 +6,9 @@ import { defineConfig, loadEnv } from 'vite';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: './',
+    // Absolute base so assets resolve on the custom-domain root AND on client-side
+    // routes (e.g. /about) served via the SPA 404.html fallback on GitHub Pages.
+    base: '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
