@@ -2,42 +2,29 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useContent } from '../i18n';
 import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
-type Category = 'All' | 'Emerging Markets' | 'Field Execution' | 'Company Updates';
+// Non-translatable presentation/routing data, keyed by article id.
+const ARTICLE_META: Record<number, { image: string; href: string }> = {
+  1: { image: '/images/article-1-libya.jpg', href: '/insights/rebuilding-libya' },
+  2: { image: '/images/article-2-us-africa.jpg', href: '#' }, // TBD — body content pending
+  3: { image: '/images/article-3-permian.jpg', href: '#' }, // TBD — body content pending
+};
+
+const CATEGORY_KEYS = ['all', 'emergingMarkets', 'fieldExecution', 'companyUpdates'] as const;
+type CategoryKey = typeof CATEGORY_KEYS[number];
 
 export const Insights = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>('All');
+  const content = useContent();
+  const ip = content.insightsPage;
+  const [activeKey, setActiveKey] = useState<CategoryKey>('all');
 
-  const categories: Category[] = ['All', 'Emerging Markets', 'Field Execution', 'Company Updates'];
-
-  const articles = [
-    {
-      id: 1,
-      title: 'Rebuilding Libya Will Depend on Execution, Not Statements',
-      category: 'Emerging Markets',
-      image: '/images/article-1-libya.jpg',
-      href: '/insights/rebuilding-libya',
-    },
-    {
-      id: 2,
-      title: 'Freedom First CEO Joins Panel at the U.S. Africa Energy Forum',
-      category: 'Company Updates',
-      image: '/images/article-2-us-africa.jpg',
-      href: '#', // TBD — body content pending from client
-    },
-    {
-      id: 3,
-      title: 'The Transferrable Lessons and Methods Learned in the Permian Basin',
-      category: 'Field Execution',
-      image: '/images/article-3-permian.jpg',
-      href: '#', // TBD — body content pending from client
-    }
-  ];
-
-  const filteredArticles = activeCategory === 'All' 
-    ? articles 
-    : articles.filter(article => article.category === activeCategory);
+  // Filter on a stable key, comparing display strings within the active locale —
+  // so the selection survives a language switch.
+  const filteredArticles = activeKey === 'all'
+    ? ip.articles
+    : ip.articles.filter((article) => article.category === ip.categories[activeKey]);
 
   return (
     <div className="flex-grow flex flex-col bg-off-white">
@@ -46,8 +33,8 @@ export const Insights = () => {
         <div className="absolute inset-0 z-0">
           <Seo
             path="/insights"
-            title="Insights"
-            description="Field perspectives from Freedom First Global on moving hydrocarbon projects forward in demanding environments — from field execution and emerging markets to company updates."
+            title={content.seo.insights.title}
+            description={content.seo.insights.description}
             jsonLd={[
               webPageLd('Insights | Freedom First Global', 'Field perspectives on energy execution, emerging markets and company updates from Freedom First Global.', '/insights'),
               breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Insights', path: '/insights' }]),
@@ -70,13 +57,13 @@ export const Insights = () => {
             >
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">Insights</span>
+                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">{ip.eyebrow}</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
-                Field Perspectives on the Work, the Markets and What It Takes To Deliver
+                {ip.title}
               </h1>
               <p className="text-off-white/80 text-base md:text-lg leading-relaxed max-w-2xl opacity-90">
-                Freedom First shares insights from the field on moving hydrocarbon projects forward in demanding environments. From field execution to market and company updates, our perspective is shaped by the work itself.
+                {ip.subhead}
               </p>
             </motion.div>
           </div>
@@ -88,19 +75,19 @@ export const Insights = () => {
       <section className="bg-white border-b border-gray-200 sticky top-[72px] md:top-[88px] z-40 shadow-sm">
         <div className="container px-6 mx-auto">
           <div className="flex flex-wrap justify-center overflow-x-auto gap-4 md:gap-12 hide-scrollbar">
-            {categories.map((category) => (
+            {CATEGORY_KEYS.map((key) => (
               <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
+                key={key}
+                onClick={() => setActiveKey(key)}
                 className={`py-6 px-4 md:px-2 text-sm md:text-base font-bold uppercase tracking-wider transition-all relative whitespace-nowrap ${
-                  activeCategory === category 
-                    ? 'text-red-freedom' 
+                  activeKey === key
+                    ? 'text-red-freedom'
                     : 'text-navy-deep/60 hover:text-navy-deep'
                 }`}
               >
-                {category}
-                {activeCategory === category && (
-                  <motion.div 
+                {ip.categories[key]}
+                {activeKey === key && (
+                  <motion.div
                     layoutId="activeFilter"
                     className="absolute bottom-0 left-0 right-0 h-1 bg-red-freedom"
                   />
@@ -114,26 +101,29 @@ export const Insights = () => {
       {/* Articles Grid */}
       <section className="py-20 bg-off-white relative flex-grow">
         <div className="container px-6 mx-auto max-w-7xl">
-          <motion.div 
+          <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <AnimatePresence mode="popLayout">
               {filteredArticles.map((article) => {
-                const isLive = article.href !== '#';
+                const meta = ARTICLE_META[article.id];
+                const image = meta?.image;
+                const href = meta?.href ?? '#';
+                const isLive = href !== '#';
 
                 const card = (
                   <div className={`relative aspect-square rounded-2xl overflow-hidden mb-6 shadow-xl ${isLive ? 'cursor-pointer' : ''}`}>
                     {/* Image */}
-                    {article.image ? (
+                    {image ? (
                       <img
-                        src={article.image}
+                        src={image}
                         alt={article.title}
                         className={`w-full h-full object-cover transition-transform duration-700 grayscale ${isLive ? 'transform group-hover:scale-105 group-hover:grayscale-0' : ''}`}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center bg-[#134377]/10">
-                        <span className="text-navy-deep/40 font-mono text-sm tracking-widest uppercase">Image coming soon</span>
+                        <span className="text-navy-deep/40 font-mono text-sm tracking-widest uppercase">{ip.imageComingSoon}</span>
                       </div>
                     )}
 
@@ -157,14 +147,14 @@ export const Insights = () => {
                         {isLive ? (
                           <div className="flex items-center gap-3 text-red-freedom font-mono text-sm uppercase tracking-widest font-bold">
                             <span className="md:relative md:overflow-hidden">
-                              <span className="md:inline-block md:transition-transform md:duration-300 md:group-hover:-translate-y-full">Read More</span>
-                              <span className="hidden md:absolute md:top-0 md:left-0 md:inline-block md:transition-transform md:duration-300 md:translate-y-full md:group-hover:translate-y-0 md:text-white">Read More</span>
+                              <span className="md:inline-block md:transition-transform md:duration-300 md:group-hover:-translate-y-full">{ip.readMore}</span>
+                              <span className="hidden md:absolute md:top-0 md:start-0 md:inline-block md:transition-transform md:duration-300 md:translate-y-full md:group-hover:translate-y-0 md:text-white">{ip.readMore}</span>
                             </span>
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300 rtl:-scale-x-100" />
                           </div>
                         ) : (
                           <div className="flex items-center gap-3 text-white/50 font-mono text-sm uppercase tracking-widest font-bold">
-                            Coming Soon
+                            {ip.comingSoon}
                           </div>
                         )}
                       </div>
@@ -183,7 +173,7 @@ export const Insights = () => {
                     className={`group ${isLive ? '' : 'opacity-80'}`}
                   >
                     {isLive ? (
-                      <Link to={article.href} className="block w-full h-full">
+                      <Link to={href} className="block w-full h-full">
                         {card}
                       </Link>
                     ) : (
@@ -196,10 +186,10 @@ export const Insights = () => {
               })}
             </AnimatePresence>
           </motion.div>
-          
+
           {filteredArticles.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-500 font-mono text-sm uppercase tracking-widest">No articles found for this category.</p>
+              <p className="text-gray-500 font-mono text-sm uppercase tracking-widest">{ip.noArticles}</p>
             </div>
           )}
         </div>

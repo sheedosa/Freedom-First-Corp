@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { content } from '../content';
+import { useContent } from '../i18n';
 import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 export const CapabilitiesPage = () => {
+  const content = useContent();
   const { hero, subNav, sections, advantage, midMarket, cta } = content.capabilitiesPage;
   const { hash } = useLocation();
 
@@ -69,8 +70,8 @@ export const CapabilitiesPage = () => {
         <div className="absolute inset-0 z-0">
           <Seo
             path="/capabilities"
-            title="Capabilities"
-            description="From upstream operations and midstream infrastructure to downstream processing, asset protection and energy trading, Freedom First Global drives measurable production growth across the entire energy value chain."
+            title={content.seo.capabilities.title}
+            description={content.seo.capabilities.description}
             jsonLd={[
               webPageLd('Capabilities | Freedom First Global', 'Upstream, midstream, downstream, asset protection and energy trading capabilities delivered direct to the asset.', '/capabilities'),
               breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Capabilities', path: '/capabilities' }]),
@@ -96,7 +97,7 @@ export const CapabilitiesPage = () => {
             >
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">Capabilities</span>
+                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">{content.ui.capabilitiesEyebrow}</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
                 {hero.title}
@@ -206,7 +207,7 @@ export const CapabilitiesPage = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-50px' }}
                     transition={{ duration: 0.5, ease: 'easeOut' }}
-                    className={`mb-12 lg:mb-0 lg:pt-10 ${isEven ? 'lg:pr-14' : 'lg:order-2 lg:pl-14'}`}
+                    className={`mb-12 lg:mb-0 lg:pt-10 ${isEven ? 'lg:pe-14' : 'lg:order-2 lg:ps-14'}`}
                   >
                     {/* Mobile dot */}
                     <div className="lg:hidden flex items-center gap-4 mb-8">
@@ -234,7 +235,7 @@ export const CapabilitiesPage = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-50px' }}
                     transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
-                    className={`${isEven ? 'lg:pl-14' : 'lg:order-1 lg:pr-14'}`}
+                    className={`${isEven ? 'lg:ps-14' : 'lg:order-1 lg:pe-14'}`}
                   >
                     <div className={`grid grid-cols-1 gap-4 md:gap-5 ${section.deliverables.length > 5 ? 'sm:grid-cols-2' : ''}`}>
                       {section.deliverables.map((item, i) => (
@@ -289,17 +290,17 @@ export const CapabilitiesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="text-center max-w-4xl mx-auto mb-14 md:mb-20"
+            className="text-center rtl:text-right max-w-4xl mx-auto mb-14 md:mb-20"
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center rtl:justify-end gap-4 mb-6">
               <div className="w-12 h-[1px] bg-red-freedom" />
-              <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">The Advantage</span>
+              <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">{content.ui.capAdvantageEyebrow}</span>
               <div className="w-12 h-[1px] bg-red-freedom" />
             </div>
             <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-8">
               {advantage.header}
             </h2>
-            <p className="text-white/70 text-sm md:text-base leading-relaxed font-medium max-w-3xl mx-auto">
+            <p className="text-white/70 text-sm md:text-base leading-relaxed font-medium max-w-3xl mx-auto rtl:mr-0">
               {advantage.message}
             </p>
           </motion.div>
@@ -356,7 +357,7 @@ export const CapabilitiesPage = () => {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-[1px] bg-red-freedom" />
-                <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Next Steps</span>
+                <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">{content.ui.capNextSteps}</span>
               </div>
               <h2 className="text-navy-deep text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em]">
                 {cta.header}
@@ -378,14 +379,14 @@ export const CapabilitiesPage = () => {
                 className="group px-7 py-3.5 rounded-xl bg-red-freedom text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-3 hover:bg-red-700 hover:shadow-xl hover:shadow-red-freedom/20"
               >
                 {cta.primary.label}
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" />
               </Link>
               <Link
                 to={cta.secondary.href}
                 className="group px-7 py-3.5 rounded-xl border border-navy-deep/10 text-navy-deep text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-3 hover:bg-navy-deep hover:text-white"
               >
                 {cta.secondary.label}
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" />
               </Link>
             </motion.div>
           </div>

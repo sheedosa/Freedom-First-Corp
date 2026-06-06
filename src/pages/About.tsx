@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronRight, Briefcase, Quote } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { content } from '../content';
+import { useContent } from '../i18n';
 import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 export const About = () => {
+  const content = useContent();
   const { hero, content: pageContent, leadership, dataStrip, advisors, ceoMessage, finalCta } = content.about;
 
   type Person = {
@@ -33,8 +34,8 @@ export const About = () => {
     <div>
       <Seo
         path="/about"
-        title="About"
-        description="Freedom First Global is a technical production partner built for the field. Founded in Texas, we bring entrepreneurial energy expertise and an execution-driven culture to emerging markets — restoring production, modernizing infrastructure and building local capability."
+        title={content.seo.about.title}
+        description={content.seo.about.description}
         jsonLd={[
           webPageLd('About | Freedom First Global', 'Freedom First Global is a technical production partner built for the field, bringing American energy expertise to emerging markets.', '/about'),
           breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]),
@@ -44,7 +45,7 @@ export const About = () => {
       <section className="relative min-h-[56vh] flex items-center pt-32 pb-12 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
           <img src={hero.image} alt="Freedom First Global leadership reviewing operations at an energy facility" className="absolute inset-0 w-full h-full object-cover opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/70 to-navy-deep/40" />
+          <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-navy-deep via-navy-deep/70 to-navy-deep/40" />
           <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, #134377 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         </div>
 
@@ -57,7 +58,7 @@ export const About = () => {
             >
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
-                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">Mission & Origin</span>
+                <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">{content.ui.aboutMissionOrigin}</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-8">
                 {hero.title}
@@ -82,7 +83,7 @@ export const About = () => {
               <div className="sticky top-32">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-2 h-2 bg-red-freedom" />
-                  <span className="text-red-freedom font-bold uppercase tracking-[0.3em] text-[10px]">Technical Partner</span>
+                  <span className="text-red-freedom font-bold uppercase tracking-[0.3em] text-[10px]">{content.ui.aboutTechnicalPartner}</span>
                 </div>
                 <h2 className="text-navy-deep text-3xl md:text-4xl font-display uppercase tracking-tight mb-6 leading-tight">
                   {pageContent.title}
@@ -126,7 +127,7 @@ export const About = () => {
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-[1px] bg-red-freedom" />
-              <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">Core Values</span>
+              <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">{content.ui.aboutCoreValues}</span>
             </div>
             <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em]">
               {content.about.principles.header}
@@ -215,7 +216,7 @@ export const About = () => {
         <div className="max-content-width">
           <div className="flex items-center gap-4 mb-12 md:mb-16">
             <div className="w-10 h-[1px] bg-red-freedom" />
-            <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Leadership</span>
+            <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">{content.ui.aboutLeadership}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -271,14 +272,14 @@ export const About = () => {
       <section className="bg-red-freedom py-12 relative overflow-hidden">
         <div className="max-content-width py-4">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-6">
-            <div className="lg:w-1/3 text-center lg:text-left">
+            <div className="lg:w-1/3 text-center lg:text-start rtl:text-right">
               <h2 className="text-white text-2xl md:text-3xl font-display uppercase tracking-tight leading-tight">
                 {dataStrip.header}
               </h2>
             </div>
             <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
               {dataStrip.stats.map((stat, i) => (
-                <div key={i} className="text-center md:text-left space-y-1 border-white/20 md:border-l md:pl-8 first:border-0 first:pl-0">
+                <div key={i} className="text-center md:text-start space-y-1 border-white/20 md:border-s md:ps-8 first:border-0 first:ps-0">
                   <span className="block text-white/60 text-[10px] font-bold uppercase tracking-[0.2em]">
                     {stat.label}
                   </span>
@@ -313,7 +314,7 @@ export const About = () => {
           >
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-12 h-[1px] bg-red-freedom" />
-              <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">Counsel</span>
+              <span className="text-white font-bold text-[10px] tracking-[0.3em] uppercase">{content.ui.counsel}</span>
               <div className="w-12 h-[1px] bg-red-freedom" />
             </div>
             <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em]">
@@ -347,8 +348,8 @@ export const About = () => {
                     onClick={() => setSelectedPerson(advisor)}
                     className="flex items-center gap-2 text-white font-bold uppercase text-[10px] tracking-[0.2em] group/btn pt-4"
                   >
-                    Read More
-                    <ChevronRight className="w-4 h-4 text-red-freedom group-hover/btn:translate-x-1 transition-transform" />
+                    {content.ui.readMore}
+                    <ChevronRight className="w-4 h-4 text-red-freedom group-hover/btn:translate-x-1 transition-transform rtl:-scale-x-100" />
                   </button>
                 </div>
               </motion.div>
@@ -377,7 +378,7 @@ export const About = () => {
                   className="w-2/3 max-w-[240px] h-auto brightness-0 invert"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-freedom rounded-full flex items-center justify-center z-20">
+              <div className="absolute -bottom-6 -end-6 w-32 h-32 bg-red-freedom rounded-full flex items-center justify-center z-20">
                 <Quote className="w-12 h-12 text-white opacity-40" />
               </div>
             </motion.div>
@@ -400,7 +401,7 @@ export const About = () => {
               </div>
               
               <div className="relative">
-                <span className="absolute -left-6 -top-4 text-8xl text-navy-deep opacity-[0.03] font-serif leading-none">“</span>
+                <span className="absolute -start-6 -top-4 text-8xl text-navy-deep opacity-[0.03] font-serif leading-none">“</span>
                 <p className="text-navy-deep/80 text-lg md:text-xl leading-relaxed italic relative z-10 whitespace-pre-line">
                   {ceoMessage.quote}
                 </p>
@@ -419,7 +420,7 @@ export const About = () => {
 
       {/* Final CTA Section — slim white panel before the navy footer */}
       <section className="bg-white py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-center rtl:text-right">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -429,7 +430,7 @@ export const About = () => {
             <div className="inline-flex items-center gap-3 mb-4">
               <span className="w-8 h-[1px] bg-red-freedom" />
               <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">
-                Next Step
+                {content.ui.aboutNextStep}
               </span>
               <span className="w-8 h-[1px] bg-red-freedom" />
             </div>
@@ -438,7 +439,7 @@ export const About = () => {
               {finalCta.header}
             </h2>
 
-            <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto rtl:mr-0">
               {finalCta.message}
             </p>
 
@@ -447,7 +448,7 @@ export const About = () => {
               className="group inline-flex items-center gap-3 bg-red-freedom text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all duration-300 hover:shadow-xl hover:shadow-red-freedom/20"
             >
               {finalCta.ctaLabel}
-              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" />
             </Link>
           </motion.div>
         </div>
@@ -473,14 +474,14 @@ export const About = () => {
               <div className="relative p-6 md:p-10 border-b border-navy-deep/5 bg-off-white shrink-0">
                 <button 
                   onClick={() => setSelectedPerson(null)}
-                  className="absolute top-6 right-6 p-2 rounded-full hover:bg-navy-deep/5 transition-colors group"
+                  className="absolute top-6 end-6 p-2 rounded-full hover:bg-navy-deep/5 transition-colors group"
                 >
                   <X className="w-5 h-5 text-navy-deep group-hover:rotate-90 transition-transform duration-300" />
                 </button>
 
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-[1px] bg-red-freedom" />
-                  <span className="text-red-freedom font-bold uppercase tracking-[0.3em] text-[10px]">Background</span>
+                  <span className="text-red-freedom font-bold uppercase tracking-[0.3em] text-[10px]">{content.ui.background}</span>
                 </div>
                 
                 <h2 className="text-2xl md:text-4xl font-display text-navy-deep uppercase tracking-tight mb-1">
@@ -520,12 +521,12 @@ export const About = () => {
                 </div>
               </div>
 
-              <div className="p-6 md:p-8 border-t border-navy-deep/5 bg-off-white text-right shrink-0">
+              <div className="p-6 md:p-8 border-t border-navy-deep/5 bg-off-white text-end shrink-0">
                 <button 
                   onClick={() => setSelectedPerson(null)}
                   className="text-navy-deep font-bold uppercase text-xs tracking-widest hover:text-red-freedom transition-colors"
                 >
-                  Close
+                  {content.ui.close}
                 </button>
               </div>
             </motion.div>

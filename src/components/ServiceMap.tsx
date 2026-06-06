@@ -1,7 +1,7 @@
 import { memo, lazy, Suspense, useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
-import { content } from '../content';
+import { useContent } from '../i18n';
 
 type Country = {
   id: string;
@@ -71,6 +71,7 @@ const WorldMap = lazy(() => Promise.all([
 }));
 
 export const ServiceMap = () => {
+  const content = useContent();
   const { header, message, countries, cta, ctaLink, legendLabel } = content.whereWeDoIt;
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = countries.find(c => c.id === selectedId) || null;
@@ -105,7 +106,7 @@ export const ServiceMap = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-10 h-[1px] bg-red-freedom" />
                 <span className="text-white/60 font-mono uppercase tracking-[0.3em] text-[10px]">
-                  Global Operations
+                  {content.ui.serviceMapEyebrow}
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-display leading-[0.95] mb-6 md:mb-8 uppercase text-white tracking-[-0.02em]">
@@ -124,7 +125,7 @@ export const ServiceMap = () => {
                 className="inline-flex items-center justify-center bg-white text-navy-deep px-7 py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-white/90 group"
               >
                 {cta}
-                <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ms-3 w-4 h-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" />
               </a>
             </motion.div>
           ) : (
@@ -139,13 +140,13 @@ export const ServiceMap = () => {
                 onClick={() => setSelectedId(null)}
                 className="flex items-center gap-2 text-white/50 hover:text-red-freedom transition-colors text-[10px] font-mono uppercase tracking-[0.3em] mb-6"
               >
-                <ArrowLeft className="w-3 h-3" />
-                All Operations
+                <ArrowLeft className="w-3 h-3 rtl:-scale-x-100" />
+                {content.ui.serviceMapAll}
               </button>
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-10 h-[1px] bg-red-freedom" />
                 <span className="text-red-freedom font-mono uppercase tracking-[0.3em] text-[10px]">
-                  Active · {selected.id.slice(0, 3)}
+                  {content.ui.serviceMapActive} · {selected.id.slice(0, 3)}
                 </span>
               </div>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-display leading-[0.95] mb-6 uppercase text-white tracking-[-0.02em]">
@@ -177,11 +178,11 @@ export const ServiceMap = () => {
 
           <div className="absolute bottom-8 right-8 text-[10px] text-gray-400 font-mono tracking-[0.2em] uppercase select-none flex items-center gap-3">
             <div className="w-1.5 h-1.5 bg-red-freedom animate-pulse" />
-            {legendLabel || 'Our Operational Footprint'}
+            {legendLabel}
           </div>
 
           <div className="absolute bottom-8 left-8 text-[9px] text-white/30 font-mono tracking-[0.2em] uppercase select-none hidden md:flex items-center gap-2">
-            <span>Hover highlighted regions for details</span>
+            <span>{content.ui.serviceMapHover}</span>
           </div>
         </div>
       </div>

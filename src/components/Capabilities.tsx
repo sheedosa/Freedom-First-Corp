@@ -1,11 +1,12 @@
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { content } from '../content';
+import { useContent } from '../i18n';
 
 const MotionLink = motion(Link);
 
 export const CapabilitiesSection = () => {
+  const content = useContent();
   const { header, items } = content.capabilitiesSection;
 
   return (
@@ -20,9 +21,9 @@ export const CapabilitiesSection = () => {
         >
           <div className="flex items-center gap-4 mb-4">
             <div className="w-10 h-[1px] bg-red-freedom" />
-            <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">Capabilities</span>
+            <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">{content.ui.capabilitiesEyebrow}</span>
           </div>
-          <h2 className="text-navy-deep text-3xl sm:text-4xl md:text-5xl font-display leading-[0.95] uppercase text-left max-w-3xl tracking-[-0.02em]">
+          <h2 className="text-navy-deep text-3xl sm:text-4xl md:text-5xl font-display leading-[0.95] uppercase text-start max-w-3xl tracking-[-0.02em]">
             {header}
           </h2>
         </motion.div>
@@ -64,8 +65,8 @@ export const CapabilitiesSection = () => {
                   </p>
 
                   <div className="pt-4 border-t border-white/10 flex items-center justify-between text-white/60 group-hover:text-red-freedom transition-colors duration-300">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.25em]">Explore</span>
-                    <ChevronDown className="w-4 h-4 -rotate-90 transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.25em]">{content.ui.explore}</span>
+                    <ChevronDown className="w-4 h-4 -rotate-90 rtl:rotate-90 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                   </div>
                 </div>
               </div>

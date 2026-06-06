@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
-import { content } from '../content';
+import { useContent } from '../i18n';
 
 export const Partnerships = () => {
+  const content = useContent();
   const { section1, section2 } = content.partnerships;
 
   return (
@@ -26,7 +27,7 @@ export const Partnerships = () => {
                   className="h-[1px] bg-red-freedom"
                 />
                 <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">
-                  Economic Empowerment
+                  {content.ui.partnershipEconomic}
                 </span>
               </div>
               <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.05] uppercase tracking-[-0.02em]">
@@ -79,7 +80,7 @@ export const Partnerships = () => {
                   className="h-[1px] bg-red-freedom"
                 />
                 <span className="text-red-freedom font-mono text-[10px] uppercase tracking-[0.3em]">
-                  Synergy & Impact
+                  {content.ui.partnershipSynergy}
                 </span>
               </div>
               <h2 className="text-navy-deep text-2xl sm:text-3xl md:text-4xl font-display leading-[1.05] uppercase tracking-[-0.02em]">

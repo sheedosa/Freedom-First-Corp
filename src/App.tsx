@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect, Suspense, lazy } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -7,7 +7,6 @@ const Home = lazy(() => import('./pages/Home').then(module => ({ default: module
 const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
 const CapabilitiesPage = lazy(() => import('./pages/Capabilities').then(module => ({ default: module.CapabilitiesPage })));
 const Approach = lazy(() => import('./pages/Approach').then(module => ({ default: module.Approach })));
-const Stakeholders = lazy(() => import('./pages/Stakeholders').then(module => ({ default: module.Stakeholders })));
 const Insights = lazy(() => import('./pages/Insights').then(module => ({ default: module.Insights })));
 const InsightLibya = lazy(() => import('./pages/InsightLibya').then(module => ({ default: module.InsightLibya })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
@@ -35,7 +34,8 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/capabilities" element={<CapabilitiesPage />} />
               <Route path="/approach" element={<Approach />} />
-              <Route path="/stakeholders" element={<Stakeholders />} />
+              {/* Deprecated route — stakeholder content now lives on /approach. Redirect preserves old links. */}
+              <Route path="/stakeholders" element={<Navigate to="/approach#stakeholders" replace />} />
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/rebuilding-libya" element={<InsightLibya />} />
               <Route path="/contact" element={<Contact />} />

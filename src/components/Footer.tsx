@@ -6,9 +6,10 @@ const XIcon = ({ className }: { className?: string }) => (
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
-import { content } from '../content';
+import { useContent } from '../i18n';
 
 export const Footer = () => {
+  const content = useContent();
   const { navigate: navData, contactForm, company } = content.footer;
   const location = useLocation();
 
@@ -52,7 +53,7 @@ export const Footer = () => {
                     <MapPin className="w-3 h-3" />
                     <span className="text-[10px] font-bold uppercase tracking-widest">{office.city}</span>
                   </div>
-                  <p className="text-white/60 text-xs leading-relaxed whitespace-pre-line font-mono">
+                  <p dir={/[؀-ۿ]/.test(office.address) ? 'rtl' : 'ltr'} className="text-white/60 text-xs leading-relaxed whitespace-pre-line font-mono rtl:text-right">
                     {office.address}
                   </p>
                 </div>
@@ -140,7 +141,7 @@ export const Footer = () => {
           </div>
 
           {/* Column 3: Contact Form */}
-          <div className="lg:col-span-5 space-y-8 lg:pl-12 lg:border-l lg:border-white/5">
+          <div className="lg:col-span-5 space-y-8 lg:ps-12 lg:border-s lg:border-white/5">
             <h3 className="text-red-freedom text-xs font-bold uppercase tracking-[0.2em]">
               {contactForm.title}
             </h3>
@@ -168,7 +169,7 @@ export const Footer = () => {
                 className="inline-flex items-center justify-center bg-red-freedom text-white px-10 py-4.5 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-700 transition-all hover:shadow-xl hover:shadow-red-freedom/20 active:scale-[0.98] group"
               >
                 {contactForm.cta}
-                <Send className="ml-3 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <Send className="ms-3 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform rtl:-scale-x-100" />
               </button>
             </form>
           </div>
@@ -177,7 +178,7 @@ export const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
            <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-mono">
-            © 2026 Freedom First Global. All rights reserved.
+            © 2026 {company.name}. {content.ui.rightsReserved}
           </p>
         </div>
       </div>

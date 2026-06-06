@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { content } from '../content';
+import { useContent } from '../i18n';
 
 export const Hero = () => {
+  const content = useContent();
   const { eyebrow, title, subhead, ctaPrimary, bgImage } = content.hero;
 
   return (

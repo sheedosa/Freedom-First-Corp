@@ -1,11 +1,12 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { content } from '../content';
+import { useContent } from '../i18n';
 import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 export const Approach = () => {
-  const { hero, stakeholderTabs } = content.approachPage;
+  const content = useContent();
+  const { hero, stakeholderTabs, focus } = content.approachPage;
   const tabKeys = ['operators', 'host-nations', 'strategic-partners'] as const;
   type TabKey = typeof tabKeys[number];
   const [activeTab, setActiveTab] = useState<TabKey>('operators');
@@ -36,8 +37,8 @@ export const Approach = () => {
         <div className="absolute inset-0 z-0">
           <Seo
             path="/approach"
-            title="Our Approach"
-            description="Freedom First Global turns resources into economic freedom and stability — executing in the most logistically demanding environments with direct-to-asset logistics, local workforce development and performance-driven partnerships."
+            title={content.seo.approach.title}
+            description={content.seo.approach.description}
             jsonLd={[
               webPageLd('Our Approach | Freedom First Global', 'How Freedom First Global delivers output and value for host nations through direct-to-asset execution and aligned partnerships.', '/approach'),
               breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Approach', path: '/approach' }]),
@@ -61,7 +62,7 @@ export const Approach = () => {
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
                 <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">
-                  Our Approach
+                  {content.ui.approachEyebrow}
                 </span>
               </div>
               
@@ -81,72 +82,7 @@ export const Approach = () => {
       </section>
 
       {/* Detailed Approach Sections */}
-      {[
-        { 
-          id: 'direct-to-asset', 
-          title: 'Built to Deliver in Demanding Environments without Delay', 
-          eyebrow: 'Direct-to-Asset Execution',
-          desc: "Reaching the world's most remote energy assets requires a mastery of complex international logistics. Freedom First is built to move specialized teams, heavy equipment, and advanced technology in and out of the hardest-to-reach locations. By controlling the logistics, we are able to move with the speed and agility required to solve bottlenecks in real time, apply proven methodologies, and get stalled production moving again without delay.",
-          image: '/images/approach-direct.jpg',
-          subHeader: 'Our Execution Edge',
-          points: [
-            { 
-              title: 'Agile Deployment', 
-              text: 'Mobilizing specialized engineering talent and supply chains straight to the field, eliminating middleman delays.' 
-            },
-            { 
-              title: 'Field-Tested Solutions', 
-              text: 'Applying tried-and-tested methodologies to overcome the most complex surface and subsurface challenges.' 
-            },
-            { 
-              title: 'Uninterrupted Momentum', 
-              text: 'Leading with seasoned management to ensure work progresses on schedule and on budget to accelerate production timelines.' 
-            }
-          ]
-        },
-        {
-          id: 'hse-capability',
-          title: 'Structured for Safe Execution and Sustained Knowledge Transfer',
-          eyebrow: 'HSE & Local Capability',
-          desc: 'True sustainability requires protecting the people, the asset, and the environment. Freedom First brings U.S. Health, Safety, and Environment (HSE) standards and a strict culture of compliance to every site we operate. Simultaneously, we structure every project as a platform for knowledge transfer. We work side-by-side with local teams to build the technical capability required so the host nation can independently operate and sustain the assets long after the initial intervention.',
-          subHeader: 'Our Operational Standard',
-          points: [
-            { 
-              title: 'Uncompromising Safety (HSE)', 
-              text: 'Implementing operational protocols from day one to protect personnel, mitigate risk and ensure uninterrupted, safe field operations.' 
-            },
-            { 
-              title: 'Asset Protection', 
-              text: 'Managing legacy infrastructure with strict technical integrity to ensure interventions maximize production without jeopardizing reservoir health.' 
-            },
-            { 
-              title: 'Hands-On Knowledge Transfer', 
-              text: 'Upskilling the local workforce through structured training, embedding them into established systems for long-term operational continuity.' 
-            }
-          ]
-        },
-        {
-          id: 'commercial-alignment',
-          title: 'Anchored by Shared Risk and Production-Driven Reward',
-          eyebrow: 'Commercial Alignment',
-          desc: 'We engage as true production partners, fully prepared to back our operational expertise with direct capital investment. Rather than relying on traditional service models that capitalize on existing output, we bring the flexibility to share the risk. Confident in our execution, we are willing to invest our own capital and earn solely on the incremental barrels we produce. This directly aligns our returns with your national goals: increasing output, controlling costs and securing long-term asset value.',
-          subHeader: 'Our Ideal Structure',
-          points: [
-            { 
-              title: 'Performance-Driven Returns', 
-              text: 'Backing our operational confidence with commercial agreements tied exclusively to the asset’s incremental production growth.' 
-            },
-            { 
-              title: 'Direct Local Investment', 
-              text: 'Bringing private capital directly to neglected or stalled fields to unlock their energy potential without adding to national debt.' 
-            },
-            { 
-              title: 'National Goal Alignment', 
-              text: 'Structuring every project to directly support the host country\'s broader objectives of economic self-sufficiency and stability.' 
-            }
-          ]
-        }
-      ].map((section: any, index) => {
+      {focus.map((section: any, index) => {
         const isDark = index === 1;
         const isPointsFocus = section.id === 'direct-to-asset' || section.id === 'hse-capability' || section.id === 'commercial-alignment';
         
@@ -284,17 +220,17 @@ export const Approach = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.45, ease: "easeOut" }}
-            className="mb-12 md:mb-16 text-center max-w-4xl mx-auto"
+            className="mb-12 md:mb-16 text-center rtl:text-right max-w-4xl mx-auto"
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center rtl:justify-end gap-4 mb-6">
               <div className="w-12 h-[1px] bg-red-freedom" />
-              <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">Stakeholders</span>
+              <span className="text-red-freedom font-bold text-[10px] tracking-[0.3em] uppercase">{content.ui.stakeholdersEyebrow}</span>
               <div className="w-12 h-[1px] bg-red-freedom" />
             </div>
             <h2 className="text-navy-deep text-3xl md:text-4xl lg:text-5xl font-display leading-[0.95] uppercase tracking-[-0.02em] mb-6">
               {stakeholderTabs.header}
             </h2>
-            <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+            <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed max-w-3xl mx-auto rtl:mr-0">
               {stakeholderTabs.message}
             </p>
           </motion.div>
@@ -341,12 +277,12 @@ export const Approach = () => {
                   <h3 className="text-2xl md:text-4xl font-display text-navy-deep mb-6 leading-tight tracking-tight uppercase">
                     {activeContent.subtitle}
                   </h3>
-                  <div className="w-16 h-1 bg-gradient-to-r from-red-freedom to-transparent mb-8" />
+                  <div className="w-16 h-1 bg-gradient-to-r rtl:bg-gradient-to-l from-red-freedom to-transparent mb-8" />
                   <p className="text-base md:text-lg text-navy-deep/70 leading-relaxed mb-6">
                     {activeContent.text}
                   </p>
                   <div className="bg-off-white p-6 md:p-8 rounded-2xl border border-navy-deep/5 mt-4">
-                    <h4 className="font-bold text-navy-deep tracking-wider uppercase mb-3 text-xs">The Partnership</h4>
+                    <h4 className="font-bold text-navy-deep tracking-wider uppercase mb-3 text-xs">{content.ui.thePartnership}</h4>
                     <p className="text-navy-deep/70 leading-relaxed text-sm md:text-base">
                       {activeContent.partnership}
                     </p>
@@ -379,11 +315,11 @@ export const Approach = () => {
               </div>
 
               <div className="mt-16 pt-12 border-t border-navy-deep/5">
-                <div className="text-center max-w-3xl mx-auto">
+                <div className="text-center rtl:text-right max-w-3xl mx-auto">
                   <h3 className="text-xl md:text-2xl font-display text-navy-deep uppercase tracking-tight mb-8">
                     {activeContent.ctaMsg}
                   </h3>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center rtl:justify-end">
                     <Link
                       to={activeContent.ctaHref}
                       className="px-7 py-3.5 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg text-center"

@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
-import { content } from '../content';
+import { useContent } from '../i18n';
 
 export const Advantages = () => {
+  const content = useContent();
   const { header, message, items } = content.advantages;
 
   return (
@@ -10,7 +11,7 @@ export const Advantages = () => {
         <div className="flex flex-col items-start mb-12 md:mb-16 max-w-3xl">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-10 h-[1px] bg-red-freedom" />
-            <span className="text-navy-deep/50 font-mono text-[10px] tracking-[0.3em] uppercase">Advantages</span>
+            <span className="text-navy-deep/50 font-mono text-[10px] tracking-[0.3em] uppercase">{content.ui.advantagesEyebrow}</span>
           </div>
 
           <motion.h2

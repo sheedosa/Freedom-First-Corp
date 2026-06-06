@@ -6,7 +6,7 @@ import { Hero } from '../components/Hero';
 import { CapabilitiesSection } from '../components/Capabilities';
 import { Advantages } from '../components/Advantages';
 import { Partnerships } from '../components/Partnerships';
-import { content } from '../content';
+import { useContent } from '../i18n';
 import { Seo } from '../seo';
 
 // ServiceMap pulls in react-simple-maps + d3-geo + countries-110m JSON (~210 KB
@@ -25,10 +25,11 @@ const ServiceMapFallback = () => (
 );
 
 const HomeCta = () => {
+  const content = useContent();
   const { eyebrow, header, message, ctaLabel, ctaLink } = content.homeCta;
   return (
     <section className="bg-white py-12 md:py-16">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+      <div className="max-w-4xl mx-auto px-6 text-center rtl:text-right">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +48,7 @@ const HomeCta = () => {
             {header}
           </h2>
 
-          <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-navy-deep/70 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto rtl:mr-0">
             {message}
           </p>
 
@@ -56,7 +57,7 @@ const HomeCta = () => {
             className="group inline-flex items-center gap-3 bg-red-freedom text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all duration-300 hover:shadow-xl hover:shadow-red-freedom/20"
           >
             {ctaLabel}
-            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" />
           </Link>
         </motion.div>
       </div>
@@ -65,14 +66,10 @@ const HomeCta = () => {
 };
 
 export const Home = () => {
+  const content = useContent();
   return (
     <>
-      <Seo
-        noSuffix
-        path="/"
-        title="Freedom First Global — Private-Sector Energy Solutions for Emerging Markets"
-        description="Freedom First Global brings field-proven U.S. energy expertise — upstream, midstream, downstream, asset protection and trading — directly to critical assets in emerging markets. Private-sector solutions built for stability and growth."
-      />
+      <Seo noSuffix path="/" title={content.seo.home.title} description={content.seo.home.description} />
       <Hero />
       <CapabilitiesSection />
       <Suspense fallback={<ServiceMapFallback />}>

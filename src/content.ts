@@ -42,7 +42,7 @@ export const content = {
     ],
     languages: [
       { code: 'EN', label: 'English', active: true },
-      { code: 'AR', label: 'Arabic', active: false },
+      { code: 'AR', label: 'Arabic', active: true },
       { code: 'ES', label: 'Spanish', active: false }
     ],
     cta: 'Contact'
@@ -482,6 +482,159 @@ export const content = {
           ctaHref: '/capabilities'
         }
       }
-    }
+    },
+    focus: [
+      {
+        id: 'direct-to-asset',
+        title: 'Built to Deliver in Demanding Environments without Delay',
+        eyebrow: 'Direct-to-Asset Execution',
+        desc: "Reaching the world's most remote energy assets requires a mastery of complex international logistics. Freedom First is built to move specialized teams, heavy equipment, and advanced technology in and out of the hardest-to-reach locations. By controlling the logistics, we are able to move with the speed and agility required to solve bottlenecks in real time, apply proven methodologies, and get stalled production moving again without delay.",
+        subHeader: 'Our Execution Edge',
+        points: [
+          { title: 'Agile Deployment', text: 'Mobilizing specialized engineering talent and supply chains straight to the field, eliminating middleman delays.' },
+          { title: 'Field-Tested Solutions', text: 'Applying tried-and-tested methodologies to overcome the most complex surface and subsurface challenges.' },
+          { title: 'Uninterrupted Momentum', text: 'Leading with seasoned management to ensure work progresses on schedule and on budget to accelerate production timelines.' }
+        ]
+      },
+      {
+        id: 'hse-capability',
+        title: 'Structured for Safe Execution and Sustained Knowledge Transfer',
+        eyebrow: 'HSE & Local Capability',
+        desc: 'True sustainability requires protecting the people, the asset, and the environment. Freedom First brings U.S. Health, Safety, and Environment (HSE) standards and a strict culture of compliance to every site we operate. Simultaneously, we structure every project as a platform for knowledge transfer. We work side-by-side with local teams to build the technical capability required so the host nation can independently operate and sustain the assets long after the initial intervention.',
+        subHeader: 'Our Operational Standard',
+        points: [
+          { title: 'Uncompromising Safety (HSE)', text: 'Implementing operational protocols from day one to protect personnel, mitigate risk and ensure uninterrupted, safe field operations.' },
+          { title: 'Asset Protection', text: 'Managing legacy infrastructure with strict technical integrity to ensure interventions maximize production without jeopardizing reservoir health.' },
+          { title: 'Hands-On Knowledge Transfer', text: 'Upskilling the local workforce through structured training, embedding them into established systems for long-term operational continuity.' }
+        ]
+      },
+      {
+        id: 'commercial-alignment',
+        title: 'Anchored by Shared Risk and Production-Driven Reward',
+        eyebrow: 'Commercial Alignment',
+        desc: 'We engage as true production partners, fully prepared to back our operational expertise with direct capital investment. Rather than relying on traditional service models that capitalize on existing output, we bring the flexibility to share the risk. Confident in our execution, we are willing to invest our own capital and earn solely on the incremental barrels we produce. This directly aligns our returns with your national goals: increasing output, controlling costs and securing long-term asset value.',
+        subHeader: 'Our Ideal Structure',
+        points: [
+          { title: 'Performance-Driven Returns', text: 'Backing our operational confidence with commercial agreements tied exclusively to the asset’s incremental production growth.' },
+          { title: 'Direct Local Investment', text: 'Bringing private capital directly to neglected or stalled fields to unlock their energy potential without adding to national debt.' },
+          { title: 'National Goal Alignment', text: "Structuring every project to directly support the host country's broader objectives of economic self-sufficiency and stability." }
+        ]
+      }
+    ]
+  },
+  insightsPage: {
+    eyebrow: 'Insights',
+    title: 'Field Perspectives on the Work, the Markets and What It Takes To Deliver',
+    subhead: 'Freedom First shares insights from the field on moving hydrocarbon projects forward in demanding environments. From field execution to market and company updates, our perspective is shaped by the work itself.',
+    categories: { all: 'All', emergingMarkets: 'Emerging Markets', fieldExecution: 'Field Execution', companyUpdates: 'Company Updates' },
+    articles: [
+      { id: 1, title: 'Rebuilding Libya Will Depend on Execution, Not Statements', category: 'Emerging Markets' },
+      { id: 2, title: 'Freedom First CEO Joins Panel at the U.S. Africa Energy Forum', category: 'Company Updates' },
+      { id: 3, title: 'The Transferrable Lessons and Methods Learned in the Permian Basin', category: 'Field Execution' }
+    ],
+    readMore: 'Read More',
+    comingSoon: 'Coming Soon',
+    imageComingSoon: 'Image coming soon',
+    noArticles: 'No articles found for this category.'
+  },
+  insightLibya: {
+    backToInsights: 'Back to Insights',
+    allInsights: 'All Insights',
+    category: 'Emerging Markets',
+    title: 'Rebuilding Libya Will Depend on Execution, Not Statements',
+    paragraphs: [
+      "What happens in Libya will shape North Africa, Mediterranean security, migration dynamics, and regional energy flows for decades. Stability will not emerge from statements, conferences, or diplomatic symbolism alone. Recent history has made that clear. Libya's long-term stability will come from functioning power systems, rebuilt infrastructure, reliable essential services, and the sustained operational presence required to make those systems work. That effort is being driven by external actors, and the United States should be leading it.",
+      "In Libya, speed matters. Delays do not simply cost commercial opportunities. They erode confidence, weaken stability, and create space for competitors and adversaries to establish influence.",
+      "The United States is not absent because it lacks capability. American firms remain among the most competitive in the world across energy, infrastructure, logistics, engineering, and advanced systems integration. The challenge is structural. Washington still lacks a coherent model for deploying American commercial strength rapidly into fragile or transitional environments. Yet American firms are often the most capable and most willing to operate in difficult conditions.",
+      "Competitors have adapted faster. China's Belt and Road Initiative integrates financing, diplomacy, construction, and political alignment into a single coordinated offering. They move early, maintain physical presence, and deliver visible results on the ground.",
+      "The American approach remains fragmented and slow. Institutions such as the U.S. International Development Finance Corporation and EXIM are powerful tools, but they are rarely synchronized for rapid execution. By the time financing, approvals, and support mechanisms align, the strategic window has often narrowed or closed entirely. In many cases, there is not merely delay, but a broader absence of sustained interest.",
+      "The answer is not more policy papers or strategic frameworks. The answer is a different operating model.",
+      "American private enterprise should become the lead instrument of economic statecraft in emerging markets. Stability in Libya will not ultimately be created through diplomatic language alone. It will be built by companies that invest capital, construct infrastructure, restore services, create employment, and operate critical systems over time. In practice, durable influence is often established through contracts, transactions, and long-term operational presence.",
+      "Washington's role should be to enable that effort early and decisively: align financing tools, de-risk projects, support commercial execution, and operate on timelines measured in weeks and months rather than years. The role of government is not to replace American business, but to empower it as the forward edge of American engagement.",
+      "That requires physical presence. Economic strategy cannot be executed remotely.",
+      "Trust is not built through virtual or periodic engagement alone. A fully operational U.S. Embassy in Libya would send a clear signal to American firms, Libyan stakeholders, and regional competitors that the United States is serious, committed, and prepared to remain engaged. Meaningful commercial engagement is difficult without meaningful diplomatic presence and support on the ground.",
+      "No financing package or policy framework can fully substitute for that signal. Presence is not a diplomatic luxury. It is a strategic and competitive necessity. The role of the embassy is not to direct commerce, but to support the American companies willing to execute in difficult environments.",
+      "This extends beyond Libya. Across emerging markets, development and stability are inseparable. Where American firms invest, build, and remain present, they help shape long-term political and economic outcomes. Where they do not, others will.",
+      "Libya represents an opportunity to demonstrate that the United States can still compete where it matters most, not by declaring stability, but by helping build it."
+    ]
+  },
+  contactPage: {
+    eyebrow: 'Contact',
+    title: 'Engage the Engineers Behind High-Yield Production',
+    subhead: "Tell us about your asset and we'll get stalled production moving.",
+    formEyebrow: 'Project Intake',
+    formHeading: 'Tell Us About Your Asset',
+    fields: {
+      name: 'First & Last Name',
+      company: 'Company / Organization',
+      title: 'Official Title',
+      email: 'Email',
+      phone: 'Phone',
+      location: 'Asset / Project Location',
+      objective: 'Operational Objective',
+      challenge: 'Define the Core Challenge'
+    },
+    objectivePlaceholder: '— Select objective —',
+    objectiveOptions: [
+      'Upstream: Production Optimization & Recovery',
+      'Midstream: Infrastructure & Flow Acceleration',
+      'Downstream: Yield Optimization & Reliability',
+      'Trading & Logistics: Market Access & Physical Offtake'
+    ],
+    challengePlaceholder: 'Provide a brief overview of the operational bottleneck or commercial constraint you need resolved...',
+    submit: 'Initiate Contact',
+    directEyebrow: 'Direct Contact',
+    directHeading: 'Reach Our Team Directly',
+    hqEyebrow: 'Headquarters',
+    hqCity: 'The Woodlands, TX',
+    hqAddress: '2700 Research Forest Dr.\nSuite 105\nThe Woodlands, Texas 77381',
+    hqCountry: 'United States of America',
+    getDirections: 'Get Directions',
+    emailEyebrow: 'Email',
+    emailHeading: 'Get in Touch',
+    generalInquiries: 'General Inquiries',
+    footprintEyebrow: 'Operating Footprint',
+    footprintHeading: 'Deployed Globally',
+    footprintText: "Freedom First deploys engineers and operators globally. Whether assets are located in mature domestic basins or the world's most logistically challenging emerging markets, we bring the execution directly to the wellhead."
+  },
+  ui: {
+    explore: 'Explore',
+    comingSoon: 'Coming soon',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    capabilitiesEyebrow: 'Capabilities',
+    advantagesEyebrow: 'Advantages',
+    partnershipEconomic: 'Economic Empowerment',
+    partnershipSynergy: 'Synergy & Impact',
+    serviceMapEyebrow: 'Global Operations',
+    serviceMapAll: 'All Operations',
+    serviceMapActive: 'Active',
+    serviceMapHover: 'Hover highlighted regions for details',
+    aboutMissionOrigin: 'Mission & Origin',
+    aboutTechnicalPartner: 'Technical Partner',
+    aboutCoreValues: 'Core Values',
+    aboutLeadership: 'Leadership',
+    aboutNextStep: 'Next Step',
+    capAdvantageEyebrow: 'The Advantage',
+    capNextSteps: 'Next Steps',
+    approachEyebrow: 'Our Approach',
+    thePartnership: 'The Partnership',
+    stakeholdersEyebrow: 'Stakeholders',
+    counsel: 'Counsel',
+    background: 'Background',
+    readMore: 'Read More',
+    close: 'Close',
+    rightsReserved: 'All rights reserved.'
+  },
+  seo: {
+    home: { title: 'Freedom First Global — Private-Sector Energy Solutions for Emerging Markets', description: 'Freedom First Global brings field-proven U.S. energy expertise — upstream, midstream, downstream, asset protection and trading — directly to critical assets in emerging markets. Private-sector solutions built for stability and growth.' },
+    about: { title: 'About', description: 'Freedom First Global is a technical production partner built for the field. Founded in Texas, we bring entrepreneurial energy expertise and an execution-driven culture to emerging markets — restoring production, modernizing infrastructure and building local capability.' },
+    capabilities: { title: 'Capabilities', description: 'From upstream operations and midstream infrastructure to downstream processing, asset protection and energy trading, Freedom First Global drives measurable production growth across the entire energy value chain.' },
+    approach: { title: 'Our Approach', description: 'Freedom First Global turns resources into economic freedom and stability — executing in the most logistically demanding environments with direct-to-asset logistics, local workforce development and performance-driven partnerships.' },
+    insights: { title: 'Insights', description: 'Field perspectives from Freedom First Global on moving hydrocarbon projects forward in demanding environments — from field execution and emerging markets to company updates.' },
+    insightLibya: { title: 'Rebuilding Libya Will Depend on Execution, Not Statements', description: "Libya's stability will be built by companies that invest capital, construct infrastructure and operate critical systems — and American private enterprise should lead. A Freedom First Global field perspective." },
+    contact: { title: 'Contact', description: 'Engage the engineers behind high-yield production. Connect with Freedom First Global to diagnose constraints, engineer solutions and get stalled production moving. Offices in The Woodlands, Texas and Abu Dhabi, UAE.' }
   }
 };
+
+export type Content = typeof content;

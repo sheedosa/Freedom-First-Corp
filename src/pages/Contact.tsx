@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin, Mail, Globe, ExternalLink } from 'lucide-react';
+import { useContent, useLanguage } from '../i18n';
 import { Seo, SITE_URL, SITE_NAME, canonicalFor, breadcrumbLd } from '../seo';
 
 type FormState = {
@@ -26,6 +27,10 @@ const initialForm: FormState = {
 };
 
 export const Contact = () => {
+  const content = useContent();
+  const cp = content.contactPage;
+  const { locale } = useLanguage();
+  const isRtl = locale === 'ar';
   const [form, setForm] = useState<FormState>(initialForm);
 
   const update = (key: keyof FormState) => (value: string) =>
@@ -58,8 +63,8 @@ export const Contact = () => {
     <div className="flex-grow flex flex-col bg-off-white">
       <Seo
         path="/contact"
-        title="Contact"
-        description="Engage the engineers behind high-yield production. Connect with Freedom First Global to diagnose constraints, engineer solutions and get stalled production moving. Offices in The Woodlands, Texas and Abu Dhabi, UAE."
+        title={content.seo.contact.title}
+        description={content.seo.contact.description}
         jsonLd={[
           {
             '@context': 'https://schema.org',
@@ -115,14 +120,14 @@ export const Contact = () => {
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
                 <span className="text-xs font-mono tracking-[0.3em] text-white uppercase">
-                  Contact
+                  {cp.eyebrow}
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em] mb-4">
-                Engage the Engineers Behind High-Yield Production
+                {cp.title}
               </h1>
               <p className="text-off-white/80 text-base leading-relaxed max-w-xl opacity-90">
-                Tell us about your asset and we'll get stalled production moving.
+                {cp.subhead}
               </p>
             </motion.div>
           </div>
@@ -143,11 +148,11 @@ export const Contact = () => {
               <div className="inline-flex items-center gap-3 mb-3">
                 <div className="w-10 h-[1px] bg-red-freedom" />
                 <span className="text-red-freedom font-mono text-[10px] tracking-[0.3em] uppercase">
-                  Project Intake
+                  {cp.formEyebrow}
                 </span>
               </div>
               <h2 className="block text-navy-deep text-2xl md:text-3xl lg:text-4xl font-display uppercase tracking-[-0.02em] leading-[0.95]">
-                Tell Us About Your Asset
+                {cp.formHeading}
               </h2>
             </div>
 
@@ -157,20 +162,20 @@ export const Contact = () => {
             >
               {/* Left column */}
               <div className="space-y-6">
-                <Field label="First & Last Name" value={form.name} onChange={update('name')} required />
-                <Field label="Company / Organization" value={form.company} onChange={update('company')} required />
-                <Field label="Official Title" value={form.title} onChange={update('title')} />
-                <Field label="Email" type="email" value={form.email} onChange={update('email')} required />
-                <Field label="Phone" type="tel" value={form.phone} onChange={update('phone')} />
+                <Field label={cp.fields.name} value={form.name} onChange={update('name')} required />
+                <Field label={cp.fields.company} value={form.company} onChange={update('company')} required />
+                <Field label={cp.fields.title} value={form.title} onChange={update('title')} />
+                <Field label={cp.fields.email} type="email" value={form.email} onChange={update('email')} required />
+                <Field label={cp.fields.phone} type="tel" value={form.phone} onChange={update('phone')} />
               </div>
 
               {/* Right column */}
               <div className="space-y-6">
-                <Field label="Asset / Project Location" value={form.location} onChange={update('location')} />
+                <Field label={cp.fields.location} value={form.location} onChange={update('location')} />
 
                 <div>
                   <label className="block text-navy-deep text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                    Operational Objective
+                    {cp.fields.objective}
                   </label>
                   <select
                     value={form.objective}
@@ -179,36 +184,29 @@ export const Contact = () => {
                     style={{
                       backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23001E3C' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E")`,
                       backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'right 1rem center',
+                      backgroundPosition: isRtl ? 'left 1rem center' : 'right 1rem center',
                       backgroundSize: '1.25em',
-                      paddingRight: '2.5rem',
+                      paddingInlineEnd: '2.5rem',
                     }}
                   >
-                    <option value="">— Select objective —</option>
-                    <option value="Upstream: Production Optimization & Recovery">
-                      Upstream: Production Optimization & Recovery
-                    </option>
-                    <option value="Midstream: Infrastructure & Flow Acceleration">
-                      Midstream: Infrastructure & Flow Acceleration
-                    </option>
-                    <option value="Downstream: Yield Optimization & Reliability">
-                      Downstream: Yield Optimization & Reliability
-                    </option>
-                    <option value="Trading & Logistics: Market Access & Physical Offtake">
-                      Trading & Logistics: Market Access & Physical Offtake
-                    </option>
+                    <option value="">{cp.objectivePlaceholder}</option>
+                    {cp.objectiveOptions.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-navy-deep text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                    Define the Core Challenge
+                    {cp.fields.challenge}
                   </label>
                   <textarea
                     value={form.challenge}
                     onChange={(e) => update('challenge')(e.target.value)}
                     rows={6}
-                    placeholder="Provide a brief overview of the operational bottleneck or commercial constraint you need resolved..."
+                    placeholder={cp.challengePlaceholder}
                     className="w-full bg-white border-2 border-navy-deep/15 px-4 py-3.5 text-sm text-navy-deep rounded-lg focus:border-red-freedom focus:outline-none transition-colors resize-none placeholder:text-navy-deep/40"
                   />
                 </div>
@@ -219,8 +217,8 @@ export const Contact = () => {
                   type="submit"
                   className="group inline-flex items-center gap-3 bg-red-freedom text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-red-700 transition-all hover:shadow-xl hover:shadow-red-freedom/30"
                 >
-                  Initiate Contact
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {cp.submit}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform rtl:-scale-x-100" />
                 </button>
               </div>
             </form>
@@ -262,35 +260,33 @@ export const Contact = () => {
             <div className="inline-flex items-center gap-3 mb-3">
               <div className="w-10 h-[1px] bg-red-freedom" />
               <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
-                Direct Contact
+                {cp.directEyebrow}
               </span>
             </div>
             <h2 className="block text-white text-2xl md:text-3xl lg:text-4xl font-display uppercase tracking-[-0.02em] leading-[0.95]">
-              Reach Our Team Directly
+              {cp.directHeading}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
             {/* HQ Address */}
             <div className="group relative flex flex-col h-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 rounded-2xl p-6 md:p-8 transition-colors duration-300">
-              <div className="absolute top-0 left-6 md:left-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
+              <div className="absolute top-0 start-6 md:start-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
                 <MapPin className="w-5 h-5 text-white" strokeWidth={2} />
               </div>
 
               <div className="mt-4 mb-5">
                 <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
-                  Headquarters
+                  {cp.hqEyebrow}
                 </span>
                 <h3 className="text-white font-display text-xl md:text-2xl uppercase tracking-tight leading-tight mt-2">
-                  The Woodlands, TX
+                  {cp.hqCity}
                 </h3>
               </div>
 
               <address className="not-italic text-white/80 text-sm md:text-[15px] leading-relaxed">
-                <p>2700 Research Forest Dr.</p>
-                <p>Suite 105</p>
-                <p className="mt-2">The Woodlands, Texas 77381</p>
-                <p className="text-white/55">United States of America</p>
+                <p dir="ltr" className="whitespace-pre-line rtl:text-right">{cp.hqAddress}</p>
+                <p className="text-white/55 mt-2">{cp.hqCountry}</p>
               </address>
 
               <a
@@ -299,32 +295,32 @@ export const Contact = () => {
                 rel="noopener noreferrer"
                 className="mt-auto pt-6 inline-flex items-center gap-2 text-white/55 hover:text-red-freedom text-[10px] font-bold uppercase tracking-[0.25em] transition-colors w-fit"
               >
-                Get Directions
+                {cp.getDirections}
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
 
             {/* Email */}
             <div className="group relative flex flex-col h-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 rounded-2xl p-6 md:p-8 transition-colors duration-300">
-              <div className="absolute top-0 left-6 md:left-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
+              <div className="absolute top-0 start-6 md:start-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
                 <Mail className="w-5 h-5 text-white" strokeWidth={2} />
               </div>
 
               <div className="mt-4 mb-5">
                 <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
-                  Email
+                  {cp.emailEyebrow}
                 </span>
                 <h3 className="text-white font-display text-xl md:text-2xl uppercase tracking-tight leading-tight mt-2">
-                  Get in Touch
+                  {cp.emailHeading}
                 </h3>
               </div>
 
               <a
                 href="mailto:info@freedomfirstglobal.com"
-                className="group/email block py-2 border-l-2 border-white/15 hover:border-red-freedom pl-3 transition-colors"
+                className="group/email block py-2 border-s-2 border-white/15 hover:border-red-freedom ps-3 transition-colors"
               >
                 <p className="text-white/45 text-[10px] uppercase tracking-[0.25em] mb-1 font-bold">
-                  General Inquiries
+                  {cp.generalInquiries}
                 </p>
                 <p className="text-white group-hover/email:text-red-freedom transition-colors text-sm md:text-[15px] font-mono break-all">
                   info@freedomfirstglobal.com
@@ -334,21 +330,21 @@ export const Contact = () => {
 
             {/* Global Footprint */}
             <div className="group relative flex flex-col h-full bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 rounded-2xl p-6 md:p-8 transition-colors duration-300">
-              <div className="absolute top-0 left-6 md:left-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
+              <div className="absolute top-0 start-6 md:start-8 -translate-y-1/2 w-12 h-12 rounded-xl bg-red-freedom flex items-center justify-center shadow-lg shadow-red-freedom/30">
                 <Globe className="w-5 h-5 text-white" strokeWidth={2} />
               </div>
 
               <div className="mt-4 mb-5">
                 <span className="text-red-freedom text-[10px] font-bold tracking-[0.3em] uppercase">
-                  Operating Footprint
+                  {cp.footprintEyebrow}
                 </span>
                 <h3 className="text-white font-display text-xl md:text-2xl uppercase tracking-tight leading-tight mt-2">
-                  Deployed Globally
+                  {cp.footprintHeading}
                 </h3>
               </div>
 
               <p className="text-white/80 text-sm md:text-[15px] leading-relaxed">
-                Freedom First deploys engineers and operators globally. Whether assets are located in mature domestic basins or the world's most logistically challenging emerging markets, we bring the execution directly to the wellhead.
+                {cp.footprintText}
               </p>
             </div>
           </div>

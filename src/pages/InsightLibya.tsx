@@ -1,18 +1,23 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { useContent, useLanguage } from '../i18n';
 import { Seo, SITE_URL, SITE_NAME, canonicalFor, breadcrumbLd } from '../seo';
 
 export const InsightLibya = () => {
+  const content = useContent();
+  const { locale } = useLanguage();
+  const lib = content.insightLibya;
+  const seo = content.seo.insightLibya;
+
   const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Rebuilding Libya Will Depend on Execution, Not Statements',
-    description:
-      "Libya's stability will be built by companies that invest capital, construct infrastructure and operate critical systems — and American private enterprise should lead.",
+    headline: lib.title,
+    description: seo.description,
     image: `${SITE_URL}/images/article-1-libya.jpg`,
-    articleSection: 'Emerging Markets',
-    inLanguage: 'en',
+    articleSection: lib.category,
+    inLanguage: locale,
     url: canonicalFor('/insights/rebuilding-libya'),
     mainEntityOfPage: canonicalFor('/insights/rebuilding-libya'),
     author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
@@ -28,8 +33,8 @@ export const InsightLibya = () => {
     <div className="flex-grow flex flex-col bg-off-white">
       <Seo
         path="/insights/rebuilding-libya"
-        title="Rebuilding Libya Will Depend on Execution, Not Statements"
-        description="Libya's stability will be built by companies that invest capital, construct infrastructure and operate critical systems — and American private enterprise should lead. A Freedom First Global field perspective."
+        title={seo.title}
+        description={seo.description}
         jsonLd={[
           articleLd,
           breadcrumbLd([
@@ -55,16 +60,16 @@ export const InsightLibya = () => {
               to="/insights"
               className="inline-flex items-center gap-2 text-white/50 hover:text-white text-xs font-mono tracking-widest uppercase mb-10 transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Insights
+              <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+              {lib.backToInsights}
             </Link>
             <div className="inline-flex items-center gap-3 mb-6">
               <span className="inline-block bg-red-freedom text-white text-[10px] font-bold font-mono tracking-widest uppercase px-3 py-1.5 rounded-sm">
-                Emerging Markets
+                {lib.category}
               </span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em]">
-              Rebuilding Libya Will Depend on Execution, Not Statements
+              {lib.title}
             </h1>
           </motion.div>
         </div>
@@ -80,45 +85,9 @@ export const InsightLibya = () => {
             className="prose prose-lg max-w-none"
           >
             <div className="space-y-7 text-navy-deep/80 text-lg leading-relaxed">
-              <p>
-                What happens in Libya will shape North Africa, Mediterranean security, migration dynamics, and regional energy flows for decades. Stability will not emerge from statements, conferences, or diplomatic symbolism alone. Recent history has made that clear. Libya's long-term stability will come from functioning power systems, rebuilt infrastructure, reliable essential services, and the sustained operational presence required to make those systems work. That effort is being driven by external actors, and the United States should be leading it.
-              </p>
-              <p>
-                In Libya, speed matters. Delays do not simply cost commercial opportunities. They erode confidence, weaken stability, and create space for competitors and adversaries to establish influence.
-              </p>
-              <p>
-                The United States is not absent because it lacks capability. American firms remain among the most competitive in the world across energy, infrastructure, logistics, engineering, and advanced systems integration. The challenge is structural. Washington still lacks a coherent model for deploying American commercial strength rapidly into fragile or transitional environments. Yet American firms are often the most capable and most willing to operate in difficult conditions.
-              </p>
-              <p>
-                Competitors have adapted faster. China's Belt and Road Initiative integrates financing, diplomacy, construction, and political alignment into a single coordinated offering. They move early, maintain physical presence, and deliver visible results on the ground.
-              </p>
-              <p>
-                The American approach remains fragmented and slow. Institutions such as the U.S. International Development Finance Corporation and EXIM are powerful tools, but they are rarely synchronized for rapid execution. By the time financing, approvals, and support mechanisms align, the strategic window has often narrowed or closed entirely. In many cases, there is not merely delay, but a broader absence of sustained interest.
-              </p>
-              <p>
-                The answer is not more policy papers or strategic frameworks. The answer is a different operating model.
-              </p>
-              <p>
-                American private enterprise should become the lead instrument of economic statecraft in emerging markets. Stability in Libya will not ultimately be created through diplomatic language alone. It will be built by companies that invest capital, construct infrastructure, restore services, create employment, and operate critical systems over time. In practice, durable influence is often established through contracts, transactions, and long-term operational presence.
-              </p>
-              <p>
-                Washington's role should be to enable that effort early and decisively: align financing tools, de-risk projects, support commercial execution, and operate on timelines measured in weeks and months rather than years. The role of government is not to replace American business, but to empower it as the forward edge of American engagement.
-              </p>
-              <p>
-                That requires physical presence. Economic strategy cannot be executed remotely.
-              </p>
-              <p>
-                Trust is not built through virtual or periodic engagement alone. A fully operational U.S. Embassy in Libya would send a clear signal to American firms, Libyan stakeholders, and regional competitors that the United States is serious, committed, and prepared to remain engaged. Meaningful commercial engagement is difficult without meaningful diplomatic presence and support on the ground.
-              </p>
-              <p>
-                No financing package or policy framework can fully substitute for that signal. Presence is not a diplomatic luxury. It is a strategic and competitive necessity. The role of the embassy is not to direct commerce, but to support the American companies willing to execute in difficult environments.
-              </p>
-              <p>
-                This extends beyond Libya. Across emerging markets, development and stability are inseparable. Where American firms invest, build, and remain present, they help shape long-term political and economic outcomes. Where they do not, others will.
-              </p>
-              <p>
-                Libya represents an opportunity to demonstrate that the United States can still compete where it matters most, not by declaring stability, but by helping build it.
-              </p>
+              {lib.paragraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
             </div>
           </motion.div>
 
@@ -128,8 +97,8 @@ export const InsightLibya = () => {
               to="/insights"
               className="inline-flex items-center gap-2 text-navy-deep font-bold text-xs uppercase tracking-widest hover:text-red-freedom transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
-              All Insights
+              <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
+              {lib.allInsights}
             </Link>
           </div>
         </div>

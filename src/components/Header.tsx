@@ -2,19 +2,21 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
-import { content } from '../content';
+import { useContent, useLanguage, type Locale } from '../i18n';
 import { Logo } from './Logo';
 
 export const Header = () => {
+  const content = useContent();
+  const { locale, setLocale } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(null);
-  const [currentLang, setCurrentLang] = useState(content.nav.languages.find(l => l.active)?.code || 'EN');
   const [isMobileLangOpen, setIsMobileLangOpen] = useState(false);
-  
+
   const location = useLocation();
   const navigate = useNavigate();
+  const currentCode = locale.toUpperCase();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,8 +45,9 @@ export const Header = () => {
 
   const handleLangChange = (code: string, active: boolean) => {
     if (active) {
-      setCurrentLang(code);
+      setLocale(code.toLowerCase() as Locale);
       setIsMobileLangOpen(false);
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -64,10 +67,10 @@ export const Header = () => {
   };
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 py-3 md:py-4 shadow-sm text-navy-deep' 
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 py-3 md:py-4 shadow-sm text-navy-deep'
           : 'bg-transparent py-5 md:py-8 text-white'
       }`}
     >
@@ -79,30 +82,30 @@ export const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
-            <div 
-              key={item.label} 
+            <div
+              key={item.label}
               className="relative group"
               onMouseEnter={() => setActiveDropdown(item.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               {item.href.startsWith('/') ? (
-                <Link 
+                <Link
                   to={item.href}
                   className="flex items-center nav-link transition-colors duration-200 hover:text-red-freedom"
                 >
                   {item.label}
-                  {item.dropdown && <ChevronDown className="ml-1 w-3 h-3 opacity-50" strokeWidth={3} />}
+                  {item.dropdown && <ChevronDown className="ms-1 w-3 h-3 opacity-50" strokeWidth={3} />}
                 </Link>
               ) : (
-                <a 
+                <a
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className="flex items-center nav-link transition-colors duration-200 hover:text-red-freedom"
                 >
                   {item.label}
-                  {item.dropdown && <ChevronDown className="ml-1 w-3 h-3 opacity-50" strokeWidth={3} />}
+                  {item.dropdown && <ChevronDown className="ms-1 w-3 h-3 opacity-50" strokeWidth={3} />}
                 </a>
               )}
 
@@ -114,7 +117,7 @@ export const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute left-0 mt-4 w-64 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden border border-gray-100"
+                      className="absolute start-0 mt-4 w-64 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden border border-gray-100"
                     >
                       <div className="py-3 px-2">
                         {item.dropdown.map((subItem) => (
@@ -122,7 +125,7 @@ export const Header = () => {
                             <Link
                               key={subItem.label}
                               to={subItem.href}
-                              className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200"
+                              className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200 text-start"
                             >
                               {subItem.label}
                             </Link>
@@ -131,7 +134,7 @@ export const Header = () => {
                               key={subItem.label}
                               href={subItem.href}
                               onClick={(e) => handleNavClick(e, subItem.href)}
-                              className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200"
+                              className="block px-4 py-2.5 text-sm text-navy-deep rounded-xl hover:bg-red-freedom/10 hover:text-red-freedom transition-all duration-200 text-start"
                             >
                               {subItem.label}
                             </a>
@@ -146,30 +149,30 @@ export const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center gap-6">
           {/* Language Switcher */}
           <div className="relative group">
-            <button 
+            <button
               className="flex items-center text-xs font-medium uppercase tracking-wider transition-colors duration-200"
             >
-              <Globe className="mr-2 w-4 h-4 opacity-70" />
-              {currentLang}
+              <Globe className="me-2 w-4 h-4 opacity-70" />
+              {currentCode}
             </button>
-            <div className="absolute right-0 mt-4 w-40 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl border border-gray-100 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+            <div className="absolute end-0 mt-4 w-44 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl border border-gray-100 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0">
               <div className="py-2 px-1">
                 {content.nav.languages.map((lang) => (
-                  <button 
-                    key={lang.code} 
+                  <button
+                    key={lang.code}
                     onClick={() => handleLangChange(lang.code, lang.active)}
-                    className={`w-full relative px-4 py-2.5 flex items-center text-left rounded-xl ${!lang.active ? 'cursor-not-allowed opacity-50' : 'hover:bg-red-freedom/10'}`}
+                    className={`w-full relative px-4 py-2.5 flex items-center text-start rounded-xl ${!lang.active ? 'cursor-not-allowed opacity-50' : 'hover:bg-red-freedom/10'}`}
                     disabled={!lang.active}
                   >
-                    <span className={`text-xs ${currentLang === lang.code ? 'text-red-freedom font-bold' : 'text-navy-deep'}`}>
+                    <span className={`text-xs ${currentCode === lang.code ? 'text-red-freedom font-bold' : 'text-navy-deep'}`}>
                       {lang.label} ({lang.code})
                     </span>
                     {!lang.active && (
-                      <span className="ml-auto text-[10px] bg-gray-100 px-1 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                        Coming soon
+                      <span className="ms-auto text-[10px] bg-gray-100 px-1 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        {content.ui.comingSoon}
                       </span>
                     )}
                   </button>
@@ -177,7 +180,7 @@ export const Header = () => {
               </div>
             </div>
           </div>
- 
+
           <Link
             to="/contact"
             className="bg-red-freedom text-white px-8 py-3.5 text-xs font-bold uppercase tracking-[0.1em] rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-freedom/30 hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
@@ -187,10 +190,10 @@ export const Header = () => {
         </div>
 
         {/* Mobile menu toggle */}
-        <button 
-          className="lg:hidden p-3 -mr-3 touch-manipulation"
+        <button
+          className="lg:hidden p-3 -me-3 touch-manipulation"
           onClick={() => setIsMobileMenuOpen(true)}
-          aria-label="Open menu"
+          aria-label={content.ui.openMenu}
         >
           <Menu className="w-8 h-8 transition-colors duration-200" />
         </button>
@@ -209,10 +212,10 @@ export const Header = () => {
             <div className="flex flex-col h-full overflow-hidden">
               <div className="flex justify-between items-center p-6 border-b border-white/10 shrink-0">
                 <Logo variant="white" />
-                <button 
-                  onClick={() => setIsMobileMenuOpen(false)} 
-                  aria-label="Close menu"
-                  className="p-3 -mr-3"
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  aria-label={content.ui.closeMenu}
+                  className="p-3 -me-3"
                 >
                   <X className="w-8 h-8" />
                 </button>
@@ -223,17 +226,17 @@ export const Header = () => {
                   <div key={item.label} className="border-b border-white/5 pb-4">
                     <div className="w-full">
                       {item.href.startsWith('/') ? (
-                        <Link 
+                        <Link
                           to={item.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="w-full flex items-center justify-between text-left text-2xl font-bold uppercase tracking-tight active:text-red-freedom transition-all"
+                          className="w-full flex items-center justify-between text-start text-2xl font-bold uppercase tracking-tight active:text-red-freedom transition-all"
                         >
                           <span>{item.label}</span>
                         </Link>
                       ) : (
-                        <button 
+                        <button
                           onClick={() => item.dropdown ? toggleMobileItem(item.label) : handleNavClick({ preventDefault: () => {} } as any, item.href)}
-                          className="w-full flex items-center justify-between text-left text-2xl font-bold uppercase tracking-tight active:text-red-freedom transition-all"
+                          className="w-full flex items-center justify-between text-start text-2xl font-bold uppercase tracking-tight active:text-red-freedom transition-all"
                         >
                           <span>{item.label}</span>
                           {item.dropdown && (
@@ -247,7 +250,7 @@ export const Header = () => {
                         </button>
                       )}
                     </div>
-                    
+
                     {item.dropdown && (
                       <AnimatePresence>
                         {expandedMobileItem === item.label && (
@@ -258,7 +261,7 @@ export const Header = () => {
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
                             className="overflow-hidden"
                           >
-                            <div className="pl-4 mt-4 space-y-4 border-l border-white/20">
+                            <div className="ps-4 mt-4 space-y-4 border-s border-white/20">
                               {item.dropdown.map((subItem) => (
                                 subItem.href.startsWith('/') ? (
                                   <Link
@@ -292,17 +295,17 @@ export const Header = () => {
               <div className="p-8 border-t border-white/10 space-y-6 bg-black/40 shrink-0">
                 {/* Mobile Language Switcher Dropdown */}
                 <div className="relative">
-                  <button 
+                  <button
                     onClick={() => setIsMobileLangOpen(!isMobileLangOpen)}
                     className="w-full flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/10 text-sm font-bold tracking-widest"
                   >
                     <div className="flex items-center">
-                      <Globe className="w-4 h-4 mr-3 text-red-freedom" />
-                      <span>{content.nav.languages.find(l => l.code === currentLang)?.label || 'English'}</span>
+                      <Globe className="w-4 h-4 me-3 text-red-freedom" />
+                      <span>{content.nav.languages.find(l => l.code === currentCode)?.label}</span>
                     </div>
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileLangOpen ? 'rotate-180' : ''}`} />
                   </button>
- 
+
                   <AnimatePresence>
                     {isMobileLangOpen && (
                       <motion.div
@@ -316,13 +319,13 @@ export const Header = () => {
                             key={lang.code}
                             onClick={() => handleLangChange(lang.code, lang.active)}
                             disabled={!lang.active}
-                            className={`w-full px-6 py-4 flex items-center justify-between text-left rounded-2xl ${!lang.active ? 'opacity-30' : 'active:bg-off-white'}`}
+                            className={`w-full px-6 py-4 flex items-center justify-between text-start rounded-2xl ${!lang.active ? 'opacity-30' : 'active:bg-off-white'}`}
                           >
-                            <span className={`text-sm font-bold uppercase ${currentLang === lang.code ? 'text-red-freedom' : ''}`}>
+                            <span className={`text-sm font-bold uppercase ${currentCode === lang.code ? 'text-red-freedom' : ''}`}>
                               {lang.label}
                             </span>
                             {!lang.active && (
-                              <span className="text-[10px] bg-gray-100 px-2 py-1 rounded-md">Coming soon</span>
+                              <span className="text-[10px] bg-gray-100 px-2 py-1 rounded-md">{content.ui.comingSoon}</span>
                             )}
                           </button>
                         ))}
@@ -330,7 +333,7 @@ export const Header = () => {
                     )}
                   </AnimatePresence>
                 </div>
- 
+
                 <Link
                   to="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}

@@ -112,3 +112,49 @@
     width: 100%;
   }
 }
+
+/* =========================================================================
+   Arabic / RTL
+   Written unlayered so these rules reliably win over Tailwind's layered
+   utilities (cascade layers rank below unlayered styles).
+   ========================================================================= */
+
+/* Swap the whole type system to Tajawal when Arabic is active. The display,
+   body, sans and mono utilities all read these vars, so one override covers
+   headings, body copy, eyebrow labels and form controls. */
+[dir="rtl"] {
+  --font-display: "Tajawal", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Tajawal", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Tajawal", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Tajawal", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-body);
+  /* Arabic reads more comfortably with a little extra leading. */
+  line-height: 1.7;
+}
+
+/* Letter-spacing breaks Arabic cursive joining — never apply it. This neutralizes
+   every `tracking-*` utility (and the global heading/nav rules) under RTL. */
+[dir="rtl"] * {
+  letter-spacing: normal !important;
+}
+
+/* Arabic has no letter case. Drop uppercase so Arabic renders naturally and any
+   embedded Latin brand fragments keep their proper mixed case instead of SHOUTING. */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] .nav-link,
+[dir="rtl"] .uppercase {
+  text-transform: none;
+}
+
+/* Give the tiny eyebrow/label text a touch more weight so small Arabic stays legible. */
+[dir="rtl"] .font-mono {
+  font-weight: 500;
+}
