@@ -128,7 +128,7 @@ export const contentEs: Content = {
     message: 'Freedom First aplica un enfoque «por, con y a través de» para ejecutar con la rapidez, la flexibilidad y la preparación local necesarias para mantener el trabajo en marcha en entornos difíciles.',
     items: [
       {
-        title: 'Experiencia *Probada en Campo*',
+        title: 'Experiencia Probada en Campo',
         description: 'Aplicamos métodos probados en campo y estrategias técnicas que reducen las conjeturas, mejoran el desempeño y cumplen las metas de producción.',
         image: '/images/us-expertise.jpg'
       },
@@ -274,7 +274,7 @@ export const contentEs: Content = {
         },
         {
           name: 'Erik Prince',
-          role: 'Cofundador',
+          role: 'Cofundador, Presidente del Consejo',
           paragraphs: [
             'Erik es un empresario, inversionista y autor estadounidense, y exoficial de los Navy SEAL de Estados Unidos, que fundó Blackwater, una de las primeras compañías militares privadas de alcance global. Bajo el liderazgo de Erik, Blackwater ejecutó más de USD 2.000 millones en contratos de seguridad gubernamentales, abarcando operaciones en países de todo el mundo, como Irak, Afganistán, Bosnia, Israel, Azerbaiyán, Japón, Pakistán y Uzbekistán.'
           ],
@@ -325,7 +325,7 @@ export const contentEs: Content = {
       authorTitle: 'Presidente/CEO'
     },
     finalCta: {
-      header: 'Impulse la Producción Detenida',
+      header: 'Libere el Verdadero Valor de Sus Activos',
       message: 'Vea cómo nuestro equipo diagnostica sus limitaciones, diseña las soluciones y vuelve a poner en marcha la producción detenida.',
       ctaLabel: 'Explore Nuestras Capacidades',
       ctaLink: '/capabilities'
@@ -567,19 +567,21 @@ export const contentEs: Content = {
   },
   contactPage: {
     eyebrow: 'Contacto',
-    title: 'Conecte con los Ingenieros detrás de la Producción de Alto Rendimiento',
+    title: 'Conecte con nuestro equipo hoy',
     subhead: 'Cuéntenos sobre su activo y reactivaremos la producción detenida.',
-    formEyebrow: 'Recepción de Proyectos',
-    formHeading: 'Cuéntenos sobre Su Activo',
+    formEyebrow: 'Consultas',
+    formHeading: 'Póngase en Contacto',
+    formDescription: 'Si desea obtener más información sobre Freedom First o analizar posibles oportunidades de colaboración, nuestro equipo estará encantado de ayudarle. Envíe su consulta y un miembro de nuestro equipo la revisará.',
     fields: {
-      name: 'Nombre y Apellidos',
+      name: 'Nombre',
       company: 'Empresa / Organización',
       title: 'Cargo',
       email: 'Correo electrónico',
-      phone: 'Teléfono',
+      phone: 'Número de teléfono',
       location: 'Ubicación del Activo / Proyecto',
       objective: 'Objetivo Operativo',
-      challenge: 'Defina el Desafío Principal'
+      challenge: 'Defina el Desafío Principal',
+      message: 'Mensaje'
     },
     objectivePlaceholder: '— Seleccione un objetivo —',
     objectiveOptions: [
@@ -621,7 +623,7 @@ export const contentEs: Content = {
     aboutTechnicalPartner: 'Socio Técnico',
     aboutCoreValues: 'Valores Fundamentales',
     aboutLeadership: 'Liderazgo',
-    aboutNextStep: 'Siguiente Paso',
+    aboutNextStep: 'Siguientes Pasos',
     capAdvantageEyebrow: 'La Ventaja',
     capNextSteps: 'Siguientes Pasos',
     approachEyebrow: 'Nuestro Enfoque',

@@ -190,7 +190,7 @@ export const contentAr: Content = {
         },
         {
           name: 'إريك برينس',
-          role: 'شريك مؤسِّس',
+          role: 'شريك مؤسِّس، رئيس مجلس الإدارة',
           paragraphs: [
             'إريك رجل أعمال ومستثمر ومؤلِّف أمريكي، وضابط سابق في قوات البحرية الأمريكية الخاصة (Navy SEAL)، أسّس شركة Blackwater التي تُعدّ من أوائل شركات الخدمات العسكرية الخاصة عالمياً. وتحت قيادته، نفّذت Blackwater عقود أمن حكومية تجاوزت قيمتها ملياري دولار أمريكي، شملت عمليات في دول حول العالم مثل العراق وأفغانستان والبوسنة وإسرائيل وأذربيجان واليابان وباكستان وأوزبكستان.'
           ],
@@ -226,7 +226,7 @@ export const contentAr: Content = {
       authorTitle: 'الرئيس والمدير التنفيذي'
     },
     finalCta: {
-      header: 'حرّك الإنتاج المتوقّف إلى الأمام',
+      header: 'أطلِق القيمة الحقيقية لأصولك',
       message: 'اطّلِع على كيفية تشخيص فريقنا للعوائق، وهندسة الحلول، وإعادة تحريك الإنتاج المتوقّف.',
       ctaLabel: 'استكشف قدراتنا',
       ctaLink: '/capabilities'
@@ -450,19 +450,21 @@ export const contentAr: Content = {
   },
   contactPage: {
     eyebrow: 'تواصل معنا',
-    title: 'تواصَل مع المهندسين وراء الإنتاج عالي المردود',
+    title: 'تواصَل مع فريقنا اليوم',
     subhead: 'حدّثنا عن أصلك وسنُعيد تحريك الإنتاج المتوقّف.',
-    formEyebrow: 'استقبال المشاريع',
-    formHeading: 'حدّثنا عن أصلك',
+    formEyebrow: 'الاستفسارات',
+    formHeading: 'ابقَ على تواصل',
+    formDescription: 'إذا كنت ترغب في معرفة المزيد عن Freedom First أو مناقشة فرص الشراكة المحتملة، فيسعد فريقنا بمساعدتك. يُرجى إرسال استفسارك وسيتولّى أحد أعضاء فريقنا مراجعته.',
     fields: {
-      name: 'الاسم الأول واسم العائلة',
+      name: 'الاسم',
       company: 'الشركة / المؤسسة',
       title: 'المسمّى الوظيفي',
       email: 'البريد الإلكتروني',
-      phone: 'الهاتف',
+      phone: 'رقم الهاتف',
       location: 'موقع الأصل / المشروع',
       objective: 'الهدف التشغيلي',
-      challenge: 'حدّد التحدّي الأساسي'
+      challenge: 'حدّد التحدّي الأساسي',
+      message: 'الرسالة'
     },
     objectivePlaceholder: '— اختر الهدف —',
     objectiveOptions: [
@@ -504,7 +506,7 @@ export const contentAr: Content = {
     aboutTechnicalPartner: 'شريك تقني',
     aboutCoreValues: 'القيم الأساسية',
     aboutLeadership: 'القيادة',
-    aboutNextStep: 'الخطوة التالية',
+    aboutNextStep: 'الخطوات التالية',
     capAdvantageEyebrow: 'الميزة',
     capNextSteps: 'الخطوات التالية',
     approachEyebrow: 'منهجنا',

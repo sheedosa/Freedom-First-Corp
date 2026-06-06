@@ -121,7 +121,7 @@ export const content = {
     message: 'Freedom First delivers a by, with, and through approach to execute with the speed, flexibility, and local readiness needed to keep work moving in difficult environments.',
     items: [
       {
-        title: 'Field-Proven *Field* Expertise',
+        title: 'Field-Proven Field Expertise',
         description: 'We apply field-tested methods and technical strategies that reduce guesswork, improve performance and deliver on production targets.',
         image: '/images/us-expertise.jpg'
       },
@@ -267,7 +267,7 @@ export const content = {
         },
         {
           name: 'Erik Prince',
-          role: 'Co-Founder',
+          role: 'Co-Founder, Chairman',
           paragraphs: [
             "Erik is an American businessman, investor, author, and former U.S. Navy SEAL officer who founded Blackwater, one of the first global private military companies. Under Erik's leadership, Blackwater executed more than USD 2 billion in government security contracts, covering operations in countries globally, such as Iraq, Afghanistan, Bosnia, Israel, Azerbaijan, Japan, Pakistan, and Uzbekistan."
           ],
@@ -318,7 +318,7 @@ export const content = {
       authorTitle: 'President/CEO'
     },
     finalCta: {
-      header: 'Move Stalled Production Forward',
+      header: 'Unlock the True Value of Your Assets',
       message: 'See how our team diagnoses your constraints, engineers the solutions and gets stalled production moving again.',
       ctaLabel: 'Explore Our Capabilities',
       ctaLink: '/capabilities'
@@ -560,19 +560,21 @@ export const content = {
   },
   contactPage: {
     eyebrow: 'Contact',
-    title: 'Engage the Engineers Behind High-Yield Production',
+    title: 'Connect with our team today',
     subhead: "Tell us about your asset and we'll get stalled production moving.",
-    formEyebrow: 'Project Intake',
-    formHeading: 'Tell Us About Your Asset',
+    formEyebrow: 'Enquiries',
+    formHeading: 'Get In Touch',
+    formDescription: 'If you would like to learn more about Freedom First or discuss potential partnership opportunities, our team would be pleased to assist. Please submit your enquiry and a member of our team will review.',
     fields: {
-      name: 'First & Last Name',
+      name: 'Name',
       company: 'Company / Organization',
       title: 'Official Title',
       email: 'Email',
-      phone: 'Phone',
+      phone: 'Phone Number',
       location: 'Asset / Project Location',
       objective: 'Operational Objective',
-      challenge: 'Define the Core Challenge'
+      challenge: 'Define the Core Challenge',
+      message: 'Message'
     },
     objectivePlaceholder: '— Select objective —',
     objectiveOptions: [
@@ -614,7 +616,7 @@ export const content = {
     aboutTechnicalPartner: 'Technical Partner',
     aboutCoreValues: 'Core Values',
     aboutLeadership: 'Leadership',
-    aboutNextStep: 'Next Step',
+    aboutNextStep: 'Next Steps',
     capAdvantageEyebrow: 'The Advantage',
     capNextSteps: 'Next Steps',
     approachEyebrow: 'Our Approach',

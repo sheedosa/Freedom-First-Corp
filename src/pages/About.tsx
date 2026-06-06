@@ -249,18 +249,11 @@ export const About = () => {
                       {para}
                     </p>
                   ))}
-                  {'bullets' in member && member.bullets && (
-                    <ul className="space-y-3 pt-2">
-                      {member.bullets.map((bullet, i) => (
-                        <li key={i} className="flex gap-3">
-                          <div className="w-1.5 h-1.5 bg-red-freedom rounded-full shrink-0 mt-2" />
-                          <p className="text-navy-deep/70 text-sm md:text-[15px] leading-relaxed">
-                            {bullet}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  {'bullets' in member && member.bullets && member.bullets.map((bullet, i) => (
+                    <p key={`bullet-${i}`} className="text-navy-deep/70 text-sm md:text-[15px] leading-relaxed">
+                      {bullet}
+                    </p>
+                  ))}
                 </div>
               </motion.div>
             ))}

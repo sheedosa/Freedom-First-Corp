@@ -319,14 +319,16 @@ export const Approach = () => {
                   <h3 className="text-xl md:text-2xl font-display text-navy-deep uppercase tracking-tight mb-8">
                     {activeContent.ctaMsg}
                   </h3>
-                  <div className="flex justify-center rtl:justify-end">
-                    <Link
-                      to={activeContent.ctaHref}
-                      className="px-7 py-3.5 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg text-center"
-                    >
-                      {activeContent.ctaText}
-                    </Link>
-                  </div>
+                  {activeTab !== 'host-nations' && (
+                    <div className="flex justify-center rtl:justify-end">
+                      <Link
+                        to={activeContent.ctaHref}
+                        className="px-7 py-3.5 bg-navy-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-red-freedom transition-all shadow-lg text-center"
+                      >
+                        {activeContent.ctaText}
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

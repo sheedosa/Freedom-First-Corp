@@ -381,13 +381,6 @@ export const CapabilitiesPage = () => {
                 {cta.primary.label}
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" />
               </Link>
-              <Link
-                to={cta.secondary.href}
-                className="group px-7 py-3.5 rounded-xl border border-navy-deep/10 text-navy-deep text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-3 hover:bg-navy-deep hover:text-white"
-              >
-                {cta.secondary.label}
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:-scale-x-100" />
-              </Link>
             </motion.div>
           </div>
         </div>
