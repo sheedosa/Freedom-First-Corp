@@ -46,7 +46,7 @@ export const contentAr: Content = {
     languages: [
       { code: 'EN', label: 'الإنجليزية', active: true },
       { code: 'AR', label: 'العربية', active: true },
-      { code: 'ES', label: 'الإسبانية', active: false }
+      { code: 'ES', label: 'الإسبانية', active: true }
     ],
     cta: 'تواصل معنا'
   },

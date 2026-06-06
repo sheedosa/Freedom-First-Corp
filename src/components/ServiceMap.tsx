@@ -27,7 +27,10 @@ const WorldMap = lazy(() => Promise.all([
         <rsm.Geographies geography={geoData.default || geoData}>
           {({ geographies }) =>
             geographies.map((geo: any) => {
-              const country = countries.find(c => c.name === geo.properties.name);
+              // Match on the stable English id (lowercased map name) so country
+              // highlighting works in every locale, even when c.name is localized.
+              const geoName = (geo.properties.name || '').toLowerCase();
+              const country = countries.find(c => c.id === geoName || c.name === geo.properties.name);
               const isHighlighted = !!country;
               const isActive = country && selectedId === country.id;
               const dimmed = isHighlighted && selectedId !== null && !isActive;

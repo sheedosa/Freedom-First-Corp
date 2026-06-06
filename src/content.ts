@@ -43,7 +43,7 @@ export const content = {
     languages: [
       { code: 'EN', label: 'English', active: true },
       { code: 'AR', label: 'Arabic', active: true },
-      { code: 'ES', label: 'Spanish', active: false }
+      { code: 'ES', label: 'Spanish', active: true }
     ],
     cta: 'Contact'
   },
