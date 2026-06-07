@@ -281,7 +281,7 @@ export const contentEs: Content = {
           bullets: [
             'Es Cofundador de Freedom First, que invierte en proyectos de energía, agricultura, tecnología e infraestructura en regiones donde convergen la seguridad, la logística y la inversión.',
             'Anteriormente, Erik fundó Frontier Resource Group, una firma de capital privado, y fue Presidente de Frontier Service Group, cotizada en Hong Kong, hasta 2021; Frontier se centraba en las industrias extractivas en Asia y África.',
-            'La actual empresa de Erik orientada a la seguridad, Vectus, ayuda a los gobiernos en asuntos de seguridad nacional y contribuye a financiar las soluciones de seguridad incrementando los ingresos internos mediante la implementación de planes eficaces de recaudación de impuestos y aranceles, entre otras medidas.'
+            'La actual empresa de Erik orientada a la seguridad, Vectus, ayuda a los gobiernos a ampliar su capacidad para abordar cuestiones de seguridad nacional y a aumentar la recaudación de ingresos internos, con miras a fortalecer la soberanía y mejorar el clima de inversión.'
           ]
         }
       ]

@@ -10,6 +10,11 @@ type Country = {
   coordinates: number[];
 };
 
+// Home base highlighted on the map (visual only — no label, not interactive).
+// Matched against geo.properties.name lowercased, like the country ids.
+const HOME_IDS = ['united states of america'];
+const HOME_FILL = 'rgba(147,197,253,0.55)';
+
 const WorldMap = lazy(() => Promise.all([
   import('react-simple-maps'),
   import('world-atlas/countries-110m.json')
@@ -34,17 +39,21 @@ const WorldMap = lazy(() => Promise.all([
               const isHighlighted = !!country;
               const isActive = country && selectedId === country.id;
               const dimmed = isHighlighted && selectedId !== null && !isActive;
+              // Home base (USA): distinct cool fill, non-interactive, label-free.
+              const isHome = !isHighlighted && HOME_IDS.includes(geoName);
               const fill = isActive
                 ? 'rgba(215,38,56,0.95)'
                 : isHighlighted
                   ? (dimmed ? 'rgba(215,38,56,0.35)' : 'rgba(215,38,56,0.65)')
-                  : 'rgba(255,255,255,0.03)';
+                  : isHome
+                    ? HOME_FILL
+                    : 'rgba(255,255,255,0.03)';
               return (
                 <rsm.Geography
                   key={geo.rsmKey}
                   geography={geo}
                   fill={fill}
-                  stroke={isHighlighted ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.4)'}
+                  stroke={isHighlighted || isHome ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.4)'}
                   strokeWidth={isActive ? 1 : 0.5}
                   onClick={isHighlighted && country ? () => onSelect(isActive ? null : country.id) : undefined}
                   onMouseEnter={isHighlighted && country ? () => onSelect(country.id) : undefined}
@@ -57,7 +66,7 @@ const WorldMap = lazy(() => Promise.all([
                     },
                     hover: {
                       outline: 'none',
-                      fill: isHighlighted ? 'rgba(215,38,56,0.95)' : 'rgba(255,255,255,0.08)',
+                      fill: isHighlighted ? 'rgba(215,38,56,0.95)' : isHome ? HOME_FILL : 'rgba(255,255,255,0.08)',
                       cursor: isHighlighted ? 'pointer' : 'default'
                     },
                     pressed: { outline: 'none' },
@@ -184,7 +193,7 @@ export const ServiceMap = () => {
             {legendLabel}
           </div>
 
-          <div className="absolute bottom-8 left-8 text-[9px] text-white/30 font-mono tracking-[0.2em] uppercase select-none hidden md:flex items-center gap-2">
+          <div className="absolute top-[12%] left-[60%] -translate-x-1/2 text-[9px] text-white/40 font-mono tracking-[0.2em] uppercase select-none hidden md:flex items-center gap-2">
             <span>{content.ui.serviceMapHover}</span>
           </div>
         </div>

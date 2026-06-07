@@ -121,7 +121,7 @@ export const content = {
     message: 'Freedom First delivers a by, with, and through approach to execute with the speed, flexibility, and local readiness needed to keep work moving in difficult environments.',
     items: [
       {
-        title: 'Field-Proven Field Expertise',
+        title: 'Proven Field Expertise',
         description: 'We apply field-tested methods and technical strategies that reduce guesswork, improve performance and deliver on production targets.',
         image: '/images/us-expertise.jpg'
       },
@@ -274,7 +274,7 @@ export const content = {
           bullets: [
             'He is the Co-founder of Freedom First, which invests in energy, agriculture, technology, and infrastructure projects in regions where security, logistics, and investment overlap.',
             'Previously, Erik founded Frontier Resource Group, a private equity firm, and was Chairman of Hong Kong-listed Frontier Service Group until 2021; Frontier focused on the extractive industries in Asia and Africa.',
-            "Erik's current security-focused enterprise, Vectus, helps governments with national security issues and assists with funding the security solutions via increasing domestic revenues through the implementation of effective tax and tariff collection plans, inter alia."
+            "Erik's current security-focused enterprise, Vectus, helps governments expand their capacity to deal with national security issues and increase domestic revenue collection, with a review to strengthening sovereignty and improving the investment climate."
           ]
         }
       ]
