@@ -13,7 +13,7 @@ type Country = {
 // Home base highlighted on the map (visual only — no label, not interactive).
 // Matched against geo.properties.name lowercased, like the country ids.
 const HOME_IDS = ['united states of america'];
-const HOME_FILL = 'rgba(147,197,253,0.55)';
+const HOME_FILL = 'rgba(215,38,56,0.65)';
 
 const WorldMap = lazy(() => Promise.all([
   import('react-simple-maps'),
@@ -39,7 +39,7 @@ const WorldMap = lazy(() => Promise.all([
               const isHighlighted = !!country;
               const isActive = country && selectedId === country.id;
               const dimmed = isHighlighted && selectedId !== null && !isActive;
-              // Home base (USA): distinct cool fill, non-interactive, label-free.
+              // Home base (USA): same red as markets, non-interactive, label-free.
               const isHome = !isHighlighted && HOME_IDS.includes(geoName);
               const fill = isActive
                 ? 'rgba(215,38,56,0.95)'
