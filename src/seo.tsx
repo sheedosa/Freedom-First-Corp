@@ -7,7 +7,7 @@
  * three static files that can't read JS: public/robots.txt, public/sitemap.xml,
  * and index.html (og:url / canonical fallback). They all use the same domain.
  */
-export const SITE_URL = 'https://freedomfirstglobal.com';
+export const SITE_URL = 'https://www.freedomfirstglobal.com';
 export const SITE_NAME = 'Freedom First Global';
 
 type SeoProps = {

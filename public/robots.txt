@@ -45,4 +45,4 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://freedomfirstglobal.com/sitemap.xml
+Sitemap: https://www.freedomfirstglobal.com/sitemap.xml
