@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { useContent, useLanguage } from '../i18n';
 import { Seo, SITE_URL, SITE_NAME, canonicalFor, breadcrumbLd } from '../seo';
+import { ArticleHero } from '../components/ArticleHero';
 
 export const InsightLibya = () => {
   const content = useContent();
@@ -44,36 +45,12 @@ export const InsightLibya = () => {
           ]),
         ]}
       />
-      {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-end pt-32 pb-16 overflow-hidden bg-navy-deep">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle, #134377 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 to-navy-deep" />
-        </div>
-        <div className="container relative z-10 px-6 mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-          >
-            <Link
-              to="/insights"
-              className="inline-flex items-center gap-2 text-white/50 hover:text-white text-xs font-mono tracking-widest uppercase mb-10 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
-              {lib.backToInsights}
-            </Link>
-            <div className="inline-flex items-center gap-3 mb-6">
-              <span className="inline-block bg-red-freedom text-white text-[10px] font-bold font-mono tracking-widest uppercase px-3 py-1.5 rounded-sm">
-                {lib.category}
-              </span>
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-white uppercase leading-[1.0] tracking-[-0.02em]">
-              {lib.title}
-            </h1>
-          </motion.div>
-        </div>
-      </section>
+      <ArticleHero
+        image="/images/article-1-libya-banner.jpg"
+        backLabel={lib.backToInsights}
+        category={lib.category}
+        title={lib.title}
+      />
 
       {/* Article Body */}
       <section className="py-14 md:py-20 bg-white flex-grow">

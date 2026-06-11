@@ -689,7 +689,7 @@ export const content = {
     rightsReserved: 'All rights reserved.'
   },
   seo: {
-    home: { title: 'Freedom First Global — Private-Sector Energy Solutions for Emerging Markets', description: 'Freedom First Global brings field-proven U.S. energy expertise — upstream, midstream, downstream, asset protection and trading — directly to critical assets in emerging markets. Private-sector solutions built for stability and growth.' },
+    home: { title: 'Freedom First Global — Energy Solutions for Emerging Markets', description: 'Freedom First Global brings field-proven U.S. energy expertise — upstream, midstream, downstream, asset protection and trading — directly to critical assets in emerging markets. Private-sector solutions built for stability and growth.' },
     about: { title: 'About', description: 'Freedom First Global is a technical production partner built for the field. Founded in Texas, we bring entrepreneurial energy expertise and an execution-driven culture to emerging markets — restoring production, modernizing infrastructure and building local capability.' },
     capabilities: { title: 'Capabilities', description: 'From upstream operations and midstream infrastructure to downstream processing, asset protection and energy trading, Freedom First Global drives measurable production growth across the entire energy value chain.' },
     approach: { title: 'Our Approach', description: 'Freedom First Global turns resources into economic freedom and stability — executing in the most logistically demanding environments with direct-to-asset logistics, local workforce development and performance-driven partnerships.' },
