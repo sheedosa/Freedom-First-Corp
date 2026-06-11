@@ -193,9 +193,14 @@ export const ServiceMap = () => {
             {legendLabel}
           </div>
 
-          <div className="absolute top-[12%] left-[60%] -translate-x-1/2 text-[9px] text-white/40 font-mono tracking-[0.2em] uppercase select-none hidden md:flex items-center gap-2">
-            <span>{content.ui.serviceMapHover}</span>
-          </div>
+        </div>
+
+        {/* Hover hint — sits below the map on the plain panel background so it reads clearly */}
+        <div className="hidden md:flex justify-center mt-5 lg:mt-6">
+          <span className="inline-flex items-center gap-2.5 text-[11px] text-white/60 font-mono tracking-[0.25em] uppercase select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-freedom/80" />
+            {content.ui.serviceMapHover}
+          </span>
         </div>
       </div>
 
