@@ -419,8 +419,9 @@ export const contentAr: Content = {
     categories: { all: 'الكل', emergingMarkets: 'الأسواق الناشئة', fieldExecution: 'التنفيذ الميداني', companyUpdates: 'مستجدّات الشركة' },
     articles: [
       { id: 1, title: 'إعادة إعمار ليبيا ستعتمد على التنفيذ، لا على التصريحات', category: 'الأسواق الناشئة' },
-      { id: 2, title: 'الرئيس التنفيذي لشركة Freedom First يشارك في جلسة حوارية ضمن منتدى الطاقة الأمريكي–الأفريقي', category: 'مستجدّات الشركة' },
-      { id: 3, title: 'الدروس والأساليب القابلة للنقل المُستفادة من حوض بيرميان', category: 'التنفيذ الميداني' }
+      { id: 4, title: "Upstream Profiles Freedom First's Approach to Energy Development", category: 'مستجدّات الشركة' },
+      { id: 3, title: 'Bringing Lessons from the Permian Basin to Libya', category: 'التنفيذ الميداني' },
+      { id: 2, title: 'الرئيس التنفيذي لشركة Freedom First يشارك في جلسة حوارية ضمن منتدى الطاقة الأمريكي–الأفريقي', category: 'مستجدّات الشركة' }
     ],
     readMore: 'اقرأ المزيد',
     comingSoon: 'قريباً',
@@ -446,6 +447,65 @@ export const contentAr: Content = {
       'لا يمكن لأي حزمة تمويل أو إطار سياسات أن يحلّ محلّ تلك الإشارة بالكامل. فالحضور ليس ترفاً دبلوماسياً، بل ضرورة استراتيجية وتنافسية. ودور السفارة ليس توجيه التجارة، بل دعم الشركات الأمريكية المستعدّة للتنفيذ في البيئات الصعبة.',
       'ويمتدّ هذا إلى ما هو أبعد من ليبيا. فعبر الأسواق الناشئة، تترابط التنمية والاستقرار ترابطاً لا ينفصم. وحيث تستثمر الشركات الأمريكية وتبني وتبقى حاضرة، تُسهم في تشكيل النتائج السياسية والاقتصادية طويلة الأمد. وحيث لا تفعل، سيفعل غيرها.',
       'تمثّل ليبيا فرصةً للبرهنة على أن الولايات المتحدة لا تزال قادرة على المنافسة حيث يكون ذلك أهمّ ما يكون، لا بإعلان الاستقرار، بل بالمساعدة على بنائه.'
+    ]
+  },
+  insightUpstream: {
+    backToInsights: 'العودة إلى الرؤى',
+    allInsights: 'كل الرؤى',
+    category: 'مستجدّات الشركة',
+    title: "Upstream Profiles Freedom First's Approach to Energy Development",
+    paragraphs: [
+      `Freedom First was built for the markets where resource potential is clear, but execution remains the limiting factor.`,
+      `That was one of the clearest themes in Upstream's recent feature on Freedom First: this is an energy company focused on markets where security risk, logistics, and underinvestment have made progress harder to sustain, particularly in parts of Africa where hydrocarbon resources remain substantial but conditions are often what hold projects back. As Freedom First Co-founder and Chairman, Erik Prince, put it, in many cases the resource remains "too dangerous on the surface."`,
+      `For Freedom First, that does not mean these markets should be written off. It means they need a different kind of operating partner.`,
+      `The company's current attention is centered largely on Libya, where Freedom First has established an office in Tripoli and sees a practical opportunity to help existing operators become more efficient and raise output. Ryan Manicom, CEO of Freedom First, described the company as having a "huge focus on Libya," a market where production has recovered in recent years but still sits well below its long-term potential. Upstream noted Libya's renewed momentum, including a new licensing round, growing supermajor interest, and active plans by operators to expand production in existing fields.`,
+      `That context matters because Freedom First is not approaching Libya as a conventional E&P entrant looking to secure acreage under a standard concession model. The company's focus, as Manicom explained, is to work with existing operating entities, identify baseline production, improve efficiency, and help speed up production growth. In other words, the objective is not to enter the market with theory. It is to help optimize existing assets through better execution.`,
+      `That same logic extends beyond Libya.`,
+      `Upstream also reported on Freedom First's interest in Somalia, where offshore acreage has attracted serious industry attention, but where exploration and development have been held back by piracy risk, insurgency, and the lack of a practical logistics base close enough to support sustained offshore activity. The article makes clear that the issue is not only the size of the resource opportunity. It is whether the environment around it is stable and functional enough to support real development.`,
+      `Freedom First's view is that energy development in markets like these must be approached as more than a drilling question. It requires the operating conditions, infrastructure, logistics, and local systems that make long-term production possible. In Somalia, that means helping build the practical base for offshore development and supporting the kinds of jobs and economic activity that create stronger local incentives for stability over time. Upstream reported that both Prince and Manicom see that kind of economic foothold as essential if energy development is going to move from resource potential to real output.`,
+      `The article also drew an important distinction that aligns closely with how Freedom First sees itself: this is an energy company first.`,
+      `That point matters because difficult markets often get reduced to the risks around them. But Freedom First's role is not to dramatize those conditions. It is to help make them workable for operators to perform. Prince captured that directly when he described a broader mentality aimed at creating stable conditions so the "oilfield guys can do their job."`,
+      `That is a useful way to understand the company's model.`,
+      `Freedom First is designed for places where large players may have the technical depth but not the flexibility, and where conventional contractors aren't willing to take on the risk. In those environments, what matters is a production-focused technical partner that can bring the proven field expertise and execute on the ground.`,
+      `That is why the company's leadership bench matters as much as the markets it is entering. As Upstream noted, Freedom First's team includes people with backgrounds at Chesapeake, Schlumberger, and Halliburton, alongside leadership experience across Papua New Guinea, Myanmar, Iraq, Libya, and other difficult operating environments. The point is that the company is built by people who have worked where progress depends on field logistics, commercial realism, and the ability to solve problems close to the asset.`,
+      `The article also pointed to a broader regional lens. Somalia and Libya may be the clearest examples today, but the same structural conditions exist across other parts of Africa and the wider emerging-market landscape: strong resource potential, weak delivery systems, and too few partners willing to work where the surface conditions are difficult. That is the gap Freedom First is made to fill.`,
+      `Not through presentations from a distance. Not through a slow-moving contractor model. And not by waiting for a perfect operating environment before work begins.`,
+      `Freedom First was built for the places where output underperforms, projects stall, and standard approaches leave too much value behind. It's built to help existing operators move faster, work smarter, and build the systems required for long-term production growth in markets that demand more from the people on the ground.`
+    ]
+  },
+  insightPermian: {
+    backToInsights: 'العودة إلى الرؤى',
+    allInsights: 'كل الرؤى',
+    category: 'التنفيذ الميداني',
+    title: 'Bringing Lessons from the Permian Basin to Libya',
+    paragraphs: [
+      `Libya's energy sector does not lack opportunity. It has reserves, ambition, and renewed momentum. What it needs is the right operating model to help turn that potential into sustained production growth. That is where Freedom First sees its role.`,
+      `As featured in Libya Energy Magazine, Freedom First is working alongside national oil companies and host countries to strengthen both technical and commercial capability by embedding experienced experts directly within the operating company. In Libya, that work is already focused on helping an operator increase production and improve efficiency across drilling, workovers, artificial lift, and broader infrastructure upgrades.`,
+      `That model matters because difficult markets need less distance between the asset and the expertise. Freedom First was built around the idea that production problems are solved by bringing the right engineering, field discipline, and project leadership directly to the asset. In Libya, that means working inside the operational challenge, not around it, and helping create the conditions for stronger output and better long-term performance.`,
+      `That same thinking sits behind Freedom First's broader vision for emerging markets.`,
+      `As CEO of Freedom First, Ryan Manicom explained in the article, "Freedom First has long had a vision to bridge the gaps in the energy development of emerging markets with American ingenuity." He added that Freedom First aims to apply the experience and lessons of the Permian Basin, a region defined by rapid growth, technical innovation, and field-level problem solving, to markets like Libya, where the right execution model can make a meaningful difference.`,
+      `Freedom First is not trying to copy and paste a U.S. basin into a different market. It is taking the operating standards, technology, and practical execution mindset that helped transform the Permian and applying those lessons in a way that fits Libya's own goals, operating realities, and growth potential.`,
+      `Manicom's words make that ambition clear: the objective is not only to bring capability into the market, but to build something durable through it. As he put it, the company's vision is rooted in "investing directly into new markets, educating the local workforce and empowering the next generation of private sector leaders."`,
+      `That local dimension is central to the Freedom First model.`,
+      `Production growth alone is not enough if it depends forever on external support. Long-term value comes from building the technical systems, workforce capability, and operating confidence that allow a market to sustain that progress over time. In Libya, this means helping raise output today while also strengthening the local capacity required to support tomorrow's operations. That is the kind of work Freedom First believes matters most.`,
+      `The Libya Energy feature also highlighted another important aspect: serious engagement with U.S. institutions on the ground.`,
+      `Freedom First sees the U.S.'s diplomatic presence as part of the operating environment that helps companies work more effectively in complex markets. Manicom made that clear to Libya Energy, noting that "Support from the embassy is very important and is always valued." He added that the U.S. Embassy's time spent at the AmCham Pavilion was "an important signal," and expressed hope for continued opportunities to engage and share experience in the future.`,
+      `That kind of support matters because emerging markets move on confidence as much as they move on capital. When serious U.S. commercial players are visible, engaged, and supported, it sends a message that long-term partnership is possible and that practical work on the ground has institutional backing behind it.`,
+      `Libya is not short on promise. What it has often lacked is the right combination of execution discipline, technical depth, local engagement, and long-term commitment. Freedom First's view is that these gaps can be closed through direct work in the field, strong partnerships, and a model built to move production forward while building local capability alongside it.`,
+      `That is what Freedom First is working to bring to Libya: a development model that is grounded in the realities of the asset and the people operating it.`,
+      `And if that model succeeds, the result will not just be higher production. It will be a stronger operating base for Libya's energy future.`
+    ]
+  },
+  insightForum: {
+    backToInsights: 'العودة إلى الرؤى',
+    allInsights: 'كل الرؤى',
+    category: 'مستجدّات الشركة',
+    title: 'Freedom First CEO Joins Panel at the U.S. Africa Energy Forum',
+    paragraphs: [
+      `Freedom First was proud to take part in the U.S.-Africa Energy Forum in Houston, Texas, where President and CEO Ryan Manicom joined the panel "American Companies Supporting Libya's Bold Energy Vision." The discussion focused on the role American companies can play in supporting Libya's energy ambitions, including its targets of 2 million barrels of oil per day and 4 billion cubic feet of gas per day through upstream revitalization, expanded exploration, and infrastructure investment.`,
+      `For Freedom First, the conversation reflected a broader reality: Africa remains one of the world's most promising energy markets, and the United States should play a leading role in helping move projects forward. Libya, in particular, stands out not only for the scale of its resource base, but also for its position as a gateway to wider opportunity across the continent.`,
+      `Reflecting on the event, Ryan Manicom said, "The U.S. cannot afford to take a back seat in Africa's energy future." Speaking specifically about Libya's long-term potential, he added, "With more targeted engagement from both the U.S. and Texas, Libya has the potential to replicate the success of the Permian Basin, increasing production while prioritizing efficiency, stability, and shared prosperity."`,
+      `The U.S.-Africa Energy Forum provided an important platform for the conversations that lead to direct collaboration in markets where the opportunity is real and the work ahead matters. Freedom First was proud to contribute to that discussion and remains committed to expanding its engagement in Libya through strong partnerships and a sustained focus on production growth.`
     ]
   },
   contactPage: {
@@ -525,6 +585,9 @@ export const contentAr: Content = {
     approach: { title: 'منهجنا', description: 'تُحوّل Freedom First Global الموارد إلى حرية اقتصادية واستقرار، مُنفّذةً في أصعب البيئات لوجستياً عبر إيصال لوجستي مباشر إلى الأصل، وتطوير القوى العاملة المحلية، وشراكات قائمة على الأداء.' },
     insights: { title: 'رؤى', description: 'رؤى ميدانية من Freedom First Global حول دفع مشاريع الهيدروكربونات إلى الأمام في البيئات الصعبة: التنفيذ الميداني والأسواق الناشئة ومستجدّات الشركة.' },
     insightLibya: { title: 'إعادة إعمار ليبيا ستعتمد على التنفيذ، لا على التصريحات', description: 'استقرار ليبيا ستبنيه شركات تستثمر رأس المال وتُنشئ البنية التحتية وتُشغّل الأنظمة الحيوية — وعلى المشروع الخاص الأمريكي أن يتصدّر. رؤية ميدانية من Freedom First Global.' },
+    insightUpstream: { title: "Upstream Profiles Freedom First's Approach to Energy Development", description: "Upstream profiles Freedom First — an energy company built for markets like Libya and Somalia where resource potential is clear but execution is the limiting factor." },
+    insightPermian: { title: 'Bringing Lessons from the Permian Basin to Libya', description: 'How Freedom First applies the operating standards, technology and execution mindset of the Permian Basin to raise production and build local capability in Libya.' },
+    insightForum: { title: 'Freedom First CEO Joins Panel at the U.S. Africa Energy Forum', description: "At the U.S.-Africa Energy Forum in Houston, CEO Ryan Manicom joined the panel on American companies supporting Libya's bold energy vision." },
     contact: { title: 'تواصل معنا', description: 'تواصَل مع المهندسين وراء الإنتاج عالي المردود. تواصَل مع Freedom First Global لتشخيص العوائق، وهندسة الحل، وإعادة تحريك الإنتاج المتوقّف. لدينا مكاتب في ذا وودلاندز بولاية تكساس وأبوظبي بالإمارات.' }
   }
 };

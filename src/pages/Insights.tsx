@@ -6,10 +6,11 @@ import { useContent } from '../i18n';
 import { Seo, breadcrumbLd, webPageLd } from '../seo';
 
 // Non-translatable presentation/routing data, keyed by article id.
-const ARTICLE_META: Record<number, { image: string; href: string }> = {
+const ARTICLE_META: Record<number, { image?: string; href: string }> = {
   1: { image: '/images/article-1-libya.jpg', href: '/insights/rebuilding-libya' },
-  2: { image: '/images/article-2-us-africa.jpg', href: '#' }, // TBD — body content pending
-  3: { image: '/images/article-3-permian.jpg', href: '#' }, // TBD — body content pending
+  2: { image: '/images/article-2-us-africa.jpg', href: '/insights/us-africa-energy-forum' },
+  3: { image: '/images/article-3-permian.jpg', href: '/insights/permian-basin-to-libya' },
+  4: { image: '/images/article-4-upstream.jpg', href: '/insights/upstream-energy-development' },
 };
 
 const CATEGORY_KEYS = ['all', 'emergingMarkets', 'fieldExecution', 'companyUpdates'] as const;
