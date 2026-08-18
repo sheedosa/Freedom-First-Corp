@@ -12,17 +12,23 @@ approval step: a save goes live on <https://www.freedomfirstglobal.com> in about
 
 ## 1. One-time setup
 
-1. Create a free GitHub account if you don't have one, and ask the site
-   administrator to add you to the `sheedosa/freedom-first-corp` repository with
-   **Write** access.
-2. Go to **<https://app.pagescms.org>** and click **Sign in with GitHub**.
-3. Approve access for the `sheedosa/freedom-first-corp` repository when GitHub
-   asks. (Grant it to that repository only.)
-4. Pick the repository from your list, then choose the **`main`** branch.
+**Your CMS address — bookmark this:**
 
-Pages CMS reads the editing rules from the `.pages.yml` file already in the
-repository, so the editor is ready to use straight away. Bookmark the page — that
-is your CMS from now on.
+> ### <https://app.pagescms.org/sheedosa/Freedom-First-Corp/main>
+
+The first time you open it:
+
+1. Create a free GitHub account if you don't have one, then send your GitHub
+   username to the site administrator so they can give you **Write** access to
+   the `sheedosa/Freedom-First-Corp` repository. Without Write access you can
+   look around the editor but saving will fail.
+2. Open the link above and click **Sign in with GitHub**.
+3. Approve access for the `sheedosa/Freedom-First-Corp` repository when GitHub
+   asks. (Grant it to that repository only.)
+
+That's it — the link takes you straight to this website's content, so there is no
+project or branch to choose. Pages CMS reads its editing rules from a file
+already in the repository, so the editor is ready to use immediately.
 
 ---
 
