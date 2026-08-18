@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "title": "A Technical Production Partner Built for the Field",
+    "image": "/images/about-hero.jpg"
+  },
+  "content": {
+    "title": "Our Foundation",
+    "paragraphs": [
+      "Freedom First was founded on a simple belief: energy development should strengthen nations, expand economic opportunity, and create lasting stability, not just for governments or investors, but for the people who call those nations home.",
+      "Built in Texas, we bring the entrepreneurial spirit, engineering expertise, and execution-driven culture that transformed American energy production to emerging markets around the world. We believe the private sector performs best when guided by accountability, speed, and practical problem-solving, not bureaucracy. And we step in where others have stepped away.",
+      "We partner directly with host nations and local operators to restore production, modernize infrastructure, and unlock the full value of critical energy assets. But our work goes beyond the field. We invest in local capability, strengthen energy independence, and build resilient systems designed for long-term growth, because true development means communities standing on their own.",
+      "We do not just extract value and walk away. We build systems, develop talent, and create engines of opportunity that let people reclaim ownership of their future. The real shareholders of any resource-rich nation are its people, and that's exactly who we work for.",
+      "Our mission is straightforward: help nations convert their natural assets into durable economic strength through trusted partnership, technical excellence, and results that last."
+    ]
+  },
+  "principles": {
+    "header": "Guided by a Mandate to Execute, Optimize, and Localize Capabilities",
+    "vision": {
+      "title": "Our Vision",
+      "text": "To see resource-rich nations achieve true economic self-sufficiency by having the technical capability and infrastructure to fully control, operate, and maximize their own energy potential."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "To deliver field-proven capabilities directly to the asset. We bypass hurdles to accelerate production, optimize existing fields, and build local workforce capacity for a resilient, independent energy sector."
+    },
+    "principles": {
+      "title": "Our Principles",
+      "intro": "We reject the cycle of external dependency by focusing strictly on delivery and capacity building. Our work is guided by three core principles:",
+      "items": [
+        {
+          "label": "Execute with Discipline",
+          "text": "We remove operational guesswork by deploying tried and tested methodologies that ensure safe, reliable delivery in complex environments."
+        },
+        {
+          "label": "Optimize the Asset",
+          "text": "We align our success directly with the host country's priorities, maximizing output to achieve national production goals."
+        },
+        {
+          "label": "Localize the Workforce",
+          "text": "We do not just extract value; we ensure every project drives true knowledge transfer to empower the people who operate the assets."
+        }
+      ]
+    }
+  },
+  "leadership": {
+    "members": [
+      {
+        "name": "Ryan Manicom",
+        "role": "Co-Founder, President & CEO",
+        "paragraphs": [
+          "Ryan is the Co-Founder, President & CEO of Freedom First Global, where he leads a diverse portfolio of international business ventures. A graduate of Texas Tech University, he began his career in business development, helping expand advanced asset performance solutions from defense into the energy sector.",
+          "He went on to hold leadership roles across global energy markets, including Papua New Guinea, Myanmar, and Iraq. His work has focused on large-scale project development, operational leadership, and innovative approaches to energy infrastructure—most notably pioneering solutions for gas flare mitigation in emerging markets.",
+          "Based in Houston, Ryan is a strong advocate for private sector leadership in global development. He is particularly passionate about extending the success and innovation of Texas's energy industry, including the Permian Basin, into high-growth regions around the world.",
+          "Through Freedom First Global, Ryan is committed to investing in, educating, and empowering communities—driven by a belief that ingenuity and opportunity exist in every market."
+        ]
+      },
+      {
+        "name": "Erik Prince",
+        "role": "Co-Founder, Chairman",
+        "paragraphs": [
+          "Erik is an American businessman, investor, author, and former U.S. Navy SEAL officer who founded Blackwater, one of the first global private military companies. Under Erik's leadership, Blackwater executed more than USD 2 billion in government security contracts, covering operations in countries globally, such as Iraq, Afghanistan, Bosnia, Israel, Azerbaijan, Japan, Pakistan, and Uzbekistan."
+        ],
+        "bullets": [
+          "He is the Co-founder of Freedom First, which invests in energy, agriculture, technology, and infrastructure projects in regions where security, logistics, and investment overlap.",
+          "Previously, Erik founded Frontier Resource Group, a private equity firm, and was Chairman of Hong Kong-listed Frontier Service Group until 2021; Frontier focused on the extractive industries in Asia and Africa.",
+          "Erik's current security-focused enterprise, Vectus, helps governments expand their capacity to deal with national security issues and increase domestic revenue collection, with a review to strengthening sovereignty and improving the investment climate."
+        ]
+      }
+    ]
+  },
+  "dataStrip": {
+    "header": "Defined by a track record of execution",
+    "stats": [
+      {
+        "label": "Wells Managed",
+        "value": "1,000+",
+        "sublabel": "(Onshore & Offshore)"
+      },
+      {
+        "label": "Peak Production Achieved",
+        "value": "1 BSCFD",
+        "sublabel": "(Barnett Shale)"
+      },
+      {
+        "label": "Project Budgets Executed",
+        "value": "$1B+",
+        "sublabel": "Successfully managed"
+      }
+    ]
+  },
+  "advisors": {
+    "header": "Backed by Experienced Strategic Advisors",
+    "members": [
+      {
+        "name": "Ted Hogan",
+        "role": "Vice Chairman",
+        "summary": "Ted brings decades of operational and commercial growth experience within the oilfield services sector. He co-founded Light Tower Rentals (LTR) in 1994, scaling the equipment business into a national organization. Following strategic institutional partnerships and a merger, LTR became Gravity Oilfield Services, where Ted transitioned to Vice Chairman.",
+        "expandedBio": "His expertise lies in scaling industrial equipment operations, structuring institutional investments, and maintaining rigorous service delivery across the energy sector."
+      },
+      {
+        "name": "Colby Fuser",
+        "role": "Advisor",
+        "summary": "Colby brings over 20 years of executive and operational leadership across the global oil and gas industry. During his tenure at Halliburton Energy Services, he managed large-scale operations as Regional Vice President for the Asia Pacific Region and held senior execution roles across North Africa and the Middle East.",
+        "expandedBio": "He currently serves as President and CEO of E3 Company following its successful private equity acquisition. Colby provides Freedom First with deep expertise in international field operations, M&A integration, and disciplined safety standards."
+      },
+      {
+        "name": "Richard Anderson",
+        "role": "Advisor",
+        "summary": "Richard is an energy executive and certified public accountant with extensive experience in international exploration and financial governance. He recently served as CEO of Coastline Exploration, leading offshore oil and gas operations in Somalia.",
+        "expandedBio": "His track record includes serving as Chief Financial Officer for Eurasia Drilling Company Limited and holding directorships at major global operators including Transocean Ltd. and Vanguard Natural Resources. Richard brings critical financial rigor, capital discipline, and public-market governance experience to Freedom First's international operations."
+      }
+    ]
+  },
+  "ceoMessage": {
+    "header": "CEO Message",
+    "subheader": "From the Permian Basin to Emerging Markets",
+    "quote": "“Freedom First was founded on the belief that American leadership, free enterprise, and strong governance can drive lasting prosperity in emerging markets. Inspired by the strength, innovation, and energy independence of the Permian Basin, we seek to export the proven principles that transformed Texas into a global energy leader.\n\nOur team brings together top experts across every facet of energy development, united by a mission to invest in strategic markets, empower local workforces, and advance the next generation of private-sector leadership. Through strategic investment, operational excellence, and value-driven partnerships, Freedom First is committed to strengthening energy security, economic growth, and long-term stability worldwide.”",
+    "author": "Ryan Manicom",
+    "authorTitle": "President/CEO"
+  },
+  "finalCta": {
+    "header": "Unlock the True Value of Your Assets",
+    "message": "See how our team diagnoses your constraints, engineers the solutions and gets stalled production moving again.",
+    "ctaLabel": "Explore Our Capabilities",
+    "ctaLink": "/capabilities"
+  }
+}

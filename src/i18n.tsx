@@ -1,11 +1,9 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { content as en, type Content } from './content';
-import { contentAr } from './content.ar';
-import { contentEs } from './content.es';
+import { contentEn, contentAr, contentEs, type Content } from './content';
 
 export type Locale = 'en' | 'ar' | 'es';
 
-const DICTIONARIES: Record<Locale, Content> = { en, ar: contentAr, es: contentEs };
+const DICTIONARIES: Record<Locale, Content> = { en: contentEn, ar: contentAr, es: contentEs };
 const RTL_LOCALES: Locale[] = ['ar'];
 const STORAGE_KEY = 'ffg-lang';
 

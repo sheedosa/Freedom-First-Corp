@@ -1,0 +1,41 @@
+{
+  "eyebrow": "Contact",
+  "title": "Connect with our team today",
+  "subhead": "Tell us about your asset and we'll get stalled production moving.",
+  "formEyebrow": "Enquiries",
+  "formHeading": "Get In Touch",
+  "formDescription": "If you would like to learn more about Freedom First or discuss potential partnership opportunities, our team would be pleased to assist. Please submit your enquiry and a member of our team will review.",
+  "fields": {
+    "name": "Name",
+    "company": "Company / Organization",
+    "title": "Official Title",
+    "email": "Email",
+    "phone": "Phone Number",
+    "location": "Asset / Project Location",
+    "objective": "Operational Objective",
+    "challenge": "Define the Core Challenge",
+    "message": "Message"
+  },
+  "objectivePlaceholder": "— Select objective —",
+  "objectiveOptions": [
+    "Upstream: Production Optimization & Recovery",
+    "Midstream: Infrastructure & Flow Acceleration",
+    "Downstream: Yield Optimization & Reliability",
+    "Trading & Logistics: Market Access & Physical Offtake"
+  ],
+  "challengePlaceholder": "Provide a brief overview of the operational bottleneck or commercial constraint you need resolved...",
+  "submit": "Initiate Contact",
+  "directEyebrow": "Direct Contact",
+  "directHeading": "Reach Our Team Directly",
+  "hqEyebrow": "Headquarters",
+  "hqCity": "The Woodlands, TX",
+  "hqAddress": "2700 Research Forest Dr.\nSuite 105\nThe Woodlands, Texas 77381",
+  "hqCountry": "United States of America",
+  "getDirections": "Get Directions",
+  "emailEyebrow": "Email",
+  "emailHeading": "Get in Touch",
+  "generalInquiries": "General Inquiries",
+  "footprintEyebrow": "Operating Footprint",
+  "footprintHeading": "Deployed Globally",
+  "footprintText": "Freedom First deploys engineers and operators globally. Whether assets are located in mature domestic basins or the world's most logistically challenging emerging markets, we bring the execution directly to the wellhead."
+}

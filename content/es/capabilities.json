@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "Impulsando la Ejecución en Toda la Cadena de Valor Energética",
+    "subtitle": "Desde las operaciones de exploración y producción hasta el acceso a mercados globales, maximizamos el valor de los activos energéticos en cada etapa de su ciclo de vida."
+  },
+  "subNav": [
+    {
+      "label": "Exploración y Producción",
+      "href": "#upstream"
+    },
+    {
+      "label": "Transporte y Almacenamiento",
+      "href": "#midstream"
+    },
+    {
+      "label": "Refinación y Distribución",
+      "href": "#downstream"
+    },
+    {
+      "label": "Protección de Activos",
+      "href": "#asset-protection"
+    },
+    {
+      "label": "Comercialización y Logística de Energía",
+      "href": "#energy-trading"
+    }
+  ],
+  "sections": [
+    {
+      "id": "upstream",
+      "tag": "Exploración y Producción",
+      "header": "Generando un Crecimiento Medible de la Producción",
+      "message": "Aportamos experiencia estadounidense de primer nivel para impulsar un crecimiento verificable de la producción. Desde acelerar el camino hacia el primer barril hasta reactivar activos maduros (brownfield) detenidos, nuestra especialidad es diseñar las soluciones necesarias para romper los bloqueos operativos, desplegar tecnologías de extracción avanzadas y mantener el flujo de los barriles.",
+      "deliverables": [
+        {
+          "title": "Exploración y Evaluación del Subsuelo",
+          "text": "Realizamos evaluaciones geológicas y sísmicas detalladas para identificar reservas viables y modelar los datos necesarios para fundamentar las decisiones de desarrollo."
+        },
+        {
+          "title": "Servicios de Perforación Avanzada",
+          "text": "Desplegamos tecnologías avanzadas y equipos de campo de élite para ejecutar programas de perforación que optimizan el emplazamiento, reducen el tiempo no productivo y aseguran las reservas."
+        },
+        {
+          "title": "Reacondicionamiento y Optimización de Pozos",
+          "text": "Ejecutamos intervenciones de pozo específicas, desde el mantenimiento rutinario hasta reacondicionamientos mecánicos complejos, para restaurar la integridad del pozo y optimizar el desempeño del flujo."
+        },
+        {
+          "title": "Operaciones de Campo y Soporte de Instalaciones",
+          "text": "Dirigimos la gestión integral del campo, desde la puesta en marcha y el mantenimiento preventivo hasta los protocolos de respuesta rápida ante emergencias, para garantizar la fiabilidad del activo."
+        }
+      ]
+    },
+    {
+      "id": "midstream",
+      "tag": "Transporte y Almacenamiento",
+      "header": "Optimizando el Camino de la Producción al Procesamiento",
+      "message": "Construimos, gestionamos y escalamos la infraestructura de transporte y almacenamiento crítica necesaria para mover los hidrocarburos de forma segura desde la cabeza de pozo hasta las instalaciones de procesamiento. Mediante una ingeniería rigurosa y una gestión logística precisa, eliminamos los cuellos de botella de la cadena de suministro y maximizamos el flujo de recursos hacia las instalaciones de procesamiento y los mercados finales.",
+      "deliverables": [
+        {
+          "title": "Desarrollo y Soporte de Infraestructura",
+          "text": "Dirigimos la planificación, construcción y soporte operativo de ductos, terminales e instalaciones de almacenamiento para entregar una infraestructura escalable diseñada para el flujo continuo."
+        },
+        {
+          "title": "Coordinación de Transporte y Logística",
+          "text": "Brindamos una logística integral y una supervisión operativa total hacia y desde entornos complejos, integrando la gestión de la cadena de suministro directamente con la ejecución en campo."
+        },
+        {
+          "title": "Soluciones de Almacenamiento y Manejo",
+          "text": "Gestionamos operaciones de almacenamiento complejas para garantizar la contención segura y la transferencia de productos energéticos, ayudando a sostener un suministro de mercado ininterrumpido."
+        }
+      ]
+    },
+    {
+      "id": "downstream",
+      "tag": "Refinación y Distribución",
+      "header": "Maximizando el Rendimiento, la Disponibilidad y la Entrega al Mercado",
+      "message": "Aplicamos una ejecución estadounidense de primer nivel directamente a los activos de refinación y distribución para maximizar los rendimientos de procesamiento y asegurar la fiabilidad de la refinería. Trabajamos para convertir los hidrocarburos en productos de alto valor y gestionamos las operaciones finales de las terminales para lograr un flujo estable hacia el mercado.",
+      "deliverables": [
+        {
+          "title": "Soporte Operativo y Técnico",
+          "text": "Ejecutamos intervenciones técnicas y operativas específicas para maximizar los rendimientos de la refinería y aumentar la capacidad de procesamiento de las instalaciones."
+        },
+        {
+          "title": "Integridad de Activos y Ejecución de Paradas de Planta",
+          "text": "Dirigimos programas de mantenimiento y paradas de planta para asegurar la integridad técnica, mitigar el riesgo operativo y eliminar el tiempo de inactividad no planificado."
+        },
+        {
+          "title": "Operaciones de Terminal y Distribución Final",
+          "text": "Gestionamos la logística integral de terminales y aseguramos las redes de distribución para garantizar un flujo estable e ininterrumpido de productos energéticos listos para el mercado."
+        }
+      ]
+    },
+    {
+      "id": "asset-protection",
+      "tag": "Protección de Activos",
+      "header": "Protegiendo los Activos Críticos y la Continuidad Operativa",
+      "message": "El desarrollo energético y la protección de activos son fundamentales para el crecimiento nacional. A medida que las naciones amplían la producción e invierten en infraestructura crítica, asegurar estos activos es esencial para proteger los ingresos, mantener la continuidad operativa y atraer inversión a largo plazo.",
+      "deliverables": [
+        {
+          "title": "Evaluaciones de seguridad de infraestructura crítica y planificación de su protección"
+        },
+        {
+          "title": "Programas de seguridad para petróleo, gas, energía eléctrica y ductos"
+        },
+        {
+          "title": "Capacitación de fuerzas de protección y desarrollo de capacidades"
+        },
+        {
+          "title": "Servicios de asesoría en operaciones de seguridad y centros de comando"
+        },
+        {
+          "title": "Evaluación de riesgos, análisis de amenazas y planificación de respuesta a crisis"
+        },
+        {
+          "title": "Programas de preparación ante emergencias y continuidad del negocio"
+        },
+        {
+          "title": "Doctrina de seguridad, procedimientos y desarrollo de la fuerza laboral"
+        },
+        {
+          "title": "Apoyo de asesoría estratégica para gobiernos y operadores energéticos"
+        }
+      ]
+    },
+    {
+      "id": "energy-trading",
+      "tag": "Comercialización y Logística de Energía",
+      "header": "Conectando la Producción con los Mercados de Alta Demanda",
+      "message": "Nuestra división de comercialización de energía integra una logística de primer nivel con el acceso a mercados globales, ejecutando operaciones físicas de crudo, productos refinados, GNL y LGN. Conectamos a los productores directamente con los usuarios finales industriales, gobernando el flujo físico de los recursos para garantizar un suministro fiable y maximizar el valor comercial en toda la cadena de valor energética.",
+      "deliverables": [
+        {
+          "title": "Comercialización Global y Compraventa (Offtake)",
+          "text": "Ejecutamos operaciones físicas de crudo, productos refinados y líquidos del gas. Aseguramos contratos de compra directa (offtake) y estructuramos acuerdos de suministro que conectan la producción directamente con los mercados de alta demanda."
+        },
+        {
+          "title": "Ejecución Logística Integral",
+          "text": "Gestionamos el flujo de hidrocarburos desde el activo hasta el comprador —transporte marítimo, almacenamiento y coordinación de la entrega— para garantizar una entrega global fiable."
+        },
+        {
+          "title": "Estructuración Comercial y Monetización",
+          "text": "Gestionamos el ciclo de vida comercial completo, desde las transacciones spot hasta el suministro a largo plazo, con la visión de mercado necesaria para optimizar los precios y posicionar los activos para obtener el máximo retorno."
+        }
+      ]
+    }
+  ],
+  "advantage": {
+    "header": "La Ventaja de Ejecución de las Medianas Empresas Estadounidenses",
+    "message": "Ejecutamos a un nivel de élite, sirviendo como su puerta de acceso a los equipos comerciales y técnicos ágiles y altamente especializados que impulsaron la revolución no convencional estadounidense."
+  },
+  "midMarket": [
+    {
+      "title": "Pedigrí de Élite",
+      "description": "Acceda a los equipos técnicos especializados que impulsaron el crecimiento de los hidrocarburos en EE. UU.",
+      "image": "/images/midmarket-1.jpg"
+    },
+    {
+      "title": "Ejecución Directa en el Activo",
+      "description": "Asegure ingeniería y ejecución en campo de primer nivel directamente en la operación.",
+      "image": "/images/midmarket-2.jpg"
+    },
+    {
+      "title": "Cero Lastre Burocrático",
+      "description": "Evite la burocracia de las grandes compañías para acelerar los plazos y ejecutar con agilidad.",
+      "image": "/images/midmarket-3.jpg"
+    }
+  ],
+  "cta": {
+    "header": "La Experiencia de la Cuenca Pérmica Llevada Directamente al Activo",
+    "message": "Vea cómo llevamos las capacidades de la Cuenca Pérmica directamente a sus campos más exigentes en todo el mundo.",
+    "primary": {
+      "label": "Explore Nuestro Enfoque",
+      "href": "/approach"
+    },
+    "secondary": {
+      "label": "Contacte a Nuestro Equipo",
+      "href": "/contact"
+    }
+  }
+}

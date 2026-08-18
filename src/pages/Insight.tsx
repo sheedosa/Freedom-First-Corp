@@ -1,26 +1,40 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { useContent, useLanguage } from '../i18n';
 import { Seo, SITE_URL, SITE_NAME, canonicalFor, breadcrumbLd } from '../seo';
 import { ArticleHero } from '../components/ArticleHero';
+import { getArticle } from '../content/articles';
 
-export const InsightLibya = () => {
+/**
+ * One route for every insight article, replacing the four near-identical page
+ * components this used to need. The slug comes from the URL and maps straight to
+ * a markdown file, so publishing an article is a content change only.
+ */
+export const Insight = () => {
+  const { slug = '' } = useParams();
   const content = useContent();
   const { locale } = useLanguage();
-  const lib = content.insightLibya;
-  const seo = content.seo.insightLibya;
+  const ip = content.insightsPage;
+  const article = getArticle(locale, slug);
+
+  // Unknown slug — send the visitor to the index rather than a blank page.
+  if (!article || !article.published || !article.hasBody) return <Navigate to="/insights" replace />;
+
+  const path = `/insights/${article.slug}`;
+  const categoryLabel = ip.categories[article.category] ?? article.category;
 
   const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: lib.title,
-    description: seo.description,
-    image: `${SITE_URL}/images/article-1-libya.jpg`,
-    articleSection: lib.category,
+    headline: article.title,
+    description: article.seoDescription,
+    image: `${SITE_URL}${article.banner || article.image}`,
+    articleSection: categoryLabel,
     inLanguage: locale,
-    url: canonicalFor('/insights/rebuilding-libya'),
-    mainEntityOfPage: canonicalFor('/insights/rebuilding-libya'),
+    ...(article.date ? { datePublished: article.date } : {}),
+    url: canonicalFor(path),
+    mainEntityOfPage: canonicalFor(path),
     author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
     publisher: {
       '@type': 'Organization',
@@ -33,23 +47,23 @@ export const InsightLibya = () => {
   return (
     <div className="flex-grow flex flex-col bg-off-white">
       <Seo
-        path="/insights/rebuilding-libya"
-        title={seo.title}
-        description={seo.description}
+        path={path}
+        title={article.seoTitle}
+        description={article.seoDescription}
         jsonLd={[
           articleLd,
           breadcrumbLd([
             { name: 'Home', path: '/' },
             { name: 'Insights', path: '/insights' },
-            { name: 'Rebuilding Libya', path: '/insights/rebuilding-libya' },
+            { name: article.title, path },
           ]),
         ]}
       />
       <ArticleHero
-        image="/images/article-1-libya-banner.jpg"
-        backLabel={lib.backToInsights}
-        category={lib.category}
-        title={lib.title}
+        image={article.banner}
+        backLabel={ip.backToInsights}
+        category={categoryLabel}
+        title={article.title}
       />
 
       {/* Article Body */}
@@ -59,13 +73,15 @@ export const InsightLibya = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.1 }}
-            className="prose prose-lg max-w-none"
           >
-            <div className="space-y-7 text-navy-deep/80 text-lg leading-relaxed">
-              {lib.paragraphs.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-            </div>
+            {/* Body HTML is compiled from markdown committed to this repository —
+                authoring it already requires repo write access, so there is no
+                lower-trust input being injected here. */}
+            <div
+              className="article-body"
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: article.html }}
+            />
           </motion.div>
 
           {/* Divider & Back */}
@@ -75,7 +91,7 @@ export const InsightLibya = () => {
               className="inline-flex items-center gap-2 text-navy-deep font-bold text-xs uppercase tracking-widest hover:text-red-freedom transition-colors"
             >
               <ArrowLeft className="w-4 h-4 rtl:-scale-x-100" />
-              {lib.allInsights}
+              {ip.allInsights}
             </Link>
           </div>
         </div>

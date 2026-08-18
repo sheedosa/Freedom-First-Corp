@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "eyebrow": "FREEDOM FIRST",
+    "title": "Private-Sector Solutions Built for Stability and Growth",
+    "subhead": "By combining energy development, infrastructure investment and strategic asset protection, we help build stronger, self-reliant economies.",
+    "ctaPrimary": "Our Capabilities",
+    "bgImage": "/images/hero-bg.jpg"
+  },
+  "capabilitiesSection": {
+    "header": "We Drive Production Growth Across the Life of the Asset",
+    "items": [
+      {
+        "title": "Upstream",
+        "description": "Maximize output from the reservoir to the wellhead with elite U.S. field execution.",
+        "image": "/images/cap-upstream.jpg",
+        "link": "/capabilities#upstream"
+      },
+      {
+        "title": "Midstream",
+        "description": "Target bottlenecks and deploy high-capacity infrastructure to guarantee continuous hydrocarbon flow.",
+        "image": "/images/cap-midstream.jpg",
+        "link": "/capabilities#midstream"
+      },
+      {
+        "title": "Downstream",
+        "description": "Lock in absolute facility uptime and maximize refining yields through elite U.S. engineering.",
+        "image": "/images/cap-downstream.jpg",
+        "link": "/capabilities#downstream"
+      },
+      {
+        "title": "Asset Protection",
+        "description": "Create secure environments that reduce risk, attract investment, and protect critical assets.",
+        "image": "/images/cap-asset-protection.jpg",
+        "link": "/capabilities#asset-protection"
+      },
+      {
+        "title": "Energy Trading",
+        "description": "Connect physical production directly to high-demand markets and secure maximum commercial returns.",
+        "image": "/images/cap-trading.jpg",
+        "link": "/capabilities#energy-trading"
+      }
+    ]
+  },
+  "whereWeDoIt": {
+    "header": "In the Places Where Proven Execution Matters Most",
+    "message": "When projects stall, output underperforms, or standard approaches fall short, Freedom First brings U.S. expertise to unlock energy potential.",
+    "cta": "Who We Work With",
+    "ctaLink": "/approach#stakeholders",
+    "legendLabel": "Our Operational Footprint",
+    "countries": [
+      {
+        "id": "libya",
+        "name": "Libya",
+        "brief": "Technical partnership and production enhancement, bringing stability and execution discipline to critical assets.",
+        "coordinates": [
+          17.2283,
+          26.3351
+        ]
+      },
+      {
+        "id": "venezuela",
+        "name": "Venezuela",
+        "brief": "Strategic advisory and technical support for mature field reactivation, focusing on heavy oil recovery and infrastructure modernization.",
+        "coordinates": [
+          -66.5897,
+          6.4238
+        ]
+      },
+      {
+        "id": "somalia",
+        "name": "Somalia",
+        "brief": "Greenfield exploration and regulatory advisory, helping establish world-class standards for a developing energy sector.",
+        "coordinates": [
+          46.1996,
+          5.1521
+        ]
+      }
+    ]
+  },
+  "advantages": {
+    "header": "Built for the Realities of the Field",
+    "message": "Freedom First delivers a by, with, and through approach to execute with the speed, flexibility, and local readiness needed to keep work moving in difficult environments.",
+    "items": [
+      {
+        "title": "Proven Field Expertise",
+        "description": "We apply field-tested methods and technical strategies that reduce guesswork, improve performance and deliver on production targets.",
+        "image": "/images/us-expertise.jpg"
+      },
+      {
+        "title": "Network of Energy Specialists",
+        "description": "We tap deep industry networks to bring in proven engineers, and technical specialists from across the U.S. and global hydrocarbon sector.",
+        "image": "/images/adv-network.jpg"
+      },
+      {
+        "title": "Agile, Independent Execution",
+        "description": "We move without the drag of big-company bureaucracy—able to adjust across technical logistical and commercial realities to deliver results.",
+        "image": "/images/adv-agile.jpg"
+      },
+      {
+        "title": "Direct Supply Chain Advantage",
+        "description": "By working closer to the source, we help reduce value leakage, control cost, and improve project economics across the chain.",
+        "image": "/images/adv-supply.jpg"
+      }
+    ],
+    "ctaPrimary": "Our Capabilities",
+    "ctaPrimaryLink": "/capabilities",
+    "ctaSecondary": "Meet Our Team of Experts",
+    "ctaSecondaryLink": "/about#leadership"
+  },
+  "homeCta": {
+    "eyebrow": "Ready to Move",
+    "header": "Unlock the True Value of Your Assets",
+    "message": "See how our team diagnoses your constraints, engineers the solutions and gets stalled production moving again.",
+    "ctaLabel": "Explore Our Capabilities",
+    "ctaLink": "/capabilities"
+  },
+  "partnerships": {
+    "section1": {
+      "header": "We equip emerging markets with the tools to achieve self reliance",
+      "message": "The world's most resource-rich markets are too often held back by a lack of investment and technical barriers.\n\nAt Freedom First, we believe these nations should have the tools to develop their own assets, move beyond external aid, and build true economic self-sufficiency."
+    },
+    "section2": {
+      "header": "Our approach is rooted in direct collaboration, not just extraction",
+      "message": "Through strategic investment and comprehensive training, we return resource value to the people.\n\nWe work side-by-side with host countries to responsibly develop their energy potential—ensuring that today's production growth builds a self-reliant workforce for the future."
+    },
+    "ctaPrimary": "Our Approach",
+    "ctaPrimaryLink": "/approach",
+    "ctaSecondary": "See Our Latest News",
+    "ctaSecondaryLink": "/insights"
+  }
+}

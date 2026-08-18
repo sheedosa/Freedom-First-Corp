@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "items": [
+      {
+        "label": "Inicio",
+        "href": "/"
+      },
+      {
+        "label": "Nosotros",
+        "href": "/about",
+        "dropdown": [
+          {
+            "label": "Fundamento",
+            "href": "/about#who-we-are"
+          },
+          {
+            "label": "Liderazgo",
+            "href": "/about#leadership"
+          },
+          {
+            "label": "Mensaje del CEO",
+            "href": "/about#ceomessage"
+          }
+        ]
+      },
+      {
+        "label": "Capacidades",
+        "href": "/capabilities",
+        "dropdown": [
+          {
+            "label": "Exploración y Producción",
+            "href": "/capabilities#upstream"
+          },
+          {
+            "label": "Transporte y Almacenamiento",
+            "href": "/capabilities#midstream"
+          },
+          {
+            "label": "Refinación y Distribución",
+            "href": "/capabilities#downstream"
+          },
+          {
+            "label": "Protección de Activos",
+            "href": "/capabilities#asset-protection"
+          },
+          {
+            "label": "Comercialización de Energía",
+            "href": "/capabilities#energy-trading"
+          }
+        ]
+      },
+      {
+        "label": "Enfoque",
+        "href": "/approach",
+        "dropdown": [
+          {
+            "label": "Ejecución Directa en el Activo",
+            "href": "/approach#direct-to-asset"
+          },
+          {
+            "label": "HSE y Capacidad Local",
+            "href": "/approach#hse-capability"
+          },
+          {
+            "label": "Alineación Comercial",
+            "href": "/approach#commercial-alignment"
+          }
+        ]
+      },
+      {
+        "label": "Perspectivas",
+        "href": "/insights"
+      }
+    ],
+    "languages": [
+      {
+        "code": "EN",
+        "label": "Inglés",
+        "active": true
+      },
+      {
+        "code": "AR",
+        "label": "Árabe",
+        "active": true
+      },
+      {
+        "code": "ES",
+        "label": "Español",
+        "active": true
+      }
+    ],
+    "cta": "Contacto"
+  },
+  "footer": {
+    "navigate": {
+      "title": "Navegación",
+      "links": [
+        {
+          "label": "Inicio",
+          "href": "/"
+        },
+        {
+          "label": "Nosotros",
+          "href": "/about"
+        },
+        {
+          "label": "Capacidades",
+          "href": "/capabilities"
+        },
+        {
+          "label": "Enfoque",
+          "href": "/approach"
+        },
+        {
+          "label": "Perspectivas",
+          "href": "/insights"
+        },
+        {
+          "label": "Contacto",
+          "href": "/contact"
+        }
+      ]
+    },
+    "contactForm": {
+      "title": "Contáctenos",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nombre",
+          "type": "text"
+        },
+        {
+          "name": "email",
+          "label": "Correo electrónico",
+          "type": "email"
+        },
+        {
+          "name": "company",
+          "label": "Empresa",
+          "type": "text"
+        },
+        {
+          "name": "message",
+          "label": "Mensaje",
+          "type": "textarea"
+        }
+      ],
+      "cta": "Enviar Mensaje"
+    },
+    "company": {
+      "name": "Freedom First Global",
+      "offices": [
+        {
+          "city": "The Woodlands, TX",
+          "address": "2700 Research Forest Dr.\nSuite 105\nThe Woodlands, TX 77381"
+        },
+        {
+          "city": "Abu Dabi, EAU",
+          "address": "811N, Piso 8, Tamouh Tower,\nTamouh, Al Reem Island, Abu Dabi\nEmiratos Árabes Unidos"
+        }
+      ],
+      "social": {
+        "email": "info@freedomfirstglobal.com",
+        "linkedin": "https://www.linkedin.com/company/freedom-first-corp",
+        "facebook": "https://www.facebook.com/profile.php?id=61560491723699",
+        "x": "#"
+      }
+    }
+  },
+  "ui": {
+    "explore": "Explorar",
+    "comingSoon": "Próximamente",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "capabilitiesEyebrow": "Capacidades",
+    "advantagesEyebrow": "Ventajas",
+    "partnershipEconomic": "Empoderamiento Económico",
+    "partnershipSynergy": "Sinergia e Impacto",
+    "serviceMapEyebrow": "Operaciones Globales",
+    "serviceMapAll": "Todas las Operaciones",
+    "serviceMapActive": "Activo",
+    "serviceMapHover": "Pase el cursor sobre las regiones resaltadas para ver detalles",
+    "aboutMissionOrigin": "Misión y Origen",
+    "aboutTechnicalPartner": "Socio Técnico",
+    "aboutCoreValues": "Valores Fundamentales",
+    "aboutLeadership": "Liderazgo",
+    "aboutNextStep": "Siguientes Pasos",
+    "capAdvantageEyebrow": "La Ventaja",
+    "capNextSteps": "Siguientes Pasos",
+    "approachEyebrow": "Nuestro Enfoque",
+    "thePartnership": "La Alianza",
+    "stakeholdersEyebrow": "Partes Interesadas",
+    "counsel": "Asesoría",
+    "background": "Trayectoria",
+    "readMore": "Leer Más",
+    "close": "Cerrar",
+    "rightsReserved": "Todos los derechos reservados."
+  }
+}

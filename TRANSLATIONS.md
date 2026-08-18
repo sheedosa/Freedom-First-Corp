@@ -10,7 +10,15 @@
 >
 > **Brand names** (Freedom First, Freedom First Global, product names, place names
 > like Permian Basin) are kept in their original form inside ES/AR text per standard
-> practice. Keys mirror `src/content.ts` so translations can be mapped back later.
+> practice.
+>
+> **Where this copy now lives.** Key paths in this document mirror the original
+> `src/content.ts`, which has since been split into CMS-editable data files:
+> `content/<locale>/{site,home,about,capabilities,approach,insights,contact,seo}.json`,
+> with insight articles as markdown in `content/insights/<locale>/<slug>.md`. A key
+> such as `about.leadership.members[0].role` is now found under the matching
+> top-level object in `content/<locale>/about.json`. Translations are normally
+> edited through the CMS — see `docs/CMS-GUIDE.md`.
 
 ---
 

@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "title": "Un Socio Técnico de Producción Creado para el Terreno",
+    "image": "/images/about-hero.jpg"
+  },
+  "content": {
+    "title": "Nuestro Fundamento",
+    "paragraphs": [
+      "Freedom First nació de una convicción sencilla: el desarrollo energético debe fortalecer a las naciones, ampliar las oportunidades económicas y generar una estabilidad duradera, no solo para los gobiernos o los inversionistas, sino para las personas que llaman hogar a esas naciones.",
+      "Forjados en Texas, llevamos el espíritu emprendedor, la experiencia en ingeniería y la cultura orientada a la ejecución que transformaron la producción energética estadounidense a los mercados emergentes de todo el mundo. Creemos que el sector privado rinde mejor cuando lo guían la responsabilidad, la rapidez y la resolución práctica de problemas, no la burocracia. Y damos un paso al frente allí donde otros se han retirado.",
+      "Nos asociamos directamente con las naciones anfitrionas y los operadores locales para restablecer la producción, modernizar la infraestructura y liberar todo el valor de los activos energéticos críticos. Pero nuestro trabajo va más allá del campo. Invertimos en la capacidad local, fortalecemos la independencia energética y construimos sistemas resilientes diseñados para el crecimiento a largo plazo, porque el verdadero desarrollo significa comunidades capaces de valerse por sí mismas.",
+      "No nos limitamos a extraer valor y marcharnos. Construimos sistemas, desarrollamos talento y creamos motores de oportunidad que permiten a las personas recuperar las riendas de su futuro. Los verdaderos accionistas de cualquier nación rica en recursos son sus habitantes, y es exactamente para ellos para quienes trabajamos.",
+      "Nuestra misión es clara: ayudar a las naciones a convertir sus activos naturales en una fortaleza económica duradera mediante alianzas de confianza, excelencia técnica y resultados que perduran."
+    ]
+  },
+  "principles": {
+    "header": "Guiados por el Mandato de Ejecutar, Optimizar y Localizar Capacidades",
+    "vision": {
+      "title": "Nuestra Visión",
+      "text": "Ver a las naciones ricas en recursos alcanzar una verdadera autosuficiencia económica al contar con la capacidad técnica y la infraestructura para controlar, operar y maximizar plenamente su propio potencial energético."
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "text": "Llevar capacidades comprobadas en campo directamente al activo. Sorteamos los obstáculos para acelerar la producción, optimizar los campos existentes y desarrollar la capacidad de la fuerza laboral local para un sector energético resiliente e independiente."
+    },
+    "principles": {
+      "title": "Nuestros Principios",
+      "intro": "Rechazamos el ciclo de la dependencia externa centrándonos estrictamente en la entrega y el desarrollo de capacidades. Nuestro trabajo se guía por tres principios fundamentales:",
+      "items": [
+        {
+          "label": "Ejecutar con Disciplina",
+          "text": "Eliminamos las conjeturas operativas desplegando metodologías probadas que garantizan una entrega segura y fiable en entornos complejos."
+        },
+        {
+          "label": "Optimizar el Activo",
+          "text": "Alineamos nuestro éxito directamente con las prioridades del país anfitrión, maximizando la producción para alcanzar las metas nacionales."
+        },
+        {
+          "label": "Localizar la Fuerza Laboral",
+          "text": "No nos limitamos a extraer valor; nos aseguramos de que cada proyecto impulse una verdadera transferencia de conocimiento para empoderar a quienes operan los activos."
+        }
+      ]
+    }
+  },
+  "leadership": {
+    "members": [
+      {
+        "name": "Ryan Manicom",
+        "role": "Cofundador, Presidente y CEO",
+        "paragraphs": [
+          "Ryan es Cofundador, Presidente y CEO de Freedom First Global, donde dirige una cartera diversa de empresas internacionales. Graduado de Texas Tech University, comenzó su carrera en desarrollo de negocios, ayudando a expandir soluciones avanzadas de rendimiento de activos desde el sector de la defensa hacia el sector energético.",
+          "Posteriormente ocupó cargos de liderazgo en mercados energéticos de todo el mundo, incluidos Papúa Nueva Guinea, Myanmar e Irak. Su trabajo se ha centrado en el desarrollo de proyectos a gran escala, el liderazgo operativo y enfoques innovadores para la infraestructura energética, destacando especialmente soluciones pioneras para la mitigación de la quema de gas en mercados emergentes.",
+          "Con base en Houston, Ryan es un firme defensor del liderazgo del sector privado en el desarrollo global. Le apasiona especialmente extender el éxito y la innovación de la industria energética de Texas, incluida la Cuenca Pérmica, a regiones de alto crecimiento en todo el mundo.",
+          "A través de Freedom First Global, Ryan está comprometido con invertir en las comunidades, formarlas y empoderarlas, impulsado por la convicción de que el ingenio y la oportunidad existen en todos los mercados."
+        ]
+      },
+      {
+        "name": "Erik Prince",
+        "role": "Cofundador, Presidente del Consejo",
+        "paragraphs": [
+          "Erik es un empresario, inversionista y autor estadounidense, y exoficial de los Navy SEAL de Estados Unidos, que fundó Blackwater, una de las primeras compañías militares privadas de alcance global. Bajo el liderazgo de Erik, Blackwater ejecutó más de USD 2.000 millones en contratos de seguridad gubernamentales, abarcando operaciones en países de todo el mundo, como Irak, Afganistán, Bosnia, Israel, Azerbaiyán, Japón, Pakistán y Uzbekistán."
+        ],
+        "bullets": [
+          "Es Cofundador de Freedom First, que invierte en proyectos de energía, agricultura, tecnología e infraestructura en regiones donde convergen la seguridad, la logística y la inversión.",
+          "Anteriormente, Erik fundó Frontier Resource Group, una firma de capital privado, y fue Presidente de Frontier Service Group, cotizada en Hong Kong, hasta 2021; Frontier se centraba en las industrias extractivas en Asia y África.",
+          "La actual empresa de Erik orientada a la seguridad, Vectus, ayuda a los gobiernos a ampliar su capacidad para abordar cuestiones de seguridad nacional y a aumentar la recaudación de ingresos internos, con miras a fortalecer la soberanía y mejorar el clima de inversión."
+        ]
+      }
+    ]
+  },
+  "dataStrip": {
+    "header": "Definidos por una Trayectoria de Ejecución",
+    "stats": [
+      {
+        "label": "Pozos Gestionados",
+        "value": "1.000+",
+        "sublabel": "(En tierra y costa afuera)"
+      },
+      {
+        "label": "Producción Máxima Alcanzada",
+        "value": "1 BSCFD",
+        "sublabel": "(Barnett Shale)"
+      },
+      {
+        "label": "Presupuestos de Proyecto Ejecutados",
+        "value": "USD 1.000 M+",
+        "sublabel": "Gestionados con éxito"
+      }
+    ]
+  },
+  "advisors": {
+    "header": "Respaldados por Asesores Estratégicos Experimentados",
+    "members": [
+      {
+        "name": "Ted Hogan",
+        "role": "Vicepresidente",
+        "summary": "Ted aporta décadas de experiencia en crecimiento operativo y comercial dentro del sector de servicios petroleros. Cofundó Light Tower Rentals (LTR) en 1994, llevando el negocio de equipos a convertirse en una organización de alcance nacional. Tras alianzas institucionales estratégicas y una fusión, LTR se convirtió en Gravity Oilfield Services, donde Ted pasó a ocupar el cargo de Vicepresidente.",
+        "expandedBio": "Su especialidad radica en escalar operaciones de equipos industriales, estructurar inversiones institucionales y mantener una prestación de servicios rigurosa en todo el sector energético."
+      },
+      {
+        "name": "Colby Fuser",
+        "role": "Asesor",
+        "summary": "Colby aporta más de 20 años de liderazgo ejecutivo y operativo en la industria mundial del petróleo y el gas. Durante su etapa en Halliburton Energy Services, gestionó operaciones a gran escala como Vicepresidente Regional para la región de Asia-Pacífico y ocupó cargos ejecutivos de alto nivel en el norte de África y el Medio Oriente.",
+        "expandedBio": "Actualmente se desempeña como Presidente y CEO de E3 Company tras su exitosa adquisición por capital privado. Colby aporta a Freedom First una profunda experiencia en operaciones de campo internacionales, integración de fusiones y adquisiciones, y rigurosos estándares de seguridad."
+      },
+      {
+        "name": "Richard Anderson",
+        "role": "Asesor",
+        "summary": "Richard es un ejecutivo del sector energético y contador público certificado con amplia experiencia en exploración internacional y gobernanza financiera. Recientemente se desempeñó como CEO de Coastline Exploration, dirigiendo operaciones de petróleo y gas costa afuera en Somalia.",
+        "expandedBio": "Su trayectoria incluye haberse desempeñado como Director Financiero de Eurasia Drilling Company Limited y haber ocupado cargos directivos en importantes operadores globales como Transocean Ltd. y Vanguard Natural Resources. Richard aporta un rigor financiero crítico, disciplina de capital y experiencia en gobernanza de mercados cotizados a las operaciones internacionales de Freedom First."
+      }
+    ]
+  },
+  "ceoMessage": {
+    "header": "Mensaje del CEO",
+    "subheader": "De la Cuenca Pérmica a los Mercados Emergentes",
+    "quote": "«Freedom First nació de la convicción de que el liderazgo estadounidense, la libre empresa y una gobernanza sólida pueden impulsar una prosperidad duradera en los mercados emergentes. Inspirados por la fortaleza, la innovación y la independencia energética de la Cuenca Pérmica, buscamos exportar los principios comprobados que convirtieron a Texas en un líder energético mundial.\n\nNuestro equipo reúne a los mejores expertos en cada faceta del desarrollo energético, unidos por la misión de invertir en mercados estratégicos, empoderar a las fuerzas laborales locales y promover la próxima generación de liderazgo del sector privado. Mediante la inversión estratégica, la excelencia operativa y alianzas orientadas al valor, Freedom First se compromete a fortalecer la seguridad energética, el crecimiento económico y la estabilidad a largo plazo en todo el mundo.»",
+    "author": "Ryan Manicom",
+    "authorTitle": "Presidente/CEO"
+  },
+  "finalCta": {
+    "header": "Libere el Verdadero Valor de Sus Activos",
+    "message": "Vea cómo nuestro equipo diagnostica sus limitaciones, diseña las soluciones y vuelve a poner en marcha la producción detenida.",
+    "ctaLabel": "Explore Nuestras Capacidades",
+    "ctaLink": "/capabilities"
+  }
+}

@@ -173,3 +173,124 @@
 [dir="rtl"] h6 {
   line-height: 1.35;
 }
+
+/* ── Insight-article body ────────────────────────────────────────────────────
+   Articles are authored as markdown in the CMS, so their HTML is generated and
+   can't carry utility classes. These rules style what `marked` emits — matching
+   the typography the hand-built article pages used (text-lg, leading-relaxed,
+   navy at 80%), and covering the richer marks the CMS editor can now produce:
+   headings, links, lists, blockquotes, bold/italic and horizontal rules.
+   Logical properties (margin-inline, padding-inline, border-inline-start) keep
+   it correct in both LTR and Arabic RTL without a separate ruleset. */
+.article-body {
+  color: color-mix(in srgb, var(--color-navy-deep) 80%, transparent);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.article-body > * + * {
+  margin-block-start: 1.75rem;
+}
+
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  color: var(--color-navy-deep);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.article-body h2 { font-size: 1.75rem; }
+.article-body h3 { font-size: 1.375rem; }
+.article-body h4 { font-size: 1.125rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* Headings need more space above than the uniform flow margin gives them. */
+.article-body > :is(h2, h3, h4) + * { margin-block-start: 1rem; }
+.article-body > * + :is(h2, h3, h4) { margin-block-start: 2.75rem; }
+
+.article-body a {
+  color: var(--color-red-freedom);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.article-body a:hover { color: var(--color-navy-deep); }
+
+.article-body strong { color: var(--color-navy-deep); font-weight: 700; }
+.article-body em { font-style: italic; }
+
+.article-body :is(ul, ol) {
+  padding-inline-start: 1.5rem;
+}
+
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li + li { margin-block-start: 0.6rem; }
+.article-body li::marker { color: var(--color-red-freedom); }
+
+.article-body blockquote {
+  border-inline-start: 3px solid var(--color-red-freedom);
+  padding-inline-start: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--color-navy-deep);
+}
+
+.article-body blockquote p + p { margin-block-start: 1rem; }
+
+.article-body hr {
+  border: 0;
+  border-block-start: 1px solid color-mix(in srgb, var(--color-navy-deep) 15%, transparent);
+  margin-block: 2.5rem;
+}
+
+.article-body :is(img, video) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.article-body :is(code, pre) {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.article-body code {
+  background: color-mix(in srgb, var(--color-navy-deep) 7%, transparent);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.article-body pre {
+  background: var(--color-navy-deep);
+  color: var(--color-off-white);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+}
+
+.article-body pre code { background: none; padding: 0; }
+
+/* Tables can exceed the measure on narrow screens; let them scroll in place
+   rather than widening the page. */
+.article-body table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.article-body :is(th, td) {
+  border: 1px solid color-mix(in srgb, var(--color-navy-deep) 15%, transparent);
+  padding: 0.6rem 0.9rem;
+  text-align: start;
+}
+
+.article-body th {
+  background: color-mix(in srgb, var(--color-navy-deep) 5%, transparent);
+  color: var(--color-navy-deep);
+  font-weight: 700;
+}

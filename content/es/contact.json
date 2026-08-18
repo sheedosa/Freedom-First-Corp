@@ -1,0 +1,41 @@
+{
+  "eyebrow": "Contacto",
+  "title": "Conecte con nuestro equipo hoy",
+  "subhead": "Cuéntenos sobre su activo y reactivaremos la producción detenida.",
+  "formEyebrow": "Consultas",
+  "formHeading": "Póngase en Contacto",
+  "formDescription": "Si desea obtener más información sobre Freedom First o analizar posibles oportunidades de colaboración, nuestro equipo estará encantado de ayudarle. Envíe su consulta y un miembro de nuestro equipo la revisará.",
+  "fields": {
+    "name": "Nombre",
+    "company": "Empresa / Organización",
+    "title": "Cargo",
+    "email": "Correo electrónico",
+    "phone": "Número de teléfono",
+    "location": "Ubicación del Activo / Proyecto",
+    "objective": "Objetivo Operativo",
+    "challenge": "Defina el Desafío Principal",
+    "message": "Mensaje"
+  },
+  "objectivePlaceholder": "— Seleccione un objetivo —",
+  "objectiveOptions": [
+    "Exploración y Producción: Optimización y Recuperación de la Producción",
+    "Transporte y Almacenamiento: Infraestructura y Aceleración del Flujo",
+    "Refinación y Distribución: Optimización del Rendimiento y Fiabilidad",
+    "Comercialización y Logística: Acceso a Mercados y Compra Física (Offtake)"
+  ],
+  "challengePlaceholder": "Proporcione una breve descripción del cuello de botella operativo o la limitación comercial que necesita resolver...",
+  "submit": "Iniciar Contacto",
+  "directEyebrow": "Contacto Directo",
+  "directHeading": "Comuníquese Directamente con Nuestro Equipo",
+  "hqEyebrow": "Sede Central",
+  "hqCity": "The Woodlands, TX",
+  "hqAddress": "2700 Research Forest Dr.\nSuite 105\nThe Woodlands, Texas 77381",
+  "hqCountry": "Estados Unidos de América",
+  "getDirections": "Cómo Llegar",
+  "emailEyebrow": "Correo electrónico",
+  "emailHeading": "Póngase en Contacto",
+  "generalInquiries": "Consultas Generales",
+  "footprintEyebrow": "Presencia Operativa",
+  "footprintHeading": "Presencia Global",
+  "footprintText": "Freedom First despliega ingenieros y operadores en todo el mundo. Ya sea que los activos se encuentren en cuencas nacionales maduras o en los mercados emergentes logísticamente más desafiantes del mundo, llevamos la ejecución directamente a la cabeza de pozo."
+}

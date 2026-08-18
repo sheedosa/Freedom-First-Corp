@@ -2,30 +2,27 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useContent } from '../i18n';
+import { useContent, useLanguage } from '../i18n';
 import { Seo, breadcrumbLd, webPageLd } from '../seo';
-
-// Non-translatable presentation/routing data, keyed by article id.
-const ARTICLE_META: Record<number, { image?: string; href: string }> = {
-  1: { image: '/images/article-1-libya.jpg', href: '/insights/rebuilding-libya' },
-  2: { image: '/images/article-2-us-africa.jpg', href: '/insights/us-africa-energy-forum' },
-  3: { image: '/images/article-3-permian.jpg', href: '/insights/permian-basin-to-libya' },
-  4: { image: '/images/article-4-upstream.jpg', href: '/insights/upstream-energy-development' },
-};
+import { listArticles } from '../content/articles';
 
 const CATEGORY_KEYS = ['all', 'emergingMarkets', 'fieldExecution', 'companyUpdates'] as const;
 type CategoryKey = typeof CATEGORY_KEYS[number];
 
 export const Insights = () => {
   const content = useContent();
+  const { locale } = useLanguage();
   const ip = content.insightsPage;
   const [activeKey, setActiveKey] = useState<CategoryKey>('all');
 
-  // Filter on a stable key, comparing display strings within the active locale —
-  // so the selection survives a language switch.
+  // Articles come from the markdown collection, ordered by their `order` field.
+  const articles = listArticles(locale);
+
+  // Each article stores a stable category key, so filtering never depends on a
+  // translated label and the selection survives a language switch.
   const filteredArticles = activeKey === 'all'
-    ? ip.articles
-    : ip.articles.filter((article) => article.category === ip.categories[activeKey]);
+    ? articles
+    : articles.filter((article) => article.category === activeKey);
 
   return (
     <div className="flex-grow flex flex-col bg-off-white">
@@ -108,10 +105,12 @@ export const Insights = () => {
           >
             <AnimatePresence mode="popLayout">
               {filteredArticles.map((article) => {
-                const meta = ARTICLE_META[article.id];
-                const image = meta?.image;
-                const href = meta?.href ?? '#';
-                const isLive = href !== '#';
+                const image = article.image;
+                const href = `/insights/${article.slug}`;
+                // An article with frontmatter but no body yet is a teaser: shown
+                // in the grid as "coming soon" but not linked.
+                const isLive = article.hasBody;
+                const categoryLabel = ip.categories[article.category] ?? article.category;
 
                 const card = (
                   <div className={`relative aspect-square rounded-2xl overflow-hidden mb-6 shadow-xl ${isLive ? 'cursor-pointer' : ''}`}>
@@ -136,7 +135,7 @@ export const Insights = () => {
                       {/* Tag */}
                       <div className="self-start">
                         <span className="inline-block bg-red-freedom text-white text-[10px] font-bold font-mono tracking-widest uppercase px-3 py-1.5 rounded-sm">
-                          {article.category}
+                          {categoryLabel}
                         </span>
                       </div>
 
@@ -165,7 +164,7 @@ export const Insights = () => {
 
                 return (
                   <motion.div
-                    key={article.id}
+                    key={article.slug}
                     layout
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}

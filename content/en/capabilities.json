@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "Driving Execution Across the Energy Value Chain",
+    "subtitle": "From upstream operations to global market access, we maximize energy asset value at every stage of the lifecycle."
+  },
+  "subNav": [
+    {
+      "label": "Upstream",
+      "href": "#upstream"
+    },
+    {
+      "label": "Midstream",
+      "href": "#midstream"
+    },
+    {
+      "label": "Downstream",
+      "href": "#downstream"
+    },
+    {
+      "label": "Asset Protection",
+      "href": "#asset-protection"
+    },
+    {
+      "label": "Energy Trading & Logistics",
+      "href": "#energy-trading"
+    }
+  ],
+  "sections": [
+    {
+      "id": "upstream",
+      "tag": "Upstream",
+      "header": "Delivering Measurable Production Growth",
+      "message": "We deliver tier-one U.S. expertise to drive verifiable production growth. From accelerating the path to first oil to reactivating stalled brownfield assets, our specialty is in engineering the solutions required to break operational deadlocks, deploy advanced extraction technologies, and keep the barrels flowing.",
+      "deliverables": [
+        {
+          "title": "Exploration & Subsurface Evaluation",
+          "text": "Delivering detailed geological and seismic assessments to identify viable reserves and model the data required to drive development decisions."
+        },
+        {
+          "title": "Advanced Drilling Services",
+          "text": "Deploying advanced technologies and elite field teams to execute drilling programs that optimize placement, reduce non-productive time, and secure reserves."
+        },
+        {
+          "title": "Workover & Well Optimization",
+          "text": "Executing targeted well interventions ranging from routine maintenance to complex mechanical workovers to restore wellbore integrity and optimize flow performance."
+        },
+        {
+          "title": "Field Operations & Facility Support",
+          "text": "Directing end-to-end field management from commissioning and preventative maintenance to rapid emergency response protocols to ensure asset reliability."
+        }
+      ]
+    },
+    {
+      "id": "midstream",
+      "tag": "Midstream",
+      "header": "Optimizing the Path from Production to Processing",
+      "message": "We build, manage, and scale the critical midstream infrastructure required to move hydrocarbons safely from the wellhead to processing facilities. Through rigorous engineering and precise logistics management, we eliminate supply chain bottlenecks and maximize the flow of resources to processing facilities and end markets.",
+      "deliverables": [
+        {
+          "title": "Infrastructure Development & Support",
+          "text": "Directing the planning, construction, and operational support of pipelines, terminals, and storage facilities to deliver scalable infrastructure built for continuous flow."
+        },
+        {
+          "title": "Transport & Logistics Coordination",
+          "text": "Delivering end-to-end logistics and total operational oversight into and out of complex environments, integrating supply chain management directly with field execution."
+        },
+        {
+          "title": "Storage & Handling Solutions",
+          "text": "Managing complex storage operations to guarantee the secure containment and transfer of energy products to help sustain an uninterrupted market supply."
+        }
+      ]
+    },
+    {
+      "id": "downstream",
+      "tag": "Downstream",
+      "header": "Maximizing Yield, Uptime, and Market Delivery",
+      "message": "We apply tier-one U.S. execution directly to downstream assets to maximize processing yields and lock in reliability of the refinery. We work to turn hydrocarbons into high-value products and manage the final terminal operations to drive a stable flow into the market.",
+      "deliverables": [
+        {
+          "title": "Operational & Technical Support",
+          "text": "Executing targeted technical and operational interventions to maximize refinery yields and increase facility throughput."
+        },
+        {
+          "title": "Asset Integrity & Turnaround Execution",
+          "text": "Directing maintenance and turnaround programs to ensure technical integrity, mitigate operational risk, and eliminate unplanned downtime."
+        },
+        {
+          "title": "Terminal Operations & Final Distribution",
+          "text": "Managing end-to-end terminal logistics and securing the distribution networks to guarantee a stable, uninterrupted flow of market-ready energy products."
+        }
+      ]
+    },
+    {
+      "id": "asset-protection",
+      "tag": "Asset Protection",
+      "header": "Protecting Critical Assets and Operational Continuity",
+      "message": "Energy development and asset protection are fundamental to national growth. As nations expand production and invest in critical infrastructure, securing these assets is essential to protecting revenue, maintaining operational continuity, and attracting long-term investment.",
+      "deliverables": [
+        {
+          "title": "Critical infrastructure security assessments and protection planning"
+        },
+        {
+          "title": "Oil, gas, power, and pipeline security programs"
+        },
+        {
+          "title": "Protective force training and capability development"
+        },
+        {
+          "title": "Security operations and command center advisory services"
+        },
+        {
+          "title": "Risk assessment, threat analysis, and crisis response planning"
+        },
+        {
+          "title": "Emergency preparedness and business continuity programs"
+        },
+        {
+          "title": "Security doctrine, procedures, and workforce development"
+        },
+        {
+          "title": "Strategic advisory support for governments and energy operators"
+        }
+      ]
+    },
+    {
+      "id": "energy-trading",
+      "tag": "Energy Trading & Logistics",
+      "header": "Connecting Production to High-Demand Markets",
+      "message": "Our energy trading division integrates tier-one logistics with global market access, executing physical trades across crude oil, refined products, LNG, and NGLs. We connect producers directly to industrial end-users, commanding the physical flow of resources to guarantee reliable supply and maximize commercial value across the energy value chain.",
+      "deliverables": [
+        {
+          "title": "Global Trading & Offtake",
+          "text": "Executing physical trading across crude, refined products, and gas liquids. We secure direct offtake and structure supply agreements that connect production straight to high-demand markets."
+        },
+        {
+          "title": "End-to-End Logistics Execution",
+          "text": "Managing the flow of hydrocarbons from the asset to the buyer — from shipping, storage, and delivery coordination — to guarantee reliable global delivery."
+        },
+        {
+          "title": "Commercial Structuring & Monetization",
+          "text": "Managing the full commercial lifecycle, from spot transactions to long-term supply, with the market insight to optimize pricing and position assets for maximum return."
+        }
+      ]
+    }
+  ],
+  "advantage": {
+    "header": "The U.S. Mid-Market Execution Advantage",
+    "message": "We execute at an elite level serving as your gateway to the agile, highly specialized commercial and technical teams that drove the American unconventional revolution."
+  },
+  "midMarket": [
+    {
+      "title": "Elite Pedigree",
+      "description": "Access the specialized technical teams that drove U.S. hydrocarbon growth.",
+      "image": "/images/midmarket-1.jpg"
+    },
+    {
+      "title": "Direct-to-Asset Execution",
+      "description": "Secure tier-one engineering and field execution straight to the operation.",
+      "image": "/images/midmarket-2.jpg"
+    },
+    {
+      "title": "Zero Bureaucratic Drag",
+      "description": "Bypass the red tape of major companies to accelerate timelines and execute with agility.",
+      "image": "/images/midmarket-3.jpg"
+    }
+  ],
+  "cta": {
+    "header": "Permian Basin Experience Delivered Direct to the Asset",
+    "message": "See how we bring the capabilities of the Permian Basin straight to your toughest fields around the world.",
+    "primary": {
+      "label": "Explore Our Approach",
+      "href": "/approach"
+    },
+    "secondary": {
+      "label": "Contact Our Team",
+      "href": "/contact"
+    }
+  }
+}

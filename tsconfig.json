@@ -10,6 +10,8 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
+    /* import.meta.glob + ?raw imports used by src/content/articles.ts */
+    "types": ["vite/client"],
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
@@ -26,6 +28,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "content"],
   "references": [ { "path": "./tsconfig.node.json" } ]
 }

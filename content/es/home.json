@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "eyebrow": "FREEDOM FIRST",
+    "title": "Soluciones del Sector Privado para la Estabilidad y el Crecimiento",
+    "subhead": "Al combinar el desarrollo energético, la inversión en infraestructura y la protección estratégica de activos, ayudamos a construir economías más fuertes y autosuficientes.",
+    "ctaPrimary": "Nuestras Capacidades",
+    "bgImage": "/images/hero-bg.jpg"
+  },
+  "capabilitiesSection": {
+    "header": "Impulsamos el Crecimiento de la Producción a lo Largo de la Vida del Activo",
+    "items": [
+      {
+        "title": "Exploración y Producción",
+        "description": "Maximice la producción desde el yacimiento hasta la cabeza de pozo con una ejecución en campo estadounidense de primer nivel.",
+        "image": "/images/cap-upstream.jpg",
+        "link": "/capabilities#upstream"
+      },
+      {
+        "title": "Transporte y Almacenamiento",
+        "description": "Atacamos los cuellos de botella y desplegamos infraestructura de alta capacidad para garantizar un flujo continuo de hidrocarburos.",
+        "image": "/images/cap-midstream.jpg",
+        "link": "/capabilities#midstream"
+      },
+      {
+        "title": "Refinación y Distribución",
+        "description": "Aseguramos la máxima disponibilidad de las instalaciones y maximizamos los rendimientos de refinación mediante ingeniería estadounidense de primer nivel.",
+        "image": "/images/cap-downstream.jpg",
+        "link": "/capabilities#downstream"
+      },
+      {
+        "title": "Protección de Activos",
+        "description": "Creamos entornos seguros que reducen el riesgo, atraen inversión y protegen los activos críticos.",
+        "image": "/images/cap-asset-protection.jpg",
+        "link": "/capabilities#asset-protection"
+      },
+      {
+        "title": "Comercialización de Energía",
+        "description": "Conectamos la producción física directamente con los mercados de alta demanda y aseguramos el máximo retorno comercial.",
+        "image": "/images/cap-trading.jpg",
+        "link": "/capabilities#energy-trading"
+      }
+    ]
+  },
+  "whereWeDoIt": {
+    "header": "En los Lugares Donde la Ejecución Comprobada Más Importa",
+    "message": "Cuando los proyectos se estancan, la producción rinde por debajo de lo esperado o los enfoques convencionales se quedan cortos, Freedom First aporta experiencia estadounidense para liberar el potencial energético.",
+    "cta": "Con Quién Trabajamos",
+    "ctaLink": "/approach#stakeholders",
+    "legendLabel": "Nuestra Presencia Operativa",
+    "countries": [
+      {
+        "id": "libya",
+        "name": "Libia",
+        "brief": "Asociación técnica y mejora de la producción, aportando estabilidad y disciplina de ejecución a activos críticos.",
+        "coordinates": [
+          17.2283,
+          26.3351
+        ]
+      },
+      {
+        "id": "venezuela",
+        "name": "Venezuela",
+        "brief": "Asesoría estratégica y soporte técnico para la reactivación de campos maduros, con foco en la recuperación de crudo pesado y la modernización de la infraestructura.",
+        "coordinates": [
+          -66.5897,
+          6.4238
+        ]
+      },
+      {
+        "id": "somalia",
+        "name": "Somalia",
+        "brief": "Exploración en campos nuevos y asesoría regulatoria, ayudando a establecer estándares de clase mundial para un sector energético en desarrollo.",
+        "coordinates": [
+          46.1996,
+          5.1521
+        ]
+      }
+    ]
+  },
+  "advantages": {
+    "header": "Diseñados para la Realidad del Terreno",
+    "message": "Freedom First aplica un enfoque «por, con y a través de» para ejecutar con la rapidez, la flexibilidad y la preparación local necesarias para mantener el trabajo en marcha en entornos difíciles.",
+    "items": [
+      {
+        "title": "Experiencia Probada en Campo",
+        "description": "Aplicamos métodos probados en campo y estrategias técnicas que reducen las conjeturas, mejoran el desempeño y cumplen las metas de producción.",
+        "image": "/images/us-expertise.jpg"
+      },
+      {
+        "title": "Red de Especialistas en Energía",
+        "description": "Aprovechamos profundas redes del sector para incorporar ingenieros y especialistas técnicos de probada trayectoria de Estados Unidos y del sector mundial de hidrocarburos.",
+        "image": "/images/adv-network.jpg"
+      },
+      {
+        "title": "Ejecución Ágil e Independiente",
+        "description": "Nos movemos sin el lastre de la burocracia de las grandes compañías, con capacidad para adaptarnos a las realidades técnicas, logísticas y comerciales y lograr resultados.",
+        "image": "/images/adv-agile.jpg"
+      },
+      {
+        "title": "Ventaja Directa en la Cadena de Suministro",
+        "description": "Al trabajar más cerca de la fuente, ayudamos a reducir la fuga de valor, controlar los costos y mejorar la economía del proyecto en toda la cadena.",
+        "image": "/images/adv-supply.jpg"
+      }
+    ],
+    "ctaPrimary": "Nuestras Capacidades",
+    "ctaPrimaryLink": "/capabilities",
+    "ctaSecondary": "Conozca a Nuestro Equipo de Expertos",
+    "ctaSecondaryLink": "/about#leadership"
+  },
+  "homeCta": {
+    "eyebrow": "Listos para Avanzar",
+    "header": "Libere el Verdadero Valor de Sus Activos",
+    "message": "Vea cómo nuestro equipo diagnostica sus limitaciones, diseña las soluciones y vuelve a poner en marcha la producción detenida.",
+    "ctaLabel": "Explore Nuestras Capacidades",
+    "ctaLink": "/capabilities"
+  },
+  "partnerships": {
+    "section1": {
+      "header": "Dotamos a los mercados emergentes de las herramientas para lograr la autosuficiencia",
+      "message": "Con demasiada frecuencia, los mercados más ricos en recursos del mundo se ven frenados por la falta de inversión y por barreras técnicas.\n\nEn Freedom First creemos que estas naciones deben contar con las herramientas para desarrollar sus propios activos, superar la dependencia de la ayuda externa y construir una verdadera autosuficiencia económica."
+    },
+    "section2": {
+      "header": "Nuestro enfoque se basa en la colaboración directa, no solo en la extracción",
+      "message": "Mediante la inversión estratégica y una capacitación integral, devolvemos el valor de los recursos a las personas.\n\nTrabajamos codo a codo con los países anfitriones para desarrollar de forma responsable su potencial energético, asegurando que el crecimiento de la producción de hoy construya una fuerza laboral autosuficiente para el futuro."
+    },
+    "ctaPrimary": "Nuestro Enfoque",
+    "ctaPrimaryLink": "/approach",
+    "ctaSecondary": "Vea Nuestras Últimas Noticias",
+    "ctaSecondaryLink": "/insights"
+  }
+}

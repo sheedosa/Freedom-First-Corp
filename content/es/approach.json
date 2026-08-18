@@ -1,0 +1,149 @@
+{
+  "hero": {
+    "title": "Convertir los Recursos en Libertad Económica y Estabilidad",
+    "subtitle": "Intervenimos como un verdadero socio de producción. Ejecutamos en los lugares logísticamente más exigentes y construimos sistemas técnicos que su fuerza laboral puede sostener, todo respaldado por un modelo comercial orientado al desempeño."
+  },
+  "stakeholderTabs": {
+    "header": "Alianzas Creadas para Impulsar el Crecimiento Energético",
+    "message": "Freedom First trabaja con operadores, naciones anfitrionas y socios estratégicos para hacer avanzar los proyectos de hidrocarburos en entornos difíciles mediante una ejecución comprobada y modelos de alianza diseñados para generar valor a largo plazo.",
+    "tabs": {
+      "operators": {
+        "id": "operators",
+        "title": "Operadores",
+        "subtitle": "Propietarios de Activos y Productores",
+        "text": "Trabajamos con operadores que gestionan activos maduros, heredados o detenidos, donde la producción se ve frenada por cuellos de botella técnicos, desafíos de ejecución o limitaciones comerciales.",
+        "partnership": "Freedom First aporta la ingeniería, el liderazgo de proyecto y el modelo de ejecución necesarios para hacer avanzar proyectos difíciles. Donde los modelos de contratistas convencionales se quedan cortos, intervenimos para romper los bloqueos, mejorar la economía del campo y elevar la producción.",
+        "points": [
+          {
+            "title": "Alineación Orientada a la Producción",
+            "text": "Estructuramos nuestro rol en torno a un único objetivo: aumentar la producción y mejorar la economía del campo."
+          },
+          {
+            "title": "Ejecución Donde Importa",
+            "text": "Asumimos los desafíos operativos, logísticos y de subsuelo que mantienen estancada la producción."
+          },
+          {
+            "title": "Modelo Orientado al Desempeño",
+            "text": "Operamos con un modelo diseñado para recompensar el avance de la producción, no solo la actividad."
+          }
+        ],
+        "ctaMsg": "Lleve una Ejecución Comprobada a Sus Campos Más Exigentes",
+        "ctaText": "Explore Nuestras Capacidades",
+        "ctaHref": "/capabilities"
+      },
+      "host-nations": {
+        "id": "host-nations",
+        "title": "Naciones Anfitrionas",
+        "subtitle": "Estados Soberanos y Planificadores Energéticos Nacionales",
+        "text": "Trabajamos con gobiernos e instituciones energéticas nacionales que buscan aumentar la producción interna, fortalecer la capacidad local y desarrollar sus recursos energéticos conforme a las prioridades nacionales.",
+        "partnership": "Freedom First trabaja codo a codo con las naciones anfitrionas para elevar la producción, construir una capacidad operativa más sólida y dejar atrás sistemas que la fuerza laboral local pueda sostener a largo plazo.",
+        "points": [
+          {
+            "title": "Alineados con las Prioridades Nacionales",
+            "text": "Estructuramos los proyectos para apoyar el crecimiento de la producción, el valor del activo a largo plazo y los objetivos nacionales más amplios."
+          },
+          {
+            "title": "Integración de la Fuerza Laboral Local",
+            "text": "Trabajamos con el talento local y lo desarrollamos como parte de la ejecución, integrando a los equipos locales en los sistemas y estándares establecidos."
+          },
+          {
+            "title": "Estándares Estrictos en el Campo",
+            "text": "Aplicamos sólidos estándares de HSE y operativos para proteger a las personas, la infraestructura y la continuidad de las operaciones."
+          }
+        ],
+        "ctaMsg": "Lleve la Ingeniería Estadounidense Directamente a Sus Activos Soberanos",
+        "ctaText": "Conozca al Equipo Directivo",
+        "ctaHref": "/about#leadership"
+      },
+      "strategic-partners": {
+        "id": "strategic-partners",
+        "title": "Socios Estratégicos",
+        "subtitle": "Socios de Apoyo en el País",
+        "text": "Trabajamos con empresas de servicios locales, socios de la cadena de suministro y proveedores de infraestructura que aportan acceso local crítico, conocimiento operativo y capacidad de ejecución de última milla.",
+        "partnership": "Lideramos con una gestión de proyectos especializada y una inversión de capital directa que se integra con socios locales de confianza. Creemos que los mejores resultados surgen de combinar la profundidad técnica con las capacidades locales, no de prescindir de ellas.",
+        "points": [
+          {
+            "title": "Apoyo a Nivel de Campo",
+            "text": "Operamos a través de la infraestructura local, las cadenas de suministro y las relaciones operativas para reducir los retrasos y mantener el ritmo."
+          },
+          {
+            "title": "Estándares Compartidos",
+            "text": "Nos asociamos con entidades locales dispuestas a operar bajo nuestros estándares de cumplimiento, ayudando a elevar las operaciones a un nivel de primera categoría."
+          },
+          {
+            "title": "Valor a Largo Plazo",
+            "text": "Construimos alianzas diseñadas para generar trabajo recurrente, una ejecución más sólida y un valor sostenido para ambas partes."
+          }
+        ],
+        "ctaMsg": "Descubra Cómo Su Presencia Puede Apoyar Nuestras Operaciones de Campo",
+        "ctaText": "Explore Nuestras Capacidades",
+        "ctaHref": "/capabilities"
+      }
+    }
+  },
+  "focus": [
+    {
+      "id": "direct-to-asset",
+      "title": "Diseñados para Cumplir en Entornos Exigentes y sin Demoras",
+      "eyebrow": "Ejecución Directa en el Activo",
+      "desc": "Llegar a los activos energéticos más remotos del mundo exige dominar una logística internacional compleja. Freedom First está diseñada para movilizar equipos especializados, maquinaria pesada y tecnología avanzada hacia y desde las ubicaciones más difíciles de alcanzar. Al controlar la logística, podemos movernos con la rapidez y la agilidad necesarias para resolver los cuellos de botella en tiempo real, aplicar metodologías comprobadas y volver a poner en marcha la producción detenida sin demoras.",
+      "subHeader": "Nuestra Ventaja de Ejecución",
+      "points": [
+        {
+          "title": "Despliegue Ágil",
+          "text": "Movilizamos talento de ingeniería especializado y cadenas de suministro directamente al campo, eliminando los retrasos de los intermediarios."
+        },
+        {
+          "title": "Soluciones Probadas en Campo",
+          "text": "Aplicamos metodologías probadas para superar los desafíos de superficie y subsuelo más complejos."
+        },
+        {
+          "title": "Impulso Ininterrumpido",
+          "text": "Lideramos con una gestión experimentada para asegurar que el trabajo avance según el cronograma y el presupuesto, acelerando los plazos de producción."
+        }
+      ]
+    },
+    {
+      "id": "hse-capability",
+      "title": "Estructurados para una Ejecución Segura y una Transferencia de Conocimiento Sostenida",
+      "eyebrow": "HSE y Capacidad Local",
+      "desc": "La verdadera sostenibilidad exige proteger a las personas, el activo y el medio ambiente. Freedom First lleva estándares estadounidenses de Salud, Seguridad y Medio Ambiente (HSE) y una estricta cultura de cumplimiento a cada sitio donde operamos. Al mismo tiempo, estructuramos cada proyecto como una plataforma para la transferencia de conocimiento. Trabajamos codo a codo con los equipos locales para desarrollar la capacidad técnica necesaria, de modo que la nación anfitriona pueda operar y sostener los activos de forma independiente mucho después de la intervención inicial.",
+      "subHeader": "Nuestro Estándar Operativo",
+      "points": [
+        {
+          "title": "Seguridad Inquebrantable (HSE)",
+          "text": "Implementamos protocolos operativos desde el primer día para proteger al personal, mitigar el riesgo y asegurar operaciones de campo seguras e ininterrumpidas."
+        },
+        {
+          "title": "Protección de Activos",
+          "text": "Gestionamos la infraestructura heredada con una estricta integridad técnica para asegurar que las intervenciones maximicen la producción sin comprometer la salud del yacimiento."
+        },
+        {
+          "title": "Transferencia de Conocimiento Práctica",
+          "text": "Capacitamos a la fuerza laboral local mediante formación estructurada, integrándola en los sistemas establecidos para una continuidad operativa a largo plazo."
+        }
+      ]
+    },
+    {
+      "id": "commercial-alignment",
+      "title": "Sustentados en el Riesgo Compartido y la Recompensa Orientada a la Producción",
+      "eyebrow": "Alineación Comercial",
+      "desc": "Nos comprometemos como verdaderos socios de producción, plenamente dispuestos a respaldar nuestra experiencia operativa con inversión de capital directa. En lugar de depender de los modelos de servicio tradicionales que se benefician de la producción existente, aportamos la flexibilidad de compartir el riesgo. Seguros de nuestra ejecución, estamos dispuestos a invertir nuestro propio capital y a obtener ganancias únicamente por los barriles incrementales que producimos. Esto alinea directamente nuestros retornos con sus objetivos nacionales: aumentar la producción, controlar los costos y asegurar el valor del activo a largo plazo.",
+      "subHeader": "Nuestra Estructura Ideal",
+      "points": [
+        {
+          "title": "Retornos Orientados al Desempeño",
+          "text": "Respaldamos nuestra confianza operativa con acuerdos comerciales vinculados exclusivamente al crecimiento incremental de la producción del activo."
+        },
+        {
+          "title": "Inversión Local Directa",
+          "text": "Llevamos capital privado directamente a campos desatendidos o detenidos para liberar su potencial energético sin aumentar la deuda nacional."
+        },
+        {
+          "title": "Alineación con los Objetivos Nacionales",
+          "text": "Estructuramos cada proyecto para apoyar directamente los objetivos más amplios del país anfitrión de autosuficiencia económica y estabilidad."
+        }
+      ]
+    }
+  ]
+}

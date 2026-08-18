@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "items": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/about",
+        "dropdown": [
+          {
+            "label": "Foundation",
+            "href": "/about#who-we-are"
+          },
+          {
+            "label": "Leadership",
+            "href": "/about#leadership"
+          },
+          {
+            "label": "CEO Message",
+            "href": "/about#ceomessage"
+          }
+        ]
+      },
+      {
+        "label": "Capabilities",
+        "href": "/capabilities",
+        "dropdown": [
+          {
+            "label": "Upstream",
+            "href": "/capabilities#upstream"
+          },
+          {
+            "label": "Midstream",
+            "href": "/capabilities#midstream"
+          },
+          {
+            "label": "Downstream",
+            "href": "/capabilities#downstream"
+          },
+          {
+            "label": "Asset Protection",
+            "href": "/capabilities#asset-protection"
+          },
+          {
+            "label": "Energy Trading",
+            "href": "/capabilities#energy-trading"
+          }
+        ]
+      },
+      {
+        "label": "Approach",
+        "href": "/approach",
+        "dropdown": [
+          {
+            "label": "Direct-to-Asset Execution",
+            "href": "/approach#direct-to-asset"
+          },
+          {
+            "label": "HSE & Local Capability",
+            "href": "/approach#hse-capability"
+          },
+          {
+            "label": "Commercial Alignment",
+            "href": "/approach#commercial-alignment"
+          }
+        ]
+      },
+      {
+        "label": "Insights",
+        "href": "/insights"
+      }
+    ],
+    "languages": [
+      {
+        "code": "EN",
+        "label": "English",
+        "active": true
+      },
+      {
+        "code": "AR",
+        "label": "Arabic",
+        "active": true
+      },
+      {
+        "code": "ES",
+        "label": "Spanish",
+        "active": true
+      }
+    ],
+    "cta": "Contact"
+  },
+  "footer": {
+    "navigate": {
+      "title": "Navigate",
+      "links": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Capabilities",
+          "href": "/capabilities"
+        },
+        {
+          "label": "Approach",
+          "href": "/approach"
+        },
+        {
+          "label": "Insights",
+          "href": "/insights"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ]
+    },
+    "contactForm": {
+      "title": "Contact Us",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text"
+        },
+        {
+          "name": "email",
+          "label": "Email Address",
+          "type": "email"
+        },
+        {
+          "name": "company",
+          "label": "Company",
+          "type": "text"
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea"
+        }
+      ],
+      "cta": "Send Message"
+    },
+    "company": {
+      "name": "Freedom First Global",
+      "offices": [
+        {
+          "city": "The Woodlands, TX",
+          "address": "2700 Research Forest Dr.\nSuite 105\nThe Woodlands, TX 77381"
+        },
+        {
+          "city": "Abu Dhabi, UAE",
+          "address": "811N, Floor 8, Tamouh Tower,\nTamouh, Al Reem Island, Abu Dhabi\nUnited Arab Emirates"
+        }
+      ],
+      "social": {
+        "email": "info@freedomfirstglobal.com",
+        "linkedin": "https://www.linkedin.com/company/freedom-first-corp",
+        "facebook": "https://www.facebook.com/profile.php?id=61560491723699",
+        "x": "#"
+      }
+    }
+  },
+  "ui": {
+    "explore": "Explore",
+    "comingSoon": "Coming soon",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "capabilitiesEyebrow": "Capabilities",
+    "advantagesEyebrow": "Advantages",
+    "partnershipEconomic": "Economic Empowerment",
+    "partnershipSynergy": "Synergy & Impact",
+    "serviceMapEyebrow": "Global Operations",
+    "serviceMapAll": "All Operations",
+    "serviceMapActive": "Active",
+    "serviceMapHover": "Hover highlighted regions for details",
+    "aboutMissionOrigin": "Mission & Origin",
+    "aboutTechnicalPartner": "Technical Partner",
+    "aboutCoreValues": "Core Values",
+    "aboutLeadership": "Leadership",
+    "aboutNextStep": "Next Steps",
+    "capAdvantageEyebrow": "The Advantage",
+    "capNextSteps": "Next Steps",
+    "approachEyebrow": "Our Approach",
+    "thePartnership": "The Partnership",
+    "stakeholdersEyebrow": "Stakeholders",
+    "counsel": "Counsel",
+    "background": "Background",
+    "readMore": "Read More",
+    "close": "Close",
+    "rightsReserved": "All rights reserved."
+  }
+}

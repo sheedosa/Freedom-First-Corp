@@ -1,5 +1,5 @@
 {
-  "name": "react-example",
+  "name": "freedom-first-global",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,14 +9,18 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
+    "prebuild": "node scripts/generate-seo-files.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "seo": "node scripts/generate-seo-files.mjs",
+    "cms:config": "node scripts/generate-cms-config.mjs"
   },
   "dependencies": {
     "@types/react-simple-maps": "^3.0.6",
     "d3-geo": "^3.1.1",
     "lucide-react": "^0.546.0",
+    "marked": "^15.0.12",
     "motion": "^12.23.24",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",

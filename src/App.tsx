@@ -8,10 +8,7 @@ const About = lazy(() => import('./pages/About').then(module => ({ default: modu
 const CapabilitiesPage = lazy(() => import('./pages/Capabilities').then(module => ({ default: module.CapabilitiesPage })));
 const Approach = lazy(() => import('./pages/Approach').then(module => ({ default: module.Approach })));
 const Insights = lazy(() => import('./pages/Insights').then(module => ({ default: module.Insights })));
-const InsightLibya = lazy(() => import('./pages/InsightLibya').then(module => ({ default: module.InsightLibya })));
-const InsightUpstream = lazy(() => import('./pages/InsightUpstream').then(module => ({ default: module.InsightUpstream })));
-const InsightPermian = lazy(() => import('./pages/InsightPermian').then(module => ({ default: module.InsightPermian })));
-const InsightForum = lazy(() => import('./pages/InsightForum').then(module => ({ default: module.InsightForum })));
+const Insight = lazy(() => import('./pages/Insight').then(module => ({ default: module.Insight })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
 
 function ScrollToTop() {
@@ -40,10 +37,9 @@ export default function App() {
               {/* Deprecated route — stakeholder content now lives on /approach. Redirect preserves old links. */}
               <Route path="/stakeholders" element={<Navigate to="/approach#stakeholders" replace />} />
               <Route path="/insights" element={<Insights />} />
-              <Route path="/insights/rebuilding-libya" element={<InsightLibya />} />
-              <Route path="/insights/upstream-energy-development" element={<InsightUpstream />} />
-              <Route path="/insights/permian-basin-to-libya" element={<InsightPermian />} />
-              <Route path="/insights/us-africa-energy-forum" element={<InsightForum />} />
+              {/* One route serves every article; the slug maps to a markdown file
+                  under content/insights/, so new articles need no code change. */}
+              <Route path="/insights/:slug" element={<Insight />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </Suspense>

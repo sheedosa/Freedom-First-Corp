@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "items": [
+      {
+        "label": "الرئيسية",
+        "href": "/"
+      },
+      {
+        "label": "من نحن",
+        "href": "/about",
+        "dropdown": [
+          {
+            "label": "الأساس",
+            "href": "/about#who-we-are"
+          },
+          {
+            "label": "القيادة",
+            "href": "/about#leadership"
+          },
+          {
+            "label": "كلمة الرئيس التنفيذي",
+            "href": "/about#ceomessage"
+          }
+        ]
+      },
+      {
+        "label": "القدرات",
+        "href": "/capabilities",
+        "dropdown": [
+          {
+            "label": "المنبع",
+            "href": "/capabilities#upstream"
+          },
+          {
+            "label": "الأنشطة الوسيطة",
+            "href": "/capabilities#midstream"
+          },
+          {
+            "label": "المصب",
+            "href": "/capabilities#downstream"
+          },
+          {
+            "label": "حماية الأصول",
+            "href": "/capabilities#asset-protection"
+          },
+          {
+            "label": "تداول الطاقة",
+            "href": "/capabilities#energy-trading"
+          }
+        ]
+      },
+      {
+        "label": "منهجنا",
+        "href": "/approach",
+        "dropdown": [
+          {
+            "label": "التنفيذ المباشر في الأصل",
+            "href": "/approach#direct-to-asset"
+          },
+          {
+            "label": "الصحة والسلامة والبيئة والقدرات المحلية",
+            "href": "/approach#hse-capability"
+          },
+          {
+            "label": "المواءمة التجارية",
+            "href": "/approach#commercial-alignment"
+          }
+        ]
+      },
+      {
+        "label": "رؤى",
+        "href": "/insights"
+      }
+    ],
+    "languages": [
+      {
+        "code": "EN",
+        "label": "الإنجليزية",
+        "active": true
+      },
+      {
+        "code": "AR",
+        "label": "العربية",
+        "active": true
+      },
+      {
+        "code": "ES",
+        "label": "الإسبانية",
+        "active": true
+      }
+    ],
+    "cta": "تواصل معنا"
+  },
+  "footer": {
+    "navigate": {
+      "title": "تصفّح",
+      "links": [
+        {
+          "label": "الرئيسية",
+          "href": "/"
+        },
+        {
+          "label": "من نحن",
+          "href": "/about"
+        },
+        {
+          "label": "القدرات",
+          "href": "/capabilities"
+        },
+        {
+          "label": "منهجنا",
+          "href": "/approach"
+        },
+        {
+          "label": "رؤى",
+          "href": "/insights"
+        },
+        {
+          "label": "تواصل معنا",
+          "href": "/contact"
+        }
+      ]
+    },
+    "contactForm": {
+      "title": "تواصل معنا",
+      "fields": [
+        {
+          "name": "name",
+          "label": "الاسم",
+          "type": "text"
+        },
+        {
+          "name": "email",
+          "label": "البريد الإلكتروني",
+          "type": "email"
+        },
+        {
+          "name": "company",
+          "label": "الشركة",
+          "type": "text"
+        },
+        {
+          "name": "message",
+          "label": "الرسالة",
+          "type": "textarea"
+        }
+      ],
+      "cta": "إرسال الرسالة"
+    },
+    "company": {
+      "name": "Freedom First Global",
+      "offices": [
+        {
+          "city": "ذا وودلاندز، تكساس",
+          "address": "2700 Research Forest Dr.\nSuite 105\nThe Woodlands, TX 77381"
+        },
+        {
+          "city": "أبوظبي، الإمارات",
+          "address": "811N، الطابق 8، برج تموّه\nجزيرة الريم، أبوظبي\nالإمارات العربية المتحدة"
+        }
+      ],
+      "social": {
+        "email": "info@freedomfirstglobal.com",
+        "linkedin": "https://www.linkedin.com/company/freedom-first-corp",
+        "facebook": "https://www.facebook.com/profile.php?id=61560491723699",
+        "x": "#"
+      }
+    }
+  },
+  "ui": {
+    "explore": "استكشف",
+    "comingSoon": "قريباً",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "capabilitiesEyebrow": "القدرات",
+    "advantagesEyebrow": "مزايانا",
+    "partnershipEconomic": "التمكين الاقتصادي",
+    "partnershipSynergy": "التآزر والأثر",
+    "serviceMapEyebrow": "العمليات العالمية",
+    "serviceMapAll": "كل العمليات",
+    "serviceMapActive": "نشط",
+    "serviceMapHover": "مرّر المؤشّر فوق المناطق المميّزة لعرض التفاصيل",
+    "aboutMissionOrigin": "المهمة والنشأة",
+    "aboutTechnicalPartner": "شريك تقني",
+    "aboutCoreValues": "القيم الأساسية",
+    "aboutLeadership": "القيادة",
+    "aboutNextStep": "الخطوات التالية",
+    "capAdvantageEyebrow": "الميزة",
+    "capNextSteps": "الخطوات التالية",
+    "approachEyebrow": "منهجنا",
+    "thePartnership": "الشراكة",
+    "stakeholdersEyebrow": "أصحاب المصلحة",
+    "counsel": "الاستشارة",
+    "background": "نبذة",
+    "readMore": "اقرأ المزيد",
+    "close": "إغلاق",
+    "rightsReserved": "جميع الحقوق محفوظة."
+  }
+}
