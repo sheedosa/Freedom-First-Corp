@@ -15,7 +15,7 @@ approval step: a save goes live on <https://www.freedomfirstglobal.com> in about
 1. Create a free GitHub account if you don't have one, and ask the site
    administrator to add you to the `sheedosa/freedom-first-corp` repository with
    **Write** access.
-2. Go to **<https://pagescms.org>** and click **Sign in with GitHub**.
+2. Go to **<https://app.pagescms.org>** and click **Sign in with GitHub**.
 3. Approve access for the `sheedosa/freedom-first-corp` repository when GitHub
    asks. (Grant it to that repository only.)
 4. Pick the repository from your list, then choose the **`main`** branch.
