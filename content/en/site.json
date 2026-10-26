@@ -151,8 +151,13 @@
       "name": "Freedom First Global",
       "offices": [
         {
-          "city": "Abu Dhabi, UAE",
-          "address": "811N, Floor 8, Tamouh Tower,\nTamouh, Al Reem Island, Abu Dhabi\nUnited Arab Emirates"
+          "city": "The Woodlands, TX"
+        },
+        {
+          "city": "Abu Dhabi, UAE"
+        },
+        {
+          "city": "London, UK"
         }
       ],
       "social": {
